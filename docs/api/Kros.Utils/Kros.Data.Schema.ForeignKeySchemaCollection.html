@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class ForeignKeySchemaCollection
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,7 +83,7 @@
   
   <h1 id="Kros_Data_Schema_ForeignKeySchemaCollection" data-uid="Kros.Data.Schema.ForeignKeySchemaCollection" class="text-break">Class ForeignKeySchemaCollection
   </h1>
-  <div class="markdown level0 summary"><p>Zoznam cudzích kľúčov tabuľky <a class="xref" href="Kros.Data.Schema.TableSchema.html">TableSchema</a>.</p>
+  <div class="markdown level0 summary"><p>List of foreign keys for table <a class="xref" href="Kros.Data.Schema.TableSchema.html">TableSchema</a>.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -100,15 +100,14 @@
     <pre><code class="lang-csharp hljs">public class ForeignKeySchemaCollection : KeyedCollection&lt;string, ForeignKeySchema&gt;, IList&lt;ForeignKeySchema&gt;, ICollection&lt;ForeignKeySchema&gt;, IList, ICollection, IReadOnlyList&lt;ForeignKeySchema&gt;, IReadOnlyCollection&lt;ForeignKeySchema&gt;, IEnumerable&lt;ForeignKeySchema&gt;, IEnumerable</code></pre>
   </div>
   <h5 id="Kros_Data_Schema_ForeignKeySchemaCollection_remarks"><strong>Remarks</strong></h5>
-  <div class="markdown level0 remarks"><p>Cudzím kľúčom pridaným do zoznamu je automaticky nastavená tabuľka <a class="xref" href="Kros.Data.Schema.IndexSchema.html#Kros_Data_Schema_IndexSchema_Table">Table</a>.
-Do zoznamu nie je možné pridať cudzí kľúč, ktorý už patrí inej tabuľke. V takom prípade je vyvolaná výnimka
-<span class="xref">System.InvalidOperationException</span>.</p>
+  <div class="markdown level0 remarks"><p>To the foreign keys added to this list is automatically set their <a class="xref" href="Kros.Data.Schema.ForeignKeySchema.html#Kros_Data_Schema_ForeignKeySchema_Table">Table</a>.
+Foreign key can belong only to one table.</p>
 </div>
   <h3 id="constructors">Constructors
   </h3>
   <a id="Kros_Data_Schema_ForeignKeySchemaCollection__ctor_" data-uid="Kros.Data.Schema.ForeignKeySchemaCollection.#ctor*"></a>
   <h4 id="Kros_Data_Schema_ForeignKeySchemaCollection__ctor_Kros_Data_Schema_TableSchema_" data-uid="Kros.Data.Schema.ForeignKeySchemaCollection.#ctor(Kros.Data.Schema.TableSchema)">ForeignKeySchemaCollection(TableSchema)</h4>
-  <div class="markdown level1 summary"><p>Vytvorí zoznam cudzích kľúčov pre tabuľku <code data-dev-comment-type="paramref" class="paramref">table</code>.</p>
+  <div class="markdown level1 summary"><p>Creates a new foreign key list for <code data-dev-comment-type="paramref" class="paramref">table</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -128,7 +127,7 @@ Do zoznamu nie je možné pridať cudzí kľúč, ktorý už patrí inej tabuľk
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.TableSchema.html">TableSchema</a></td>
         <td><span class="parametername">table</span></td>
-        <td><p>Tabuľka.</p>
+        <td><p>Table to which foreign key list belongs.</p>
 </td>
       </tr>
     </tbody>
@@ -144,7 +143,7 @@ Do zoznamu nie je možné pridať cudzí kľúč, ktorý už patrí inej tabuľk
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Hodnota <code data-dev-comment-type="paramref" class="paramref">table</code> je <code>null</code>.</p>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">table</code> is <span class="xref">null</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -153,9 +152,9 @@ Do zoznamu nie je možné pridať cudzí kľúč, ktorý už patrí inej tabuľk
   </h3>
   <a id="Kros_Data_Schema_ForeignKeySchemaCollection_Add_" data-uid="Kros.Data.Schema.ForeignKeySchemaCollection.Add*"></a>
   <h4 id="Kros_Data_Schema_ForeignKeySchemaCollection_Add_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__System_String_System_Collections_Generic_IEnumerable_System_String__" data-uid="Kros.Data.Schema.ForeignKeySchemaCollection.Add(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.Collections.Generic.IEnumerable{System.String})">Add(String, String, IEnumerable&lt;String&gt;, String, IEnumerable&lt;String&gt;)</h4>
-  <div class="markdown level1 summary"><p>Vytvorí a pridá do zoznamu novú definíciu cudzieho kľúča s menom <code data-dev-comment-type="paramref" class="paramref">name</code>. Cudzí kľúč je nad stĺpcami
-<code data-dev-comment-type="paramref" class="paramref">foreignKeyTableColumns</code> tabuľky <code data-dev-comment-type="paramref" class="paramref">foreignKeyTableName</code> a odkazuje sa na
-stĺpce <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableColumns</code> tabuľky <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableName</code>.</p>
+  <div class="markdown level1 summary"><p>Creates a definition of foreign key with the <code data-dev-comment-type="paramref" class="paramref">name</code> and adds it to the list.
+Columns <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableColumns</code> in parent table <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableName</code> are
+referenced in columns <code data-dev-comment-type="paramref" class="paramref">foreignKeyTableColumns</code> of child table <code data-dev-comment-type="paramref" class="paramref">foreignKeyTableName</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -175,31 +174,31 @@ stĺpce <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableC
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">name</span></td>
-        <td><p>Meno cudzieho kľúča.</p>
+        <td><p>Name of the foreign key.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">primaryKeyTableName</span></td>
-        <td><p>Meno tabuľky s primárnym kľúčom.</p>
+        <td><p><inheritdoc cref="P:Kros.Data.Schema.ForeignKeySchema.PrimaryKeyTableName" select="summary"></inheritdoc>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
         <td><span class="parametername">primaryKeyTableColumns</span></td>
-        <td><p>Zoznam odkazovaných stĺpcov v tabuľke s primárnym kľúčom.</p>
+        <td><p>List of columns in parent table.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">foreignKeyTableName</span></td>
-        <td><p>Meno tabuľky s cudzím kľúčom.</p>
+        <td><p><inheritdoc cref="P:Kros.Data.Schema.ForeignKeySchema.ForeignKeyTableName" select="summary"></inheritdoc>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
         <td><span class="parametername">foreignKeyTableColumns</span></td>
-        <td><p>Zoznam stĺpcov v tabuľke cudzieho kľúča.</p>
+        <td><p>List of columns in child table.</p>
 </td>
       </tr>
     </tbody>
@@ -215,8 +214,7 @@ stĺpce <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableC
     <tbody>
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.ForeignKeySchema.html">ForeignKeySchema</a></td>
-        <td><p>Vytvorený cudzí kľúč.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -231,7 +229,7 @@ stĺpce <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableC
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Hodnota ľubovoľného parametra je <code>null</code>.</p>
+        <td><p>Value of any argument is <span class="xref">null</span>.</p>
 </td>
       </tr>
       <tr>
@@ -242,9 +240,9 @@ stĺpce <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableC
   </table>
   <a id="Kros_Data_Schema_ForeignKeySchemaCollection_Add_" data-uid="Kros.Data.Schema.ForeignKeySchemaCollection.Add*"></a>
   <h4 id="Kros_Data_Schema_ForeignKeySchemaCollection_Add_System_String_System_String_System_String_System_String_System_String_" data-uid="Kros.Data.Schema.ForeignKeySchemaCollection.Add(System.String,System.String,System.String,System.String,System.String)">Add(String, String, String, String, String)</h4>
-  <div class="markdown level1 summary"><p>Vytvorí a pridá do zoznamu novú definíciu cudzieho kľúča s menom <code data-dev-comment-type="paramref" class="paramref">name</code>. Cudzí kľúč je nad stĺpcom
-<code data-dev-comment-type="paramref" class="paramref">foreignKeyTableColumn</code> tabuľky <code data-dev-comment-type="paramref" class="paramref">foreignKeyTableName</code> a odkazuje sa na
-stĺpec <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableColumn</code> tabuľky <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableName</code>.</p>
+  <div class="markdown level1 summary"><p>Creates a definition of foreign key with the <code data-dev-comment-type="paramref" class="paramref">name</code> and adds it to the list.
+Column <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableColumn</code> in parent table <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableName</code> is
+referenced in column <code data-dev-comment-type="paramref" class="paramref">foreignKeyTableColumn</code> of child table <code data-dev-comment-type="paramref" class="paramref">foreignKeyTableName</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -264,31 +262,31 @@ stĺpec <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableC
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">name</span></td>
-        <td><p>Meno cudzieho kľúča.</p>
+        <td><p>Name of the foreign key.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">primaryKeyTableName</span></td>
-        <td><p>Meno tabuľky s primárnym kľúčom.</p>
+        <td><p><inheritdoc cref="P:Kros.Data.Schema.ForeignKeySchema.PrimaryKeyTableName" select="summary"></inheritdoc>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">primaryKeyTableColumn</span></td>
-        <td><p>Meno odkazovaného stĺpca v tabuľke s primárnym kľúčom.</p>
+        <td><p>Column name in primary key table.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">foreignKeyTableName</span></td>
-        <td><p>Meno tabuľky s cudzím kľúčom.</p>
+        <td><p><inheritdoc cref="P:Kros.Data.Schema.ForeignKeySchema.ForeignKeyTableName" select="summary"></inheritdoc>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">foreignKeyTableColumn</span></td>
-        <td><p>Meno stĺpca v tabuľke cudzieho kľúča.</p>
+        <td><p>Column name in foreign key table.</p>
 </td>
       </tr>
     </tbody>
@@ -304,7 +302,7 @@ stĺpec <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableC
     <tbody>
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.ForeignKeySchema.html">ForeignKeySchema</a></td>
-        <td><p>Vytvorený cudzí kľúč.</p>
+        <td><p>Created foreign key.</p>
 </td>
       </tr>
     </tbody>
@@ -320,12 +318,13 @@ stĺpec <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableC
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Hodnota ľubovoľného parametra je <code>null</code>.</p>
+        <td><p>Value of any parameter is <span class="xref">null</span>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Hodnota ľubovoľného parametra je prázdny reťazec, alebo reťazec bielych znakov.</p>
+        <td><p>Value of any parameter is empty string, or string containing only
+whitespace characters.</p>
 </td>
       </tr>
     </tbody>

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class SqlServerBulkInsert
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,7 +83,7 @@
   
   <h1 id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert" class="text-break">Class SqlServerBulkInsert
   </h1>
-  <div class="markdown level0 summary"><p>Trieda umožňujúca rýchle hromadné vkladanie dát pre SQL Server.</p>
+  <div class="markdown level0 summary"><p>Class for fast data inserting into SQL Server.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -105,8 +105,7 @@
   </h3>
   <a id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert__ctor_" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.#ctor*"></a>
   <h4 id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert__ctor_System_Data_SqlClient_SqlConnection_" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.#ctor(System.Data.SqlClient.SqlConnection)">SqlServerBulkInsert(SqlConnection)</h4>
-  <div class="markdown level1 summary"><p>Inicializuje novú inštanciu <a class="xref" href="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.html">SqlServerBulkInsert</a> použitím spojenia na databázu
-<code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
+  <div class="markdown level1 summary"><p>Initialize new instance of <a class="xref" href="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.html">SqlServerBulkInsert</a> with database connection <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -126,17 +125,16 @@
       <tr>
         <td><span class="xref">System.Data.SqlClient.SqlConnection</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Spojenie na databázu, kam sa vložia dáta. Spojenie musí byť otvorené.
-Ak je na spojení spustená transakcia, mysí sa použiť konštruktor s externou transakciou a tá musí
-byť zadaná.</p>
+        <td><p>Database connection where data will be inserted, connection has to be opened.
+If transaction is running on connection, contructor with defined external transaction must be used.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert__ctor_" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.#ctor*"></a>
   <h4 id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert__ctor_System_Data_SqlClient_SqlConnection_System_Data_SqlClient_SqlBulkCopyOptions_" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.#ctor(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlBulkCopyOptions)">SqlServerBulkInsert(SqlConnection, SqlBulkCopyOptions)</h4>
-  <div class="markdown level1 summary"><p>Inicializuje novú inštanciu <a class="xref" href="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.html">SqlServerBulkInsert</a> použitím spojenia na databázu
-<code data-dev-comment-type="paramref" class="paramref">connection</code> a zadaných nastavení <code data-dev-comment-type="paramref" class="paramref">options</code>.</p>
+  <div class="markdown level1 summary"><p>Initialize new instance of <a class="xref" href="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.html">SqlServerBulkInsert</a> with database connection <code data-dev-comment-type="paramref" class="paramref">connection</code>
+and defined options <code data-dev-comment-type="paramref" class="paramref">options</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -156,21 +154,21 @@ byť zadaná.</p>
       <tr>
         <td><span class="xref">System.Data.SqlClient.SqlConnection</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Spojenie na databázu, kam sa vložia dáta. Spojenie musí byť otvorené.</p>
+        <td><p>Database connection where data will be inserted, connection has to be opened.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Data.SqlClient.SqlBulkCopyOptions</span></td>
         <td><span class="parametername">options</span></td>
-        <td><p>Nastavenia <span class="xref">System.Data.SqlClient.SqlBulkCopyOptions</span>.</p>
+        <td><p>Options <span class="xref">System.Data.SqlClient.SqlBulkCopyOptions</span>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert__ctor_" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.#ctor*"></a>
   <h4 id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert__ctor_System_Data_SqlClient_SqlConnection_System_Data_SqlClient_SqlTransaction_" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.#ctor(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction)">SqlServerBulkInsert(SqlConnection, SqlTransaction)</h4>
-  <div class="markdown level1 summary"><p>Inicializuje novú inštanciu <a class="xref" href="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.html">SqlServerBulkInsert</a> použitím spojenia na databázu
-<code data-dev-comment-type="paramref" class="paramref">connection</code> a externej transakcie <code data-dev-comment-type="paramref" class="paramref">externalTransaction</code>.</p>
+  <div class="markdown level1 summary"><p>Initialize new instance of <a class="xref" href="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.html">SqlServerBulkInsert</a> with database connection <code data-dev-comment-type="paramref" class="paramref">connection</code>
+and external transaction <code data-dev-comment-type="paramref" class="paramref">externalTransaction</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -190,23 +188,22 @@ byť zadaná.</p>
       <tr>
         <td><span class="xref">System.Data.SqlClient.SqlConnection</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Spojenie na databázu, kam sa vložia dáta. Spojenie musí byť otvorené.
-Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code data-dev-comment-type="paramref" class="paramref">externalTransaction</code>.</p>
+        <td><p>Database connection where data will be inserted, connection has to be opened.
+If transaction is running on connection, transaction has to be defined in <code data-dev-comment-type="paramref" class="paramref">externalTransaction</code>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Data.SqlClient.SqlTransaction</span></td>
         <td><span class="parametername">externalTransaction</span></td>
-        <td><p>Externá transakcia, v ktorej hromadné vloženie prebehne.</p>
+        <td><p>External transaction, in which bulk insert is executed.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert__ctor_" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.#ctor*"></a>
   <h4 id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert__ctor_System_Data_SqlClient_SqlConnection_System_Data_SqlClient_SqlTransaction_System_Data_SqlClient_SqlBulkCopyOptions_" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.#ctor(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.Data.SqlClient.SqlBulkCopyOptions)">SqlServerBulkInsert(SqlConnection, SqlTransaction, SqlBulkCopyOptions)</h4>
-  <div class="markdown level1 summary"><p>Inicializuje novú inštanciu <a class="xref" href="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.html">SqlServerBulkInsert</a> použitím spojenia na databázu
-<code data-dev-comment-type="paramref" class="paramref">connection</code>, externej transakcie <code data-dev-comment-type="paramref" class="paramref">externalTransaction</code>
-a zadaných nastavení <code data-dev-comment-type="paramref" class="paramref">options</code>.</p>
+  <div class="markdown level1 summary"><p>Initialize new instance of <a class="xref" href="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.html">SqlServerBulkInsert</a> with database connection <code data-dev-comment-type="paramref" class="paramref">connection</code>,
+external transaction <code data-dev-comment-type="paramref" class="paramref">externalTransaction</code> and defined options <code data-dev-comment-type="paramref" class="paramref">options</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -226,28 +223,27 @@ a zadaných nastavení <code data-dev-comment-type="paramref" class="paramref">o
       <tr>
         <td><span class="xref">System.Data.SqlClient.SqlConnection</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Spojenie na databázu, kam sa vložia dáta. Spojenie musí byť otvorené.
-Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code data-dev-comment-type="paramref" class="paramref">externalTransaction</code>.</p>
+        <td><p>Database connection where data will be inserted, connection has to be opened.
+If transaction is running on connection, transaction has to be defined in <code data-dev-comment-type="paramref" class="paramref">externalTransaction</code>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Data.SqlClient.SqlTransaction</span></td>
         <td><span class="parametername">externalTransaction</span></td>
-        <td><p>Externá transakcia, v ktorej hromadné vloženie prebehne.</p>
+        <td><p>External transaction, in which bulk insert is executed.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Data.SqlClient.SqlBulkCopyOptions</span></td>
         <td><span class="parametername">options</span></td>
-        <td><p>Nastavenia <span class="xref">System.Data.SqlClient.SqlBulkCopyOptions</span>.</p>
+        <td><p>Options <span class="xref">System.Data.SqlClient.SqlBulkCopyOptions</span>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert__ctor_" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.#ctor*"></a>
   <h4 id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert__ctor_System_String_" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.#ctor(System.String)">SqlServerBulkInsert(String)</h4>
-  <div class="markdown level1 summary"><p>Inicializuje novú inštanciu <a class="xref" href="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.html">SqlServerBulkInsert</a> použitím spojenia na databázu
-<code data-dev-comment-type="paramref" class="paramref">connectionString</code>.</p>
+  <div class="markdown level1 summary"><p>Initialize new instance of <a class="xref" href="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.html">SqlServerBulkInsert</a> with <code data-dev-comment-type="paramref" class="paramref">connectionString</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -267,15 +263,15 @@ Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code dat
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">connectionString</span></td>
-        <td><p>Spojenie na databázu, kam sa vložia dáta.</p>
+        <td><p>Connection string for database connection.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert__ctor_" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.#ctor*"></a>
   <h4 id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert__ctor_System_String_System_Data_SqlClient_SqlBulkCopyOptions_" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.#ctor(System.String,System.Data.SqlClient.SqlBulkCopyOptions)">SqlServerBulkInsert(String, SqlBulkCopyOptions)</h4>
-  <div class="markdown level1 summary"><p>Inicializuje novú inštanciu <a class="xref" href="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.html">SqlServerBulkInsert</a> použitím spojenia na databázu
-<code data-dev-comment-type="paramref" class="paramref">connectionString</code> a zadaných nastavení <code data-dev-comment-type="paramref" class="paramref">options</code>.</p>
+  <div class="markdown level1 summary"><p>Initialize new instance of <a class="xref" href="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.html">SqlServerBulkInsert</a> with <code data-dev-comment-type="paramref" class="paramref">connectionString</code>
+and defined options <code data-dev-comment-type="paramref" class="paramref">options</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -295,13 +291,13 @@ Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code dat
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">connectionString</span></td>
-        <td><p>Spojenie na databázu, kam sa vložia dáta.</p>
+        <td><p>Connection string for database connection.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Data.SqlClient.SqlBulkCopyOptions</span></td>
         <td><span class="parametername">options</span></td>
-        <td><p>Nastavenia <span class="xref">System.Data.SqlClient.SqlBulkCopyOptions</span>.</p>
+        <td><p>Options <span class="xref">System.Data.SqlClient.SqlBulkCopyOptions</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -310,7 +306,7 @@ Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code dat
   </h3>
   <a id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert_BatchSize_" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.BatchSize*"></a>
   <h4 id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert_BatchSize" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.BatchSize">BatchSize</h4>
-  <div class="markdown level1 summary"><p>Počet riadkov v dávke, ktorá sa posiela do databázy. Ak je hodnota 0, veľkosť dávky nie je obmedzená.</p>
+  <div class="markdown level1 summary"><p>Row count for batch sent to database. If 0, batch size is not limited.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -343,14 +339,14 @@ Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code dat
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Zadaná hodnota je záporná.</p>
+        <td><p>Value is negative.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert_BulkCopyOptions_" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.BulkCopyOptions*"></a>
   <h4 id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert_BulkCopyOptions" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.BulkCopyOptions">BulkCopyOptions</h4>
-  <div class="markdown level1 summary"><p>Nastavenia <a class="xref" href="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.html#Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert_BulkCopyOptions">BulkCopyOptions</a> pre internú inštanciu <span class="xref">System.Data.SqlClient.SqlBulkCopy</span>.</p>
+  <div class="markdown level1 summary"><p>Options <a class="xref" href="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.html#Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert_BulkCopyOptions">BulkCopyOptions</a> for internal instance of <span class="xref">System.Data.SqlClient.SqlBulkCopy</span>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -374,7 +370,7 @@ Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code dat
   </table>
   <a id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert_BulkInsertTimeout_" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.BulkInsertTimeout*"></a>
   <h4 id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert_BulkInsertTimeout" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.BulkInsertTimeout">BulkInsertTimeout</h4>
-  <div class="markdown level1 summary"><p>Počet sekúnd na dokončenie operácie. ak je hodnota 0, trvanie operácie nie je obmedzené.</p>
+  <div class="markdown level1 summary"><p>Timeout for BulkInsert operation. If 0, duration of operation is not limited.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -407,16 +403,16 @@ Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code dat
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Zadaná hodnota je záporná.</p>
+        <td><p>Value is negative.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert_DefaultBulkCopyOptions_" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.DefaultBulkCopyOptions*"></a>
   <h4 id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert_DefaultBulkCopyOptions" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.DefaultBulkCopyOptions">DefaultBulkCopyOptions</h4>
-  <div class="markdown level1 summary"><p>Predvolená hodnota <span class="xref">System.Data.SqlClient.SqlBulkCopyOptions</span> pre internú inštanciu <span class="xref">System.Data.SqlClient.SqlBulkCopy</span>, ak sa nepoužíva
-externá transakcia.
-hodnota je <code>SqlBulkCopyOptions.TableLock | SqlBulkCopyOptions.UseInternalTransaction</code>.</p>
+  <div class="markdown level1 summary"><p>Default <span class="xref">System.Data.SqlClient.SqlBulkCopyOptions</span> for internal instance of <span class="xref">System.Data.SqlClient.SqlBulkCopy</span>,
+if external transaction is not used.
+Value is <code>SqlBulkCopyOptions.TableLock | SqlBulkCopyOptions.UseInternalTransaction</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -440,9 +436,9 @@ hodnota je <code>SqlBulkCopyOptions.TableLock | SqlBulkCopyOptions.UseInternalTr
   </table>
   <a id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert_DefaultBulkCopyOptionsExternalTransaction_" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.DefaultBulkCopyOptionsExternalTransaction*"></a>
   <h4 id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert_DefaultBulkCopyOptionsExternalTransaction" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.DefaultBulkCopyOptionsExternalTransaction">DefaultBulkCopyOptionsExternalTransaction</h4>
-  <div class="markdown level1 summary"><p>Predvolená hodnota <span class="xref">System.Data.SqlClient.SqlBulkCopyOptions</span> pre internú inštanciu <span class="xref">System.Data.SqlClient.SqlBulkCopy</span>, ak sa používa
-externá transakcia.
-Hodnota je ako <code>SqlBulkCopyOptions.TableLock</code>.</p>
+  <div class="markdown level1 summary"><p>Default <span class="xref">System.Data.SqlClient.SqlBulkCopyOptions</span> for internal instance of <span class="xref">System.Data.SqlClient.SqlBulkCopy</span>,
+if external transaction is used.
+Value is <code>SqlBulkCopyOptions.TableLock</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -466,7 +462,7 @@ Hodnota je ako <code>SqlBulkCopyOptions.TableLock</code>.</p>
   </table>
   <a id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert_DestinationTableName_" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.DestinationTableName*"></a>
   <h4 id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert_DestinationTableName" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.DestinationTableName">DestinationTableName</h4>
-  <div class="markdown level1 summary"><p>Meno cieľovej tabuľky v databáze.</p>
+  <div class="markdown level1 summary"><p>Destination table name in database.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -490,7 +486,7 @@ Hodnota je ako <code>SqlBulkCopyOptions.TableLock</code>.</p>
   </table>
   <a id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert_ExternalTransaction_" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.ExternalTransaction*"></a>
   <h4 id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert_ExternalTransaction" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.ExternalTransaction">ExternalTransaction</h4>
-  <div class="markdown level1 summary"><p>Externá transakcia, v ktorej sa vykoná vloženie dát.</p>
+  <div class="markdown level1 summary"><p>External transaction, in which bulk insert is executed.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -549,8 +545,7 @@ Hodnota je ako <code>SqlBulkCopyOptions.TableLock</code>.</p>
   </table>
   <a id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert_Insert_" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.Insert*"></a>
   <h4 id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert_Insert_Kros_Data_BulkActions_IBulkActionDataReader_" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.Insert(Kros.Data.BulkActions.IBulkActionDataReader)">Insert(IBulkActionDataReader)</h4>
-  <div class="markdown level1 summary"><p>Vloží všetky dáta zo zdroja <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -569,15 +564,13 @@ Hodnota je ako <code>SqlBulkCopyOptions.TableLock</code>.</p>
       <tr>
         <td><a class="xref" href="Kros.Data.BulkActions.IBulkActionDataReader.html">IBulkActionDataReader</a></td>
         <td><span class="parametername">reader</span></td>
-        <td><p>Zdroj dát.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert_Insert_" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.Insert*"></a>
   <h4 id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert_Insert_System_Data_DataTable_" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.Insert(System.Data.DataTable)">Insert(DataTable)</h4>
-  <div class="markdown level1 summary"><p>Vloží všetky riadky z tabuľky <code data-dev-comment-type="paramref" class="paramref">table</code>.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -596,15 +589,13 @@ Hodnota je ako <code>SqlBulkCopyOptions.TableLock</code>.</p>
       <tr>
         <td><span class="xref">System.Data.DataTable</span></td>
         <td><span class="parametername">table</span></td>
-        <td><p>Zdrojové dáta.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert_Insert_" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.Insert*"></a>
   <h4 id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert_Insert_System_Data_IDataReader_" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.Insert(System.Data.IDataReader)">Insert(IDataReader)</h4>
-  <div class="markdown level1 summary"><p>Vloží všetky dáta zo zdroja <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -623,8 +614,127 @@ Hodnota je ako <code>SqlBulkCopyOptions.TableLock</code>.</p>
       <tr>
         <td><span class="xref">System.Data.IDataReader</span></td>
         <td><span class="parametername">reader</span></td>
-        <td><p>Zdroj dát.</p>
-</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert_InsertAsync_" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.InsertAsync*"></a>
+  <h4 id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert_InsertAsync_Kros_Data_BulkActions_IBulkActionDataReader_" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.InsertAsync(Kros.Data.BulkActions.IBulkActionDataReader)">InsertAsync(IBulkActionDataReader)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task InsertAsync(IBulkActionDataReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Kros.Data.BulkActions.IBulkActionDataReader.html">IBulkActionDataReader</a></td>
+        <td><span class="parametername">reader</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert_InsertAsync_" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.InsertAsync*"></a>
+  <h4 id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert_InsertAsync_System_Data_DataTable_" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.InsertAsync(System.Data.DataTable)">InsertAsync(DataTable)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task InsertAsync(DataTable table)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.DataTable</span></td>
+        <td><span class="parametername">table</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert_InsertAsync_" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.InsertAsync*"></a>
+  <h4 id="Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert_InsertAsync_System_Data_IDataReader_" data-uid="Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.InsertAsync(System.Data.IDataReader)">InsertAsync(IDataReader)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task InsertAsync(IDataReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDataReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>

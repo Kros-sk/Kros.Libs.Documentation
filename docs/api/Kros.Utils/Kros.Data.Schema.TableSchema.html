@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class TableSchema
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,7 +83,7 @@
   
   <h1 id="Kros_Data_Schema_TableSchema" data-uid="Kros.Data.Schema.TableSchema" class="text-break">Class TableSchema
   </h1>
-  <div class="markdown level0 summary"><p>Schéma databázovej tabuľky.</p>
+  <div class="markdown level0 summary"><p>Schema of a database table.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -101,7 +101,8 @@
   </h3>
   <a id="Kros_Data_Schema_TableSchema__ctor_" data-uid="Kros.Data.Schema.TableSchema.#ctor*"></a>
   <h4 id="Kros_Data_Schema_TableSchema__ctor_Kros_Data_Schema_DatabaseSchema_System_String_" data-uid="Kros.Data.Schema.TableSchema.#ctor(Kros.Data.Schema.DatabaseSchema,System.String)">TableSchema(DatabaseSchema, String)</h4>
-  <div class="markdown level1 summary"><p>Vytvorí schému tabuľky <code data-dev-comment-type="paramref" class="paramref">name</code> pre databázu <code data-dev-comment-type="paramref" class="paramref">database</code>.</p>
+  <div class="markdown level1 summary"><p>Creates an instance of <code>TableSchema</code> with specified <code data-dev-comment-type="paramref" class="paramref">name</code>,
+which belongs to <code data-dev-comment-type="paramref" class="paramref">database</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -121,13 +122,13 @@
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.DatabaseSchema.html">DatabaseSchema</a></td>
         <td><span class="parametername">database</span></td>
-        <td><p>Databáza, v ktorej je tabuľka. Hodnota nie je povinná, môže byť <code>null</code>.</p>
+        <td><p>Database into which table belongs to. Value can be <span class="xref">null</span>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">name</span></td>
-        <td><p>Meno tabuľky. Je povinné.</p>
+        <td><p>Table&apos;s name.</p>
 </td>
       </tr>
     </tbody>
@@ -143,19 +144,20 @@
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Hodnota <code data-dev-comment-type="paramref" class="paramref">name</code> je <code>null</code>.</p>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">name</code> is <span class="xref">null</span>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Hodnota <code data-dev-comment-type="paramref" class="paramref">name</code> je prázdny reťazec, alebo reťazec bielych znakov.</p>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">name</code> is empty string, or string containing only
+whitespace characters.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_Schema_TableSchema__ctor_" data-uid="Kros.Data.Schema.TableSchema.#ctor*"></a>
   <h4 id="Kros_Data_Schema_TableSchema__ctor_System_String_" data-uid="Kros.Data.Schema.TableSchema.#ctor(System.String)">TableSchema(String)</h4>
-  <div class="markdown level1 summary"><p>Vytvorí schému tabuľky <code data-dev-comment-type="paramref" class="paramref">name</code>.</p>
+  <div class="markdown level1 summary"><p>Creates an instance of <code>TableSchema</code> with specified <code data-dev-comment-type="paramref" class="paramref">name</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -191,12 +193,13 @@
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Hodnota <code data-dev-comment-type="paramref" class="paramref">name</code> je <code>null</code>.</p>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">name</code> is <span class="xref">null</span>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Hodnota <code data-dev-comment-type="paramref" class="paramref">name</code> je prázdny reťazec, alebo reťazec bielych znakov.</p>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">name</code> is empty string, or string containing only
+whitespace characters.</p>
 </td>
       </tr>
     </tbody>
@@ -205,7 +208,7 @@
   </h3>
   <a id="Kros_Data_Schema_TableSchema_Columns_" data-uid="Kros.Data.Schema.TableSchema.Columns*"></a>
   <h4 id="Kros_Data_Schema_TableSchema_Columns" data-uid="Kros.Data.Schema.TableSchema.Columns">Columns</h4>
-  <div class="markdown level1 summary"><p>Zoznam stĺpcov tabuľky.</p>
+  <div class="markdown level1 summary"><p>Columns of the table.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -229,7 +232,7 @@
   </table>
   <a id="Kros_Data_Schema_TableSchema_Database_" data-uid="Kros.Data.Schema.TableSchema.Database*"></a>
   <h4 id="Kros_Data_Schema_TableSchema_Database" data-uid="Kros.Data.Schema.TableSchema.Database">Database</h4>
-  <div class="markdown level1 summary"><p>Databáza, ktorej tabuľka patrí.</p>
+  <div class="markdown level1 summary"><p>Database to which table belongs.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -253,7 +256,7 @@
   </table>
   <a id="Kros_Data_Schema_TableSchema_ForeignKeys_" data-uid="Kros.Data.Schema.TableSchema.ForeignKeys*"></a>
   <h4 id="Kros_Data_Schema_TableSchema_ForeignKeys" data-uid="Kros.Data.Schema.TableSchema.ForeignKeys">ForeignKeys</h4>
-  <div class="markdown level1 summary"><p>Zoznam cudzích kľúčov tabuľky.</p>
+  <div class="markdown level1 summary"><p>List of table&apos;s foreign keys.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -277,7 +280,7 @@
   </table>
   <a id="Kros_Data_Schema_TableSchema_Indexes_" data-uid="Kros.Data.Schema.TableSchema.Indexes*"></a>
   <h4 id="Kros_Data_Schema_TableSchema_Indexes" data-uid="Kros.Data.Schema.TableSchema.Indexes">Indexes</h4>
-  <div class="markdown level1 summary"><p>Zoznam indexov tabuľky.</p>
+  <div class="markdown level1 summary"><p>List of table&apos;s indexes.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -301,7 +304,7 @@
   </table>
   <a id="Kros_Data_Schema_TableSchema_Name_" data-uid="Kros.Data.Schema.TableSchema.Name*"></a>
   <h4 id="Kros_Data_Schema_TableSchema_Name" data-uid="Kros.Data.Schema.TableSchema.Name">Name</h4>
-  <div class="markdown level1 summary"><p>Meno tabuľky.</p>
+  <div class="markdown level1 summary"><p>Table&apos;s name.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -325,7 +328,7 @@
   </table>
   <a id="Kros_Data_Schema_TableSchema_PrimaryKey_" data-uid="Kros.Data.Schema.TableSchema.PrimaryKey*"></a>
   <h4 id="Kros_Data_Schema_TableSchema_PrimaryKey" data-uid="Kros.Data.Schema.TableSchema.PrimaryKey">PrimaryKey</h4>
-  <div class="markdown level1 summary"><p>Primárny kľúč tabuľky.</p>
+  <div class="markdown level1 summary"><p>Table&apos;s primary key.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -348,10 +351,63 @@
     </tbody>
   </table>
   <h5 id="Kros_Data_Schema_TableSchema_PrimaryKey_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Inštancia je vždy vytvorená, aj ak tabuľka nemá primárny kľúč. V tomto prípade len nemá žiadny stĺpec.</p>
+  <div class="markdown level1 remarks"><p>If table does not have a primary key, value is <span class="xref">null</span>.</p>
 </div>
   <h3 id="methods">Methods
   </h3>
+  <a id="Kros_Data_Schema_TableSchema_SetPrimaryKey_" data-uid="Kros.Data.Schema.TableSchema.SetPrimaryKey*"></a>
+  <h4 id="Kros_Data_Schema_TableSchema_SetPrimaryKey_System_String_System_Boolean_" data-uid="Kros.Data.Schema.TableSchema.SetPrimaryKey(System.String,System.Boolean)">SetPrimaryKey(String, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sets primary key with name <code data-dev-comment-type="paramref" class="paramref">primaryKeyName</code> and flag <code data-dev-comment-type="paramref" class="paramref">clustered</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IndexSchema SetPrimaryKey(string primaryKeyName, bool clustered)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">primaryKeyName</span></td>
+        <td><p>Primary key name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">clustered</span></td>
+        <td><p>If <span class="xref">true</span>, primary key is <code>CLUSTERED</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Kros.Data.Schema.IndexSchema.html">IndexSchema</a></td>
+        <td><p>Created primary key or <span class="xref">null</span> value, if primary key name was not specified.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Kros_Data_Schema_TableSchema_SetPrimaryKey_System_String_System_Boolean__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If <code data-dev-comment-type="paramref" class="paramref">primaryKeyName</code> is <span class="xref">null</span> or empty string or white space string,
+primary key is removed (value of <a class="xref" href="Kros.Data.Schema.TableSchema.html#Kros_Data_Schema_TableSchema_PrimaryKey">PrimaryKey</a> will be <span class="xref">null</span>).</p>
+</div>
   <a id="Kros_Data_Schema_TableSchema_ToString_" data-uid="Kros.Data.Schema.TableSchema.ToString*"></a>
   <h4 id="Kros_Data_Schema_TableSchema_ToString" data-uid="Kros.Data.Schema.TableSchema.ToString">ToString()</h4>
   <div class="markdown level1 summary"></div>

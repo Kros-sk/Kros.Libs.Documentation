@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IModelMapper
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -345,7 +345,10 @@ string - return table name.</p>
     </tbody>
   </table>
   <h5 id="Kros_KORM_Metadata_IModelMapper_InjectionConfigurator__1_examples">Examples</h5>
-  <pre><code source="..\Examples\Kros.KORM.Examples\WelcomeExample.cs" region="InectionConfiguration"></code></pre>
+  <pre><code class="cs" source="..\..\..\..\Documentation\Examples\Kros.KORM.Examples\WelcomeExample.cs" region="InectionConfiguration">            Database.DefaultModelMapper
+            .InjectionConfigurator&lt;Person>()
+                .FillProperty(p => p.CalculationService, () => new CalculationService())
+                .FillProperty(p => p.Logger, () => ServiceContainer.Instance.Resolve&lt;ILogger>());</code></pre>
 
   <a id="Kros_KORM_Metadata_IModelMapper_SetColumnName_" data-uid="Kros.KORM.Metadata.IModelMapper.SetColumnName*"></a>
   <h4 id="Kros_KORM_Metadata_IModelMapper_SetColumnName__2_System_Linq_Expressions_Expression_System_Func___0___1___System_String_" data-uid="Kros.KORM.Metadata.IModelMapper.SetColumnName``2(System.Linq.Expressions.Expression{System.Func{``0,``1}},System.String)">SetColumnName&lt;TModel, TValue&gt;(Expression&lt;Func&lt;TModel, TValue&gt;&gt;, String)</h4>
@@ -355,6 +358,7 @@ string - return table name.</p>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void SetColumnName&lt;TModel, TValue&gt;(Expression&lt;Func&lt;TModel, TValue&gt;&gt; modelProperty, string columnName)
+
     where TModel : class</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -401,7 +405,7 @@ string - return table name.</p>
     </tbody>
   </table>
   <h5 id="Kros_KORM_Metadata_IModelMapper_SetColumnName__2_System_Linq_Expressions_Expression_System_Func___0___1___System_String__examples">Examples</h5>
-  <pre><code source="..\Examples\Kros.KORM.Examples\ModelMapperExample.cs" region="SetColumnName"></code></pre>
+  <pre><code class="cs" source="..\..\..\..\Documentation\Examples\Kros.KORM.Examples\ModelMapperExample.cs" region="SetColumnName">            Database.DefaultModelMapper.SetColumnName&lt;Person, string>(p => p.Name, &quot;FirstName&quot;); </code></pre>
 
 </article>
           </div>

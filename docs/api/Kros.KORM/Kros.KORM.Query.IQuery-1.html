@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IQuery&lt;T&gt;
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -92,13 +92,22 @@ Instance which implement this interface can be used for creating and executing q
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Kros.KORM.Query.IProjectionQuery-1.html#Kros_KORM_Query_IProjectionQuery_1_Where_System_String_System_Object___">IProjectionQuery&lt;T&gt;.Where(String, Object[])</a>
+      <a class="xref" href="Kros.KORM.Query.IProjectionQuery-1.html#Kros_KORM_Query_IProjectionQuery_1_Where_Kros_KORM_Query_Sql_RawSqlString_System_Object___">IProjectionQuery&lt;T&gt;.Where(RawSqlString, Object[])</a>
     </div>
     <div>
-      <a class="xref" href="Kros.KORM.Query.IProjectionQuery-1.html#Kros_KORM_Query_IProjectionQuery_1_FirstOrDefault_System_String_System_Object___">IProjectionQuery&lt;T&gt;.FirstOrDefault(String, Object[])</a>
+      <a class="xref" href="Kros.KORM.Query.IProjectionQuery-1.html#Kros_KORM_Query_IProjectionQuery_1_Where_System_FormattableString_">IProjectionQuery&lt;T&gt;.Where(FormattableString)</a>
     </div>
     <div>
-      <a class="xref" href="Kros.KORM.Query.IProjectionQuery-1.html#Kros_KORM_Query_IProjectionQuery_1_Any_System_String_System_Object___">IProjectionQuery&lt;T&gt;.Any(String, Object[])</a>
+      <a class="xref" href="Kros.KORM.Query.IProjectionQuery-1.html#Kros_KORM_Query_IProjectionQuery_1_FirstOrDefault_Kros_KORM_Query_Sql_RawSqlString_System_Object___">IProjectionQuery&lt;T&gt;.FirstOrDefault(RawSqlString, Object[])</a>
+    </div>
+    <div>
+      <a class="xref" href="Kros.KORM.Query.IProjectionQuery-1.html#Kros_KORM_Query_IProjectionQuery_1_FirstOrDefault_System_FormattableString_">IProjectionQuery&lt;T&gt;.FirstOrDefault(FormattableString)</a>
+    </div>
+    <div>
+      <a class="xref" href="Kros.KORM.Query.IProjectionQuery-1.html#Kros_KORM_Query_IProjectionQuery_1_Any_Kros_KORM_Query_Sql_RawSqlString_System_Object___">IProjectionQuery&lt;T&gt;.Any(RawSqlString, Object[])</a>
+    </div>
+    <div>
+      <a class="xref" href="Kros.KORM.Query.IProjectionQuery-1.html#Kros_KORM_Query_IProjectionQuery_1_Any_System_FormattableString_">IProjectionQuery&lt;T&gt;.Any(FormattableString)</a>
     </div>
     <div>
       <a class="xref" href="Kros.KORM.Query.IProjectionQuery-1.html#Kros_KORM_Query_IProjectionQuery_1_OrderBy_System_String_">IProjectionQuery&lt;T&gt;.OrderBy(String)</a>
@@ -149,11 +158,28 @@ When you don&apos;t use <code>Select</code> or <code>From</code> function, than 
   <h5 id="Kros_KORM_Query_IQuery_1_examples"><strong>Examples</strong></h5>
   <p>
   You can use standard string sql query for querying data.
-<pre><code source="..\Examples\Kros.KORM.Examples\IQueryExample.cs" region="Sql"></code></pre>
+<pre><code class="cs" source="..\..\..\..\Documentation\Examples\Kros.KORM.Examples\IQueryExample.cs" region="Sql">                var people = database.Query&lt;Person>().Sql(
+            &quot;SELECT p.Id, FirstName, LastName, PostCode &quot; +
+            &quot;FROM Person &quot; +
+            &quot;JOIN Address ON (Person.AddressId = Address.Id) &quot; +
+            &quot;WHERE Age > @1&quot;, 18);
+
+        foreach (var person in people)
+        {
+            Console.WriteLine(person.FirstName);
+        }</code></pre>
 </p>
 <p>
   You can use sql query builder.
-<pre><code source="..\Examples\Kros.KORM.Examples\IQueryExample.cs" region="Select"></code></pre>
+<pre><code class="cs" source="..\..\..\..\Documentation\Examples\Kros.KORM.Examples\IQueryExample.cs" region="Select">                var people = database.Query&lt;Person>()
+            .Select(&quot;p.Id&quot;, &quot;FirstName&quot;, &quot;LastName&quot;, &quot;PostCode&quot;)
+            .From(&quot;Person JOIN Address ON (Person.AddressId = Address.Id)&quot;)
+            .Where(&quot;Age > @1&quot;, 18);
+
+        foreach (var person in people)
+        {
+            Console.WriteLine(person.FirstName);
+        }</code></pre>
 </p>
 
   <h3 id="methods">Methods
@@ -205,7 +231,7 @@ When you don&apos;t use <code>Select</code> or <code>From</code> function, than 
   <div class="markdown level1 remarks"><p>When <code>From</code> method is not call, query take table by T model type.</p>
 </div>
   <h5 id="Kros_KORM_Query_IQuery_1_From_System_String__examples">Examples</h5>
-  <pre><code source="..\Examples\Kros.KORM.Examples\IQueryExample.cs" region="From"></code></pre>
+  <pre><code class="cs" source="..\..\..\..\Documentation\Examples\Kros.KORM.Examples\IQueryExample.cs" region="From">                var people = database.Query&lt;Person>().From(&quot;Person LEFT JOIN Avatar ON (Person.Id = Avatar.PersonId)&quot;);</code></pre>
 
   <h5 class="exceptions">Exceptions</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -270,7 +296,7 @@ When you don&apos;t use <code>Select</code> or <code>From</code> function, than 
   <div class="markdown level1 remarks"><p>When <code>Select</code> method is not call, query take columns by T model.</p>
 </div>
   <h5 id="Kros_KORM_Query_IQuery_1_Select_System_String__examples">Examples</h5>
-  <pre><code source="..\Examples\Kros.KORM.Examples\IQueryExample.cs" region="Select11"></code></pre>
+  <pre><code class="cs" source="..\..\..\..\Documentation\Examples\Kros.KORM.Examples\IQueryExample.cs" region="Select11">                var people = database.Query&lt;Person>().Select(&quot;Id, FirstName&quot;);</code></pre>
 
   <h5 class="exceptions">Exceptions</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -335,7 +361,7 @@ When you don&apos;t use <code>Select</code> or <code>From</code> function, than 
   <div class="markdown level1 remarks"><p>When Select method is not call, query take columns by T model.</p>
 </div>
   <h5 id="Kros_KORM_Query_IQuery_1_Select_System_String____examples">Examples</h5>
-  <pre><code source="..\Examples\Kros.KORM.Examples\IQueryExample.cs" region="Select12"></code></pre>
+  <pre><code class="cs" source="..\..\..\..\Documentation\Examples\Kros.KORM.Examples\IQueryExample.cs" region="Select12">                var people = database.Query&lt;Person>().Select(&quot;Id&quot;, &quot;FirstName&quot;);</code></pre>
 
   <a id="Kros_KORM_Query_IQuery_1_Select_" data-uid="Kros.KORM.Query.IQuery`1.Select*"></a>
   <h4 id="Kros_KORM_Query_IQuery_1_Select__1_System_Func__0___0__" data-uid="Kros.KORM.Query.IQuery`1.Select``1(System.Func{`0,``0})">Select&lt;TResult&gt;(Func&lt;T, TResult&gt;)</h4>
@@ -400,7 +426,7 @@ When you don&apos;t use <code>Select</code> or <code>From</code> function, than 
   <div class="markdown level1 remarks"><p>When <code>Select</code> method is not call, query take columns by T model.</p>
 </div>
   <h5 id="Kros_KORM_Query_IQuery_1_Select__1_System_Func__0___0___examples">Examples</h5>
-  <pre><code source="..\Examples\Kros.KORM.Examples\IQueryExample.cs" region="Select13"></code></pre>
+  <pre><code class="cs" source="..\..\..\..\Documentation\Examples\Kros.KORM.Examples\IQueryExample.cs" region="Select13">                var people = database.Query&lt;Person>().Select(p => new { p.Id, p.FirstName });</code></pre>
 
   <h5 class="exceptions">Exceptions</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -419,13 +445,13 @@ When you don&apos;t use <code>Select</code> or <code>From</code> function, than 
     </tbody>
   </table>
   <a id="Kros_KORM_Query_IQuery_1_Sql_" data-uid="Kros.KORM.Query.IQuery`1.Sql*"></a>
-  <h4 id="Kros_KORM_Query_IQuery_1_Sql_System_String_System_Object___" data-uid="Kros.KORM.Query.IQuery`1.Sql(System.String,System.Object[])">Sql(String, Object[])</h4>
+  <h4 id="Kros_KORM_Query_IQuery_1_Sql_Kros_KORM_Query_Sql_RawSqlString_System_Object___" data-uid="Kros.KORM.Query.IQuery`1.Sql(Kros.KORM.Query.Sql.RawSqlString,System.Object[])">Sql(RawSqlString, Object[])</h4>
   <div class="markdown level1 summary"><p>Create query from sql statement.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IQueryBase&lt;T&gt; Sql(string sql, params object[] args)</code></pre>
+    <pre><code class="lang-csharp hljs">IQueryBase&lt;T&gt; Sql(RawSqlString sql, params object[] args)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -438,7 +464,7 @@ When you don&apos;t use <code>Select</code> or <code>From</code> function, than 
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
+        <td><a class="xref" href="Kros.KORM.Query.Sql.RawSqlString.html">RawSqlString</a></td>
         <td><span class="parametername">sql</span></td>
         <td><p>The SQL for executing in server.</p>
 </td>
@@ -467,9 +493,76 @@ When you don&apos;t use <code>Select</code> or <code>From</code> function, than 
       </tr>
     </tbody>
   </table>
-  <h5 id="Kros_KORM_Query_IQuery_1_Sql_System_String_System_Object____remarks">Remarks</h5>
+  <h5 id="Kros_KORM_Query_IQuery_1_Sql_Kros_KORM_Query_Sql_RawSqlString_System_Object____remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>Sql must be server specific. Because no translation is provide.</p>
 </div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p>if <code>sql</code> is null or white string.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Kros_KORM_Query_IQuery_1_Sql_" data-uid="Kros.KORM.Query.IQuery`1.Sql*"></a>
+  <h4 id="Kros_KORM_Query_IQuery_1_Sql_System_FormattableString_" data-uid="Kros.KORM.Query.IQuery`1.Sql(System.FormattableString)">Sql(FormattableString)</h4>
+  <div class="markdown level1 summary"><p>Create query from sql statement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IQueryBase&lt;T&gt; Sql(FormattableString sql)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.FormattableString</span></td>
+        <td><span class="parametername">sql</span></td>
+        <td><p>The SQL for executing in server.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Kros.KORM.Query.IQueryBase-1.html">IQueryBase</a>&lt;T&gt;</td>
+        <td><p>Query from sql.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Kros_KORM_Query_IQuery_1_Sql_System_FormattableString__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Sql must be server specific. Because no translation is provide.</p>
+</div>
+  <h5 id="Kros_KORM_Query_IQuery_1_Sql_System_FormattableString__examples">Examples</h5>
+  <pre><code>var id = 15;
+var name = &quot;Name&quot;;
+var items = query.Sql($&quot;SELECT * FROM Table WHERE Id = {id} AND Name = {name}&quot;);</code></pre>
+
   <h5 class="exceptions">Exceptions</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>

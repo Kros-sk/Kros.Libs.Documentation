@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class TableSchemaCollection
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,7 +83,7 @@
   
   <h1 id="Kros_Data_Schema_TableSchemaCollection" data-uid="Kros.Data.Schema.TableSchemaCollection" class="text-break">Class TableSchemaCollection
   </h1>
-  <div class="markdown level0 summary"><p>Zoznam tabuliek databázy.</p>
+  <div class="markdown level0 summary"><p>List of tables for <a class="xref" href="Kros.Data.Schema.DatabaseSchema.html">DatabaseSchema</a>.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -100,15 +100,14 @@
     <pre><code class="lang-csharp hljs">public class TableSchemaCollection : KeyedCollection&lt;string, TableSchema&gt;, IList&lt;TableSchema&gt;, ICollection&lt;TableSchema&gt;, IList, ICollection, IReadOnlyList&lt;TableSchema&gt;, IReadOnlyCollection&lt;TableSchema&gt;, IEnumerable&lt;TableSchema&gt;, IEnumerable</code></pre>
   </div>
   <h5 id="Kros_Data_Schema_TableSchemaCollection_remarks"><strong>Remarks</strong></h5>
-  <div class="markdown level0 remarks"><p>Tabuľkám pridaným do zoznamu je automaticky nastavená databáza <a class="xref" href="Kros.Data.Schema.TableSchema.html#Kros_Data_Schema_TableSchema_Database">Database</a>.
-Do zoznamu nie je možné pridať tabuľku, ktorá už patrí inej databáze. V takom prípade je vyvolaná výnimka
-<span class="xref">System.InvalidOperationException</span>.</p>
+  <div class="markdown level0 remarks"><p>To the tables added to this list is automatically set their <a class="xref" href="Kros.Data.Schema.TableSchema.html#Kros_Data_Schema_TableSchema_Database">Database</a>. The table
+can belong only to one database.</p>
 </div>
   <h3 id="constructors">Constructors
   </h3>
   <a id="Kros_Data_Schema_TableSchemaCollection__ctor_" data-uid="Kros.Data.Schema.TableSchemaCollection.#ctor*"></a>
   <h4 id="Kros_Data_Schema_TableSchemaCollection__ctor_Kros_Data_Schema_DatabaseSchema_" data-uid="Kros.Data.Schema.TableSchemaCollection.#ctor(Kros.Data.Schema.DatabaseSchema)">TableSchemaCollection(DatabaseSchema)</h4>
-  <div class="markdown level1 summary"><p>Vytvorí zoznam tabuliek pre databázu <code data-dev-comment-type="paramref" class="paramref">database</code>.</p>
+  <div class="markdown level1 summary"><p>Creates a new table list for <code data-dev-comment-type="paramref" class="paramref">database</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -128,7 +127,7 @@ Do zoznamu nie je možné pridať tabuľku, ktorá už patrí inej databáze. V 
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.DatabaseSchema.html">DatabaseSchema</a></td>
         <td><span class="parametername">database</span></td>
-        <td><p>Databáza.</p>
+        <td><p>Database to which table belongs.</p>
 </td>
       </tr>
     </tbody>
@@ -144,7 +143,7 @@ Do zoznamu nie je možné pridať tabuľku, ktorá už patrí inej databáze. V 
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Hodnota <code data-dev-comment-type="paramref" class="paramref">database</code> je <code>null</code>.</p>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">database</code> is <span class="xref">null</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -153,7 +152,7 @@ Do zoznamu nie je možné pridať tabuľku, ktorá už patrí inej databáze. V 
   </h3>
   <a id="Kros_Data_Schema_TableSchemaCollection_Database_" data-uid="Kros.Data.Schema.TableSchemaCollection.Database*"></a>
   <h4 id="Kros_Data_Schema_TableSchemaCollection_Database" data-uid="Kros.Data.Schema.TableSchemaCollection.Database">Database</h4>
-  <div class="markdown level1 summary"><p>Databáza, ktorej zoznam tabuliek patrí.</p>
+  <div class="markdown level1 summary"><p>Database to which table list belongs.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -179,7 +178,7 @@ Do zoznamu nie je možné pridať tabuľku, ktorá už patrí inej databáze. V 
   </h3>
   <a id="Kros_Data_Schema_TableSchemaCollection_Add_" data-uid="Kros.Data.Schema.TableSchemaCollection.Add*"></a>
   <h4 id="Kros_Data_Schema_TableSchemaCollection_Add_System_String_" data-uid="Kros.Data.Schema.TableSchemaCollection.Add(System.String)">Add(String)</h4>
-  <div class="markdown level1 summary"><p>Vytvorí schému tabuľky s menom <code data-dev-comment-type="paramref" class="paramref">name</code> a pridá ju do zoznamu.</p>
+  <div class="markdown level1 summary"><p>Creates a new <a class="xref" href="Kros.Data.Schema.TableSchema.html">TableSchema</a> with <code data-dev-comment-type="paramref" class="paramref">name</code> and adds it to the list.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -199,7 +198,7 @@ Do zoznamu nie je možné pridať tabuľku, ktorá už patrí inej databáze. V 
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">name</span></td>
-        <td><p>Meno novej tabuľky.</p>
+        <td><p>Name of the created table.</p>
 </td>
       </tr>
     </tbody>
@@ -215,7 +214,7 @@ Do zoznamu nie je možné pridať tabuľku, ktorá už patrí inej databáze. V 
     <tbody>
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.TableSchema.html">TableSchema</a></td>
-        <td><p>Vytvorená schéma tabuľky.</p>
+        <td><p>Created table schema.</p>
 </td>
       </tr>
     </tbody>

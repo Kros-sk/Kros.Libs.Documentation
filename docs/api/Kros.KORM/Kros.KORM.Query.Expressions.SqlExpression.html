@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class SqlExpression
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -118,13 +118,13 @@
   <h3 id="constructors">Constructors
   </h3>
   <a id="Kros_KORM_Query_Expressions_SqlExpression__ctor_" data-uid="Kros.KORM.Query.Expressions.SqlExpression.#ctor*"></a>
-  <h4 id="Kros_KORM_Query_Expressions_SqlExpression__ctor_System_String_System_Object___" data-uid="Kros.KORM.Query.Expressions.SqlExpression.#ctor(System.String,System.Object[])">SqlExpression(String, Object[])</h4>
+  <h4 id="Kros_KORM_Query_Expressions_SqlExpression__ctor_Kros_KORM_Query_Sql_RawSqlString_System_Object___" data-uid="Kros.KORM.Query.Expressions.SqlExpression.#ctor(Kros.KORM.Query.Sql.RawSqlString,System.Object[])">SqlExpression(RawSqlString, Object[])</h4>
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Kros.KORM.Query.Expressions.SqlExpression.html">SqlExpression</a> class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SqlExpression(string sqlQuery, params object[] args)</code></pre>
+    <pre><code class="lang-csharp hljs">public SqlExpression(RawSqlString sqlQuery, params object[] args)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -137,7 +137,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
+        <td><a class="xref" href="Kros.KORM.Query.Sql.RawSqlString.html">RawSqlString</a></td>
         <td><span class="parametername">sqlQuery</span></td>
         <td><p>The SQL query.</p>
 </td>
@@ -154,7 +154,9 @@
   </h3>
   <a id="Kros_KORM_Query_Expressions_SqlExpression_Accept_" data-uid="Kros.KORM.Query.Expressions.SqlExpression.Accept*"></a>
   <h4 id="Kros_KORM_Query_Expressions_SqlExpression_Accept_System_Linq_Expressions_ExpressionVisitor_" data-uid="Kros.KORM.Query.Expressions.SqlExpression.Accept(System.Linq.Expressions.ExpressionVisitor)">Accept(ExpressionVisitor)</h4>
-  <div class="markdown level1 summary"><p>Dispatches to the specific visit method for this node type. For example, <span class="xref">System.Linq.Expressions.MethodCallExpression</span> calls the <span class="xref">System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(System.Linq.Expressions.MethodCallExpression)</span>.</p>
+  <div class="markdown level1 summary"><p>Dispatches to the specific visit method for this node type. For example,
+<span class="xref">System.Linq.Expressions.MethodCallExpression</span> calls the
+<span class="xref">System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(System.Linq.Expressions.MethodCallExpression)</span>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>

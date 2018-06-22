@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class SqlServerSchemaLoader
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,7 +83,7 @@
   
   <h1 id="Kros_Data_Schema_SqlServer_SqlServerSchemaLoader" data-uid="Kros.Data.Schema.SqlServer.SqlServerSchemaLoader" class="text-break">Class SqlServerSchemaLoader
   </h1>
-  <div class="markdown level0 summary"><p>Implementácia <a class="xref" href="Kros.Data.Schema.IDatabaseSchemaLoader-1.html">IDatabaseSchemaLoader&lt;T&gt;</a>, ktorá načítava schému SQL Server databáz.</p>
+  <div class="markdown level0 summary"><p>The implementation of <a class="xref" href="Kros.Data.Schema.IDatabaseSchemaLoader-1.html">IDatabaseSchemaLoader&lt;T&gt;</a> for Microsoft SQL Server.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -106,7 +106,7 @@
   </h3>
   <a id="Kros_Data_Schema_SqlServer_SqlServerSchemaLoader_GetDefaultValueString_" data-uid="Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.GetDefaultValueString*"></a>
   <h4 id="Kros_Data_Schema_SqlServer_SqlServerSchemaLoader_GetDefaultValueString_System_String_" data-uid="Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.GetDefaultValueString(System.String)">GetDefaultValueString(String)</h4>
-  <div class="markdown level1 summary"><p>Upraví reťazec <code data-dev-comment-type="paramref" class="paramref">rawDefaultValueString</code> tak, aby z neho bolo možné získať predvolenú hodnotu stĺpca.</p>
+  <div class="markdown level1 summary"><p>Adjusts the string <code data-dev-comment-type="paramref" class="paramref">rawDefaultValueString</code> so column&apos;s default value can be obtained from it.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -126,7 +126,7 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">rawDefaultValueString</span></td>
-        <td><p>Reťazec predvolenej hodnoty stĺpca tak, ako je uložený v databáze.</p>
+        <td><p>Default value string as it is stored in database.</p>
 </td>
       </tr>
     </tbody>
@@ -142,14 +142,14 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><p>Upravený reťazec.</p>
+        <td><p>Adjusted string - trimmed of unneeded characters.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_Schema_SqlServer_SqlServerSchemaLoader_LoadSchema_" data-uid="Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.LoadSchema*"></a>
   <h4 id="Kros_Data_Schema_SqlServer_SqlServerSchemaLoader_LoadSchema_System_Data_SqlClient_SqlConnection_" data-uid="Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.LoadSchema(System.Data.SqlClient.SqlConnection)">LoadSchema(SqlConnection)</h4>
-  <div class="markdown level1 summary"><p>Načíta celú schému databázy určenej spojením <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
+  <div class="markdown level1 summary"><p>Loads database schema for <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -169,7 +169,7 @@
       <tr>
         <td><span class="xref">System.Data.SqlClient.SqlConnection</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Spojenie na databázu.</p>
+        <td><p>Database connection.</p>
 </td>
       </tr>
     </tbody>
@@ -185,14 +185,15 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.DatabaseSchema.html">DatabaseSchema</a></td>
-        <td><p>Vráti schému celej databázy.</p>
+        <td><p>Database schema.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <h5 id="Kros_Data_Schema_SqlServer_SqlServerSchemaLoader_LoadSchema_System_Data_SqlClient_SqlConnection__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Štandardne sa na získanie schémy vytvorí nové spojenie na databázu podľa vstupného spojenia
-<code data-dev-comment-type="paramref" class="paramref">connection</code>. Ak je však vstupné spojenie exkluzívne, použije sa priamo.</p>
+  <div class="markdown level1 remarks"><p>Loading schema creates a new connection to database based on <code data-dev-comment-type="paramref" class="paramref">connection</code>. If loading with
+new connection fails (for example input connection is exclusive), schema is loaded using input
+<code data-dev-comment-type="paramref" class="paramref">connection</code> directly.</p>
 </div>
   <h5 class="exceptions">Exceptions</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -205,18 +206,20 @@
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Hodnota <code data-dev-comment-type="paramref" class="paramref">connection</code> je <code>null</code>.</p>
+        <td><ul><li></li><li></li></ul>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><ul><li></li><li></li></ul></td>
+        <td><p>Initial catalog of <code data-dev-comment-type="paramref" class="paramref">connection</code> is an empty string, or string containing
+whitespace characters only.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_Schema_SqlServer_SqlServerSchemaLoader_LoadTableSchema_" data-uid="Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.LoadTableSchema*"></a>
   <h4 id="Kros_Data_Schema_SqlServer_SqlServerSchemaLoader_LoadTableSchema_System_Data_SqlClient_SqlConnection_System_String_" data-uid="Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.LoadTableSchema(System.Data.SqlClient.SqlConnection,System.String)">LoadTableSchema(SqlConnection, String)</h4>
-  <div class="markdown level1 summary"><p>Načíta schému tabuľky <code data-dev-comment-type="paramref" class="paramref">tableName</code> z databázy <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
+  <div class="markdown level1 summary"><p>Loads table schema for table <code data-dev-comment-type="paramref" class="paramref">tableName</code> in database <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -236,13 +239,13 @@
       <tr>
         <td><span class="xref">System.Data.SqlClient.SqlConnection</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Spojenie na databázu.</p>
+        <td><p>Database connection.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">tableName</span></td>
-        <td><p>Meno tabuľky, ktorej schéma sa načíta.</p>
+        <td><p>Table name.</p>
 </td>
       </tr>
     </tbody>
@@ -258,14 +261,15 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.TableSchema.html">TableSchema</a></td>
-        <td><p>Vráti načítanú schému tabuľky, alebo hodnotu <code>null</code>, ak taká tabuľka neexistuje.</p>
+        <td><p>Table schema, or value <span class="xref">null</span> if specified table does not exist.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <h5 id="Kros_Data_Schema_SqlServer_SqlServerSchemaLoader_LoadTableSchema_System_Data_SqlClient_SqlConnection_System_String__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Štandardne sa na získanie schémy vytvorí nové spojenie na databázu podľa vstupného spojenia
-<code data-dev-comment-type="paramref" class="paramref">connection</code>. Ak je však vstupné spojenie exkluzívne, použije sa priamo.</p>
+  <div class="markdown level1 remarks"><p>Loading schema creates a new connection to database based on <code data-dev-comment-type="paramref" class="paramref">connection</code>. If loading with
+new connection fails (for example input connection is exclusive), schema is loaded using input
+<code data-dev-comment-type="paramref" class="paramref">connection</code> directly.</p>
 </div>
   <h5 class="exceptions">Exceptions</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -278,18 +282,19 @@
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Hodnota <code data-dev-comment-type="paramref" class="paramref">connection</code> je <code>null</code>.</p>
+        <td><ul><li></li><li></li><li></li></ul>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><ul><li></li><li></li><li></li></ul></td>
+        <td><ul><li></li><li></li></ul>
+</td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_Schema_SqlServer_SqlServerSchemaLoader_OnParseDefaultValue_" data-uid="Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.OnParseDefaultValue*"></a>
   <h4 id="Kros_Data_Schema_SqlServer_SqlServerSchemaLoader_OnParseDefaultValue_Kros_Data_Schema_SqlServer_SqlServerParseDefaultValueEventArgs_" data-uid="Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.OnParseDefaultValue(Kros.Data.Schema.SqlServer.SqlServerParseDefaultValueEventArgs)">OnParseDefaultValue(SqlServerParseDefaultValueEventArgs)</h4>
-  <div class="markdown level1 summary"><p>Vyvolá udalosť <a class="xref" href="Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.html#Kros_Data_Schema_SqlServer_SqlServerSchemaLoader_ParseDefaultValue">ParseDefaultValue</a> s argumentami <code data-dev-comment-type="paramref" class="paramref">e</code>.</p>
+  <div class="markdown level1 summary"><p>Raises the <a class="xref" href="Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.html#Kros_Data_Schema_SqlServer_SqlServerSchemaLoader_ParseDefaultValue">ParseDefaultValue</a> event with arguments <code data-dev-comment-type="paramref" class="paramref">e</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -309,15 +314,14 @@
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.SqlServer.SqlServerParseDefaultValueEventArgs.html">SqlServerParseDefaultValueEventArgs</a></td>
         <td><span class="parametername">e</span></td>
-        <td><p>Argumenty udalosti.</p>
+        <td><p>Arguments for the event.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_Schema_SqlServer_SqlServerSchemaLoader_SupportsConnectionType_" data-uid="Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.SupportsConnectionType*"></a>
   <h4 id="Kros_Data_Schema_SqlServer_SqlServerSchemaLoader_SupportsConnectionType_System_Data_SqlClient_SqlConnection_" data-uid="Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.SupportsConnectionType(System.Data.SqlClient.SqlConnection)">SupportsConnectionType(SqlConnection)</h4>
-  <div class="markdown level1 summary"><p>Kontroluje, či dokáže načítať schému zo spojenia <code data-dev-comment-type="paramref" class="paramref">connection</code>, tzn. či zadané spojenie je
-spojenie na SQL Server databázu.</p>
+  <div class="markdown level1 summary"><p>Checks if it is poosible to load database schema for <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -337,7 +341,7 @@ spojenie na SQL Server databázu.</p>
       <tr>
         <td><span class="xref">System.Data.SqlClient.SqlConnection</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Spojenie na databázu.</p>
+        <td><p>Database connection.</p>
 </td>
       </tr>
     </tbody>
@@ -353,7 +357,8 @@ spojenie na SQL Server databázu.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p><span class="xref">true</span>, ak je možné načítať schému databázy, <span class="xref">false</span>, ak to možné nie je.</p>
+        <td><p><span class="xref">false</span> if value of <code data-dev-comment-type="paramref" class="paramref">connection</code> is <span class="xref">null</span>,
+    otherwise <span class="xref">true</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -361,8 +366,7 @@ spojenie na SQL Server databázu.</p>
   <h3 id="events">Events
   </h3>
   <h4 id="Kros_Data_Schema_SqlServer_SqlServerSchemaLoader_ParseDefaultValue" data-uid="Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.ParseDefaultValue">ParseDefaultValue</h4>
-  <div class="markdown level1 summary"><p>Udalosť vyvolaná pri parsovaní predvolenej hodnoty stĺpca. V obsluhe je možné predvolenú hodnotu parsovať
-vlastným spôsobom, ak interné parsovanie zlyhalo.</p>
+  <div class="markdown level1 summary"><p>Event raised while parsing default value of a column. It is possible to use custom parsing logic in the event handler.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -385,16 +389,15 @@ vlastným spôsobom, ak interné parsovanie zlyhalo.</p>
     </tbody>
   </table>
   <h5 id="Kros_Data_Schema_SqlServer_SqlServerSchemaLoader_ParseDefaultValue_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>V obsluhe udalosti je možné spraviť vlatné parsovanie predvolenej hodnoty stĺpca. Ak je v obsluhe
-predvolená hodnota rozparsovaná, je potrebné ju nastaviť v argumente
-<a class="xref" href="Kros.Data.Schema.SqlServer.SqlServerParseDefaultValueEventArgs.html#Kros_Data_Schema_SqlServer_SqlServerParseDefaultValueEventArgs_DefaultValue">DefaultValue</a> a zároveň je potrebné nastaviť
-<a class="xref" href="Kros.Data.Schema.SqlServer.SqlServerParseDefaultValueEventArgs.html#Kros_Data_Schema_SqlServer_SqlServerParseDefaultValueEventArgs_Handled">Handled</a> na <span class="xref">true</span>.</p>
+  <div class="markdown level1 remarks"><p>When custom logic for parsing column&apos;s default value is used, the parsed value is set in
+<a class="xref" href="Kros.Data.Schema.SqlServer.SqlServerParseDefaultValueEventArgs.html#Kros_Data_Schema_SqlServer_SqlServerParseDefaultValueEventArgs_DefaultValue">DefaultValue</a> property and
+<a class="xref" href="Kros.Data.Schema.SqlServer.SqlServerParseDefaultValueEventArgs.html#Kros_Data_Schema_SqlServer_SqlServerParseDefaultValueEventArgs_Handled">Handled</a> flag must be set to <span class="xref">true</span>.</p>
 </div>
   <h3 id="eii">Explicit Interface Implementations
   </h3>
   <a id="Kros_Data_Schema_SqlServer_SqlServerSchemaLoader_Kros_Data_Schema_IDatabaseSchemaLoader_LoadSchema_" data-uid="Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.Kros#Data#Schema#IDatabaseSchemaLoader#LoadSchema*"></a>
   <h4 id="Kros_Data_Schema_SqlServer_SqlServerSchemaLoader_Kros_Data_Schema_IDatabaseSchemaLoader_LoadSchema_System_Object_" data-uid="Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.Kros#Data#Schema#IDatabaseSchemaLoader#LoadSchema(System.Object)">IDatabaseSchemaLoader.LoadSchema(Object)</h4>
-  <div class="markdown level1 summary"><p>Načíta celú schému databázy určenej spojením <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
+  <div class="markdown level1 summary"><p>Loads database schema for <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -414,7 +417,7 @@ predvolená hodnota rozparsovaná, je potrebné ju nastaviť v argumente
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Spojenie na databázu.</p>
+        <td><p>Database connection.</p>
 </td>
       </tr>
     </tbody>
@@ -430,14 +433,15 @@ predvolená hodnota rozparsovaná, je potrebné ju nastaviť v argumente
     <tbody>
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.DatabaseSchema.html">DatabaseSchema</a></td>
-        <td><p>Vráti schému celej databázy.</p>
+        <td><p>Database schema.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <h5 id="Kros_Data_Schema_SqlServer_SqlServerSchemaLoader_Kros_Data_Schema_IDatabaseSchemaLoader_LoadSchema_System_Object__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Štandardne sa na získanie schémy vytvorí nové spojenie na databázu podľa vstupného spojenia
-<code data-dev-comment-type="paramref" class="paramref">connection</code>. Ak je však vstupné spojenie exkluzívne, použije sa priamo.</p>
+  <div class="markdown level1 remarks"><p>Loading schema creates a new connection to database based on <code data-dev-comment-type="paramref" class="paramref">connection</code>. If loading with
+new connection fails (for example input connection is exclusive), schema is loaded using input
+<code data-dev-comment-type="paramref" class="paramref">connection</code> directly.</p>
 </div>
   <h5 class="exceptions">Exceptions</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -450,18 +454,19 @@ predvolená hodnota rozparsovaná, je potrebné ju nastaviť v argumente
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Hodnota <code data-dev-comment-type="paramref" class="paramref">connection</code> je <code>null</code>.</p>
+        <td><ul><li></li><li></li></ul>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><ul><li></li><li></li></ul></td>
+        <td><ul><li></li><li></li></ul>
+</td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_Schema_SqlServer_SqlServerSchemaLoader_Kros_Data_Schema_IDatabaseSchemaLoader_LoadTableSchema_" data-uid="Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.Kros#Data#Schema#IDatabaseSchemaLoader#LoadTableSchema*"></a>
   <h4 id="Kros_Data_Schema_SqlServer_SqlServerSchemaLoader_Kros_Data_Schema_IDatabaseSchemaLoader_LoadTableSchema_System_Object_System_String_" data-uid="Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.Kros#Data#Schema#IDatabaseSchemaLoader#LoadTableSchema(System.Object,System.String)">IDatabaseSchemaLoader.LoadTableSchema(Object, String)</h4>
-  <div class="markdown level1 summary"><p>Načíta schému tabuľky <code data-dev-comment-type="paramref" class="paramref">tableName</code> z databázy <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
+  <div class="markdown level1 summary"><p>Loads table schema for table <code data-dev-comment-type="paramref" class="paramref">tableName</code> in database <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -481,13 +486,13 @@ predvolená hodnota rozparsovaná, je potrebné ju nastaviť v argumente
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Spojenie na databázu.</p>
+        <td><p>Database connection.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">tableName</span></td>
-        <td><p>Meno tabuľky, ktorej schéma sa načíta.</p>
+        <td><p>Table name.</p>
 </td>
       </tr>
     </tbody>
@@ -503,14 +508,15 @@ predvolená hodnota rozparsovaná, je potrebné ju nastaviť v argumente
     <tbody>
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.TableSchema.html">TableSchema</a></td>
-        <td><p>Vráti načítanú schému tabuľky, alebo hodnotu <code>null</code>, ak taká tabuľka neexistuje.</p>
+        <td><p>Table schema, or value <span class="xref">null</span> if specified table does not exist.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <h5 id="Kros_Data_Schema_SqlServer_SqlServerSchemaLoader_Kros_Data_Schema_IDatabaseSchemaLoader_LoadTableSchema_System_Object_System_String__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Štandardne sa na získanie schémy vytvorí nové spojenie na databázu podľa vstupného spojenia
-<code data-dev-comment-type="paramref" class="paramref">connection</code>. Ak je však vstupné spojenie exkluzívne, použije sa priamo.</p>
+  <div class="markdown level1 remarks"><p>Loading schema creates a new connection to database based on <code data-dev-comment-type="paramref" class="paramref">connection</code>. If loading with
+new connection fails (for example input connection is exclusive), schema is loaded using input
+<code data-dev-comment-type="paramref" class="paramref">connection</code> directly.</p>
 </div>
   <h5 class="exceptions">Exceptions</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -523,19 +529,19 @@ predvolená hodnota rozparsovaná, je potrebné ju nastaviť v argumente
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Hodnota <code data-dev-comment-type="paramref" class="paramref">connection</code> je <code>null</code>.</p>
+        <td><ul><li></li><li></li><li></li></ul>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><ul><li></li><li></li><li></li></ul></td>
+        <td><ul><li></li><li></li><li></li></ul>
+</td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_Schema_SqlServer_SqlServerSchemaLoader_Kros_Data_Schema_IDatabaseSchemaLoader_SupportsConnectionType_" data-uid="Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.Kros#Data#Schema#IDatabaseSchemaLoader#SupportsConnectionType*"></a>
   <h4 id="Kros_Data_Schema_SqlServer_SqlServerSchemaLoader_Kros_Data_Schema_IDatabaseSchemaLoader_SupportsConnectionType_System_Object_" data-uid="Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.Kros#Data#Schema#IDatabaseSchemaLoader#SupportsConnectionType(System.Object)">IDatabaseSchemaLoader.SupportsConnectionType(Object)</h4>
-  <div class="markdown level1 summary"><p>Kontroluje, či dokáže načítať schému zo spojenia <code data-dev-comment-type="paramref" class="paramref">connection</code>, tzn. či zadané spojenie je
-spojenie na SQL Server databázu.</p>
+  <div class="markdown level1 summary"><p>Checks if it is poosible to load database schema for <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -555,7 +561,7 @@ spojenie na SQL Server databázu.</p>
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Spojenie na databázu.</p>
+        <td><p>Database connection.</p>
 </td>
       </tr>
     </tbody>
@@ -571,7 +577,8 @@ spojenie na SQL Server databázu.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p><span class="xref">true</span>, ak je možné načítať schému databázy, <span class="xref">false</span>, ak to možné nie je.</p>
+        <td><p><span class="xref">false</span> if value of <code data-dev-comment-type="paramref" class="paramref">connection</code> is not of <span class="xref">System.Data.SqlClient.SqlConnection</span>
+    type or is <span class="xref">null</span>, otherwise <span class="xref">true</span>.</p>
 </td>
       </tr>
     </tbody>

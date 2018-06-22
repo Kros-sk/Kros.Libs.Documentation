@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class IndexColumnSchema
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,7 +83,7 @@
   
   <h1 id="Kros_Data_Schema_IndexColumnSchema" data-uid="Kros.Data.Schema.IndexColumnSchema" class="text-break">Class IndexColumnSchema
   </h1>
-  <div class="markdown level0 summary"><p>Schéma stĺpca v indexe tabuľky.</p>
+  <div class="markdown level0 summary"><p>Schema of a column of an index.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -101,8 +101,8 @@
   </h3>
   <a id="Kros_Data_Schema_IndexColumnSchema__ctor_" data-uid="Kros.Data.Schema.IndexColumnSchema.#ctor*"></a>
   <h4 id="Kros_Data_Schema_IndexColumnSchema__ctor_System_String_" data-uid="Kros.Data.Schema.IndexColumnSchema.#ctor(System.String)">IndexColumnSchema(String)</h4>
-  <div class="markdown level1 summary"><p>Vytvorí inštanciu indexového stĺpca s menom <code data-dev-comment-type="paramref" class="paramref">name</code>.
-Zoradenie stĺpca je <a class="xref" href="Kros.Data.Schema.SortOrder.html#Kros_Data_Schema_SortOrder_Ascending">Ascending</a>.</p>
+  <div class="markdown level1 summary"><p>Creates an instance of an index column with <code data-dev-comment-type="paramref" class="paramref">name</code>. Column sort <a class="xref" href="Kros.Data.Schema.IndexColumnSchema.html#Kros_Data_Schema_IndexColumnSchema_Order">Order</a> is
+<a class="xref" href="Kros.Data.Schema.SortOrder.html#Kros_Data_Schema_SortOrder_Ascending">Ascending</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -122,7 +122,7 @@ Zoradenie stĺpca je <a class="xref" href="Kros.Data.Schema.SortOrder.html#Kros_
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">name</span></td>
-        <td><p>Meno stĺpca v indexe.</p>
+        <td><p>Index column name.</p>
 </td>
       </tr>
     </tbody>
@@ -138,19 +138,20 @@ Zoradenie stĺpca je <a class="xref" href="Kros.Data.Schema.SortOrder.html#Kros_
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Hodnota <code data-dev-comment-type="paramref" class="paramref">name</code> je <code>null</code>.</p>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">name</code> is <span class="xref">null</span>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Hodnota <code data-dev-comment-type="paramref" class="paramref">name</code> je prázdny reťazec, alebo reťazec bielych znakov.</p>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">name</code> is empty string, or string containing only
+whitespace characters.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_Schema_IndexColumnSchema__ctor_" data-uid="Kros.Data.Schema.IndexColumnSchema.#ctor*"></a>
   <h4 id="Kros_Data_Schema_IndexColumnSchema__ctor_System_String_Kros_Data_Schema_SortOrder_" data-uid="Kros.Data.Schema.IndexColumnSchema.#ctor(System.String,Kros.Data.Schema.SortOrder)">IndexColumnSchema(String, SortOrder)</h4>
-  <div class="markdown level1 summary"><p>Vytvorí inštanciu indexového stĺpca s menom <code data-dev-comment-type="paramref" class="paramref">name</code> a zoradením <code data-dev-comment-type="paramref" class="paramref">order</code>.</p>
+  <div class="markdown level1 summary"><p>Creates an instance of an index column with <code data-dev-comment-type="paramref" class="paramref">name</code> and sort <code data-dev-comment-type="paramref" class="paramref">order</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -170,13 +171,13 @@ Zoradenie stĺpca je <a class="xref" href="Kros.Data.Schema.SortOrder.html#Kros_
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">name</span></td>
-        <td><p>Meno stĺpca v indexe.</p>
+        <td><p>Index column name.</p>
 </td>
       </tr>
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.SortOrder.html">SortOrder</a></td>
         <td><span class="parametername">order</span></td>
-        <td><p>Zoradenie stĺpca v indexe.</p>
+        <td><p>Index column sort order.</p>
 </td>
       </tr>
     </tbody>
@@ -192,12 +193,13 @@ Zoradenie stĺpca je <a class="xref" href="Kros.Data.Schema.SortOrder.html#Kros_
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Hodnota <code data-dev-comment-type="paramref" class="paramref">name</code> je <code>null</code>.</p>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">name</code> is <span class="xref">null</span>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Hodnota <code data-dev-comment-type="paramref" class="paramref">name</code> je prázdny reťazec, alebo reťazec bielych znakov.</p>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">name</code> is empty string, or string containing only
+whitespace characters.</p>
 </td>
       </tr>
     </tbody>
@@ -206,7 +208,7 @@ Zoradenie stĺpca je <a class="xref" href="Kros.Data.Schema.SortOrder.html#Kros_
   </h3>
   <a id="Kros_Data_Schema_IndexColumnSchema_Index_" data-uid="Kros.Data.Schema.IndexColumnSchema.Index*"></a>
   <h4 id="Kros_Data_Schema_IndexColumnSchema_Index" data-uid="Kros.Data.Schema.IndexColumnSchema.Index">Index</h4>
-  <div class="markdown level1 summary"><p>Index, ktorému stĺpec patrí.</p>
+  <div class="markdown level1 summary"><p>Index, to which column belongs.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -230,7 +232,7 @@ Zoradenie stĺpca je <a class="xref" href="Kros.Data.Schema.SortOrder.html#Kros_
   </table>
   <a id="Kros_Data_Schema_IndexColumnSchema_Name_" data-uid="Kros.Data.Schema.IndexColumnSchema.Name*"></a>
   <h4 id="Kros_Data_Schema_IndexColumnSchema_Name" data-uid="Kros.Data.Schema.IndexColumnSchema.Name">Name</h4>
-  <div class="markdown level1 summary"><p>Meno stĺpca v indexe.</p>
+  <div class="markdown level1 summary"><p>Column name.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -254,7 +256,7 @@ Zoradenie stĺpca je <a class="xref" href="Kros.Data.Schema.SortOrder.html#Kros_
   </table>
   <a id="Kros_Data_Schema_IndexColumnSchema_Order_" data-uid="Kros.Data.Schema.IndexColumnSchema.Order*"></a>
   <h4 id="Kros_Data_Schema_IndexColumnSchema_Order" data-uid="Kros.Data.Schema.IndexColumnSchema.Order">Order</h4>
-  <div class="markdown level1 summary"><p>Zoradenie stĺpca v indexe.</p>
+  <div class="markdown level1 summary"><p>Sort order of the column.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>

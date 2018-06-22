@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class DataExtensions
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,7 +83,7 @@
   
   <h1 id="Kros_Data_DataExtensions" data-uid="Kros.Data.DataExtensions" class="text-break">Class DataExtensions
   </h1>
-  <div class="markdown level0 summary"><p>Rozne rozšírenia dátových tried.</p>
+  <div class="markdown level0 summary"><p>Extensions for various data classes.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -101,7 +101,7 @@
   </h3>
   <a id="Kros_Data_DataExtensions_IsOpened_" data-uid="Kros.Data.DataExtensions.IsOpened*"></a>
   <h4 id="Kros_Data_DataExtensions_IsOpened_System_Data_IDbConnection_" data-uid="Kros.Data.DataExtensions.IsOpened(System.Data.IDbConnection)">IsOpened(IDbConnection)</h4>
-  <div class="markdown level1 summary"><p>Vráti, či je spojenie na databázu otvorené.</p>
+  <div class="markdown level1 summary"><p>Checks if database connection is opened.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -121,7 +121,7 @@
       <tr>
         <td><span class="xref">System.Data.IDbConnection</span></td>
         <td><span class="parametername">cn</span></td>
-        <td><p>Spojenie na databázu, ktoré sa testuje.</p>
+        <td><p>Database connection.</p>
 </td>
       </tr>
     </tbody>
@@ -137,14 +137,14 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p><span class="xref">true</span>, ak spojenie na databázu je otvorené, <span class="xref">false</span> ak nie je.</p>
+        <td><p><span class="xref">true</span>, if database connection is opened, <span class="xref">false</span> otherwise.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_DataExtensions_SqlServerErrorCode_" data-uid="Kros.Data.DataExtensions.SqlServerErrorCode*"></a>
   <h4 id="Kros_Data_DataExtensions_SqlServerErrorCode_System_Data_SqlClient_SqlException_" data-uid="Kros.Data.DataExtensions.SqlServerErrorCode(System.Data.SqlClient.SqlException)">SqlServerErrorCode(SqlException)</h4>
-  <div class="markdown level1 summary"><p>Vráti chybový kód výnimky pre SQL Server.</p>
+  <div class="markdown level1 summary"><p>Returns error code for Microsoft SQL Server.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -164,7 +164,7 @@
       <tr>
         <td><span class="xref">System.Data.SqlClient.SqlException</span></td>
         <td><span class="parametername">ex</span></td>
-        <td><p>Výnimka, ktorej chybový kód sa kontroluje.</p>
+        <td><p>Exception of which error code is tested.</p>
 </td>
       </tr>
     </tbody>
@@ -180,15 +180,15 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Kros.Data.SqlServer.SqlServerErrorCode.html">SqlServerErrorCode</a></td>
-        <td><p>Vráti chybový kód ako hodnotu enumerátu <a class="xref" href="Kros.Data.DataExtensions.html#Kros_Data_DataExtensions_SqlServerErrorCode_System_Data_SqlClient_SqlException_">SqlServerErrorCode(SqlException)</a>. Ak chybový kód
-je neznámy, alebo nie je definovaný, je vrátená hodnota <a class="xref" href="Kros.Data.SqlServer.SqlServerErrorCode.html#Kros_Data_SqlServer_SqlServerErrorCode_Unknown">Unknown</a>.</p>
+        <td><p>Error code as a value of enumeration <a class="xref" href="Kros.Data.DataExtensions.html#Kros_Data_DataExtensions_SqlServerErrorCode_System_Data_SqlClient_SqlException_">SqlServerErrorCode(SqlException)</a>. If error code is not defined in
+the enum, value <a class="xref" href="Kros.Data.SqlServer.SqlServerErrorCode.html#Kros_Data_SqlServer_SqlServerErrorCode_Unknown">Unknown</a> is returned.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <h5 id="Kros_Data_DataExtensions_SqlServerErrorCode_System_Data_SqlClient_SqlException__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Metóda pozerá hodnotu <span class="xref">System.Data.SqlClient.SqlError.Number</span> prvej chyby v zozname
-<span class="xref">System.Data.SqlClient.SqlException.Errors</span>.</p>
+  <div class="markdown level1 remarks"><p>Method checks value of <span class="xref">System.Data.SqlClient.SqlError.Number</span> property of the first error in the
+<span class="xref">System.Data.SqlClient.SqlException.Errors</span> list.</p>
 </div>
 </article>
           </div>

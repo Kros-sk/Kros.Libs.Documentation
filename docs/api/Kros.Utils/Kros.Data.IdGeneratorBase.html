@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class IdGeneratorBase
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,8 +83,7 @@
   
   <h1 id="Kros_Data_IdGeneratorBase" data-uid="Kros.Data.IdGeneratorBase" class="text-break">Class IdGeneratorBase
   </h1>
-  <div class="markdown level0 summary"><p>Základná trieda, ktorú stači zdediť aby sme mohli jednoduchšie vytvárať implementácie <a class="xref" href="Kros.Data.IIdGenerator.html">IIdGenerator</a>.
-Stará sa o dispose connection.</p>
+  <div class="markdown level0 summary"><p>Base class for simple creation of implementations of <a class="xref" href="Kros.Data.IIdGenerator.html">IIdGenerator</a>.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -107,12 +106,13 @@ Stará sa o dispose connection.</p>
   </h3>
   <a id="Kros_Data_IdGeneratorBase__ctor_" data-uid="Kros.Data.IdGeneratorBase.#ctor*"></a>
   <h4 id="Kros_Data_IdGeneratorBase__ctor_System_Data_Common_DbConnection_System_String_System_Int32_" data-uid="Kros.Data.IdGeneratorBase.#ctor(System.Data.Common.DbConnection,System.String,System.Int32)">IdGeneratorBase(DbConnection, String, Int32)</h4>
-  <div class="markdown level1 summary"><p>Konštruktor.</p>
+  <div class="markdown level1 summary"><p>Creates an instance of ID generator for table <code data-dev-comment-type="paramref" class="paramref">tableName</code> in database <code data-dev-comment-type="paramref" class="paramref">connection</code>
+and with specified <code data-dev-comment-type="paramref" class="paramref">batchSize</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IdGeneratorBase(DbConnection connection, string tableName, int bathSize)</code></pre>
+    <pre><code class="lang-csharp hljs">public IdGeneratorBase(DbConnection connection, string tableName, int batchSize)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -127,26 +127,48 @@ Stará sa o dispose connection.</p>
       <tr>
         <td><span class="xref">System.Data.Common.DbConnection</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Connection, ktorá sa použije pre získavanie unikátnych identifikátorov.</p>
+        <td><p>Database connection.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">tableName</span></td>
-        <td><p>Názov tabuľky, pre ktorú generujem identifikátory.</p>
+        <td><p>Table name, for which IDs are generated.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
-        <td><span class="parametername">bathSize</span></td>
-        <td><p>Veľkosť dávky, ktorú si zarezervuje dopredu.</p>
+        <td><span class="parametername">batchSize</span></td>
+        <td><p>IDs batch size. Saves round trips to database for IDs.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">connection</code> or <code data-dev-comment-type="paramref" class="paramref">tableName</code> is <span class="xref">null</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">batchSize</code> is less or equal than 0.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_IdGeneratorBase__ctor_" data-uid="Kros.Data.IdGeneratorBase.#ctor*"></a>
   <h4 id="Kros_Data_IdGeneratorBase__ctor_System_String_System_String_System_Int32_" data-uid="Kros.Data.IdGeneratorBase.#ctor(System.String,System.String,System.Int32)">IdGeneratorBase(String, String, Int32)</h4>
-  <div class="markdown level1 summary"><p>Konštruktor.</p>
+  <div class="markdown level1 summary"><p>Creates an instance of ID generator for table <code data-dev-comment-type="paramref" class="paramref">tableName</code> in database
+<code data-dev-comment-type="paramref" class="paramref">connectionString</code> and with specified <code data-dev-comment-type="paramref" class="paramref">batchSize</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -166,20 +188,40 @@ Stará sa o dispose connection.</p>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">connectionString</span></td>
-        <td><p>Connection string, ktorý sa použije na vytvorenie conenction pre získavanie unikátnych identifikátorov.</p>
+        <td><p>Database connection string.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">tableName</span></td>
-        <td><p>Názov tabuľky, pre ktorú generujem identifikátory.</p>
+        <td><p>Table name, for which IDs are generated.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">batchSize</span></td>
-        <td><p>Veľkosť dávky, ktorú si zarezervuje dopredu.</p>
+        <td><p>IDs batch size. Saves round trips to database for IDs.</p>
 </td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">connectionString</code> or <code data-dev-comment-type="paramref" class="paramref">tableName</code> is <span class="xref">null</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><ul><li></li><li></li></ul></td>
       </tr>
     </tbody>
   </table>
@@ -187,7 +229,7 @@ Stará sa o dispose connection.</p>
   </h3>
   <a id="Kros_Data_IdGeneratorBase_BatchSize_" data-uid="Kros.Data.IdGeneratorBase.BatchSize*"></a>
   <h4 id="Kros_Data_IdGeneratorBase_BatchSize" data-uid="Kros.Data.IdGeneratorBase.BatchSize">BatchSize</h4>
-  <div class="markdown level1 summary"><p>Veľkosť dávky, ktorú si zarezevuje dopredu.</p>
+  <div class="markdown level1 summary"><p>Batch size - saves roundtrips into database.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -211,7 +253,7 @@ Stará sa o dispose connection.</p>
   </table>
   <a id="Kros_Data_IdGeneratorBase_Connection_" data-uid="Kros.Data.IdGeneratorBase.Connection*"></a>
   <h4 id="Kros_Data_IdGeneratorBase_Connection" data-uid="Kros.Data.IdGeneratorBase.Connection">Connection</h4>
-  <div class="markdown level1 summary"><p>Connection, ktorá sa použije pre získavanie unikátnych identifikátorov.</p>
+  <div class="markdown level1 summary"><p>Database connection.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -235,7 +277,7 @@ Stará sa o dispose connection.</p>
   </table>
   <a id="Kros_Data_IdGeneratorBase_TableName_" data-uid="Kros.Data.IdGeneratorBase.TableName*"></a>
   <h4 id="Kros_Data_IdGeneratorBase_TableName" data-uid="Kros.Data.IdGeneratorBase.TableName">TableName</h4>
-  <div class="markdown level1 summary"><p>Názov tabuľky, pre ktorú generujem identifikátory.</p>
+  <div class="markdown level1 summary"><p>Table name for which IDs are generated.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -261,7 +303,7 @@ Stará sa o dispose connection.</p>
   </h3>
   <a id="Kros_Data_IdGeneratorBase_CreateConnection_" data-uid="Kros.Data.IdGeneratorBase.CreateConnection*"></a>
   <h4 id="Kros_Data_IdGeneratorBase_CreateConnection_System_String_" data-uid="Kros.Data.IdGeneratorBase.CreateConnection(System.String)">CreateConnection(String)</h4>
-  <div class="markdown level1 summary"><p>Vytvorenie connection.</p>
+  <div class="markdown level1 summary"><p>Creates a database connection instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -297,7 +339,7 @@ Stará sa o dispose connection.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Data.Common.DbConnection</span></td>
-        <td><p>Špecifická inštancia <span class="xref">System.Data.Common.DbConnection</span>.</p>
+        <td><p>Specific instance of <span class="xref">System.Data.Common.DbConnection</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -337,8 +379,7 @@ Stará sa o dispose connection.</p>
   </table>
   <a id="Kros_Data_IdGeneratorBase_GetNewIdFromDbCore_" data-uid="Kros.Data.IdGeneratorBase.GetNewIdFromDbCore*"></a>
   <h4 id="Kros_Data_IdGeneratorBase_GetNewIdFromDbCore" data-uid="Kros.Data.IdGeneratorBase.GetNewIdFromDbCore">GetNewIdFromDbCore()</h4>
-  <div class="markdown level1 summary"><p>Získa nový identifikátor z databázy. V tejto metóde je zabezpečné, že spojenie na databázu <a class="xref" href="Kros.Data.IdGeneratorBase.html#Kros_Data_IdGeneratorBase_Connection">Connection</a>
-je otvorené.</p>
+  <div class="markdown level1 summary"><p>Returns new ID from database. In this method is ensured, that the <a class="xref" href="Kros.Data.IdGeneratorBase.html#Kros_Data_IdGeneratorBase_Connection">Connection</a> is opened.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -356,15 +397,14 @@ je otvorené.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Int32</span></td>
-        <td><p>Ďalší identifikátor, ktorý sa môže použiť.</p>
+        <td><p>Next ID.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_IdGeneratorBase_GetNext_" data-uid="Kros.Data.IdGeneratorBase.GetNext*"></a>
   <h4 id="Kros_Data_IdGeneratorBase_GetNext" data-uid="Kros.Data.IdGeneratorBase.GetNext">GetNext()</h4>
-  <div class="markdown level1 summary"><p>Vráti identifikátor pre ďalší záznam.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -381,16 +421,13 @@ je otvorené.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Int32</span></td>
-        <td><p>Unikátny identifikátor pre záznam v tabuľke.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_IdGeneratorBase_InitDatabaseForIdGenerator_" data-uid="Kros.Data.IdGeneratorBase.InitDatabaseForIdGenerator*"></a>
   <h4 id="Kros_Data_IdGeneratorBase_InitDatabaseForIdGenerator" data-uid="Kros.Data.IdGeneratorBase.InitDatabaseForIdGenerator">InitDatabaseForIdGenerator()</h4>
-  <div class="markdown level1 summary"><p>Inicializuje databázu tak, aby sa dal v nej používať generátor ID. Znamená to napríklad vytvorenie príslušnej
-tabuľky a stored procedúry.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">

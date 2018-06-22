@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface ISchemaCacheKeyGenerator
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,7 +83,7 @@
   
   <h1 id="Kros_Data_Schema_ISchemaCacheKeyGenerator" data-uid="Kros.Data.Schema.ISchemaCacheKeyGenerator" class="text-break">Interface ISchemaCacheKeyGenerator
   </h1>
-  <div class="markdown level0 summary"><p>Generátor kľúča pre spojenie na databázu. Používa ho <a class="xref" href="Kros.Data.Schema.DatabaseSchemaCache.html">DatabaseSchemaCache</a>.</p>
+  <div class="markdown level0 summary"><p>Cache key generator for <a class="xref" href="Kros.Data.Schema.DatabaseSchemaCache.html">DatabaseSchemaCache</a>.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Kros.Data.Schema.html">Kros.Data.Schema</a></h6>
@@ -96,7 +96,7 @@
   </h3>
   <a id="Kros_Data_Schema_ISchemaCacheKeyGenerator_GenerateKey_" data-uid="Kros.Data.Schema.ISchemaCacheKeyGenerator.GenerateKey*"></a>
   <h4 id="Kros_Data_Schema_ISchemaCacheKeyGenerator_GenerateKey_System_Object_" data-uid="Kros.Data.Schema.ISchemaCacheKeyGenerator.GenerateKey(System.Object)">GenerateKey(Object)</h4>
-  <div class="markdown level1 summary"><p>Vygeneruje kľúč pre spojenie <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
+  <div class="markdown level1 summary"><p>Generates a cache key for <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -116,7 +116,7 @@
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Spojenie na databázu.</p>
+        <td><p>Database connection.</p>
 </td>
       </tr>
     </tbody>
@@ -132,7 +132,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><p>Reťazec.</p>
+        <td><p>String, which identifies <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
 </td>
       </tr>
     </tbody>

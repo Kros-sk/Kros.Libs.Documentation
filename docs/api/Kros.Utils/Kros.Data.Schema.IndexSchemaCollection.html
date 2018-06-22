@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class IndexSchemaCollection
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,7 +83,7 @@
   
   <h1 id="Kros_Data_Schema_IndexSchemaCollection" data-uid="Kros.Data.Schema.IndexSchemaCollection" class="text-break">Class IndexSchemaCollection
   </h1>
-  <div class="markdown level0 summary"><p>Zoznam indexov tabuľky <a class="xref" href="Kros.Data.Schema.TableSchema.html">TableSchema</a>.</p>
+  <div class="markdown level0 summary"><p>List of indexes for table <a class="xref" href="Kros.Data.Schema.TableSchema.html">TableSchema</a>.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -100,15 +100,14 @@
     <pre><code class="lang-csharp hljs">public class IndexSchemaCollection : KeyedCollection&lt;string, IndexSchema&gt;, IList&lt;IndexSchema&gt;, ICollection&lt;IndexSchema&gt;, IList, ICollection, IReadOnlyList&lt;IndexSchema&gt;, IReadOnlyCollection&lt;IndexSchema&gt;, IEnumerable&lt;IndexSchema&gt;, IEnumerable</code></pre>
   </div>
   <h5 id="Kros_Data_Schema_IndexSchemaCollection_remarks"><strong>Remarks</strong></h5>
-  <div class="markdown level0 remarks"><p>Indexom pridaným do zoznamu je automaticky nastavená tabuľka <a class="xref" href="Kros.Data.Schema.IndexSchema.html#Kros_Data_Schema_IndexSchema_Table">Table</a>.
-Do zoznamu nie je možné pridať index, ktorý už patrí inej tabuľke. V takom prípade je vyvolaná výnimka
-<span class="xref">System.InvalidOperationException</span>.</p>
+  <div class="markdown level0 remarks"><p>To the indexes added to this list is automatically set their <a class="xref" href="Kros.Data.Schema.IndexSchema.html#Kros_Data_Schema_IndexSchema_Table">Table</a>. Index can
+belong only to one table.</p>
 </div>
   <h3 id="constructors">Constructors
   </h3>
   <a id="Kros_Data_Schema_IndexSchemaCollection__ctor_" data-uid="Kros.Data.Schema.IndexSchemaCollection.#ctor*"></a>
   <h4 id="Kros_Data_Schema_IndexSchemaCollection__ctor_Kros_Data_Schema_TableSchema_" data-uid="Kros.Data.Schema.IndexSchemaCollection.#ctor(Kros.Data.Schema.TableSchema)">IndexSchemaCollection(TableSchema)</h4>
-  <div class="markdown level1 summary"><p>Vytvorí zoznam stĺpcov pre tabuľku <code data-dev-comment-type="paramref" class="paramref">table</code>.</p>
+  <div class="markdown level1 summary"><p>Creates a new index list for <code data-dev-comment-type="paramref" class="paramref">table</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -128,7 +127,7 @@ Do zoznamu nie je možné pridať index, ktorý už patrí inej tabuľke. V tako
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.TableSchema.html">TableSchema</a></td>
         <td><span class="parametername">table</span></td>
-        <td><p>Tabuľka.</p>
+        <td><p>Table to which index list belongs.</p>
 </td>
       </tr>
     </tbody>
@@ -144,7 +143,7 @@ Do zoznamu nie je možné pridať index, ktorý už patrí inej tabuľke. V tako
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Hodnota <code data-dev-comment-type="paramref" class="paramref">table</code> je <code>null</code>.</p>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">table</code> is <span class="xref">null</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -153,7 +152,7 @@ Do zoznamu nie je možné pridať index, ktorý už patrí inej tabuľke. V tako
   </h3>
   <a id="Kros_Data_Schema_IndexSchemaCollection_Table_" data-uid="Kros.Data.Schema.IndexSchemaCollection.Table*"></a>
   <h4 id="Kros_Data_Schema_IndexSchemaCollection_Table" data-uid="Kros.Data.Schema.IndexSchemaCollection.Table">Table</h4>
-  <div class="markdown level1 summary"><p>Tabuľka, ktorej zoznam stĺpcov patrí.</p>
+  <div class="markdown level1 summary"><p>The table to which belongs this <code>IndexSchemaCollection</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -179,7 +178,7 @@ Do zoznamu nie je možné pridať index, ktorý už patrí inej tabuľke. V tako
   </h3>
   <a id="Kros_Data_Schema_IndexSchemaCollection_Add_" data-uid="Kros.Data.Schema.IndexSchemaCollection.Add*"></a>
   <h4 id="Kros_Data_Schema_IndexSchemaCollection_Add_System_String_" data-uid="Kros.Data.Schema.IndexSchemaCollection.Add(System.String)">Add(String)</h4>
-  <div class="markdown level1 summary"><p>Vytvorí a pridá do zoznamu novú schému indexu s menom <code data-dev-comment-type="paramref" class="paramref">indexName</code>.</p>
+  <div class="markdown level1 summary"><p>Creates an instance of index with name <code data-dev-comment-type="paramref" class="paramref">indexName</code>. Created index is added to the list.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -199,7 +198,7 @@ Do zoznamu nie je možné pridať index, ktorý už patrí inej tabuľke. V tako
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">indexName</span></td>
-        <td><p>Meno indexu.</p>
+        <td><p>Name of the index.</p>
 </td>
       </tr>
     </tbody>
@@ -215,7 +214,7 @@ Do zoznamu nie je možné pridať index, ktorý už patrí inej tabuľke. V tako
     <tbody>
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.IndexSchema.html">IndexSchema</a></td>
-        <td><p>Vytvorenú schému indexu.</p>
+        <td><p>Created index schema.</p>
 </td>
       </tr>
     </tbody>
@@ -231,21 +230,21 @@ Do zoznamu nie je možné pridať index, ktorý už patrí inej tabuľke. V tako
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Hodnota <code data-dev-comment-type="paramref" class="paramref">indexName</code> je <code>null</code>.</p>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">indexName</code> is <span class="xref">null</span>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Hodnota <code data-dev-comment-type="paramref" class="paramref">indexName</code> je prázdny reťazec, alebo reťazec bielych
-znakov.</p>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">indexName</code> is empty string, or string containing only
+whitespace characters.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_Schema_IndexSchemaCollection_Add_" data-uid="Kros.Data.Schema.IndexSchemaCollection.Add*"></a>
   <h4 id="Kros_Data_Schema_IndexSchemaCollection_Add_System_String_Kros_Data_Schema_IndexType_" data-uid="Kros.Data.Schema.IndexSchemaCollection.Add(System.String,Kros.Data.Schema.IndexType)">Add(String, IndexType)</h4>
-  <div class="markdown level1 summary"><p>Vytvorí a pridá do zoznamu novú schému indexu s menom <code data-dev-comment-type="paramref" class="paramref">indexName</code>
-a typom <code data-dev-comment-type="paramref" class="paramref">indexType</code>.</p>
+  <div class="markdown level1 summary"><p>Creates an instance of index of type <code data-dev-comment-type="paramref" class="paramref">indexType</code>, with name <code data-dev-comment-type="paramref" class="paramref">indexName</code>.
+Created index is added to the list.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -265,13 +264,13 @@ a typom <code data-dev-comment-type="paramref" class="paramref">indexType</code>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">indexName</span></td>
-        <td><p>Meno indexu.</p>
+        <td><p>Name of the index.</p>
 </td>
       </tr>
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.IndexType.html">IndexType</a></td>
         <td><span class="parametername">indexType</span></td>
-        <td><p>Typ indexu.</p>
+        <td><p>Type of the index.</p>
 </td>
       </tr>
     </tbody>
@@ -287,7 +286,7 @@ a typom <code data-dev-comment-type="paramref" class="paramref">indexType</code>
     <tbody>
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.IndexSchema.html">IndexSchema</a></td>
-        <td><p>Vytvorenú schému indexu.</p>
+        <td><p>Created index schema.</p>
 </td>
       </tr>
     </tbody>
@@ -303,21 +302,21 @@ a typom <code data-dev-comment-type="paramref" class="paramref">indexType</code>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Hodnota <code data-dev-comment-type="paramref" class="paramref">indexName</code> je <code>null</code>.</p>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">indexName</code> is <span class="xref">null</span>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Hodnota <code data-dev-comment-type="paramref" class="paramref">indexName</code> je prázdny reťazec, alebo reťazec bielych
-znakov.</p>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">indexName</code> is empty string, or string containing only
+whitespace characters.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_Schema_IndexSchemaCollection_Add_" data-uid="Kros.Data.Schema.IndexSchemaCollection.Add*"></a>
   <h4 id="Kros_Data_Schema_IndexSchemaCollection_Add_System_String_Kros_Data_Schema_IndexType_System_Boolean_" data-uid="Kros.Data.Schema.IndexSchemaCollection.Add(System.String,Kros.Data.Schema.IndexType,System.Boolean)">Add(String, IndexType, Boolean)</h4>
-  <div class="markdown level1 summary"><p>Vytvorí a pridá do zoznamu novú schému indexu s menom <code data-dev-comment-type="paramref" class="paramref">indexName</code>,
-typom <code data-dev-comment-type="paramref" class="paramref">indexType</code> a príznakom <code data-dev-comment-type="paramref" class="paramref">clustered</code>.</p>
+  <div class="markdown level1 summary"><p>Creates an instance of index of type <code data-dev-comment-type="paramref" class="paramref">indexType</code>, with name <code data-dev-comment-type="paramref" class="paramref">indexName</code> and
+setting if the index is <code data-dev-comment-type="paramref" class="paramref">clustered</code>. Created index is added to the list.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -337,19 +336,19 @@ typom <code data-dev-comment-type="paramref" class="paramref">indexType</code> a
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">indexName</span></td>
-        <td><p>Meno indexu.</p>
+        <td><p>Name of the index.</p>
 </td>
       </tr>
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.IndexType.html">IndexType</a></td>
         <td><span class="parametername">indexType</span></td>
-        <td><p>Typ indexu.</p>
+        <td><p>Type of the index.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><span class="parametername">clustered</span></td>
-        <td><p>Príznak, či index je <code>CLUSTERED</code>.</p>
+        <td><p>Specifies, if the index is <code>CLUSTERED</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -365,7 +364,7 @@ typom <code data-dev-comment-type="paramref" class="paramref">indexType</code> a
     <tbody>
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.IndexSchema.html">IndexSchema</a></td>
-        <td><p>Vytvorenú schému indexu.</p>
+        <td><p>Created index schema.</p>
 </td>
       </tr>
     </tbody>
@@ -381,13 +380,13 @@ typom <code data-dev-comment-type="paramref" class="paramref">indexType</code> a
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Hodnota <code data-dev-comment-type="paramref" class="paramref">indexName</code> je <code>null</code>.</p>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">indexName</code> is <span class="xref">null</span>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Hodnota <code data-dev-comment-type="paramref" class="paramref">indexName</code> je prázdny reťazec, alebo reťazec bielych
-znakov.</p>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">indexName</code> is empty string, or string containing only
+whitespace characters.</p>
 </td>
       </tr>
     </tbody>

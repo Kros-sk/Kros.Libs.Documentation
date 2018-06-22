@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class ConnectionHelper
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,8 +83,7 @@
   
   <h1 id="Kros_Data_ConnectionHelper" data-uid="Kros.Data.ConnectionHelper" class="text-break">Class ConnectionHelper
   </h1>
-  <div class="markdown level0 summary"><p>Pomocná trieda pre otváranie spojenia na databázu. Trieda pri použití spojenie otvorí, ak je to potrebné a zase
-zatvorí, ak ho otvorila. V prípade, že spojenie už otvorené bolo, nerobí nič.</p>
+  <div class="markdown level0 summary"><p>Helper class for opening database connection. It ensures opening and closing of the connection.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -112,8 +111,9 @@ zatvorí, ak ho otvorila. V prípade, že spojenie už otvorené bolo, nerobí n
   </h3>
   <a id="Kros_Data_ConnectionHelper_OpenConnection_" data-uid="Kros.Data.ConnectionHelper.OpenConnection*"></a>
   <h4 id="Kros_Data_ConnectionHelper_OpenConnection_System_Data_IDbConnection_" data-uid="Kros.Data.ConnectionHelper.OpenConnection(System.Data.IDbConnection)">OpenConnection(IDbConnection)</h4>
-  <div class="markdown level1 summary"><p>Otvorí spojenie na databázu <code data-dev-comment-type="paramref" class="paramref">connection</code>, ak nie je otvorené. Po uvoľnení vráteného objektu
-je spojenie opäť uzatvorené v prípade, že bolo na začiatku otvorené. Ak spojenie už bolo otvorené, nerobí sa nič.</p>
+  <div class="markdown level1 summary"><p>If database <code data-dev-comment-type="paramref" class="paramref">connection</code> is closed, it is opened immediately. After disposing of returned
+object, the connection is closed, but only if it was opened. So when already opened connection is passed
+in the parameter, nothing is done with it.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -133,7 +133,7 @@ je spojenie opäť uzatvorené v prípade, že bolo na začiatku otvorené. Ak s
       <tr>
         <td><span class="xref">System.Data.IDbConnection</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Spojenie na databázu, ktoré sa otvorí.</p>
+        <td><p>Database connection.</p>
 </td>
       </tr>
     </tbody>
@@ -149,15 +149,30 @@ je spojenie opäť uzatvorené v prípade, že bolo na začiatku otvorené. Ak s
     <tbody>
       <tr>
         <td><span class="xref">System.IDisposable</span></td>
-        <td><p>Objekt, ktorého uvoľnením sa spojenie na databázu zatvorí v prípade, že bolo na začitku otvorené.</p>
+        <td><p>Helper object, which closes connection when it is disposed of.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">connection</code> is <span class="xref">null</span>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_ConnectionHelper_ResumeCore_" data-uid="Kros.Data.ConnectionHelper.ResumeCore*"></a>
   <h4 id="Kros_Data_ConnectionHelper_ResumeCore" data-uid="Kros.Data.ConnectionHelper.ResumeCore">ResumeCore()</h4>
-  <div class="markdown level1 summary"><p>Zatvorí spojenie na databázu, ak bolo otvorené v <a class="xref" href="Kros.Data.ConnectionHelper.html#Kros_Data_ConnectionHelper_SuspendCore">SuspendCore()</a>.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -167,8 +182,7 @@ je spojenie opäť uzatvorené v prípade, že bolo na začiatku otvorené. Ak s
   <div><a class="xref" href="Kros.Utils.Suspender.html#Kros_Utils_Suspender_ResumeCore">Suspender.ResumeCore()</a></div>
   <a id="Kros_Data_ConnectionHelper_SuspendCore_" data-uid="Kros.Data.ConnectionHelper.SuspendCore*"></a>
   <h4 id="Kros_Data_ConnectionHelper_SuspendCore" data-uid="Kros.Data.ConnectionHelper.SuspendCore">SuspendCore()</h4>
-  <div class="markdown level1 summary"><p>Otvorí spojenie na databázu, ak je zatvorené.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">

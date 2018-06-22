@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IIdGenerator
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,7 +83,7 @@
   
   <h1 id="Kros_Data_IIdGenerator" data-uid="Kros.Data.IIdGenerator" class="text-break">Interface IIdGenerator
   </h1>
-  <div class="markdown level0 summary"><p>Interfejs popisujúci tiedu, ktorá generuje unikátne identifikátory pre záznamy v tabuľke.</p>
+  <div class="markdown level0 summary"><p>Interface for generating IDs for records in database. In general, IDs are just sequential numbers.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Kros.Data.html">Kros.Data</a></h6>
@@ -93,16 +93,38 @@
     <pre><code class="lang-csharp hljs">public interface IIdGenerator : IDisposable</code></pre>
   </div>
   <h5 id="Kros_Data_IIdGenerator_remarks"><strong>Remarks</strong></h5>
-  <div class="markdown level0 remarks"><p>Jedna inštancia generuje vždy pre jednu tabuľku.</p>
+  <div class="markdown level0 remarks"><p>Usually one generator generates IDs for just one table.</p>
 </div>
   <h5 id="Kros_Data_IIdGenerator_examples"><strong>Examples</strong></h5>
-  <pre><code class="cs" source="..\Examples\Kros.Utils\IdGeneratorExamples.cs" region="IdGeneratorFactory"></code></pre>
+  <pre><code class="cs" source="..\..\..\..\Documentation\Examples\Kros.Utils\IdGeneratorExamples.cs" region="IdGeneratorFactory">        public class PeopleService
+    {
+        private IIdGeneratorFactory _idGeneratorFactory;
+
+        public PeopleService(IIdGeneratorFactory idGeneratorFactory)
+        {
+            _idGeneratorFactory = Check.NotNull(idGeneratorFactory, nameof(idGeneratorFactory));
+        }
+
+        public void GenerateData()
+        {
+            using (var idGenerator = _idGeneratorFactory.GetGenerator(&quot;people&quot;, 1000))
+            {
+                for (int i = 0; i &lt; 1800; i++)
+                {
+                    var person = new Person()
+                    {
+                        Id = idGenerator.GetNext()
+                    };
+                };
+            }
+        }
+    }</code></pre>
 
   <h3 id="methods">Methods
   </h3>
   <a id="Kros_Data_IIdGenerator_GetNext_" data-uid="Kros.Data.IIdGenerator.GetNext*"></a>
   <h4 id="Kros_Data_IIdGenerator_GetNext" data-uid="Kros.Data.IIdGenerator.GetNext">GetNext()</h4>
-  <div class="markdown level1 summary"><p>Vráti identifikátor pre ďalší záznam.</p>
+  <div class="markdown level1 summary"><p>Returns next ID.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -120,14 +142,22 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Int32</span></td>
-        <td><p>Unikátny identifikátor pre záznam v tabuľke.</p>
+        <td><p>Unique ID for record in data table.</p>
 </td>
       </tr>
     </tbody>
   </table>
+  <a id="Kros_Data_IIdGenerator_InitDatabaseForIdGenerator_" data-uid="Kros.Data.IIdGenerator.InitDatabaseForIdGenerator*"></a>
+  <h4 id="Kros_Data_IIdGenerator_InitDatabaseForIdGenerator" data-uid="Kros.Data.IIdGenerator.InitDatabaseForIdGenerator">InitDatabaseForIdGenerator()</h4>
+  <div class="markdown level1 summary"><p>Initializes database for using ID generator. Initialization can mean creating necessary table and stored procedure.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void InitDatabaseForIdGenerator()</code></pre>
+  </div>
   <h3 id="seealso">See Also</h3>
   <div class="seealso">
-      <div><span class="xref">System.IDisposable</span></div>
       <div><a class="xref" href="Kros.Data.SqlServer.SqlServerIdGenerator.html">SqlServerIdGenerator</a></div>
   </div>
 </article>

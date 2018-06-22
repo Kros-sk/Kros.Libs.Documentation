@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class Database
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -450,8 +450,7 @@ For executing query and materializing models see:
   </h3>
   <a id="Kros_KORM_Database_BeginTransaction_" data-uid="Kros.KORM.Database.BeginTransaction*"></a>
   <h4 id="Kros_KORM_Database_BeginTransaction" data-uid="Kros.KORM.Database.BeginTransaction">BeginTransaction()</h4>
-  <div class="markdown level1 summary"><p>Begins the transaction.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -468,15 +467,13 @@ For executing query and materializing models see:
     <tbody>
       <tr>
         <td><a class="xref" href="Kros.KORM.Data.ITransaction.html">ITransaction</a></td>
-        <td><p><a class="xref" href="Kros.KORM.Data.ITransaction.html">ITransaction</a> wrapping access to the underlying store&apos;s transaction object.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_KORM_Database_BeginTransaction_" data-uid="Kros.KORM.Database.BeginTransaction*"></a>
   <h4 id="Kros_KORM_Database_BeginTransaction_System_Data_IsolationLevel_" data-uid="Kros.KORM.Database.BeginTransaction(System.Data.IsolationLevel)">BeginTransaction(IsolationLevel)</h4>
-  <div class="markdown level1 summary"><p>Begins the transaction using the specified isolation level.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -495,8 +492,7 @@ For executing query and materializing models see:
       <tr>
         <td><span class="xref">System.Data.IsolationLevel</span></td>
         <td><span class="parametername">isolationLevel</span></td>
-        <td><p>The database isolation level with which the underlying store transaction will be created.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -511,8 +507,7 @@ For executing query and materializing models see:
     <tbody>
       <tr>
         <td><a class="xref" href="Kros.KORM.Data.ITransaction.html">ITransaction</a></td>
-        <td><p><a class="xref" href="Kros.KORM.Data.ITransaction.html">ITransaction</a> wrapping access to the underlying store&apos;s transaction object.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -813,6 +808,7 @@ Additional columns or rows are ignored.</p>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public TResult? ExecuteScalar&lt;TResult&gt;(string query)
+
     where TResult : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -874,6 +870,7 @@ Additional columns or rows are ignored.</p>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public TResult? ExecuteScalar&lt;TResult&gt;(string query, params object[] args)
+
     where TResult : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1047,6 +1044,14 @@ set is empty. Returns a maximum of 2033 characters.</p>
       </tr>
     </tbody>
   </table>
+  <a id="Kros_KORM_Database_InitDatabaseForIdGenerator_" data-uid="Kros.KORM.Database.InitDatabaseForIdGenerator*"></a>
+  <h4 id="Kros_KORM_Database_InitDatabaseForIdGenerator" data-uid="Kros.KORM.Database.InitDatabaseForIdGenerator">InitDatabaseForIdGenerator()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void InitDatabaseForIdGenerator()</code></pre>
+  </div>
   <a id="Kros_KORM_Database_Query_" data-uid="Kros.KORM.Database.Query*"></a>
   <h4 id="Kros_KORM_Database_Query__1" data-uid="Kros.KORM.Database.Query``1">Query&lt;T&gt;()</h4>
   <div class="markdown level1 summary"><p>Gets the query builder for T creating and executing query for obtains models.</p>

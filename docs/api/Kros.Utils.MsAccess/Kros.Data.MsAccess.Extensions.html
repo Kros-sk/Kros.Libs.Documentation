@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class Extensions
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,7 +83,7 @@
   
   <h1 id="Kros_Data_MsAccess_Extensions" data-uid="Kros.Data.MsAccess.Extensions" class="text-break">Class Extensions
   </h1>
-  <div class="markdown level0 summary"><p>Všeobecné rozšírenia pre MS Access.</p>
+  <div class="markdown level0 summary"><p>General extensions for Microsoft Access.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -101,7 +101,7 @@
   </h3>
   <a id="Kros_Data_MsAccess_Extensions_MsAccessErrorCode_" data-uid="Kros.Data.MsAccess.Extensions.MsAccessErrorCode*"></a>
   <h4 id="Kros_Data_MsAccess_Extensions_MsAccessErrorCode_System_Data_OleDb_OleDbException_" data-uid="Kros.Data.MsAccess.Extensions.MsAccessErrorCode(System.Data.OleDb.OleDbException)">MsAccessErrorCode(OleDbException)</h4>
-  <div class="markdown level1 summary"><p>Vráti chybový kód výnimky pre MsAccess.</p>
+  <div class="markdown level1 summary"><p>Returns Microsoft Access error code.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -121,7 +121,7 @@
       <tr>
         <td><span class="xref">System.Data.OleDb.OleDbException</span></td>
         <td><span class="parametername">ex</span></td>
-        <td><p>Výnimka, ktorej chybový kód sa kontroluje.</p>
+        <td><p>Exception, whose error code is checked.</p>
 </td>
       </tr>
     </tbody>
@@ -137,13 +137,19 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Kros.Data.MsAccess.MsAccessErrorCode.html">MsAccessErrorCode</a></td>
-        <td></td>
+        <td><p>Returns error code as an enumeration <a class="xref" href="Kros.Data.MsAccess.MsAccessErrorCode.html">MsAccessErrorCode</a>. If the error code
+is unknown, or not defined, value <a class="xref" href="Kros.Data.MsAccess.MsAccessErrorCode.html">MsAccessErrorCode</a> is returned.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Kros_Data_MsAccess_Extensions_MsAccessErrorCode_System_Data_OleDb_OleDbException__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Method checks the value of <span class="xref">System.Data.OleDb.OleDbError.SQLState</span> of the first error in the list
+<span class="xref">System.Data.OleDb.OleDbException.Errors</span>.</p>
+</div>
   <a id="Kros_Data_MsAccess_Extensions_MsAccessErrorCode_" data-uid="Kros.Data.MsAccess.Extensions.MsAccessErrorCode*"></a>
   <h4 id="Kros_Data_MsAccess_Extensions_MsAccessErrorCode_System_Data_OleDb_OleDbException_System_String__" data-uid="Kros.Data.MsAccess.Extensions.MsAccessErrorCode(System.Data.OleDb.OleDbException,System.String@)">MsAccessErrorCode(OleDbException, out String)</h4>
-  <div class="markdown level1 summary"><p>Vráti chybový kód výnimky pre MsAccess.</p>
+  <div class="markdown level1 summary"><p>Returns Microsoft Access error code.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -163,13 +169,13 @@
       <tr>
         <td><span class="xref">System.Data.OleDb.OleDbException</span></td>
         <td><span class="parametername">ex</span></td>
-        <td><p>Výnimka, ktorej chybový kód sa kontroluje.</p>
+        <td><p>Exception, whose error code is checked.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">sqlState</span></td>
-        <td><p>Skutočná hodnota vlastnosti <span class="xref">System.Data.OleDb.OleDbError.SQLState</span>.</p>
+        <td><p>Real value of <span class="xref">System.Data.OleDb.OleDbError.SQLState</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -185,14 +191,14 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Kros.Data.MsAccess.MsAccessErrorCode.html">MsAccessErrorCode</a></td>
-        <td><p>Vráti chybový kód ako hodnotu enumerátu <a class="xref" href="Kros.Data.MsAccess.MsAccessErrorCode.html">MsAccessErrorCode</a>. Ak chybový kód
-je neznámy, alebo nie je definovaný, je vrátená hodnota <a class="xref" href="Kros.Data.MsAccess.MsAccessErrorCode.html#Kros_Data_MsAccess_MsAccessErrorCode_Unknown">Unknown</a>.</p>
+        <td><p>Returns error code as an enumeration <a class="xref" href="Kros.Data.MsAccess.MsAccessErrorCode.html">MsAccessErrorCode</a>. If the error code
+is unknown, or not defined, value <a class="xref" href="Kros.Data.MsAccess.MsAccessErrorCode.html">MsAccessErrorCode</a> is returned.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <h5 id="Kros_Data_MsAccess_Extensions_MsAccessErrorCode_System_Data_OleDb_OleDbException_System_String___remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Metóda pozerá hodnotu <span class="xref">System.Data.OleDb.OleDbError.SQLState</span> prvej chyby v zozname
+  <div class="markdown level1 remarks"><p>Method checks the value of <span class="xref">System.Data.OleDb.OleDbError.SQLState</span> of the first error in the list
 <span class="xref">System.Data.OleDb.OleDbException.Errors</span>.</p>
 </div>
 </article>

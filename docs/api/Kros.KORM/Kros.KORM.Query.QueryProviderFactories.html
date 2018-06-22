@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class QueryProviderFactories
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -153,7 +153,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.InvalidOperationException</span></td>
-        <td><p>When factory for specific <code data-dev-comment-type="paramref" class="paramref">connection</code> is not registered.</p>
+        <td><p>When factory for specific <code data-dev-comment-type="paramref" class="paramref">connection</code>
+is not registered.</p>
 </td>
       </tr>
     </tbody>
@@ -212,7 +213,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.InvalidOperationException</span></td>
-        <td><p>When factory for specific <code data-dev-comment-type="paramref" class="paramref">providerName</code> is not registered.</p>
+        <td><p>When factory for specific <code data-dev-comment-type="paramref" class="paramref">providerName</code>
+is not registered.</p>
 </td>
       </tr>
     </tbody>
@@ -225,6 +227,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Register&lt;TConnection&gt;(string providerName, IQueryProviderFactory queryProviderFactory)
+
     where TConnection : DbConnection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>

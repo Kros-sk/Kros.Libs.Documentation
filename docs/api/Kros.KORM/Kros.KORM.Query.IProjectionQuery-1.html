@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IProjectionQuery&lt;T&gt;
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -126,13 +126,13 @@
   <h3 id="methods">Methods
   </h3>
   <a id="Kros_KORM_Query_IProjectionQuery_1_Any_" data-uid="Kros.KORM.Query.IProjectionQuery`1.Any*"></a>
-  <h4 id="Kros_KORM_Query_IProjectionQuery_1_Any_System_String_System_Object___" data-uid="Kros.KORM.Query.IProjectionQuery`1.Any(System.String,System.Object[])">Any(String, Object[])</h4>
+  <h4 id="Kros_KORM_Query_IProjectionQuery_1_Any_Kros_KORM_Query_Sql_RawSqlString_System_Object___" data-uid="Kros.KORM.Query.IProjectionQuery`1.Any(Kros.KORM.Query.Sql.RawSqlString,System.Object[])">Any(RawSqlString, Object[])</h4>
   <div class="markdown level1 summary"><p>Check if exist elements in the table which match condition.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool Any(string whereCondition, params object[] args)</code></pre>
+    <pre><code class="lang-csharp hljs">bool Any(RawSqlString whereCondition, params object[] args)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -145,7 +145,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
+        <td><a class="xref" href="Kros.KORM.Query.Sql.RawSqlString.html">RawSqlString</a></td>
         <td><span class="parametername">whereCondition</span></td>
         <td><p>The where condition.</p>
 </td>
@@ -174,8 +174,70 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="Kros_KORM_Query_IProjectionQuery_1_Any_System_String_System_Object____examples">Examples</h5>
-  <pre><code source="..\Examples\Kros.KORM.Examples\IQueryExample.cs" region="Any"></code></pre>
+  <h5 id="Kros_KORM_Query_IProjectionQuery_1_Any_Kros_KORM_Query_Sql_RawSqlString_System_Object____examples">Examples</h5>
+  <pre><code class="cs" source="..\..\..\..\Documentation\Examples\Kros.KORM.Examples\IQueryExample.cs" region="Any">                var exist = database.Query&lt;Person>().Any(&quot;Age > @1&quot;, 18);</code></pre>
+
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p>if <code>whereCondition</code> is null or white string.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Kros_KORM_Query_IProjectionQuery_1_Any_" data-uid="Kros.KORM.Query.IProjectionQuery`1.Any*"></a>
+  <h4 id="Kros_KORM_Query_IProjectionQuery_1_Any_System_FormattableString_" data-uid="Kros.KORM.Query.IProjectionQuery`1.Any(System.FormattableString)">Any(FormattableString)</h4>
+  <div class="markdown level1 summary"><p>Check if exist elements in the table which match condition.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool Any(FormattableString whereCondition)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.FormattableString</span></td>
+        <td><span class="parametername">whereCondition</span></td>
+        <td><p>The where condition.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if exist elements in the table which match condition; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Kros_KORM_Query_IProjectionQuery_1_Any_System_FormattableString__examples">Examples</h5>
+  <pre><code>var exist = database.Query&lt;Person>().Any($&quot;Age > {18}&quot;);</code></pre>
 
   <h5 class="exceptions">Exceptions</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -194,13 +256,13 @@
     </tbody>
   </table>
   <a id="Kros_KORM_Query_IProjectionQuery_1_FirstOrDefault_" data-uid="Kros.KORM.Query.IProjectionQuery`1.FirstOrDefault*"></a>
-  <h4 id="Kros_KORM_Query_IProjectionQuery_1_FirstOrDefault_System_String_System_Object___" data-uid="Kros.KORM.Query.IProjectionQuery`1.FirstOrDefault(System.String,System.Object[])">FirstOrDefault(String, Object[])</h4>
+  <h4 id="Kros_KORM_Query_IProjectionQuery_1_FirstOrDefault_Kros_KORM_Query_Sql_RawSqlString_System_Object___" data-uid="Kros.KORM.Query.IProjectionQuery`1.FirstOrDefault(Kros.KORM.Query.Sql.RawSqlString,System.Object[])">FirstOrDefault(RawSqlString, Object[])</h4>
   <div class="markdown level1 summary"><p>Returns the first item of which match where condition, or a default value if item doesn&apos;t exist.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">T FirstOrDefault(string whereCondition, params object[] args)</code></pre>
+    <pre><code class="lang-csharp hljs">T FirstOrDefault(RawSqlString whereCondition, params object[] args)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -213,7 +275,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
+        <td><a class="xref" href="Kros.KORM.Query.Sql.RawSqlString.html">RawSqlString</a></td>
         <td><span class="parametername">whereCondition</span></td>
         <td><p>The where condition.</p>
 </td>
@@ -237,13 +299,75 @@
     <tbody>
       <tr>
         <td><span class="xref">T</span></td>
-        <td><p><strong>null</strong> if item doesn&apos;t exist; otherwise, the first item which match the condition.</p>
+        <td><p><span class="xref">null</span> if item doesn&apos;t exist; otherwise, the first item which match the condition.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="Kros_KORM_Query_IProjectionQuery_1_FirstOrDefault_System_String_System_Object____examples">Examples</h5>
+  <h5 id="Kros_KORM_Query_IProjectionQuery_1_FirstOrDefault_Kros_KORM_Query_Sql_RawSqlString_System_Object____examples">Examples</h5>
   <pre><code>var item = query.FirstOrDefault(&quot;Id = @1&quot;, 22);</code></pre>
+
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p>if <code>whereCondition</code> is null or white string.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Kros_KORM_Query_IProjectionQuery_1_FirstOrDefault_" data-uid="Kros.KORM.Query.IProjectionQuery`1.FirstOrDefault*"></a>
+  <h4 id="Kros_KORM_Query_IProjectionQuery_1_FirstOrDefault_System_FormattableString_" data-uid="Kros.KORM.Query.IProjectionQuery`1.FirstOrDefault(System.FormattableString)">FirstOrDefault(FormattableString)</h4>
+  <div class="markdown level1 summary"><p>Returns the first item of which match where condition, or a default value if item doesn&apos;t exist.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">T FirstOrDefault(FormattableString whereCondition)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.FormattableString</span></td>
+        <td><span class="parametername">whereCondition</span></td>
+        <td><p>The where condition.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p><span class="xref">null</span> if item doesn&apos;t exist; otherwise, the first item which match the condition.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Kros_KORM_Query_IProjectionQuery_1_FirstOrDefault_System_FormattableString__examples">Examples</h5>
+  <pre><code>var item = query.FirstOrDefault($&quot;Id = {22}&quot;);</code></pre>
 
   <h5 class="exceptions">Exceptions</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -308,7 +432,7 @@
   <div class="markdown level1 remarks"><p>You can also add HAVING statement.</p>
 </div>
   <h5 id="Kros_KORM_Query_IProjectionQuery_1_GroupBy_System_String__examples">Examples</h5>
-  <pre><code source="..\Examples\Kros.KORM.Examples\IQueryExample.cs" region="GroupBy"></code></pre>
+  <pre><code class="cs" source="..\..\..\..\Documentation\Examples\Kros.KORM.Examples\IQueryExample.cs" region="GroupBy">                var people = database.Query&lt;Person>().GroupBy(&quot;FirstName, LastName&quot;);</code></pre>
 
   <h5 class="exceptions">Exceptions</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -370,7 +494,7 @@
     </tbody>
   </table>
   <h5 id="Kros_KORM_Query_IProjectionQuery_1_OrderBy_System_String__examples">Examples</h5>
-  <pre><code source="..\Examples\Kros.KORM.Examples\IQueryExample.cs" region="OrderBy"></code></pre>
+  <pre><code class="cs" source="..\..\..\..\Documentation\Examples\Kros.KORM.Examples\IQueryExample.cs" region="OrderBy">                var people = database.Query&lt;Person>().OrderBy(&quot;FirstName DESC, LastName&quot;);</code></pre>
 
   <h5 class="exceptions">Exceptions</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -389,13 +513,13 @@
     </tbody>
   </table>
   <a id="Kros_KORM_Query_IProjectionQuery_1_Where_" data-uid="Kros.KORM.Query.IProjectionQuery`1.Where*"></a>
-  <h4 id="Kros_KORM_Query_IProjectionQuery_1_Where_System_String_System_Object___" data-uid="Kros.KORM.Query.IProjectionQuery`1.Where(System.String,System.Object[])">Where(String, Object[])</h4>
+  <h4 id="Kros_KORM_Query_IProjectionQuery_1_Where_Kros_KORM_Query_Sql_RawSqlString_System_Object___" data-uid="Kros.KORM.Query.IProjectionQuery`1.Where(Kros.KORM.Query.Sql.RawSqlString,System.Object[])">Where(RawSqlString, Object[])</h4>
   <div class="markdown level1 summary"><p>Add where condition to sql.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IFilteredQuery&lt;T&gt; Where(string whereCondition, params object[] args)</code></pre>
+    <pre><code class="lang-csharp hljs">IFilteredQuery&lt;T&gt; Where(RawSqlString whereCondition, params object[] args)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -408,7 +532,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
+        <td><a class="xref" href="Kros.KORM.Query.Sql.RawSqlString.html">RawSqlString</a></td>
         <td><span class="parametername">whereCondition</span></td>
         <td><p>The where condition.</p>
 </td>
@@ -437,8 +561,70 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="Kros_KORM_Query_IProjectionQuery_1_Where_System_String_System_Object____examples">Examples</h5>
-  <pre><code source="..\Examples\Kros.KORM.Examples\IQueryExample.cs" region="Where1"></code></pre>
+  <h5 id="Kros_KORM_Query_IProjectionQuery_1_Where_Kros_KORM_Query_Sql_RawSqlString_System_Object____examples">Examples</h5>
+  <pre><code class="cs" source="..\..\..\..\Documentation\Examples\Kros.KORM.Examples\IQueryExample.cs" region="Where1">                var people = database.Query&lt;Person>().Where(&quot;Id &lt; @1 AND Age > @2&quot;, 1000, 18);</code></pre>
+
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p>if <code>whereCondition</code> is null or white string.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Kros_KORM_Query_IProjectionQuery_1_Where_" data-uid="Kros.KORM.Query.IProjectionQuery`1.Where*"></a>
+  <h4 id="Kros_KORM_Query_IProjectionQuery_1_Where_System_FormattableString_" data-uid="Kros.KORM.Query.IProjectionQuery`1.Where(System.FormattableString)">Where(FormattableString)</h4>
+  <div class="markdown level1 summary"><p>Add where condition to sql.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IFilteredQuery&lt;T&gt; Where(FormattableString whereCondition)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.FormattableString</span></td>
+        <td><span class="parametername">whereCondition</span></td>
+        <td><p>The where condition.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Kros.KORM.Query.IFilteredQuery-1.html">IFilteredQuery</a>&lt;T&gt;</td>
+        <td><p>Query for enumerable models.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Kros_KORM_Query_IProjectionQuery_1_Where_System_FormattableString__examples">Examples</h5>
+  <pre><code>var item = query.Where($&quot;Id = {1}&quot;)</code></pre>
 
   <h5 class="exceptions">Exceptions</h5>
   <table class="table table-bordered table-striped table-condensed">

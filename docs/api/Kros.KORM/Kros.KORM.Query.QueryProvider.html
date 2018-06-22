@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class QueryProvider
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -225,7 +225,7 @@ connection string-om, je vytvorené nové spojenie.</p>
   <h4 id="Kros_KORM_Query_QueryProvider_ConnectionString" data-uid="Kros.KORM.Query.QueryProvider.ConnectionString">ConnectionString</h4>
   <div class="markdown level1 summary"><p>Connection string na databázu, ktorý bol zadaný pri vytvorení inštancie triedy
 (<a class="xref" href="Kros.KORM.Query.QueryProvider.html#Kros_KORM_Query_QueryProvider__ctor_System_Configuration_ConnectionStringSettings_Kros_KORM_Query_Sql_ISqlExpressionVisitor_Kros_KORM_Materializer_IModelBuilder_Kros_KORM_Helper_ILogger_">QueryProvider(ConnectionStringSettings, ISqlExpressionVisitor, IModelBuilder, ILogger)</a>).
-Ak bola trieda vytvorená konkrétnou inštanciou spojenia, vráti <code>null</code>.</p>
+Ak bola trieda vytvorená konkrétnou inštanciou spojenia, vráti <span class="xref">null</span>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -301,8 +301,7 @@ string a spojenie je vytvorené interne, vráti <span class="xref">false</span>.
   </h3>
   <a id="Kros_KORM_Query_QueryProvider_BeginTransaction_" data-uid="Kros.KORM.Query.QueryProvider.BeginTransaction*"></a>
   <h4 id="Kros_KORM_Query_QueryProvider_BeginTransaction_System_Data_IsolationLevel_" data-uid="Kros.KORM.Query.QueryProvider.BeginTransaction(System.Data.IsolationLevel)">BeginTransaction(IsolationLevel)</h4>
-  <div class="markdown level1 summary"><p>Begins the transaction using the specified isolation level.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -321,8 +320,7 @@ string a spojenie je vytvorené interne, vráti <span class="xref">false</span>.
       <tr>
         <td><span class="xref">System.Data.IsolationLevel</span></td>
         <td><span class="parametername">isolationLevel</span></td>
-        <td><p>The database isolation level with which the underlying store transaction will be created.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -337,8 +335,7 @@ string a spojenie je vytvorené interne, vráti <span class="xref">false</span>.
     <tbody>
       <tr>
         <td><a class="xref" href="Kros.KORM.Data.ITransaction.html">ITransaction</a></td>
-        <td><p><a class="xref" href="Kros.KORM.Data.ITransaction.html">ITransaction</a> wrapping access to the underlying store&apos;s transaction object.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -394,8 +391,7 @@ string a spojenie je vytvorené interne, vráti <span class="xref">false</span>.
   </table>
   <a id="Kros_KORM_Query_QueryProvider_CreateIdGenerator_" data-uid="Kros.KORM.Query.QueryProvider.CreateIdGenerator*"></a>
   <h4 id="Kros_KORM_Query_QueryProvider_CreateIdGenerator_System_String_System_Int32_" data-uid="Kros.KORM.Query.QueryProvider.CreateIdGenerator(System.String,System.Int32)">CreateIdGenerator(String, Int32)</h4>
-  <div class="markdown level1 summary"><p>Creates the identifier generator.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -414,14 +410,12 @@ string a spojenie je vytvorené interne, vráti <span class="xref">false</span>.
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">tableName</span></td>
-        <td><p>Name of the database table.</p>
-</td>
+        <td></td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">batchSize</span></td>
-        <td><p>Size of inserting the batch.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -436,8 +430,7 @@ string a spojenie je vytvorené interne, vráti <span class="xref">false</span>.
     <tbody>
       <tr>
         <td><a class="xref" href="../Kros.Utils/Kros.Data.IIdGenerator.html">IIdGenerator</a></td>
-        <td><p>The identifier generator.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -781,14 +774,13 @@ string a spojenie je vytvorené interne, vráti <span class="xref">false</span>.
       </tr>
     </tbody>
   </table>
-  <a id="Kros_KORM_Query_QueryProvider_ExecuteInTransaction_" data-uid="Kros.KORM.Query.QueryProvider.ExecuteInTransaction*"></a>
-  <h4 id="Kros_KORM_Query_QueryProvider_ExecuteInTransaction_System_Action_" data-uid="Kros.KORM.Query.QueryProvider.ExecuteInTransaction(System.Action)">ExecuteInTransaction(Action)</h4>
-  <div class="markdown level1 summary"><p>Executes action in transaction.</p>
-</div>
+  <a id="Kros_KORM_Query_QueryProvider_ExecuteInTransactionAsync_" data-uid="Kros.KORM.Query.QueryProvider.ExecuteInTransactionAsync*"></a>
+  <h4 id="Kros_KORM_Query_QueryProvider_ExecuteInTransactionAsync_System_Func_System_Threading_Tasks_Task__" data-uid="Kros.KORM.Query.QueryProvider.ExecuteInTransactionAsync(System.Func{System.Threading.Tasks.Task})">ExecuteInTransactionAsync(Func&lt;Task&gt;)</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void ExecuteInTransaction(Action action)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task ExecuteInTransactionAsync(Func&lt;Task&gt; action)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -801,10 +793,24 @@ string a spojenie je vytvorené interne, vráti <span class="xref">false</span>.
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Action</span></td>
+        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Threading.Tasks.Task</span>&gt;</td>
         <td><span class="parametername">action</span></td>
-        <td><p>Action which will be executed.</p>
-</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -970,6 +976,46 @@ string a spojenie je vytvorené interne, vráti <span class="xref">false</span>.
     <tbody>
       <tr>
         <td><span class="xref">System.NotImplementedException</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Kros_KORM_Query_QueryProvider_ExecuteNonQueryCommandAsync_" data-uid="Kros.KORM.Query.QueryProvider.ExecuteNonQueryCommandAsync*"></a>
+  <h4 id="Kros_KORM_Query_QueryProvider_ExecuteNonQueryCommandAsync_System_Data_Common_DbCommand_" data-uid="Kros.KORM.Query.QueryProvider.ExecuteNonQueryCommandAsync(System.Data.Common.DbCommand)">ExecuteNonQueryCommandAsync(DbCommand)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;int&gt; ExecuteNonQueryCommandAsync(DbCommand command)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.Common.DbCommand</span></td>
+        <td><span class="parametername">command</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -1169,7 +1215,7 @@ Returns a maximum of 2033 characters.</p>
   <a id="Kros_KORM_Query_QueryProvider_GetCommandForCurrentTransaction_" data-uid="Kros.KORM.Query.QueryProvider.GetCommandForCurrentTransaction*"></a>
   <h4 id="Kros_KORM_Query_QueryProvider_GetCommandForCurrentTransaction" data-uid="Kros.KORM.Query.QueryProvider.GetCommandForCurrentTransaction">GetCommandForCurrentTransaction()</h4>
   <div class="markdown level1 summary"><p>Vytvorí inicializovaný príkaz <span class="xref">System.Data.Common.DbCommand</span>, pre aktuálnu transakciu.
-Používa sa iba v rámci volania <a class="xref" href="Kros.KORM.Query.QueryProvider.html#Kros_KORM_Query_QueryProvider_ExecuteInTransaction_System_Action_">ExecuteInTransaction(Action)</a>.</p>
+Používa sa iba v rámci volania <a class="xref" href="Kros.KORM.Query.QueryProvider.html#Kros_KORM_Query_QueryProvider_ExecuteInTransactionAsync_System_Func_System_Threading_Tasks_Task__">ExecuteInTransactionAsync(Func&lt;Task&gt;)</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IIdGeneratorFactory
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,7 +83,7 @@
   
   <h1 id="Kros_Data_IIdGeneratorFactory" data-uid="Kros.Data.IIdGeneratorFactory" class="text-break">Interface IIdGeneratorFactory
   </h1>
-  <div class="markdown level0 summary"><p>Interface popisujúci factory triedu, ktorá vie vytvoriť inštanciu <a class="xref" href="Kros.Data.IIdGenerator.html">IIdGenerator</a>.</p>
+  <div class="markdown level0 summary"><p>Interface for factory classes, which create instances of <a class="xref" href="Kros.Data.IIdGenerator.html">IIdGenerator</a>.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Kros.Data.html">Kros.Data</a></h6>
@@ -93,14 +93,35 @@
     <pre><code class="lang-csharp hljs">public interface IIdGeneratorFactory</code></pre>
   </div>
   <h5 id="Kros_Data_IIdGeneratorFactory_examples"><strong>Examples</strong></h5>
-  <pre><code class="cs" source="..\Examples\Kros.Utils\IdGeneratorExamples.cs" region="IdGeneratorFactory"></code></pre>
+  <pre><code class="cs" source="..\..\..\..\Documentation\Examples\Kros.Utils\IdGeneratorExamples.cs" region="IdGeneratorFactory">        public class PeopleService
+    {
+        private IIdGeneratorFactory _idGeneratorFactory;
+
+        public PeopleService(IIdGeneratorFactory idGeneratorFactory)
+        {
+            _idGeneratorFactory = Check.NotNull(idGeneratorFactory, nameof(idGeneratorFactory));
+        }
+
+        public void GenerateData()
+        {
+            using (var idGenerator = _idGeneratorFactory.GetGenerator(&quot;people&quot;, 1000))
+            {
+                for (int i = 0; i &lt; 1800; i++)
+                {
+                    var person = new Person()
+                    {
+                        Id = idGenerator.GetNext()
+                    };
+                };
+            }
+        }
+    }</code></pre>
 
   <h3 id="methods">Methods
   </h3>
   <a id="Kros_Data_IIdGeneratorFactory_GetGenerator_" data-uid="Kros.Data.IIdGeneratorFactory.GetGenerator*"></a>
   <h4 id="Kros_Data_IIdGeneratorFactory_GetGenerator_System_String_" data-uid="Kros.Data.IIdGeneratorFactory.GetGenerator(System.String)">GetGenerator(String)</h4>
-  <div class="markdown level1 summary"><p>Vytvorí inštanciu <a class="xref" href="Kros.Data.IIdGenerator.html">IIdGenerator</a> pre generovanie unikátnych identifikátorov pre tabuľku
-<code data-dev-comment-type="paramref" class="paramref">tableName</code>.</p>
+  <div class="markdown level1 summary"><p>Creates an instance of <a class="xref" href="Kros.Data.IIdGenerator.html">IIdGenerator</a> for table <code data-dev-comment-type="paramref" class="paramref">tableName</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -120,7 +141,7 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">tableName</span></td>
-        <td><p>Názov tabuľky pre ktorú sa budú generovať identifikátory.</p>
+        <td><p>Table for which IDs will be generated.</p>
 </td>
       </tr>
     </tbody>
@@ -136,16 +157,15 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Kros.Data.IIdGenerator.html">IIdGenerator</a></td>
-        <td><p>Inštancia <a class="xref" href="Kros.Data.IIdGenerator.html">IIdGenerator</a>.</p>
+        <td><p>The instance of <a class="xref" href="Kros.Data.IIdGenerator.html">IIdGenerator</a>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_IIdGeneratorFactory_GetGenerator_" data-uid="Kros.Data.IIdGeneratorFactory.GetGenerator*"></a>
   <h4 id="Kros_Data_IIdGeneratorFactory_GetGenerator_System_String_System_Int32_" data-uid="Kros.Data.IIdGeneratorFactory.GetGenerator(System.String,System.Int32)">GetGenerator(String, Int32)</h4>
-  <div class="markdown level1 summary"><p>Vytvorí inštanciu <a class="xref" href="Kros.Data.IIdGenerator.html">IIdGenerator</a> pre generovanie unikátnych identifikátorov pre tabuľku
-<code data-dev-comment-type="paramref" class="paramref">tableName</code>.
-Nastaví mu aj dávku, ktorú ma rezervovať. (aby v prípade väčšieho počtu nemusel ísť zakaždým do databázy)</p>
+  <div class="markdown level1 summary"><p>Creates an instance of <a class="xref" href="Kros.Data.IIdGenerator.html">IIdGenerator</a> for table <code data-dev-comment-type="paramref" class="paramref">tableName</code>
+with specified <code data-dev-comment-type="paramref" class="paramref">batchSize</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -165,13 +185,13 @@ Nastaví mu aj dávku, ktorú ma rezervovať. (aby v prípade väčšieho počtu
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">tableName</span></td>
-        <td><p>Názov tabuľky pre ktorú sa budú generovať identifikátory.</p>
+        <td><p>Table for which IDs will be generated.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">batchSize</span></td>
-        <td><p>Veľkosť dávky, ktorú si zarezervuje dopredu.</p>
+        <td><p>IDs batch size. This number of IDs will be reserved for later use.</p>
 </td>
       </tr>
     </tbody>
@@ -187,7 +207,7 @@ Nastaví mu aj dávku, ktorú ma rezervovať. (aby v prípade väčšieho počtu
     <tbody>
       <tr>
         <td><a class="xref" href="Kros.Data.IIdGenerator.html">IIdGenerator</a></td>
-        <td><p>Inštancia <a class="xref" href="Kros.Data.IIdGenerator.html">IIdGenerator</a>.</p>
+        <td><p>The instance of <a class="xref" href="Kros.Data.IIdGenerator.html">IIdGenerator</a>.</p>
 </td>
       </tr>
     </tbody>

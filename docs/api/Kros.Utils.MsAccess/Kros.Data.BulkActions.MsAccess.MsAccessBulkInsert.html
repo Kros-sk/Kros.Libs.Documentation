@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class MsAccessBulkInsert
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,7 +83,7 @@
   
   <h1 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert" class="text-break">Class MsAccessBulkInsert
   </h1>
-  <div class="markdown level0 summary"><p>Trieda na hromadné vkladanie dát do MS Access tabuľky.</p>
+  <div class="markdown level0 summary"><p>The calss for fast bulk insert big amount of data into Microsoft Access database.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -102,14 +102,13 @@
     <pre><code class="lang-csharp hljs">public class MsAccessBulkInsert : IBulkInsert, IDisposable</code></pre>
   </div>
   <h5 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_remarks"><strong>Remarks</strong></h5>
-  <div class="markdown level0 remarks"><p>Na pozadí sa využíva vkladanie dát z textového CSV súboru.</p>
+  <div class="markdown level0 remarks"><p>In the background, it creates a text CSV file with data which are inserted.</p>
 </div>
   <h3 id="constructors">Constructors
   </h3>
   <a id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert__ctor_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.#ctor*"></a>
   <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert__ctor_System_Data_OleDb_OleDbConnection_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.#ctor(System.Data.OleDb.OleDbConnection)">MsAccessBulkInsert(OleDbConnection)</h4>
-  <div class="markdown level1 summary"><p>Inicializuje novú inštanciu <a class="xref" href="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.html">MsAccessBulkInsert</a> použitím spojenia na databázu
-<code data-dev-comment-type="paramref" class="paramref">connection</code></p>
+  <div class="markdown level1 summary"><p>Creates a new instance with database connection <code data-dev-comment-type="paramref" class="paramref">connection</code> and default settings for CSV file.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -129,15 +128,31 @@
       <tr>
         <td><span class="xref">System.Data.OleDb.OleDbConnection</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Spojenie na databázu, kam sa vložia dáta. Spojenie musí byť otvorené.</p>
+        <td><p>Database connection where the data will be inserted. The connection mus be opened.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">connection</code> is <span class="xref">null</span>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert__ctor_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.#ctor*"></a>
   <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert__ctor_System_Data_OleDb_OleDbConnection_System_Data_OleDb_OleDbTransaction_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.#ctor(System.Data.OleDb.OleDbConnection,System.Data.OleDb.OleDbTransaction)">MsAccessBulkInsert(OleDbConnection, OleDbTransaction)</h4>
-  <div class="markdown level1 summary"><p>Inicializuje novú inštanciu <a class="xref" href="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.html">MsAccessBulkInsert</a> použitím spojenia na databázu
-<code data-dev-comment-type="paramref" class="paramref">connection</code> a externej transakcie <code data-dev-comment-type="paramref" class="paramref">externalTransaction</code>.</p>
+  <div class="markdown level1 summary"><p>Creates a new instance with database connection <code data-dev-comment-type="paramref" class="paramref">connection</code>, transaction
+<code data-dev-comment-type="paramref" class="paramref">externalTransaction</code> and default settings for CSV file.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -157,23 +172,39 @@
       <tr>
         <td><span class="xref">System.Data.OleDb.OleDbConnection</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Spojenie na databázu, kam sa vložia dáta. Spojenie musí byť otvorené.
-Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code data-dev-comment-type="paramref" class="paramref">externalTransaction</code>.</p>
+        <td><p>Database connection where the data will be inserted. The connection mus be opened.
+If there already is running transaction in this connection, it must be specified in
+<code data-dev-comment-type="paramref" class="paramref">externalTransaction</code>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Data.OleDb.OleDbTransaction</span></td>
         <td><span class="parametername">externalTransaction</span></td>
-        <td><p>Externá transakcia, v ktorej hromadné vloženie prebehne.</p>
+        <td><p>Transaction in which the bulk insert will be performed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">connection</code> is <span class="xref">null</span>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert__ctor_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.#ctor*"></a>
   <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert__ctor_System_Data_OleDb_OleDbConnection_System_Data_OleDb_OleDbTransaction_System_Int32_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.#ctor(System.Data.OleDb.OleDbConnection,System.Data.OleDb.OleDbTransaction,System.Int32)">MsAccessBulkInsert(OleDbConnection, OleDbTransaction, Int32)</h4>
-  <div class="markdown level1 summary"><p>Inicializuje novú inštanciu <a class="xref" href="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.html">MsAccessBulkInsert</a> použitím spojenia na databázu
-<code data-dev-comment-type="paramref" class="paramref">connection</code>, externej transakcie <code data-dev-comment-type="paramref" class="paramref">externalTransaction</code>, kódovaním CSV súboru
-<code data-dev-comment-type="paramref" class="paramref">csvFileCodePage</code>.</p>
+  <div class="markdown level1 summary"><p>Creates a new instance with database connection <code data-dev-comment-type="paramref" class="paramref">connection</code>, transaction
+<code data-dev-comment-type="paramref" class="paramref">externalTransaction</code> and CSV file code page <code data-dev-comment-type="paramref" class="paramref">csvFileCodePage</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -193,29 +224,46 @@ Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code dat
       <tr>
         <td><span class="xref">System.Data.OleDb.OleDbConnection</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Spojenie na databázu, kam sa vložia dáta. Spojenie musí byť otvorené.
-Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code data-dev-comment-type="paramref" class="paramref">externalTransaction</code>.</p>
+        <td><p>Database connection where the data will be inserted. The connection mus be opened.
+If there already is running transaction in this connection, it must be specified in
+<code data-dev-comment-type="paramref" class="paramref">externalTransaction</code>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Data.OleDb.OleDbTransaction</span></td>
         <td><span class="parametername">externalTransaction</span></td>
-        <td><p>Externá transakcia, v ktorej hromadné vloženie prebehne.</p>
+        <td><p>Transaction in which the bulk insert will be performed.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">csvFileCodePage</span></td>
-        <td><p>Kódová stránka vstupného súboru.</p>
+        <td><p>Code page for generated CSV file.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">connection</code> is <span class="xref">null</span>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert__ctor_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.#ctor*"></a>
   <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert__ctor_System_Data_OleDb_OleDbConnection_System_Data_OleDb_OleDbTransaction_System_Int32_System_Char_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.#ctor(System.Data.OleDb.OleDbConnection,System.Data.OleDb.OleDbTransaction,System.Int32,System.Char)">MsAccessBulkInsert(OleDbConnection, OleDbTransaction, Int32, Char)</h4>
-  <div class="markdown level1 summary"><p>Inicializuje novú inštanciu <a class="xref" href="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.html">MsAccessBulkInsert</a> použitím spojenia na databázu
-<code data-dev-comment-type="paramref" class="paramref">connection</code>, externej transakcie <code data-dev-comment-type="paramref" class="paramref">externalTransaction</code>, kódovaním CSV súboru
-<code data-dev-comment-type="paramref" class="paramref">csvFileCodePage</code> a oddeľovačom hodnôt v CSV súbore <code data-dev-comment-type="paramref" class="paramref">valueDelimiter</code>.</p>
+  <div class="markdown level1 summary"><p>Creates a new instance with database connection <code data-dev-comment-type="paramref" class="paramref">connection</code>, transaction
+<code data-dev-comment-type="paramref" class="paramref">externalTransaction</code> and CSV file settings <code data-dev-comment-type="paramref" class="paramref">csvFileCodePage</code>
+and <code data-dev-comment-type="paramref" class="paramref">valueDelimiter</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -235,34 +283,51 @@ Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code dat
       <tr>
         <td><span class="xref">System.Data.OleDb.OleDbConnection</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Spojenie na databázu, kam sa vložia dáta. Spojenie musí byť otvorené.
-Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code data-dev-comment-type="paramref" class="paramref">externalTransaction</code>.</p>
+        <td><p>Database connection where the data will be inserted. The connection mus be opened.
+If there already is running transaction in this connection, it must be specified in
+<code data-dev-comment-type="paramref" class="paramref">externalTransaction</code>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Data.OleDb.OleDbTransaction</span></td>
         <td><span class="parametername">externalTransaction</span></td>
-        <td><p>Externá transakcia, v ktorej hromadné vloženie prebehne.</p>
+        <td><p>Transaction in which the bulk insert will be performed.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">csvFileCodePage</span></td>
-        <td><p>Kódová stránka vstupného súboru.</p>
+        <td><p>Code page for generated CSV file.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Char</span></td>
         <td><span class="parametername">valueDelimiter</span></td>
-        <td><p>Oddeľovač dát vo vstupnom súbore.</p>
+        <td><p>Value delimiter for generated CSV file.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">connection</code> is <span class="xref">null</span>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert__ctor_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.#ctor*"></a>
   <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert__ctor_System_String_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.#ctor(System.String)">MsAccessBulkInsert(String)</h4>
-  <div class="markdown level1 summary"><p>Inicializuje novú inštanciu <a class="xref" href="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.html">MsAccessBulkInsert</a> použitím spojenia na databázu
-<code data-dev-comment-type="paramref" class="paramref">connectionString</code>.</p>
+  <div class="markdown level1 summary"><p>Creates a new instance with database connection specifiend in <code data-dev-comment-type="paramref" class="paramref">connectionString</code>
+and default settings for CSV file.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -282,7 +347,7 @@ Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code dat
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">connectionString</span></td>
-        <td><p>Spojenie na databázu, kam sa vložia dáta.</p>
+        <td><p>Connection string for the database connection where the data will be inserted.</p>
 </td>
       </tr>
     </tbody>
@@ -290,7 +355,7 @@ Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code dat
   <h3 id="fields">Fields
   </h3>
   <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_AnsiCodePage" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.AnsiCodePage">AnsiCodePage</h4>
-  <div class="markdown level1 summary"><p>Kódová stránka ANSI.</p>
+  <div class="markdown level1 summary"><p>ANSI code page.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -313,7 +378,7 @@ Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code dat
     </tbody>
   </table>
   <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_DefaultCodePage" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.DefaultCodePage">DefaultCodePage</h4>
-  <div class="markdown level1 summary"><p>Predvolená kódová stránka vstupného súboru - <strong>UTF-8</strong>.</p>
+  <div class="markdown level1 summary"><p>Default code page: <a class="xref" href="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.html#Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_Utf8CodePage">Utf8CodePage</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -336,7 +401,7 @@ Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code dat
     </tbody>
   </table>
   <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_DefaultValueDelimiter" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.DefaultValueDelimiter">DefaultValueDelimiter</h4>
-  <div class="markdown level1 summary"><p>Predvolený oddeľovať dát vo vstupnom súbore - čiarka (<strong>,</strong>).</p>
+  <div class="markdown level1 summary"><p>Default value separator for CSV file: comma (<strong>,</strong>).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -359,7 +424,7 @@ Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code dat
     </tbody>
   </table>
   <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_OemCodePage" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.OemCodePage">OemCodePage</h4>
-  <div class="markdown level1 summary"><p>Kódová stránka OEM.</p>
+  <div class="markdown level1 summary"><p>OEM code page.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -382,7 +447,7 @@ Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code dat
     </tbody>
   </table>
   <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_Utf8CodePage" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.Utf8CodePage">Utf8CodePage</h4>
-  <div class="markdown level1 summary"><p>Kódová stránka UTF-8.</p>
+  <div class="markdown level1 summary"><p>UTF-8 code page: 65001.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -405,7 +470,7 @@ Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code dat
     </tbody>
   </table>
   <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_WindowsCentralEuropeCodePage" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.WindowsCentralEuropeCodePage">WindowsCentralEuropeCodePage</h4>
-  <div class="markdown level1 summary"><p>Kódová stránka vstupného súboru - <strong>1250</strong>.</p>
+  <div class="markdown level1 summary"><p>Windows Central Europe code page: <strong>1250</strong>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -431,7 +496,7 @@ Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code dat
   </h3>
   <a id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_BatchSize_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.BatchSize*"></a>
   <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_BatchSize" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.BatchSize">BatchSize</h4>
-  <div class="markdown level1 summary"><p>Počet riadkov v dávke, ktorá sa posiela do databázy. Ak je hodnota 0, veľkosť dávky nie je obmedzená.</p>
+  <div class="markdown level1 summary"><p>This setting is not used.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -453,25 +518,9 @@ Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code dat
       </tr>
     </tbody>
   </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Zadaná hodnota je záporná.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
   <a id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_BulkInsertTimeout_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.BulkInsertTimeout*"></a>
   <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_BulkInsertTimeout" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.BulkInsertTimeout">BulkInsertTimeout</h4>
-  <div class="markdown level1 summary"><p><code>MsAccessBulkInsert</code> toto nastavenie nepoužíva.</p>
+  <div class="markdown level1 summary"><p>This setting is not used.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -495,7 +544,7 @@ Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code dat
   </table>
   <a id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_CodePage_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.CodePage*"></a>
   <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_CodePage" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.CodePage">CodePage</h4>
-  <div class="markdown level1 summary"><p>Kódová stránka vstupného súboru.</p>
+  <div class="markdown level1 summary"><p>Code page used for CSV file and bulk insert. Default value is 65001 <a class="xref" href="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.html#Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_Utf8CodePage">Utf8CodePage</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -513,14 +562,14 @@ Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code dat
     <tbody>
       <tr>
         <td><span class="xref">System.Int32</span></td>
-        <td><p>Číslo.</p>
+        <td><p>Number of code page.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_Columns_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.Columns*"></a>
   <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_Columns" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.Columns">Columns</h4>
-  <div class="markdown level1 summary"><p>Zoznam vkladaných stĺpcov.</p>
+  <div class="markdown level1 summary"><p>List of inserted columns.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -538,17 +587,17 @@ Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code dat
     <tbody>
       <tr>
         <td><a class="xref" href="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsertColumnCollection.html">MsAccessBulkInsertColumnCollection</a></td>
-        <td><p>Zoznam stĺpcov <a class="xref" href="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsertColumnCollection.html">MsAccessBulkInsertColumnCollection</a>.</p>
+        <td><p>List of columns as <a class="xref" href="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsertColumnCollection.html">MsAccessBulkInsertColumnCollection</a>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <h5 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_Columns_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Stĺpce musia byť v zozname v rovnakom poradí, ako sú uložené vo vstupnom súbore.</p>
+  <div class="markdown level1 remarks"><p>Columns in the list must be in the same order as they are in input CSV file.</p>
 </div>
   <a id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_DestinationTableName_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.DestinationTableName*"></a>
   <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_DestinationTableName" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.DestinationTableName">DestinationTableName</h4>
-  <div class="markdown level1 summary"><p>Meno cieľovej tabuľky v databáze.</p>
+  <div class="markdown level1 summary"><p>Destination table name in database.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -572,7 +621,7 @@ Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code dat
   </table>
   <a id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_ExternalTransaction_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.ExternalTransaction*"></a>
   <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_ExternalTransaction" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.ExternalTransaction">ExternalTransaction</h4>
-  <div class="markdown level1 summary"><p>Externá transakcia, v ktorej sa vykoná vloženie dát.</p>
+  <div class="markdown level1 summary"><p>External transaction, in which bulk insert is executed.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -596,7 +645,7 @@ Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code dat
   </table>
   <a id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_ValueDelimiter_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.ValueDelimiter*"></a>
   <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_ValueDelimiter" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.ValueDelimiter">ValueDelimiter</h4>
-  <div class="markdown level1 summary"><p>Oddeľovač hodnôt v CSV súbore.</p>
+  <div class="markdown level1 summary"><p>Value separator in generated CSV file.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -622,8 +671,7 @@ Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code dat
   </h3>
   <a id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_Dispose_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.Dispose*"></a>
   <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_Dispose" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.Dispose">Dispose()</h4>
-  <div class="markdown level1 summary"><p>Uvoľní všetky zdroje triedy <code>MsAccessBulkInsert</code>.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -631,8 +679,7 @@ Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code dat
   </div>
   <a id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_Dispose_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.Dispose*"></a>
   <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_Dispose_System_Boolean_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.Dispose(System.Boolean)">Dispose(Boolean)</h4>
-  <div class="markdown level1 summary"><p>Uvoľní všetky zdroje používané <code>MsAccessBulkInsert</code>.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -651,16 +698,13 @@ Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code dat
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><span class="parametername">disposing</span></td>
-        <td><p><span class="xref">true</span> to release both managed and unmanaged resources;
-<span class="xref">false</span> to release only unmanaged resources.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_Insert_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.Insert*"></a>
   <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_Insert_Kros_Data_BulkActions_IBulkActionDataReader_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.Insert(Kros.Data.BulkActions.IBulkActionDataReader)">Insert(IBulkActionDataReader)</h4>
-  <div class="markdown level1 summary"><p>Vloží všetky dáta zo zdroja <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -679,15 +723,13 @@ Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code dat
       <tr>
         <td><a class="xref" href="../Kros.Utils/Kros.Data.BulkActions.IBulkActionDataReader.html">IBulkActionDataReader</a></td>
         <td><span class="parametername">reader</span></td>
-        <td><p>Zdroj dát.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_Insert_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.Insert*"></a>
   <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_Insert_System_Data_DataTable_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.Insert(System.Data.DataTable)">Insert(DataTable)</h4>
-  <div class="markdown level1 summary"><p>Vloží všetky riadky z tabuľky <code data-dev-comment-type="paramref" class="paramref">table</code>.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -706,15 +748,13 @@ Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code dat
       <tr>
         <td><span class="xref">System.Data.DataTable</span></td>
         <td><span class="parametername">table</span></td>
-        <td><p>Zdrojové dáta.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_Insert_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.Insert*"></a>
   <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_Insert_System_Data_IDataReader_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.Insert(System.Data.IDataReader)">Insert(IDataReader)</h4>
-  <div class="markdown level1 summary"><p>Vloží všetky dáta zo zdroja <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -733,8 +773,127 @@ Ak je na spojení spustená transakcia, musí byť zadaná v parametri <code dat
       <tr>
         <td><span class="xref">System.Data.IDataReader</span></td>
         <td><span class="parametername">reader</span></td>
-        <td><p>Zdroj dát.</p>
-</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_InsertAsync_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.InsertAsync*"></a>
+  <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_InsertAsync_Kros_Data_BulkActions_IBulkActionDataReader_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.InsertAsync(Kros.Data.BulkActions.IBulkActionDataReader)">InsertAsync(IBulkActionDataReader)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task InsertAsync(IBulkActionDataReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="../Kros.Utils/Kros.Data.BulkActions.IBulkActionDataReader.html">IBulkActionDataReader</a></td>
+        <td><span class="parametername">reader</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_InsertAsync_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.InsertAsync*"></a>
+  <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_InsertAsync_System_Data_DataTable_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.InsertAsync(System.Data.DataTable)">InsertAsync(DataTable)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task InsertAsync(DataTable table)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.DataTable</span></td>
+        <td><span class="parametername">table</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_InsertAsync_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.InsertAsync*"></a>
+  <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_InsertAsync_System_Data_IDataReader_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.InsertAsync(System.Data.IDataReader)">InsertAsync(IDataReader)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task InsertAsync(IDataReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDataReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>

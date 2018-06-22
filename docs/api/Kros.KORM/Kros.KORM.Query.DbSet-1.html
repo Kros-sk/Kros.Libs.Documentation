@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class DbSet&lt;T&gt;
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -314,23 +314,15 @@ into the database when CommitChanges is called.</p>
   </table>
   <a id="Kros_KORM_Query_DbSet_1_BulkInsert_" data-uid="Kros.KORM.Query.DbSet`1.BulkInsert*"></a>
   <h4 id="Kros_KORM_Query_DbSet_1_BulkInsert" data-uid="Kros.KORM.Query.DbSet`1.BulkInsert">BulkInsert()</h4>
-  <div class="markdown level1 summary"><p>Executes bulk insert over pending added items.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void BulkInsert()</code></pre>
   </div>
-  <h5 id="Kros_KORM_Query_DbSet_1_BulkInsert_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Clears added items.</p>
-</div>
-  <h5 id="Kros_KORM_Query_DbSet_1_BulkInsert_examples">Examples</h5>
-  <pre><code source="..\Examples\Kros.KORM.Examples\WelcomeExample.cs" region="BulkInsert"></code></pre>
-
   <a id="Kros_KORM_Query_DbSet_1_BulkInsert_" data-uid="Kros.KORM.Query.DbSet`1.BulkInsert*"></a>
   <h4 id="Kros_KORM_Query_DbSet_1_BulkInsert_System_Collections_Generic_IEnumerable__0__" data-uid="Kros.KORM.Query.DbSet`1.BulkInsert(System.Collections.Generic.IEnumerable{`0})">BulkInsert(IEnumerable&lt;T&gt;)</h4>
-  <div class="markdown level1 summary"><p>Executes bulk insert over <code data-dev-comment-type="paramref" class="paramref">items</code>.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -349,30 +341,84 @@ into the database when CommitChanges is called.</p>
       <tr>
         <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;T&gt;</td>
         <td><span class="parametername">items</span></td>
-        <td><p>The items to insert.</p>
-</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Kros_KORM_Query_DbSet_1_BulkInsertAsync_" data-uid="Kros.KORM.Query.DbSet`1.BulkInsertAsync*"></a>
+  <h4 id="Kros_KORM_Query_DbSet_1_BulkInsertAsync" data-uid="Kros.KORM.Query.DbSet`1.BulkInsertAsync">BulkInsertAsync()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task BulkInsertAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Kros_KORM_Query_DbSet_1_BulkInsertAsync_" data-uid="Kros.KORM.Query.DbSet`1.BulkInsertAsync*"></a>
+  <h4 id="Kros_KORM_Query_DbSet_1_BulkInsertAsync_System_Collections_Generic_IEnumerable__0__" data-uid="Kros.KORM.Query.DbSet`1.BulkInsertAsync(System.Collections.Generic.IEnumerable{`0})">BulkInsertAsync(IEnumerable&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task BulkInsertAsync(IEnumerable&lt;T&gt; items)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;T&gt;</td>
+        <td><span class="parametername">items</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_KORM_Query_DbSet_1_BulkUpdate_" data-uid="Kros.KORM.Query.DbSet`1.BulkUpdate*"></a>
   <h4 id="Kros_KORM_Query_DbSet_1_BulkUpdate" data-uid="Kros.KORM.Query.DbSet`1.BulkUpdate">BulkUpdate()</h4>
-  <div class="markdown level1 summary"><p>Executes bulk update over pending edited items.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void BulkUpdate()</code></pre>
   </div>
-  <h5 id="Kros_KORM_Query_DbSet_1_BulkUpdate_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Clears edited items.</p>
-</div>
-  <h5 id="Kros_KORM_Query_DbSet_1_BulkUpdate_examples">Examples</h5>
-  <pre><code source="..\Examples\Kros.KORM.Examples\WelcomeExample.cs" region="BulkUpdate"></code></pre>
-
   <a id="Kros_KORM_Query_DbSet_1_BulkUpdate_" data-uid="Kros.KORM.Query.DbSet`1.BulkUpdate*"></a>
   <h4 id="Kros_KORM_Query_DbSet_1_BulkUpdate_System_Action_System_Data_IDbConnection_System_Data_IDbTransaction_System_String__" data-uid="Kros.KORM.Query.DbSet`1.BulkUpdate(System.Action{System.Data.IDbConnection,System.Data.IDbTransaction,System.String})">BulkUpdate(Action&lt;IDbConnection, IDbTransaction, String&gt;)</h4>
-  <div class="markdown level1 summary"><p>Executes bulk update over pending edited items with specific action.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -391,19 +437,13 @@ into the database when CommitChanges is called.</p>
       <tr>
         <td><span class="xref">System.Action</span>&lt;<span class="xref">System.Data.IDbConnection</span>, <span class="xref">System.Data.IDbTransaction</span>, <span class="xref">System.String</span>&gt;</td>
         <td><span class="parametername">tempTableAction</span></td>
-        <td><p>The action execute on temp table (modify data in temp table).
-<ul><li></li><li></li><li></li></ul></p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="Kros_KORM_Query_DbSet_1_BulkUpdate_System_Action_System_Data_IDbConnection_System_Data_IDbTransaction_System_String___remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Clears edited items.</p>
-</div>
   <a id="Kros_KORM_Query_DbSet_1_BulkUpdate_" data-uid="Kros.KORM.Query.DbSet`1.BulkUpdate*"></a>
   <h4 id="Kros_KORM_Query_DbSet_1_BulkUpdate_System_Collections_Generic_IEnumerable__0__" data-uid="Kros.KORM.Query.DbSet`1.BulkUpdate(System.Collections.Generic.IEnumerable{`0})">BulkUpdate(IEnumerable&lt;T&gt;)</h4>
-  <div class="markdown level1 summary"><p>Executes bulk update over <code data-dev-comment-type="paramref" class="paramref">items</code>.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -422,15 +462,13 @@ into the database when CommitChanges is called.</p>
       <tr>
         <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;T&gt;</td>
         <td><span class="parametername">items</span></td>
-        <td><p>The items to update.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_KORM_Query_DbSet_1_BulkUpdate_" data-uid="Kros.KORM.Query.DbSet`1.BulkUpdate*"></a>
   <h4 id="Kros_KORM_Query_DbSet_1_BulkUpdate_System_Collections_Generic_IEnumerable__0__System_Action_System_Data_IDbConnection_System_Data_IDbTransaction_System_String__" data-uid="Kros.KORM.Query.DbSet`1.BulkUpdate(System.Collections.Generic.IEnumerable{`0},System.Action{System.Data.IDbConnection,System.Data.IDbTransaction,System.String})">BulkUpdate(IEnumerable&lt;T&gt;, Action&lt;IDbConnection, IDbTransaction, String&gt;)</h4>
-  <div class="markdown level1 summary"><p>Executes bulk update over <code data-dev-comment-type="paramref" class="paramref">items</code> with specific action.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -449,15 +487,160 @@ into the database when CommitChanges is called.</p>
       <tr>
         <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;T&gt;</td>
         <td><span class="parametername">items</span></td>
-        <td><p>The items to update.</p>
-</td>
+        <td></td>
       </tr>
       <tr>
         <td><span class="xref">System.Action</span>&lt;<span class="xref">System.Data.IDbConnection</span>, <span class="xref">System.Data.IDbTransaction</span>, <span class="xref">System.String</span>&gt;</td>
         <td><span class="parametername">tempTableAction</span></td>
-        <td><p>The action execute on temp table (modify data in temp table).
-<ul><li></li><li></li><li></li></ul></p>
-</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Kros_KORM_Query_DbSet_1_BulkUpdateAsync_" data-uid="Kros.KORM.Query.DbSet`1.BulkUpdateAsync*"></a>
+  <h4 id="Kros_KORM_Query_DbSet_1_BulkUpdateAsync" data-uid="Kros.KORM.Query.DbSet`1.BulkUpdateAsync">BulkUpdateAsync()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task BulkUpdateAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Kros_KORM_Query_DbSet_1_BulkUpdateAsync_" data-uid="Kros.KORM.Query.DbSet`1.BulkUpdateAsync*"></a>
+  <h4 id="Kros_KORM_Query_DbSet_1_BulkUpdateAsync_System_Action_System_Data_IDbConnection_System_Data_IDbTransaction_System_String__" data-uid="Kros.KORM.Query.DbSet`1.BulkUpdateAsync(System.Action{System.Data.IDbConnection,System.Data.IDbTransaction,System.String})">BulkUpdateAsync(Action&lt;IDbConnection, IDbTransaction, String&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task BulkUpdateAsync(Action&lt;IDbConnection, IDbTransaction, string&gt; tempTableAction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span>&lt;<span class="xref">System.Data.IDbConnection</span>, <span class="xref">System.Data.IDbTransaction</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">tempTableAction</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Kros_KORM_Query_DbSet_1_BulkUpdateAsync_" data-uid="Kros.KORM.Query.DbSet`1.BulkUpdateAsync*"></a>
+  <h4 id="Kros_KORM_Query_DbSet_1_BulkUpdateAsync_System_Collections_Generic_IEnumerable__0__" data-uid="Kros.KORM.Query.DbSet`1.BulkUpdateAsync(System.Collections.Generic.IEnumerable{`0})">BulkUpdateAsync(IEnumerable&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task BulkUpdateAsync(IEnumerable&lt;T&gt; items)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;T&gt;</td>
+        <td><span class="parametername">items</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Kros_KORM_Query_DbSet_1_BulkUpdateAsync_" data-uid="Kros.KORM.Query.DbSet`1.BulkUpdateAsync*"></a>
+  <h4 id="Kros_KORM_Query_DbSet_1_BulkUpdateAsync_System_Collections_Generic_IEnumerable__0__System_Action_System_Data_IDbConnection_System_Data_IDbTransaction_System_String__" data-uid="Kros.KORM.Query.DbSet`1.BulkUpdateAsync(System.Collections.Generic.IEnumerable{`0},System.Action{System.Data.IDbConnection,System.Data.IDbTransaction,System.String})">BulkUpdateAsync(IEnumerable&lt;T&gt;, Action&lt;IDbConnection, IDbTransaction, String&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task BulkUpdateAsync(IEnumerable&lt;T&gt; items, Action&lt;IDbConnection, IDbTransaction, string&gt; tempTableAction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;T&gt;</td>
+        <td><span class="parametername">items</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Action</span>&lt;<span class="xref">System.Data.IDbConnection</span>, <span class="xref">System.Data.IDbTransaction</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">tempTableAction</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -479,6 +662,29 @@ into the database when CommitChanges is called.</p>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void CommitChanges()</code></pre>
   </div>
+  <a id="Kros_KORM_Query_DbSet_1_CommitChangesAsync_" data-uid="Kros.KORM.Query.DbSet`1.CommitChangesAsync*"></a>
+  <h4 id="Kros_KORM_Query_DbSet_1_CommitChangesAsync" data-uid="Kros.KORM.Query.DbSet`1.CommitChangesAsync">CommitChangesAsync()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task CommitChangesAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="Kros_KORM_Query_DbSet_1_Delete_" data-uid="Kros.KORM.Query.DbSet`1.Delete*"></a>
   <h4 id="Kros_KORM_Query_DbSet_1_Delete__0_" data-uid="Kros.KORM.Query.DbSet`1.Delete(`0)">Delete(T)</h4>
   <div class="markdown level1 summary"><p>Adds the item to the context underlying the set in the Deleted state such that it will be deleted

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class MsAccessIdGenerator
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,7 +83,7 @@
   
   <h1 id="Kros_Data_MsAccess_MsAccessIdGenerator" data-uid="Kros.Data.MsAccess.MsAccessIdGenerator" class="text-break">Class MsAccessIdGenerator
   </h1>
-  <div class="markdown level0 summary"><p>Generátor unikátnych identifikátorov pre Ms Access.</p>
+  <div class="markdown level0 summary"><p>The unique ID generator for Microsoft Access.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -124,16 +124,39 @@
     <pre><code class="lang-csharp hljs">public class MsAccessIdGenerator : IdGeneratorBase, IIdGenerator, IDisposable</code></pre>
   </div>
   <h5 id="Kros_Data_MsAccess_MsAccessIdGenerator_remarks"><strong>Remarks</strong></h5>
-  <div class="markdown level0 remarks"><p>Štandardne sa nevytvára priamo, ale cez <a class="xref" href="Kros.Data.MsAccess.MsAccessIdGeneratorFactory.html">MsAccessIdGeneratorFactory</a>.</p>
+  <div class="markdown level0 remarks"><p>In general, the generator should be created using <a class="xref" href="Kros.Data.MsAccess.MsAccessIdGeneratorFactory.html">MsAccessIdGeneratorFactory</a>.</p>
 </div>
   <h5 id="Kros_Data_MsAccess_MsAccessIdGenerator_examples"><strong>Examples</strong></h5>
-  <pre><code class="cs" source="..\Examples\Kros.Utils\IdGeneratorExamples.cs" region="IdGeneratorFactory"></code></pre>
+  <pre><code class="cs" source="..\..\..\..\Documentation\Examples\Kros.Utils\IdGeneratorExamples.cs" region="IdGeneratorFactory">        public class PeopleService
+    {
+        private IIdGeneratorFactory _idGeneratorFactory;
+
+        public PeopleService(IIdGeneratorFactory idGeneratorFactory)
+        {
+            _idGeneratorFactory = Check.NotNull(idGeneratorFactory, nameof(idGeneratorFactory));
+        }
+
+        public void GenerateData()
+        {
+            using (var idGenerator = _idGeneratorFactory.GetGenerator(&quot;people&quot;, 1000))
+            {
+                for (int i = 0; i &lt; 1800; i++)
+                {
+                    var person = new Person()
+                    {
+                        Id = idGenerator.GetNext()
+                    };
+                };
+            }
+        }
+    }</code></pre>
 
   <h3 id="constructors">Constructors
   </h3>
   <a id="Kros_Data_MsAccess_MsAccessIdGenerator__ctor_" data-uid="Kros.Data.MsAccess.MsAccessIdGenerator.#ctor*"></a>
   <h4 id="Kros_Data_MsAccess_MsAccessIdGenerator__ctor_System_Data_OleDb_OleDbConnection_System_String_System_Int32_" data-uid="Kros.Data.MsAccess.MsAccessIdGenerator.#ctor(System.Data.OleDb.OleDbConnection,System.String,System.Int32)">MsAccessIdGenerator(OleDbConnection, String, Int32)</h4>
-  <div class="markdown level1 summary"><p>Konštruktor.</p>
+  <div class="markdown level1 summary"><p>Creates a generator for table <code data-dev-comment-type="paramref" class="paramref">tableName</code> in database <code data-dev-comment-type="paramref" class="paramref">connection</code>
+with batch size <code data-dev-comment-type="paramref" class="paramref">batchSize</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -153,26 +176,48 @@
       <tr>
         <td><span class="xref">System.Data.OleDb.OleDbConnection</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Connection, ktorá sa použije pre získavanie unikátnych identifikátorov.</p>
+        <td><p>Database connection.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">tableName</span></td>
-        <td><p>Názov tabuľky, pre ktorú generujem identifikátory.</p>
+        <td><p>Table name, for which IDs are generated.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">batchSize</span></td>
-        <td><p>Veľkosť dávky, ktorú si zarezervuje dopredu.</p>
+        <td><p>IDs batch size. Saves round trips to database for IDs.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">connection</code> or <code data-dev-comment-type="paramref" class="paramref">tableName</code> is <span class="xref">null</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">batchSize</code> is less or equal than 0.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_MsAccess_MsAccessIdGenerator__ctor_" data-uid="Kros.Data.MsAccess.MsAccessIdGenerator.#ctor*"></a>
   <h4 id="Kros_Data_MsAccess_MsAccessIdGenerator__ctor_System_String_System_String_System_Int32_" data-uid="Kros.Data.MsAccess.MsAccessIdGenerator.#ctor(System.String,System.String,System.Int32)">MsAccessIdGenerator(String, String, Int32)</h4>
-  <div class="markdown level1 summary"><p>Konštruktor.</p>
+  <div class="markdown level1 summary"><p>Creates a generator for table <code data-dev-comment-type="paramref" class="paramref">tableName</code> in database <code data-dev-comment-type="paramref" class="paramref">connectionString</code>
+with batch size <code data-dev-comment-type="paramref" class="paramref">batchSize</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -192,20 +237,40 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">connectionString</span></td>
-        <td><p>Connection string, ktorý sa použije na vytvorenie conenction pre získavanie unikátnych identifikátorov.</p>
+        <td><p>Connection string to the database.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">tableName</span></td>
-        <td><p>Názov tabuľky, pre ktorú generujem identifikátory.</p>
+        <td><p>Table name, for which IDs are generated.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">batchSize</span></td>
-        <td><p>Veľkosť dávky, ktorú si zarezervuje dopredu.</p>
+        <td><p>IDs batch size. Saves round trips to database for IDs.</p>
 </td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">connectionString</code> or <code data-dev-comment-type="paramref" class="paramref">tableName</code> is <span class="xref">null</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><ul><li></li><li></li></ul></td>
       </tr>
     </tbody>
   </table>
@@ -255,7 +320,7 @@
   <div><a class="xref" href="../Kros.Utils/Kros.Data.IdGeneratorBase.html#Kros_Data_IdGeneratorBase_CreateConnection_System_String_">IdGeneratorBase.CreateConnection(String)</a></div>
   <a id="Kros_Data_MsAccess_MsAccessIdGenerator_GetIdStoreTableCreationScript_" data-uid="Kros.Data.MsAccess.MsAccessIdGenerator.GetIdStoreTableCreationScript*"></a>
   <h4 id="Kros_Data_MsAccess_MsAccessIdGenerator_GetIdStoreTableCreationScript" data-uid="Kros.Data.MsAccess.MsAccessIdGenerator.GetIdStoreTableCreationScript">GetIdStoreTableCreationScript()</h4>
-  <div class="markdown level1 summary"><p>Získanie scriptu na vytvorenie IdStore tabuľky.</p>
+  <div class="markdown level1 summary"><p>Returns SQL script for creating <code>IdStore</code> table.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>

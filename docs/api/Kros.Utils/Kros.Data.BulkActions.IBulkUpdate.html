@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IBulkUpdate
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,7 +83,7 @@
   
   <h1 id="Kros_Data_BulkActions_IBulkUpdate" data-uid="Kros.Data.BulkActions.IBulkUpdate" class="text-break">Interface IBulkUpdate
   </h1>
-  <div class="markdown level0 summary"><p>Rozhranie pre rýchlu hromadnú editáciu dát v databáze.</p>
+  <div class="markdown level0 summary"><p>Interface for fast data updating in database.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Kros.Data.BulkActions.html">Kros.Data.BulkActions</a></h6>
@@ -96,7 +96,7 @@
   </h3>
   <a id="Kros_Data_BulkActions_IBulkUpdate_DestinationTableName_" data-uid="Kros.Data.BulkActions.IBulkUpdate.DestinationTableName*"></a>
   <h4 id="Kros_Data_BulkActions_IBulkUpdate_DestinationTableName" data-uid="Kros.Data.BulkActions.IBulkUpdate.DestinationTableName">DestinationTableName</h4>
-  <div class="markdown level1 summary"><p>Meno cieľovej tabuľky v databáze.</p>
+  <div class="markdown level1 summary"><p>Destination table name in database.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -120,7 +120,7 @@
   </table>
   <a id="Kros_Data_BulkActions_IBulkUpdate_PrimaryKeyColumn_" data-uid="Kros.Data.BulkActions.IBulkUpdate.PrimaryKeyColumn*"></a>
   <h4 id="Kros_Data_BulkActions_IBulkUpdate_PrimaryKeyColumn" data-uid="Kros.Data.BulkActions.IBulkUpdate.PrimaryKeyColumn">PrimaryKeyColumn</h4>
-  <div class="markdown level1 summary"><p>Primárny kľúč.</p>
+  <div class="markdown level1 summary"><p>Primary key.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -144,7 +144,7 @@
   </table>
   <a id="Kros_Data_BulkActions_IBulkUpdate_TempTableAction_" data-uid="Kros.Data.BulkActions.IBulkUpdate.TempTableAction*"></a>
   <h4 id="Kros_Data_BulkActions_IBulkUpdate_TempTableAction" data-uid="Kros.Data.BulkActions.IBulkUpdate.TempTableAction">TempTableAction</h4>
-  <div class="markdown level1 summary"><p>Akcia, ktorá sa má vykonať nad tempovou tabuľkou.</p>
+  <div class="markdown level1 summary"><p>Action, executed on temporary table.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -167,14 +167,14 @@
     </tbody>
   </table>
   <h5 id="Kros_Data_BulkActions_IBulkUpdate_TempTableAction_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Akcia, ktorá sa zavolá nad tempovou tabuľkou (chcem ešte dodatočne upraviť dáta).
+  <div class="markdown level1 remarks"><p>Action, which will be executed on temp table (additional modification of data).
 <ul><li></li><li></li><li></li></ul></p>
 </div>
   <h3 id="methods">Methods
   </h3>
   <a id="Kros_Data_BulkActions_IBulkUpdate_Update_" data-uid="Kros.Data.BulkActions.IBulkUpdate.Update*"></a>
   <h4 id="Kros_Data_BulkActions_IBulkUpdate_Update_Kros_Data_BulkActions_IBulkActionDataReader_" data-uid="Kros.Data.BulkActions.IBulkUpdate.Update(Kros.Data.BulkActions.IBulkActionDataReader)">Update(IBulkActionDataReader)</h4>
-  <div class="markdown level1 summary"><p>Zedituje všetky dáta zo zdroja <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+  <div class="markdown level1 summary"><p>Updates all data from source <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -194,14 +194,14 @@
       <tr>
         <td><a class="xref" href="Kros.Data.BulkActions.IBulkActionDataReader.html">IBulkActionDataReader</a></td>
         <td><span class="parametername">reader</span></td>
-        <td><p>Zdroj dát.</p>
+        <td><p>Data source.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_BulkActions_IBulkUpdate_Update_" data-uid="Kros.Data.BulkActions.IBulkUpdate.Update*"></a>
   <h4 id="Kros_Data_BulkActions_IBulkUpdate_Update_System_Data_DataTable_" data-uid="Kros.Data.BulkActions.IBulkUpdate.Update(System.Data.DataTable)">Update(DataTable)</h4>
-  <div class="markdown level1 summary"><p>Zedituje všetky riadky z tabuľky <code data-dev-comment-type="paramref" class="paramref">table</code>.</p>
+  <div class="markdown level1 summary"><p>Updates all data from table <code data-dev-comment-type="paramref" class="paramref">table</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -221,14 +221,14 @@
       <tr>
         <td><span class="xref">System.Data.DataTable</span></td>
         <td><span class="parametername">table</span></td>
-        <td><p>Zdrojové dáta.</p>
+        <td><p>Data source.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_BulkActions_IBulkUpdate_Update_" data-uid="Kros.Data.BulkActions.IBulkUpdate.Update*"></a>
   <h4 id="Kros_Data_BulkActions_IBulkUpdate_Update_System_Data_IDataReader_" data-uid="Kros.Data.BulkActions.IBulkUpdate.Update(System.Data.IDataReader)">Update(IDataReader)</h4>
-  <div class="markdown level1 summary"><p>Zedituje všetky dáta zo zdroja <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+  <div class="markdown level1 summary"><p>Updates all data from source <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -248,7 +248,136 @@
       <tr>
         <td><span class="xref">System.Data.IDataReader</span></td>
         <td><span class="parametername">reader</span></td>
-        <td><p>Zdroj dát.</p>
+        <td><p>Data source.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Kros_Data_BulkActions_IBulkUpdate_UpdateAsync_" data-uid="Kros.Data.BulkActions.IBulkUpdate.UpdateAsync*"></a>
+  <h4 id="Kros_Data_BulkActions_IBulkUpdate_UpdateAsync_Kros_Data_BulkActions_IBulkActionDataReader_" data-uid="Kros.Data.BulkActions.IBulkUpdate.UpdateAsync(Kros.Data.BulkActions.IBulkActionDataReader)">UpdateAsync(IBulkActionDataReader)</h4>
+  <div class="markdown level1 summary"><p>Asynchronously updates all data from source <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task UpdateAsync(IBulkActionDataReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Kros.Data.BulkActions.IBulkActionDataReader.html">IBulkActionDataReader</a></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Data source.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><p>A task that represents the asynchronous Insert operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Kros_Data_BulkActions_IBulkUpdate_UpdateAsync_" data-uid="Kros.Data.BulkActions.IBulkUpdate.UpdateAsync*"></a>
+  <h4 id="Kros_Data_BulkActions_IBulkUpdate_UpdateAsync_System_Data_DataTable_" data-uid="Kros.Data.BulkActions.IBulkUpdate.UpdateAsync(System.Data.DataTable)">UpdateAsync(DataTable)</h4>
+  <div class="markdown level1 summary"><p>Asynchronously updates all data from table <code data-dev-comment-type="paramref" class="paramref">table</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task UpdateAsync(DataTable table)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.DataTable</span></td>
+        <td><span class="parametername">table</span></td>
+        <td><p>Data source.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><p>A task that represents the asynchronous Insert operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Kros_Data_BulkActions_IBulkUpdate_UpdateAsync_" data-uid="Kros.Data.BulkActions.IBulkUpdate.UpdateAsync*"></a>
+  <h4 id="Kros_Data_BulkActions_IBulkUpdate_UpdateAsync_System_Data_IDataReader_" data-uid="Kros.Data.BulkActions.IBulkUpdate.UpdateAsync(System.Data.IDataReader)">UpdateAsync(IDataReader)</h4>
+  <div class="markdown level1 summary"><p>Asynchronously updates all data from source <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task UpdateAsync(IDataReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDataReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Data source.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><p>A task that represents the asynchronous Insert operation.</p>
 </td>
       </tr>
     </tbody>

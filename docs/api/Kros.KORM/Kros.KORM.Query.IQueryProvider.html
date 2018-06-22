@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IQueryProvider
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -337,14 +337,14 @@
       </tr>
     </tbody>
   </table>
-  <a id="Kros_KORM_Query_IQueryProvider_ExecuteInTransaction_" data-uid="Kros.KORM.Query.IQueryProvider.ExecuteInTransaction*"></a>
-  <h4 id="Kros_KORM_Query_IQueryProvider_ExecuteInTransaction_System_Action_" data-uid="Kros.KORM.Query.IQueryProvider.ExecuteInTransaction(System.Action)">ExecuteInTransaction(Action)</h4>
-  <div class="markdown level1 summary"><p>Executes action in transaction.</p>
+  <a id="Kros_KORM_Query_IQueryProvider_ExecuteInTransactionAsync_" data-uid="Kros.KORM.Query.IQueryProvider.ExecuteInTransactionAsync*"></a>
+  <h4 id="Kros_KORM_Query_IQueryProvider_ExecuteInTransactionAsync_System_Func_System_Threading_Tasks_Task__" data-uid="Kros.KORM.Query.IQueryProvider.ExecuteInTransactionAsync(System.Func{System.Threading.Tasks.Task})">ExecuteInTransactionAsync(Func&lt;Task&gt;)</h4>
+  <div class="markdown level1 summary"><p>Asynchronously executes action in transaction.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void ExecuteInTransaction(Action action)</code></pre>
+    <pre><code class="lang-csharp hljs">Task ExecuteInTransactionAsync(Func&lt;Task&gt; action)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -357,9 +357,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Action</span></td>
+        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Threading.Tasks.Task</span>&gt;</td>
         <td><span class="parametername">action</span></td>
         <td><p>Action which will be executed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><p>A task that represents the asynchronous operation.</p>
 </td>
       </tr>
     </tbody>
@@ -499,6 +515,50 @@
       </tr>
     </tbody>
   </table>
+  <a id="Kros_KORM_Query_IQueryProvider_ExecuteNonQueryCommandAsync_" data-uid="Kros.KORM.Query.IQueryProvider.ExecuteNonQueryCommandAsync*"></a>
+  <h4 id="Kros_KORM_Query_IQueryProvider_ExecuteNonQueryCommandAsync_System_Data_Common_DbCommand_" data-uid="Kros.KORM.Query.IQueryProvider.ExecuteNonQueryCommandAsync(System.Data.Common.DbCommand)">ExecuteNonQueryCommandAsync(DbCommand)</h4>
+  <div class="markdown level1 summary"><p>Asynchronously executes the command.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;int&gt; ExecuteNonQueryCommandAsync(DbCommand command)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.Common.DbCommand</span></td>
+        <td><span class="parametername">command</span></td>
+        <td><p>The command.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><p>A task that represents the asynchronous save operation. The task result contains the
+numbers of affected rows.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="Kros_KORM_Query_IQueryProvider_ExecuteScalar_" data-uid="Kros.KORM.Query.IQueryProvider.ExecuteScalar*"></a>
   <h4 id="Kros_KORM_Query_IQueryProvider_ExecuteScalar__1_Kros_KORM_Query_IQuery___0__" data-uid="Kros.KORM.Query.IQueryProvider.ExecuteScalar``1(Kros.KORM.Query.IQuery{``0})">ExecuteScalar&lt;T&gt;(IQuery&lt;T&gt;)</h4>
   <div class="markdown level1 summary"><p>Executes the query, and returns the first column of the first row in the result set returned by the query.
@@ -629,8 +689,8 @@ the result of procedure is converted (materialized) to that.</p>
   <p><p>
 For the examples, we expect to have a <a class="xref" href="Kros.KORM.Database.html">Database</a> initialized and a <code>Person</code> class defined.
 </p></p>
-<pre><code source="..\Examples\Kros.KORM.Examples\ExecuteStoredProcedureExamples.cs" region="Init"></code></pre>
-<pre><code source="..\Examples\Kros.KORM.Examples\ExecuteStoredProcedureExamples.cs" region="Examples"></code></pre>
+<pre><code class="cs" source="..\..\..\..\Documentation\Examples\Kros.KORM.Examples\ExecuteStoredProcedureExamples.cs" region="Init"></code></pre>
+<pre><code class="cs" source="..\..\..\..\Documentation\Examples\Kros.KORM.Examples\ExecuteStoredProcedureExamples.cs" region="Examples"></code></pre>
 
   <h5 class="exceptions">Exceptions</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -733,7 +793,7 @@ and its data type (<a class="xref" href="Kros.KORM.Query.CommandParameter.html#K
   <a id="Kros_KORM_Query_IQueryProvider_GetCommandForCurrentTransaction_" data-uid="Kros.KORM.Query.IQueryProvider.GetCommandForCurrentTransaction*"></a>
   <h4 id="Kros_KORM_Query_IQueryProvider_GetCommandForCurrentTransaction" data-uid="Kros.KORM.Query.IQueryProvider.GetCommandForCurrentTransaction">GetCommandForCurrentTransaction()</h4>
   <div class="markdown level1 summary"><p>Vytvorí inicializovaný príkaz <span class="xref">System.Data.Common.DbCommand</span>, pre aktuálnu transakciu.
-Používa sa iba v rámci volania <a class="xref" href="Kros.KORM.Query.IQueryProvider.html#Kros_KORM_Query_IQueryProvider_ExecuteInTransaction_System_Action_">ExecuteInTransaction(Action)</a>.</p>
+Používa sa iba v rámci volania <a class="xref" href="Kros.KORM.Query.IQueryProvider.html#Kros_KORM_Query_IQueryProvider_ExecuteInTransactionAsync_System_Func_System_Threading_Tasks_Task__">ExecuteInTransactionAsync(Func&lt;Task&gt;)</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>

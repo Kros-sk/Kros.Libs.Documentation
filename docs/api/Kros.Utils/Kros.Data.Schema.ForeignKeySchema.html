@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class ForeignKeySchema
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,7 +83,7 @@
   
   <h1 id="Kros_Data_Schema_ForeignKeySchema" data-uid="Kros.Data.Schema.ForeignKeySchema" class="text-break">Class ForeignKeySchema
   </h1>
-  <div class="markdown level0 summary"><p>Schéma cudzieho kľúča tabuľky.</p>
+  <div class="markdown level0 summary"><p>The schema of the foreign key of the database table.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -101,9 +101,9 @@
   </h3>
   <a id="Kros_Data_Schema_ForeignKeySchema__ctor_" data-uid="Kros.Data.Schema.ForeignKeySchema.#ctor*"></a>
   <h4 id="Kros_Data_Schema_ForeignKeySchema__ctor_System_String_System_String_System_Collections_Generic_IEnumerable_System_String__System_String_System_Collections_Generic_IEnumerable_System_String__" data-uid="Kros.Data.Schema.ForeignKeySchema.#ctor(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.Collections.Generic.IEnumerable{System.String})">ForeignKeySchema(String, String, IEnumerable&lt;String&gt;, String, IEnumerable&lt;String&gt;)</h4>
-  <div class="markdown level1 summary"><p>Vytvorí novú definíciu cudzieho kľúča s menom <code data-dev-comment-type="paramref" class="paramref">name</code>. Cudzí kľúč je nad stĺpcami
-<code data-dev-comment-type="paramref" class="paramref">foreignKeyTableColumns</code> tabuľky <code data-dev-comment-type="paramref" class="paramref">foreignKeyTableName</code> a odkazuje sa na
-stĺpce <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableColumns</code> tabuľky <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableName</code>.</p>
+  <div class="markdown level1 summary"><p>Creates a definition of foreign key with the <code data-dev-comment-type="paramref" class="paramref">name</code>.
+Columns <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableColumns</code> in parent table <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableName</code> are
+referenced in columns <code data-dev-comment-type="paramref" class="paramref">foreignKeyTableColumns</code> of child table <code data-dev-comment-type="paramref" class="paramref">foreignKeyTableName</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -123,31 +123,31 @@ stĺpce <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableC
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">name</span></td>
-        <td><p>Meno cudzieho kľúča.</p>
+        <td><p>Name of the foreign key.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">primaryKeyTableName</span></td>
-        <td><p>Meno tabuľky s primárnym kľúčom.</p>
+        <td><p><inheritdoc cref="P:Kros.Data.Schema.ForeignKeySchema.PrimaryKeyTableName" select="summary"></inheritdoc>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
         <td><span class="parametername">primaryKeyTableColumns</span></td>
-        <td><p>Zoznam odkazovaných stĺpcov v tabuľke s primárnym kľúčom.</p>
+        <td><p>List of columns in parent table.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">foreignKeyTableName</span></td>
-        <td><p>Meno tabuľky s cudzím kľúčom.</p>
+        <td><p><inheritdoc cref="P:Kros.Data.Schema.ForeignKeySchema.ForeignKeyTableName" select="summary"></inheritdoc>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
         <td><span class="parametername">foreignKeyTableColumns</span></td>
-        <td><p>Zoznam stĺpcov v tabuľke cudzieho kľúča.</p>
+        <td><p>List of columns in child table.</p>
 </td>
       </tr>
     </tbody>
@@ -163,7 +163,7 @@ stĺpce <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableC
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Hodnota ľubovoľného parametra je <code>null</code>.</p>
+        <td><p>Value of any argument is <span class="xref">null</span>.</p>
 </td>
       </tr>
       <tr>
@@ -174,9 +174,9 @@ stĺpce <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableC
   </table>
   <a id="Kros_Data_Schema_ForeignKeySchema__ctor_" data-uid="Kros.Data.Schema.ForeignKeySchema.#ctor*"></a>
   <h4 id="Kros_Data_Schema_ForeignKeySchema__ctor_System_String_System_String_System_String_System_String_System_String_" data-uid="Kros.Data.Schema.ForeignKeySchema.#ctor(System.String,System.String,System.String,System.String,System.String)">ForeignKeySchema(String, String, String, String, String)</h4>
-  <div class="markdown level1 summary"><p>Vytvorí novú definíciu cudzieho kľúča s menom <code data-dev-comment-type="paramref" class="paramref">name</code>. Cudzí kľúč je nad stĺpcom
-<code data-dev-comment-type="paramref" class="paramref">foreignKeyTableColumn</code> tabuľky <code data-dev-comment-type="paramref" class="paramref">foreignKeyTableName</code> a odkazuje sa na
-stĺpec <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableColumn</code> tabuľky <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableName</code>.</p>
+  <div class="markdown level1 summary"><p>Creates a definition of foreign key with the <code data-dev-comment-type="paramref" class="paramref">name</code>.
+Column <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableColumn</code> in parent table <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableName</code> is
+referenced in column <code data-dev-comment-type="paramref" class="paramref">foreignKeyTableColumn</code> of child table <code data-dev-comment-type="paramref" class="paramref">foreignKeyTableName</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -196,31 +196,31 @@ stĺpec <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableC
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">name</span></td>
-        <td><p>Meno cudzieho kľúča.</p>
+        <td><p>Name of the foreign key.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">primaryKeyTableName</span></td>
-        <td><p>Meno tabuľky s primárnym kľúčom.</p>
+        <td><p><inheritdoc cref="P:Kros.Data.Schema.ForeignKeySchema.PrimaryKeyTableName" select="summary"></inheritdoc>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">primaryKeyTableColumn</span></td>
-        <td><p>Meno odkazovaného stĺpca v tabuľke s primárnym kľúčom.</p>
+        <td><p>Column name in primary key table.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">foreignKeyTableName</span></td>
-        <td><p>Meno tabuľky s cudzím kľúčom.</p>
+        <td><p><inheritdoc cref="P:Kros.Data.Schema.ForeignKeySchema.ForeignKeyTableName" select="summary"></inheritdoc>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">foreignKeyTableColumn</span></td>
-        <td><p>Meno stĺpca v tabuľke cudzieho kľúča.</p>
+        <td><p>Column name in foreign key table.</p>
 </td>
       </tr>
     </tbody>
@@ -236,12 +236,13 @@ stĺpec <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableC
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Hodnota ľubovoľného parametra je <code>null</code>.</p>
+        <td><p>Value of any parameter is <span class="xref">null</span>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Hodnota ľubovoľného parametra je prázdny reťazec, alebo reťazec bielych znakov.</p>
+        <td><p>Value of any parameter is empty string, or string containing only
+whitespace characters.</p>
 </td>
       </tr>
     </tbody>
@@ -250,7 +251,7 @@ stĺpec <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableC
   </h3>
   <a id="Kros_Data_Schema_ForeignKeySchema_DeleteRule_" data-uid="Kros.Data.Schema.ForeignKeySchema.DeleteRule*"></a>
   <h4 id="Kros_Data_Schema_ForeignKeySchema_DeleteRule" data-uid="Kros.Data.Schema.ForeignKeySchema.DeleteRule">DeleteRule</h4>
-  <div class="markdown level1 summary"><p>Pravidlo ako sa správať, ak je v hlavnej tabuľke vymazaný príslušný záznam.</p>
+  <div class="markdown level1 summary"><p>The rule, what to do when record in parent table is deleted.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -274,7 +275,7 @@ stĺpec <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableC
   </table>
   <a id="Kros_Data_Schema_ForeignKeySchema_ForeignKeyTableColumns_" data-uid="Kros.Data.Schema.ForeignKeySchema.ForeignKeyTableColumns*"></a>
   <h4 id="Kros_Data_Schema_ForeignKeySchema_ForeignKeyTableColumns" data-uid="Kros.Data.Schema.ForeignKeySchema.ForeignKeyTableColumns">ForeignKeyTableColumns</h4>
-  <div class="markdown level1 summary"><p>Zoznam stĺpcov cudzieho kľúča v tabuľke, kde je definovaný.</p>
+  <div class="markdown level1 summary"><p>List of columns in child table.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -298,7 +299,7 @@ stĺpec <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableC
   </table>
   <a id="Kros_Data_Schema_ForeignKeySchema_ForeignKeyTableName_" data-uid="Kros.Data.Schema.ForeignKeySchema.ForeignKeyTableName*"></a>
   <h4 id="Kros_Data_Schema_ForeignKeySchema_ForeignKeyTableName" data-uid="Kros.Data.Schema.ForeignKeySchema.ForeignKeyTableName">ForeignKeyTableName</h4>
-  <div class="markdown level1 summary"><p>Meno tabuľky, v ktorej je definovaný cudzí kľúč.</p>
+  <div class="markdown level1 summary"><p>Name of the child table.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -322,7 +323,7 @@ stĺpec <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableC
   </table>
   <a id="Kros_Data_Schema_ForeignKeySchema_Name_" data-uid="Kros.Data.Schema.ForeignKeySchema.Name*"></a>
   <h4 id="Kros_Data_Schema_ForeignKeySchema_Name" data-uid="Kros.Data.Schema.ForeignKeySchema.Name">Name</h4>
-  <div class="markdown level1 summary"><p>Meno cudzieho kľúča.</p>
+  <div class="markdown level1 summary"><p>Name of the foreign key.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -346,7 +347,7 @@ stĺpec <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableC
   </table>
   <a id="Kros_Data_Schema_ForeignKeySchema_PrimaryKeyTableColumns_" data-uid="Kros.Data.Schema.ForeignKeySchema.PrimaryKeyTableColumns*"></a>
   <h4 id="Kros_Data_Schema_ForeignKeySchema_PrimaryKeyTableColumns" data-uid="Kros.Data.Schema.ForeignKeySchema.PrimaryKeyTableColumns">PrimaryKeyTableColumns</h4>
-  <div class="markdown level1 summary"><p>Zoznam stĺpcov tabuľky z ktorej je primárny kľúč.</p>
+  <div class="markdown level1 summary"><p>List of columns in primary key table.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -370,7 +371,7 @@ stĺpec <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableC
   </table>
   <a id="Kros_Data_Schema_ForeignKeySchema_PrimaryKeyTableName_" data-uid="Kros.Data.Schema.ForeignKeySchema.PrimaryKeyTableName*"></a>
   <h4 id="Kros_Data_Schema_ForeignKeySchema_PrimaryKeyTableName" data-uid="Kros.Data.Schema.ForeignKeySchema.PrimaryKeyTableName">PrimaryKeyTableName</h4>
-  <div class="markdown level1 summary"><p>Meno tabuľky z ktorej je primárny kľúč.</p>
+  <div class="markdown level1 summary"><p>Name of the table, where the primary key is.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -394,7 +395,7 @@ stĺpec <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableC
   </table>
   <a id="Kros_Data_Schema_ForeignKeySchema_Table_" data-uid="Kros.Data.Schema.ForeignKeySchema.Table*"></a>
   <h4 id="Kros_Data_Schema_ForeignKeySchema_Table" data-uid="Kros.Data.Schema.ForeignKeySchema.Table">Table</h4>
-  <div class="markdown level1 summary"><p>Tabuľka, ktorej cudzí kľúč patrí.</p>
+  <div class="markdown level1 summary"><p>Table to which this foreign key belongs.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -418,7 +419,7 @@ stĺpec <code data-dev-comment-type="paramref" class="paramref">primaryKeyTableC
   </table>
   <a id="Kros_Data_Schema_ForeignKeySchema_UpdateRule_" data-uid="Kros.Data.Schema.ForeignKeySchema.UpdateRule*"></a>
   <h4 id="Kros_Data_Schema_ForeignKeySchema_UpdateRule" data-uid="Kros.Data.Schema.ForeignKeySchema.UpdateRule">UpdateRule</h4>
-  <div class="markdown level1 summary"><p>Pravidlo ako sa správať, ak je v hlavnej tabuľke aktualizovaný príslušný záznam.</p>
+  <div class="markdown level1 summary"><p>The rule, what to do when record in parent table is updated.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>

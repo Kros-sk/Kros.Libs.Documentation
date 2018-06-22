@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class MsAccessBulkInsertColumnCollection
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,7 +83,7 @@
   
   <h1 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsertColumnCollection" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsertColumnCollection" class="text-break">Class MsAccessBulkInsertColumnCollection
   </h1>
-  <div class="markdown level0 summary"><p>Zoznam stĺpcov pre hromadné vkladanie do MS Access tabuľky z CSV súboru
+  <div class="markdown level0 summary"><p>Collection of columns for bulk insert into Microsoft Access database from CSV file
 (<a class="xref" href="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.html">MsAccessBulkInsert</a>).</p>
 </div>
   <div class="markdown level0 conceptual"></div>
@@ -103,7 +103,7 @@
   </h3>
   <a id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsertColumnCollection__ctor_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsertColumnCollection.#ctor*"></a>
   <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsertColumnCollection__ctor" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsertColumnCollection.#ctor">MsAccessBulkInsertColumnCollection()</h4>
-  <div class="markdown level1 summary"><p>Inicializuje novú inštanciu triedy <a class="xref" href="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsertColumnCollection.html">MsAccessBulkInsertColumnCollection</a>.</p>
+  <div class="markdown level1 summary"><p>Creates a new instance of <a class="xref" href="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsertColumnCollection.html">MsAccessBulkInsertColumnCollection</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -112,7 +112,8 @@
   </div>
   <a id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsertColumnCollection__ctor_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsertColumnCollection.#ctor*"></a>
   <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsertColumnCollection__ctor_System_Collections_Generic_IEnumerable_Kros_Data_BulkActions_MsAccess_MsAccessBulkInsertColumn__" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsertColumnCollection.#ctor(System.Collections.Generic.IEnumerable{Kros.Data.BulkActions.MsAccess.MsAccessBulkInsertColumn})">MsAccessBulkInsertColumnCollection(IEnumerable&lt;MsAccessBulkInsertColumn&gt;)</h4>
-  <div class="markdown level1 summary"><p>Inicializuje novú inštanciu triedy <a class="xref" href="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsertColumnCollection.html">MsAccessBulkInsertColumnCollection</a> so zadaných dát.</p>
+  <div class="markdown level1 summary"><p>Creates a new instance of <a class="xref" href="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsertColumnCollection.html">MsAccessBulkInsertColumnCollection</a> and adds into it data
+<code data-dev-comment-type="paramref" class="paramref">collection</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -132,14 +133,15 @@
       <tr>
         <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsertColumn.html">MsAccessBulkInsertColumn</a>&gt;</td>
         <td><span class="parametername">collection</span></td>
-        <td><p>Dáta, ktorými je zoznam naplnený.</p>
+        <td><p>Initial data added to the collection.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsertColumnCollection__ctor_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsertColumnCollection.#ctor*"></a>
   <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsertColumnCollection__ctor_System_Int32_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsertColumnCollection.#ctor(System.Int32)">MsAccessBulkInsertColumnCollection(Int32)</h4>
-  <div class="markdown level1 summary"><p>Inicializuje novú inštanciu triedy <a class="xref" href="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsertColumnCollection.html">MsAccessBulkInsertColumnCollection</a> so zadanou počiatočnou kapacitou.</p>
+  <div class="markdown level1 summary"><p>Creates a new instance of <a class="xref" href="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsertColumnCollection.html">MsAccessBulkInsertColumnCollection</a> with specified initial
+capacity <code data-dev-comment-type="paramref" class="paramref">capacity</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -159,7 +161,7 @@
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">capacity</span></td>
-        <td><p>Počet položiek, ktoré môže zoznam zo začiatku obsahovať.</p>
+        <td><p>Initial capacity of the inner list.</p>
 </td>
       </tr>
     </tbody>
@@ -168,8 +170,7 @@
   </h3>
   <a id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsertColumnCollection_Add_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsertColumnCollection.Add*"></a>
   <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsertColumnCollection_Add_Kros_Data_Schema_MsAccess_MsAccessColumnSchema_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsertColumnCollection.Add(Kros.Data.Schema.MsAccess.MsAccessColumnSchema)">Add(MsAccessColumnSchema)</h4>
-  <div class="markdown level1 summary"><p>Pridá stĺpec podľa definície stĺpca z databázy. Typ stĺpca je určený automaticky podľa dátového typu
-v databáze.</p>
+  <div class="markdown level1 summary"><p>Adds column based on database column schema <code data-dev-comment-type="paramref" class="paramref">column</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -189,15 +190,15 @@ v databáze.</p>
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.MsAccess.MsAccessColumnSchema.html">MsAccessColumnSchema</a></td>
         <td><span class="parametername">column</span></td>
-        <td><p>Definícia databázového stĺpca.</p>
+        <td><p>Database column schema.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsertColumnCollection_Add_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsertColumnCollection.Add*"></a>
   <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsertColumnCollection_Add_System_String_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsertColumnCollection.Add(System.String)">Add(String)</h4>
-  <div class="markdown level1 summary"><p>Pridá stĺpec s názvom <code data-dev-comment-type="paramref" class="paramref">columnName</code>. Typ stĺpca nie je definovaný
-<a class="xref" href="Kros.Data.BulkActions.MsAccess.BulkInsertColumnType.html">BulkInsertColumnType</a>.</p>
+  <div class="markdown level1 summary"><p>Adds a column with name <code data-dev-comment-type="paramref" class="paramref">columnName</code> with type set to
+<a class="xref" href="Kros.Data.BulkActions.MsAccess.BulkInsertColumnType.html#Kros_Data_BulkActions_MsAccess_BulkInsertColumnType_Undefined">Undefined</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -217,15 +218,14 @@ v databáze.</p>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">columnName</span></td>
-        <td><p>Názov stĺpca.</p>
+        <td><p>Column name.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsertColumnCollection_Add_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsertColumnCollection.Add*"></a>
   <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsertColumnCollection_Add_System_String_Kros_Data_BulkActions_MsAccess_BulkInsertColumnType_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsertColumnCollection.Add(System.String,Kros.Data.BulkActions.MsAccess.BulkInsertColumnType)">Add(String, BulkInsertColumnType)</h4>
-  <div class="markdown level1 summary"><p>Pridá stĺpec s názvom <code data-dev-comment-type="paramref" class="paramref">columnName</code>
-a typom <code data-dev-comment-type="paramref" class="paramref">columnType</code>.</p>
+  <div class="markdown level1 summary"><p>Adds a column with name <code data-dev-comment-type="paramref" class="paramref">columnName</code> and type <code data-dev-comment-type="paramref" class="paramref">columnType</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -245,21 +245,20 @@ a typom <code data-dev-comment-type="paramref" class="paramref">columnType</code
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">columnName</span></td>
-        <td><p>Názov stĺpca.</p>
+        <td><p>Column name.</p>
 </td>
       </tr>
       <tr>
         <td><a class="xref" href="Kros.Data.BulkActions.MsAccess.BulkInsertColumnType.html">BulkInsertColumnType</a></td>
         <td><span class="parametername">columnType</span></td>
-        <td><p>Typ stĺpca.</p>
+        <td><p>Column type.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsertColumnCollection_AddRange_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsertColumnCollection.AddRange*"></a>
   <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsertColumnCollection_AddRange_System_Collections_Generic_IEnumerable_Kros_Data_Schema_MsAccess_MsAccessColumnSchema__" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsertColumnCollection.AddRange(System.Collections.Generic.IEnumerable{Kros.Data.Schema.MsAccess.MsAccessColumnSchema})">AddRange(IEnumerable&lt;MsAccessColumnSchema&gt;)</h4>
-  <div class="markdown level1 summary"><p>Pridá viacero stĺpcov naraz určených podľa definícií z databázy <code data-dev-comment-type="paramref" class="paramref">columns</code>.
-Typy stĺpcov sú určené automaticky podľa dátového typu v databáze.</p>
+  <div class="markdown level1 summary"><p>Adds columns based on database column schemas <code data-dev-comment-type="paramref" class="paramref">columns</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -279,15 +278,15 @@ Typy stĺpcov sú určené automaticky podľa dátového typu v databáze.</p>
       <tr>
         <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Kros.Data.Schema.MsAccess.MsAccessColumnSchema.html">MsAccessColumnSchema</a>&gt;</td>
         <td><span class="parametername">columns</span></td>
-        <td><p>Zoznam databázových definícií stĺpcov.</p>
+        <td><p>Database column schemas.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsertColumnCollection_AddRange_" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsertColumnCollection.AddRange*"></a>
   <h4 id="Kros_Data_BulkActions_MsAccess_MsAccessBulkInsertColumnCollection_AddRange_System_String___" data-uid="Kros.Data.BulkActions.MsAccess.MsAccessBulkInsertColumnCollection.AddRange(System.String[])">AddRange(String[])</h4>
-  <div class="markdown level1 summary"><p>Pridá viacero stĺpcov naraz v zozname <code data-dev-comment-type="paramref" class="paramref">columnNames</code>. Všetky stĺpce
-nemajú definovaný typ (<a class="xref" href="Kros.Data.BulkActions.MsAccess.BulkInsertColumnType.html">BulkInsertColumnType</a>).</p>
+  <div class="markdown level1 summary"><p>Adds all columns in <code data-dev-comment-type="paramref" class="paramref">columnNames</code> with type set to
+<a class="xref" href="Kros.Data.BulkActions.MsAccess.BulkInsertColumnType.html#Kros_Data_BulkActions_MsAccess_BulkInsertColumnType_Undefined">Undefined</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -307,7 +306,7 @@ nemajú definovaný typ (<a class="xref" href="Kros.Data.BulkActions.MsAccess.Bu
       <tr>
         <td><span class="xref">System.String</span>[]</td>
         <td><span class="parametername">columnNames</span></td>
-        <td><p>Zoznam názvov stĺpcov.</p>
+        <td><p>Column names.</p>
 </td>
       </tr>
     </tbody>

@@ -623,6 +623,47 @@ references:
   isSpec: "True"
   fullName: Kros.Data.BulkActions.BulkActionDataReader.RecordsAffected
   nameWithType: BulkActionDataReader.RecordsAffected
+- uid: Kros.Data.BulkActions.BulkActionFactories
+  name: BulkActionFactories
+  href: api/Kros.Utils/Kros.Data.BulkActions.BulkActionFactories.html
+  commentId: T:Kros.Data.BulkActions.BulkActionFactories
+  fullName: Kros.Data.BulkActions.BulkActionFactories
+  nameWithType: BulkActionFactories
+- uid: Kros.Data.BulkActions.BulkActionFactories.GetFactory(System.Data.Common.DbConnection)
+  name: GetFactory(DbConnection)
+  href: api/Kros.Utils/Kros.Data.BulkActions.BulkActionFactories.html#Kros_Data_BulkActions_BulkActionFactories_GetFactory_System_Data_Common_DbConnection_
+  commentId: M:Kros.Data.BulkActions.BulkActionFactories.GetFactory(System.Data.Common.DbConnection)
+  fullName: Kros.Data.BulkActions.BulkActionFactories.GetFactory(System.Data.Common.DbConnection)
+  nameWithType: BulkActionFactories.GetFactory(DbConnection)
+- uid: Kros.Data.BulkActions.BulkActionFactories.GetFactory(System.String,System.String)
+  name: GetFactory(String, String)
+  href: api/Kros.Utils/Kros.Data.BulkActions.BulkActionFactories.html#Kros_Data_BulkActions_BulkActionFactories_GetFactory_System_String_System_String_
+  commentId: M:Kros.Data.BulkActions.BulkActionFactories.GetFactory(System.String,System.String)
+  fullName: Kros.Data.BulkActions.BulkActionFactories.GetFactory(System.String, System.String)
+  nameWithType: BulkActionFactories.GetFactory(String, String)
+- uid: Kros.Data.BulkActions.BulkActionFactories.GetFactory*
+  name: GetFactory
+  href: api/Kros.Utils/Kros.Data.BulkActions.BulkActionFactories.html#Kros_Data_BulkActions_BulkActionFactories_GetFactory_
+  commentId: Overload:Kros.Data.BulkActions.BulkActionFactories.GetFactory
+  isSpec: "True"
+  fullName: Kros.Data.BulkActions.BulkActionFactories.GetFactory
+  nameWithType: BulkActionFactories.GetFactory
+- uid: Kros.Data.BulkActions.BulkActionFactories.Register*
+  name: Register
+  href: api/Kros.Utils/Kros.Data.BulkActions.BulkActionFactories.html#Kros_Data_BulkActions_BulkActionFactories_Register_
+  commentId: Overload:Kros.Data.BulkActions.BulkActionFactories.Register
+  isSpec: "True"
+  fullName: Kros.Data.BulkActions.BulkActionFactories.Register
+  nameWithType: BulkActionFactories.Register
+- uid: Kros.Data.BulkActions.BulkActionFactories.Register``1(System.String,System.Func{System.Data.Common.DbConnection,Kros.Data.BulkActions.IBulkActionFactory},System.Func{System.String,Kros.Data.BulkActions.IBulkActionFactory})
+  name: Register<TConnection>(String, Func<DbConnection, IBulkActionFactory>, Func<String, IBulkActionFactory>)
+  href: api/Kros.Utils/Kros.Data.BulkActions.BulkActionFactories.html#Kros_Data_BulkActions_BulkActionFactories_Register__1_System_String_System_Func_System_Data_Common_DbConnection_Kros_Data_BulkActions_IBulkActionFactory__System_Func_System_String_Kros_Data_BulkActions_IBulkActionFactory__
+  commentId: M:Kros.Data.BulkActions.BulkActionFactories.Register``1(System.String,System.Func{System.Data.Common.DbConnection,Kros.Data.BulkActions.IBulkActionFactory},System.Func{System.String,Kros.Data.BulkActions.IBulkActionFactory})
+  name.vb: Register(Of TConnection)(String, Func(Of DbConnection, IBulkActionFactory), Func(Of String, IBulkActionFactory))
+  fullName: Kros.Data.BulkActions.BulkActionFactories.Register<TConnection>(System.String, System.Func<System.Data.Common.DbConnection, Kros.Data.BulkActions.IBulkActionFactory>, System.Func<System.String, Kros.Data.BulkActions.IBulkActionFactory>)
+  fullName.vb: Kros.Data.BulkActions.BulkActionFactories.Register(Of TConnection)(System.String, System.Func(Of System.Data.Common.DbConnection, Kros.Data.BulkActions.IBulkActionFactory), System.Func(Of System.String, Kros.Data.BulkActions.IBulkActionFactory))
+  nameWithType: BulkActionFactories.Register<TConnection>(String, Func<DbConnection, IBulkActionFactory>, Func<String, IBulkActionFactory>)
+  nameWithType.vb: BulkActionFactories.Register(Of TConnection)(String, Func(Of DbConnection, IBulkActionFactory), Func(Of String, IBulkActionFactory))
 - uid: Kros.Data.BulkActions.BulkUpdateBase
   name: BulkUpdateBase
   href: api/Kros.Utils/Kros.Data.BulkActions.BulkUpdateBase.html
@@ -712,19 +753,19 @@ references:
   isSpec: "True"
   fullName: Kros.Data.BulkActions.BulkUpdateBase.Dispose
   nameWithType: BulkUpdateBase.Dispose
-- uid: Kros.Data.BulkActions.BulkUpdateBase.DoneTempTable(System.String)
-  name: DoneTempTable(String)
-  href: api/Kros.Utils/Kros.Data.BulkActions.BulkUpdateBase.html#Kros_Data_BulkActions_BulkUpdateBase_DoneTempTable_System_String_
-  commentId: M:Kros.Data.BulkActions.BulkUpdateBase.DoneTempTable(System.String)
-  fullName: Kros.Data.BulkActions.BulkUpdateBase.DoneTempTable(System.String)
-  nameWithType: BulkUpdateBase.DoneTempTable(String)
-- uid: Kros.Data.BulkActions.BulkUpdateBase.DoneTempTable*
-  name: DoneTempTable
-  href: api/Kros.Utils/Kros.Data.BulkActions.BulkUpdateBase.html#Kros_Data_BulkActions_BulkUpdateBase_DoneTempTable_
-  commentId: Overload:Kros.Data.BulkActions.BulkUpdateBase.DoneTempTable
+- uid: Kros.Data.BulkActions.BulkUpdateBase.DoneTempTableAsync(System.String,System.Boolean)
+  name: DoneTempTableAsync(String, Boolean)
+  href: api/Kros.Utils/Kros.Data.BulkActions.BulkUpdateBase.html#Kros_Data_BulkActions_BulkUpdateBase_DoneTempTableAsync_System_String_System_Boolean_
+  commentId: M:Kros.Data.BulkActions.BulkUpdateBase.DoneTempTableAsync(System.String,System.Boolean)
+  fullName: Kros.Data.BulkActions.BulkUpdateBase.DoneTempTableAsync(System.String, System.Boolean)
+  nameWithType: BulkUpdateBase.DoneTempTableAsync(String, Boolean)
+- uid: Kros.Data.BulkActions.BulkUpdateBase.DoneTempTableAsync*
+  name: DoneTempTableAsync
+  href: api/Kros.Utils/Kros.Data.BulkActions.BulkUpdateBase.html#Kros_Data_BulkActions_BulkUpdateBase_DoneTempTableAsync_
+  commentId: Overload:Kros.Data.BulkActions.BulkUpdateBase.DoneTempTableAsync
   isSpec: "True"
-  fullName: Kros.Data.BulkActions.BulkUpdateBase.DoneTempTable
-  nameWithType: BulkUpdateBase.DoneTempTable
+  fullName: Kros.Data.BulkActions.BulkUpdateBase.DoneTempTableAsync
+  nameWithType: BulkUpdateBase.DoneTempTableAsync
 - uid: Kros.Data.BulkActions.BulkUpdateBase.ExternalTransaction
   name: ExternalTransaction
   href: api/Kros.Utils/Kros.Data.BulkActions.BulkUpdateBase.html#Kros_Data_BulkActions_BulkUpdateBase_ExternalTransaction
@@ -860,19 +901,44 @@ references:
   isSpec: "True"
   fullName: Kros.Data.BulkActions.BulkUpdateBase.Update
   nameWithType: BulkUpdateBase.Update
-- uid: Kros.Data.BulkActions.BulkUpdateBase.UpdateDestinationTable(System.Data.IDataReader,System.String)
-  name: UpdateDestinationTable(IDataReader, String)
-  href: api/Kros.Utils/Kros.Data.BulkActions.BulkUpdateBase.html#Kros_Data_BulkActions_BulkUpdateBase_UpdateDestinationTable_System_Data_IDataReader_System_String_
-  commentId: M:Kros.Data.BulkActions.BulkUpdateBase.UpdateDestinationTable(System.Data.IDataReader,System.String)
-  fullName: Kros.Data.BulkActions.BulkUpdateBase.UpdateDestinationTable(System.Data.IDataReader, System.String)
-  nameWithType: BulkUpdateBase.UpdateDestinationTable(IDataReader, String)
-- uid: Kros.Data.BulkActions.BulkUpdateBase.UpdateDestinationTable*
-  name: UpdateDestinationTable
-  href: api/Kros.Utils/Kros.Data.BulkActions.BulkUpdateBase.html#Kros_Data_BulkActions_BulkUpdateBase_UpdateDestinationTable_
-  commentId: Overload:Kros.Data.BulkActions.BulkUpdateBase.UpdateDestinationTable
+- uid: Kros.Data.BulkActions.BulkUpdateBase.UpdateAsync(Kros.Data.BulkActions.IBulkActionDataReader)
+  name: UpdateAsync(IBulkActionDataReader)
+  href: api/Kros.Utils/Kros.Data.BulkActions.BulkUpdateBase.html#Kros_Data_BulkActions_BulkUpdateBase_UpdateAsync_Kros_Data_BulkActions_IBulkActionDataReader_
+  commentId: M:Kros.Data.BulkActions.BulkUpdateBase.UpdateAsync(Kros.Data.BulkActions.IBulkActionDataReader)
+  fullName: Kros.Data.BulkActions.BulkUpdateBase.UpdateAsync(Kros.Data.BulkActions.IBulkActionDataReader)
+  nameWithType: BulkUpdateBase.UpdateAsync(IBulkActionDataReader)
+- uid: Kros.Data.BulkActions.BulkUpdateBase.UpdateAsync(System.Data.DataTable)
+  name: UpdateAsync(DataTable)
+  href: api/Kros.Utils/Kros.Data.BulkActions.BulkUpdateBase.html#Kros_Data_BulkActions_BulkUpdateBase_UpdateAsync_System_Data_DataTable_
+  commentId: M:Kros.Data.BulkActions.BulkUpdateBase.UpdateAsync(System.Data.DataTable)
+  fullName: Kros.Data.BulkActions.BulkUpdateBase.UpdateAsync(System.Data.DataTable)
+  nameWithType: BulkUpdateBase.UpdateAsync(DataTable)
+- uid: Kros.Data.BulkActions.BulkUpdateBase.UpdateAsync(System.Data.IDataReader)
+  name: UpdateAsync(IDataReader)
+  href: api/Kros.Utils/Kros.Data.BulkActions.BulkUpdateBase.html#Kros_Data_BulkActions_BulkUpdateBase_UpdateAsync_System_Data_IDataReader_
+  commentId: M:Kros.Data.BulkActions.BulkUpdateBase.UpdateAsync(System.Data.IDataReader)
+  fullName: Kros.Data.BulkActions.BulkUpdateBase.UpdateAsync(System.Data.IDataReader)
+  nameWithType: BulkUpdateBase.UpdateAsync(IDataReader)
+- uid: Kros.Data.BulkActions.BulkUpdateBase.UpdateAsync*
+  name: UpdateAsync
+  href: api/Kros.Utils/Kros.Data.BulkActions.BulkUpdateBase.html#Kros_Data_BulkActions_BulkUpdateBase_UpdateAsync_
+  commentId: Overload:Kros.Data.BulkActions.BulkUpdateBase.UpdateAsync
   isSpec: "True"
-  fullName: Kros.Data.BulkActions.BulkUpdateBase.UpdateDestinationTable
-  nameWithType: BulkUpdateBase.UpdateDestinationTable
+  fullName: Kros.Data.BulkActions.BulkUpdateBase.UpdateAsync
+  nameWithType: BulkUpdateBase.UpdateAsync
+- uid: Kros.Data.BulkActions.BulkUpdateBase.UpdateDestinationTableAsync(System.Data.IDataReader,System.String,System.Boolean)
+  name: UpdateDestinationTableAsync(IDataReader, String, Boolean)
+  href: api/Kros.Utils/Kros.Data.BulkActions.BulkUpdateBase.html#Kros_Data_BulkActions_BulkUpdateBase_UpdateDestinationTableAsync_System_Data_IDataReader_System_String_System_Boolean_
+  commentId: M:Kros.Data.BulkActions.BulkUpdateBase.UpdateDestinationTableAsync(System.Data.IDataReader,System.String,System.Boolean)
+  fullName: Kros.Data.BulkActions.BulkUpdateBase.UpdateDestinationTableAsync(System.Data.IDataReader, System.String, System.Boolean)
+  nameWithType: BulkUpdateBase.UpdateDestinationTableAsync(IDataReader, String, Boolean)
+- uid: Kros.Data.BulkActions.BulkUpdateBase.UpdateDestinationTableAsync*
+  name: UpdateDestinationTableAsync
+  href: api/Kros.Utils/Kros.Data.BulkActions.BulkUpdateBase.html#Kros_Data_BulkActions_BulkUpdateBase_UpdateDestinationTableAsync_
+  commentId: Overload:Kros.Data.BulkActions.BulkUpdateBase.UpdateDestinationTableAsync
+  isSpec: "True"
+  fullName: Kros.Data.BulkActions.BulkUpdateBase.UpdateDestinationTableAsync
+  nameWithType: BulkUpdateBase.UpdateDestinationTableAsync
 - uid: Kros.Data.BulkActions.EnumerableDataReader`1
   name: EnumerableDataReader<T>
   href: api/Kros.Utils/Kros.Data.BulkActions.EnumerableDataReader-1.html
@@ -1081,6 +1147,50 @@ references:
   isSpec: "True"
   fullName: Kros.Data.BulkActions.IBulkActionDataReader.Read
   nameWithType: IBulkActionDataReader.Read
+- uid: Kros.Data.BulkActions.IBulkActionFactory
+  name: IBulkActionFactory
+  href: api/Kros.Utils/Kros.Data.BulkActions.IBulkActionFactory.html
+  commentId: T:Kros.Data.BulkActions.IBulkActionFactory
+  fullName: Kros.Data.BulkActions.IBulkActionFactory
+  nameWithType: IBulkActionFactory
+- uid: Kros.Data.BulkActions.IBulkActionFactory.GetBulkInsert
+  name: GetBulkInsert()
+  href: api/Kros.Utils/Kros.Data.BulkActions.IBulkActionFactory.html#Kros_Data_BulkActions_IBulkActionFactory_GetBulkInsert
+  commentId: M:Kros.Data.BulkActions.IBulkActionFactory.GetBulkInsert
+  fullName: Kros.Data.BulkActions.IBulkActionFactory.GetBulkInsert()
+  nameWithType: IBulkActionFactory.GetBulkInsert()
+- uid: Kros.Data.BulkActions.IBulkActionFactory.GetBulkInsert(System.Data.Common.DbTransaction)
+  name: GetBulkInsert(DbTransaction)
+  href: api/Kros.Utils/Kros.Data.BulkActions.IBulkActionFactory.html#Kros_Data_BulkActions_IBulkActionFactory_GetBulkInsert_System_Data_Common_DbTransaction_
+  commentId: M:Kros.Data.BulkActions.IBulkActionFactory.GetBulkInsert(System.Data.Common.DbTransaction)
+  fullName: Kros.Data.BulkActions.IBulkActionFactory.GetBulkInsert(System.Data.Common.DbTransaction)
+  nameWithType: IBulkActionFactory.GetBulkInsert(DbTransaction)
+- uid: Kros.Data.BulkActions.IBulkActionFactory.GetBulkInsert*
+  name: GetBulkInsert
+  href: api/Kros.Utils/Kros.Data.BulkActions.IBulkActionFactory.html#Kros_Data_BulkActions_IBulkActionFactory_GetBulkInsert_
+  commentId: Overload:Kros.Data.BulkActions.IBulkActionFactory.GetBulkInsert
+  isSpec: "True"
+  fullName: Kros.Data.BulkActions.IBulkActionFactory.GetBulkInsert
+  nameWithType: IBulkActionFactory.GetBulkInsert
+- uid: Kros.Data.BulkActions.IBulkActionFactory.GetBulkUpdate
+  name: GetBulkUpdate()
+  href: api/Kros.Utils/Kros.Data.BulkActions.IBulkActionFactory.html#Kros_Data_BulkActions_IBulkActionFactory_GetBulkUpdate
+  commentId: M:Kros.Data.BulkActions.IBulkActionFactory.GetBulkUpdate
+  fullName: Kros.Data.BulkActions.IBulkActionFactory.GetBulkUpdate()
+  nameWithType: IBulkActionFactory.GetBulkUpdate()
+- uid: Kros.Data.BulkActions.IBulkActionFactory.GetBulkUpdate(System.Data.Common.DbTransaction)
+  name: GetBulkUpdate(DbTransaction)
+  href: api/Kros.Utils/Kros.Data.BulkActions.IBulkActionFactory.html#Kros_Data_BulkActions_IBulkActionFactory_GetBulkUpdate_System_Data_Common_DbTransaction_
+  commentId: M:Kros.Data.BulkActions.IBulkActionFactory.GetBulkUpdate(System.Data.Common.DbTransaction)
+  fullName: Kros.Data.BulkActions.IBulkActionFactory.GetBulkUpdate(System.Data.Common.DbTransaction)
+  nameWithType: IBulkActionFactory.GetBulkUpdate(DbTransaction)
+- uid: Kros.Data.BulkActions.IBulkActionFactory.GetBulkUpdate*
+  name: GetBulkUpdate
+  href: api/Kros.Utils/Kros.Data.BulkActions.IBulkActionFactory.html#Kros_Data_BulkActions_IBulkActionFactory_GetBulkUpdate_
+  commentId: Overload:Kros.Data.BulkActions.IBulkActionFactory.GetBulkUpdate
+  isSpec: "True"
+  fullName: Kros.Data.BulkActions.IBulkActionFactory.GetBulkUpdate
+  nameWithType: IBulkActionFactory.GetBulkUpdate
 - uid: Kros.Data.BulkActions.IBulkInsert
   name: IBulkInsert
   href: api/Kros.Utils/Kros.Data.BulkActions.IBulkInsert.html
@@ -1151,6 +1261,31 @@ references:
   isSpec: "True"
   fullName: Kros.Data.BulkActions.IBulkInsert.Insert
   nameWithType: IBulkInsert.Insert
+- uid: Kros.Data.BulkActions.IBulkInsert.InsertAsync(Kros.Data.BulkActions.IBulkActionDataReader)
+  name: InsertAsync(IBulkActionDataReader)
+  href: api/Kros.Utils/Kros.Data.BulkActions.IBulkInsert.html#Kros_Data_BulkActions_IBulkInsert_InsertAsync_Kros_Data_BulkActions_IBulkActionDataReader_
+  commentId: M:Kros.Data.BulkActions.IBulkInsert.InsertAsync(Kros.Data.BulkActions.IBulkActionDataReader)
+  fullName: Kros.Data.BulkActions.IBulkInsert.InsertAsync(Kros.Data.BulkActions.IBulkActionDataReader)
+  nameWithType: IBulkInsert.InsertAsync(IBulkActionDataReader)
+- uid: Kros.Data.BulkActions.IBulkInsert.InsertAsync(System.Data.DataTable)
+  name: InsertAsync(DataTable)
+  href: api/Kros.Utils/Kros.Data.BulkActions.IBulkInsert.html#Kros_Data_BulkActions_IBulkInsert_InsertAsync_System_Data_DataTable_
+  commentId: M:Kros.Data.BulkActions.IBulkInsert.InsertAsync(System.Data.DataTable)
+  fullName: Kros.Data.BulkActions.IBulkInsert.InsertAsync(System.Data.DataTable)
+  nameWithType: IBulkInsert.InsertAsync(DataTable)
+- uid: Kros.Data.BulkActions.IBulkInsert.InsertAsync(System.Data.IDataReader)
+  name: InsertAsync(IDataReader)
+  href: api/Kros.Utils/Kros.Data.BulkActions.IBulkInsert.html#Kros_Data_BulkActions_IBulkInsert_InsertAsync_System_Data_IDataReader_
+  commentId: M:Kros.Data.BulkActions.IBulkInsert.InsertAsync(System.Data.IDataReader)
+  fullName: Kros.Data.BulkActions.IBulkInsert.InsertAsync(System.Data.IDataReader)
+  nameWithType: IBulkInsert.InsertAsync(IDataReader)
+- uid: Kros.Data.BulkActions.IBulkInsert.InsertAsync*
+  name: InsertAsync
+  href: api/Kros.Utils/Kros.Data.BulkActions.IBulkInsert.html#Kros_Data_BulkActions_IBulkInsert_InsertAsync_
+  commentId: Overload:Kros.Data.BulkActions.IBulkInsert.InsertAsync
+  isSpec: "True"
+  fullName: Kros.Data.BulkActions.IBulkInsert.InsertAsync
+  nameWithType: IBulkInsert.InsertAsync
 - uid: Kros.Data.BulkActions.IBulkUpdate
   name: IBulkUpdate
   href: api/Kros.Utils/Kros.Data.BulkActions.IBulkUpdate.html
@@ -1221,6 +1356,31 @@ references:
   isSpec: "True"
   fullName: Kros.Data.BulkActions.IBulkUpdate.Update
   nameWithType: IBulkUpdate.Update
+- uid: Kros.Data.BulkActions.IBulkUpdate.UpdateAsync(Kros.Data.BulkActions.IBulkActionDataReader)
+  name: UpdateAsync(IBulkActionDataReader)
+  href: api/Kros.Utils/Kros.Data.BulkActions.IBulkUpdate.html#Kros_Data_BulkActions_IBulkUpdate_UpdateAsync_Kros_Data_BulkActions_IBulkActionDataReader_
+  commentId: M:Kros.Data.BulkActions.IBulkUpdate.UpdateAsync(Kros.Data.BulkActions.IBulkActionDataReader)
+  fullName: Kros.Data.BulkActions.IBulkUpdate.UpdateAsync(Kros.Data.BulkActions.IBulkActionDataReader)
+  nameWithType: IBulkUpdate.UpdateAsync(IBulkActionDataReader)
+- uid: Kros.Data.BulkActions.IBulkUpdate.UpdateAsync(System.Data.DataTable)
+  name: UpdateAsync(DataTable)
+  href: api/Kros.Utils/Kros.Data.BulkActions.IBulkUpdate.html#Kros_Data_BulkActions_IBulkUpdate_UpdateAsync_System_Data_DataTable_
+  commentId: M:Kros.Data.BulkActions.IBulkUpdate.UpdateAsync(System.Data.DataTable)
+  fullName: Kros.Data.BulkActions.IBulkUpdate.UpdateAsync(System.Data.DataTable)
+  nameWithType: IBulkUpdate.UpdateAsync(DataTable)
+- uid: Kros.Data.BulkActions.IBulkUpdate.UpdateAsync(System.Data.IDataReader)
+  name: UpdateAsync(IDataReader)
+  href: api/Kros.Utils/Kros.Data.BulkActions.IBulkUpdate.html#Kros_Data_BulkActions_IBulkUpdate_UpdateAsync_System_Data_IDataReader_
+  commentId: M:Kros.Data.BulkActions.IBulkUpdate.UpdateAsync(System.Data.IDataReader)
+  fullName: Kros.Data.BulkActions.IBulkUpdate.UpdateAsync(System.Data.IDataReader)
+  nameWithType: IBulkUpdate.UpdateAsync(IDataReader)
+- uid: Kros.Data.BulkActions.IBulkUpdate.UpdateAsync*
+  name: UpdateAsync
+  href: api/Kros.Utils/Kros.Data.BulkActions.IBulkUpdate.html#Kros_Data_BulkActions_IBulkUpdate_UpdateAsync_
+  commentId: Overload:Kros.Data.BulkActions.IBulkUpdate.UpdateAsync
+  isSpec: "True"
+  fullName: Kros.Data.BulkActions.IBulkUpdate.UpdateAsync
+  nameWithType: IBulkUpdate.UpdateAsync
 - uid: Kros.Data.BulkActions.MsAccess
   name: Kros.Data.BulkActions.MsAccess
   href: api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.html
@@ -1245,6 +1405,94 @@ references:
   commentId: F:Kros.Data.BulkActions.MsAccess.BulkInsertColumnType.Undefined
   fullName: Kros.Data.BulkActions.MsAccess.BulkInsertColumnType.Undefined
   nameWithType: BulkInsertColumnType.Undefined
+- uid: Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory
+  name: MsAccessBulkActionFactory
+  href: api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.html
+  commentId: T:Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory
+  fullName: Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory
+  nameWithType: MsAccessBulkActionFactory
+- uid: Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.#ctor(System.Data.OleDb.OleDbConnection)
+  name: MsAccessBulkActionFactory(OleDbConnection)
+  href: api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.html#Kros_Data_BulkActions_MsAccess_MsAccessBulkActionFactory__ctor_System_Data_OleDb_OleDbConnection_
+  commentId: M:Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.#ctor(System.Data.OleDb.OleDbConnection)
+  fullName: Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.MsAccessBulkActionFactory(System.Data.OleDb.OleDbConnection)
+  nameWithType: MsAccessBulkActionFactory.MsAccessBulkActionFactory(OleDbConnection)
+- uid: Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.#ctor(System.String)
+  name: MsAccessBulkActionFactory(String)
+  href: api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.html#Kros_Data_BulkActions_MsAccess_MsAccessBulkActionFactory__ctor_System_String_
+  commentId: M:Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.#ctor(System.String)
+  fullName: Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.MsAccessBulkActionFactory(System.String)
+  nameWithType: MsAccessBulkActionFactory.MsAccessBulkActionFactory(String)
+- uid: Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.#ctor*
+  name: MsAccessBulkActionFactory
+  href: api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.html#Kros_Data_BulkActions_MsAccess_MsAccessBulkActionFactory__ctor_
+  commentId: Overload:Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.#ctor
+  isSpec: "True"
+  fullName: Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.MsAccessBulkActionFactory
+  nameWithType: MsAccessBulkActionFactory.MsAccessBulkActionFactory
+- uid: Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.GetBulkInsert
+  name: GetBulkInsert()
+  href: api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.html#Kros_Data_BulkActions_MsAccess_MsAccessBulkActionFactory_GetBulkInsert
+  commentId: M:Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.GetBulkInsert
+  fullName: Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.GetBulkInsert()
+  nameWithType: MsAccessBulkActionFactory.GetBulkInsert()
+- uid: Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.GetBulkInsert(System.Data.Common.DbTransaction)
+  name: GetBulkInsert(DbTransaction)
+  href: api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.html#Kros_Data_BulkActions_MsAccess_MsAccessBulkActionFactory_GetBulkInsert_System_Data_Common_DbTransaction_
+  commentId: M:Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.GetBulkInsert(System.Data.Common.DbTransaction)
+  fullName: Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.GetBulkInsert(System.Data.Common.DbTransaction)
+  nameWithType: MsAccessBulkActionFactory.GetBulkInsert(DbTransaction)
+- uid: Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.GetBulkInsert(System.Data.Common.DbTransaction,System.Int32)
+  name: GetBulkInsert(DbTransaction, Int32)
+  href: api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.html#Kros_Data_BulkActions_MsAccess_MsAccessBulkActionFactory_GetBulkInsert_System_Data_Common_DbTransaction_System_Int32_
+  commentId: M:Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.GetBulkInsert(System.Data.Common.DbTransaction,System.Int32)
+  fullName: Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.GetBulkInsert(System.Data.Common.DbTransaction, System.Int32)
+  nameWithType: MsAccessBulkActionFactory.GetBulkInsert(DbTransaction, Int32)
+- uid: Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.GetBulkInsert(System.Data.Common.DbTransaction,System.Int32,System.Char)
+  name: GetBulkInsert(DbTransaction, Int32, Char)
+  href: api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.html#Kros_Data_BulkActions_MsAccess_MsAccessBulkActionFactory_GetBulkInsert_System_Data_Common_DbTransaction_System_Int32_System_Char_
+  commentId: M:Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.GetBulkInsert(System.Data.Common.DbTransaction,System.Int32,System.Char)
+  fullName: Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.GetBulkInsert(System.Data.Common.DbTransaction, System.Int32, System.Char)
+  nameWithType: MsAccessBulkActionFactory.GetBulkInsert(DbTransaction, Int32, Char)
+- uid: Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.GetBulkInsert*
+  name: GetBulkInsert
+  href: api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.html#Kros_Data_BulkActions_MsAccess_MsAccessBulkActionFactory_GetBulkInsert_
+  commentId: Overload:Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.GetBulkInsert
+  isSpec: "True"
+  fullName: Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.GetBulkInsert
+  nameWithType: MsAccessBulkActionFactory.GetBulkInsert
+- uid: Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.GetBulkUpdate
+  name: GetBulkUpdate()
+  href: api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.html#Kros_Data_BulkActions_MsAccess_MsAccessBulkActionFactory_GetBulkUpdate
+  commentId: M:Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.GetBulkUpdate
+  fullName: Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.GetBulkUpdate()
+  nameWithType: MsAccessBulkActionFactory.GetBulkUpdate()
+- uid: Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.GetBulkUpdate(System.Data.Common.DbTransaction)
+  name: GetBulkUpdate(DbTransaction)
+  href: api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.html#Kros_Data_BulkActions_MsAccess_MsAccessBulkActionFactory_GetBulkUpdate_System_Data_Common_DbTransaction_
+  commentId: M:Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.GetBulkUpdate(System.Data.Common.DbTransaction)
+  fullName: Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.GetBulkUpdate(System.Data.Common.DbTransaction)
+  nameWithType: MsAccessBulkActionFactory.GetBulkUpdate(DbTransaction)
+- uid: Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.GetBulkUpdate*
+  name: GetBulkUpdate
+  href: api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.html#Kros_Data_BulkActions_MsAccess_MsAccessBulkActionFactory_GetBulkUpdate_
+  commentId: Overload:Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.GetBulkUpdate
+  isSpec: "True"
+  fullName: Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.GetBulkUpdate
+  nameWithType: MsAccessBulkActionFactory.GetBulkUpdate
+- uid: Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.Register
+  name: Register()
+  href: api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.html#Kros_Data_BulkActions_MsAccess_MsAccessBulkActionFactory_Register
+  commentId: M:Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.Register
+  fullName: Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.Register()
+  nameWithType: MsAccessBulkActionFactory.Register()
+- uid: Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.Register*
+  name: Register
+  href: api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.html#Kros_Data_BulkActions_MsAccess_MsAccessBulkActionFactory_Register_
+  commentId: Overload:Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.Register
+  isSpec: "True"
+  fullName: Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.Register
+  nameWithType: MsAccessBulkActionFactory.Register
 - uid: Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert
   name: MsAccessBulkInsert
   href: api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.html
@@ -1428,6 +1676,31 @@ references:
   isSpec: "True"
   fullName: Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.Insert
   nameWithType: MsAccessBulkInsert.Insert
+- uid: Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.InsertAsync(Kros.Data.BulkActions.IBulkActionDataReader)
+  name: InsertAsync(IBulkActionDataReader)
+  href: api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.html#Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_InsertAsync_Kros_Data_BulkActions_IBulkActionDataReader_
+  commentId: M:Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.InsertAsync(Kros.Data.BulkActions.IBulkActionDataReader)
+  fullName: Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.InsertAsync(Kros.Data.BulkActions.IBulkActionDataReader)
+  nameWithType: MsAccessBulkInsert.InsertAsync(IBulkActionDataReader)
+- uid: Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.InsertAsync(System.Data.DataTable)
+  name: InsertAsync(DataTable)
+  href: api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.html#Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_InsertAsync_System_Data_DataTable_
+  commentId: M:Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.InsertAsync(System.Data.DataTable)
+  fullName: Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.InsertAsync(System.Data.DataTable)
+  nameWithType: MsAccessBulkInsert.InsertAsync(DataTable)
+- uid: Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.InsertAsync(System.Data.IDataReader)
+  name: InsertAsync(IDataReader)
+  href: api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.html#Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_InsertAsync_System_Data_IDataReader_
+  commentId: M:Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.InsertAsync(System.Data.IDataReader)
+  fullName: Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.InsertAsync(System.Data.IDataReader)
+  nameWithType: MsAccessBulkInsert.InsertAsync(IDataReader)
+- uid: Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.InsertAsync*
+  name: InsertAsync
+  href: api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.html#Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_InsertAsync_
+  commentId: Overload:Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.InsertAsync
+  isSpec: "True"
+  fullName: Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.InsertAsync
+  nameWithType: MsAccessBulkInsert.InsertAsync
 - uid: Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.OemCodePage
   name: OemCodePage
   href: api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.html#Kros_Data_BulkActions_MsAccess_MsAccessBulkInsert_OemCodePage
@@ -1716,25 +1989,113 @@ references:
   isSpec: "True"
   fullName: Kros.Data.BulkActions.MsAccess.MsAccessBulkUpdate.InvokeAction
   nameWithType: MsAccessBulkUpdate.InvokeAction
-- uid: Kros.Data.BulkActions.MsAccess.MsAccessBulkUpdate.UpdateDestinationTable(System.Data.IDataReader,System.String)
-  name: UpdateDestinationTable(IDataReader, String)
-  href: api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.MsAccessBulkUpdate.html#Kros_Data_BulkActions_MsAccess_MsAccessBulkUpdate_UpdateDestinationTable_System_Data_IDataReader_System_String_
-  commentId: M:Kros.Data.BulkActions.MsAccess.MsAccessBulkUpdate.UpdateDestinationTable(System.Data.IDataReader,System.String)
-  fullName: Kros.Data.BulkActions.MsAccess.MsAccessBulkUpdate.UpdateDestinationTable(System.Data.IDataReader, System.String)
-  nameWithType: MsAccessBulkUpdate.UpdateDestinationTable(IDataReader, String)
-- uid: Kros.Data.BulkActions.MsAccess.MsAccessBulkUpdate.UpdateDestinationTable*
-  name: UpdateDestinationTable
-  href: api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.MsAccessBulkUpdate.html#Kros_Data_BulkActions_MsAccess_MsAccessBulkUpdate_UpdateDestinationTable_
-  commentId: Overload:Kros.Data.BulkActions.MsAccess.MsAccessBulkUpdate.UpdateDestinationTable
+- uid: Kros.Data.BulkActions.MsAccess.MsAccessBulkUpdate.UpdateDestinationTableAsync(System.Data.IDataReader,System.String,System.Boolean)
+  name: UpdateDestinationTableAsync(IDataReader, String, Boolean)
+  href: api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.MsAccessBulkUpdate.html#Kros_Data_BulkActions_MsAccess_MsAccessBulkUpdate_UpdateDestinationTableAsync_System_Data_IDataReader_System_String_System_Boolean_
+  commentId: M:Kros.Data.BulkActions.MsAccess.MsAccessBulkUpdate.UpdateDestinationTableAsync(System.Data.IDataReader,System.String,System.Boolean)
+  fullName: Kros.Data.BulkActions.MsAccess.MsAccessBulkUpdate.UpdateDestinationTableAsync(System.Data.IDataReader, System.String, System.Boolean)
+  nameWithType: MsAccessBulkUpdate.UpdateDestinationTableAsync(IDataReader, String, Boolean)
+- uid: Kros.Data.BulkActions.MsAccess.MsAccessBulkUpdate.UpdateDestinationTableAsync*
+  name: UpdateDestinationTableAsync
+  href: api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.MsAccessBulkUpdate.html#Kros_Data_BulkActions_MsAccess_MsAccessBulkUpdate_UpdateDestinationTableAsync_
+  commentId: Overload:Kros.Data.BulkActions.MsAccess.MsAccessBulkUpdate.UpdateDestinationTableAsync
   isSpec: "True"
-  fullName: Kros.Data.BulkActions.MsAccess.MsAccessBulkUpdate.UpdateDestinationTable
-  nameWithType: MsAccessBulkUpdate.UpdateDestinationTable
+  fullName: Kros.Data.BulkActions.MsAccess.MsAccessBulkUpdate.UpdateDestinationTableAsync
+  nameWithType: MsAccessBulkUpdate.UpdateDestinationTableAsync
 - uid: Kros.Data.BulkActions.SqlServer
   name: Kros.Data.BulkActions.SqlServer
   href: api/Kros.Utils/Kros.Data.BulkActions.SqlServer.html
   commentId: N:Kros.Data.BulkActions.SqlServer
   fullName: Kros.Data.BulkActions.SqlServer
   nameWithType: Kros.Data.BulkActions.SqlServer
+- uid: Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory
+  name: SqlServerBulkActionFactory
+  href: api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.html
+  commentId: T:Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory
+  fullName: Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory
+  nameWithType: SqlServerBulkActionFactory
+- uid: Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.#ctor(System.Data.SqlClient.SqlConnection)
+  name: SqlServerBulkActionFactory(SqlConnection)
+  href: api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.html#Kros_Data_BulkActions_SqlServer_SqlServerBulkActionFactory__ctor_System_Data_SqlClient_SqlConnection_
+  commentId: M:Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.#ctor(System.Data.SqlClient.SqlConnection)
+  fullName: Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.SqlServerBulkActionFactory(System.Data.SqlClient.SqlConnection)
+  nameWithType: SqlServerBulkActionFactory.SqlServerBulkActionFactory(SqlConnection)
+- uid: Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.#ctor(System.String)
+  name: SqlServerBulkActionFactory(String)
+  href: api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.html#Kros_Data_BulkActions_SqlServer_SqlServerBulkActionFactory__ctor_System_String_
+  commentId: M:Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.#ctor(System.String)
+  fullName: Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.SqlServerBulkActionFactory(System.String)
+  nameWithType: SqlServerBulkActionFactory.SqlServerBulkActionFactory(String)
+- uid: Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.#ctor*
+  name: SqlServerBulkActionFactory
+  href: api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.html#Kros_Data_BulkActions_SqlServer_SqlServerBulkActionFactory__ctor_
+  commentId: Overload:Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.#ctor
+  isSpec: "True"
+  fullName: Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.SqlServerBulkActionFactory
+  nameWithType: SqlServerBulkActionFactory.SqlServerBulkActionFactory
+- uid: Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.GetBulkInsert
+  name: GetBulkInsert()
+  href: api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.html#Kros_Data_BulkActions_SqlServer_SqlServerBulkActionFactory_GetBulkInsert
+  commentId: M:Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.GetBulkInsert
+  fullName: Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.GetBulkInsert()
+  nameWithType: SqlServerBulkActionFactory.GetBulkInsert()
+- uid: Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.GetBulkInsert(System.Data.Common.DbTransaction)
+  name: GetBulkInsert(DbTransaction)
+  href: api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.html#Kros_Data_BulkActions_SqlServer_SqlServerBulkActionFactory_GetBulkInsert_System_Data_Common_DbTransaction_
+  commentId: M:Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.GetBulkInsert(System.Data.Common.DbTransaction)
+  fullName: Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.GetBulkInsert(System.Data.Common.DbTransaction)
+  nameWithType: SqlServerBulkActionFactory.GetBulkInsert(DbTransaction)
+- uid: Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.GetBulkInsert(System.Data.Common.DbTransaction,System.Data.SqlClient.SqlBulkCopyOptions)
+  name: GetBulkInsert(DbTransaction, SqlBulkCopyOptions)
+  href: api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.html#Kros_Data_BulkActions_SqlServer_SqlServerBulkActionFactory_GetBulkInsert_System_Data_Common_DbTransaction_System_Data_SqlClient_SqlBulkCopyOptions_
+  commentId: M:Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.GetBulkInsert(System.Data.Common.DbTransaction,System.Data.SqlClient.SqlBulkCopyOptions)
+  fullName: Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.GetBulkInsert(System.Data.Common.DbTransaction, System.Data.SqlClient.SqlBulkCopyOptions)
+  nameWithType: SqlServerBulkActionFactory.GetBulkInsert(DbTransaction, SqlBulkCopyOptions)
+- uid: Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.GetBulkInsert(System.Data.SqlClient.SqlBulkCopyOptions)
+  name: GetBulkInsert(SqlBulkCopyOptions)
+  href: api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.html#Kros_Data_BulkActions_SqlServer_SqlServerBulkActionFactory_GetBulkInsert_System_Data_SqlClient_SqlBulkCopyOptions_
+  commentId: M:Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.GetBulkInsert(System.Data.SqlClient.SqlBulkCopyOptions)
+  fullName: Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.GetBulkInsert(System.Data.SqlClient.SqlBulkCopyOptions)
+  nameWithType: SqlServerBulkActionFactory.GetBulkInsert(SqlBulkCopyOptions)
+- uid: Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.GetBulkInsert*
+  name: GetBulkInsert
+  href: api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.html#Kros_Data_BulkActions_SqlServer_SqlServerBulkActionFactory_GetBulkInsert_
+  commentId: Overload:Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.GetBulkInsert
+  isSpec: "True"
+  fullName: Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.GetBulkInsert
+  nameWithType: SqlServerBulkActionFactory.GetBulkInsert
+- uid: Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.GetBulkUpdate
+  name: GetBulkUpdate()
+  href: api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.html#Kros_Data_BulkActions_SqlServer_SqlServerBulkActionFactory_GetBulkUpdate
+  commentId: M:Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.GetBulkUpdate
+  fullName: Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.GetBulkUpdate()
+  nameWithType: SqlServerBulkActionFactory.GetBulkUpdate()
+- uid: Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.GetBulkUpdate(System.Data.Common.DbTransaction)
+  name: GetBulkUpdate(DbTransaction)
+  href: api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.html#Kros_Data_BulkActions_SqlServer_SqlServerBulkActionFactory_GetBulkUpdate_System_Data_Common_DbTransaction_
+  commentId: M:Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.GetBulkUpdate(System.Data.Common.DbTransaction)
+  fullName: Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.GetBulkUpdate(System.Data.Common.DbTransaction)
+  nameWithType: SqlServerBulkActionFactory.GetBulkUpdate(DbTransaction)
+- uid: Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.GetBulkUpdate*
+  name: GetBulkUpdate
+  href: api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.html#Kros_Data_BulkActions_SqlServer_SqlServerBulkActionFactory_GetBulkUpdate_
+  commentId: Overload:Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.GetBulkUpdate
+  isSpec: "True"
+  fullName: Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.GetBulkUpdate
+  nameWithType: SqlServerBulkActionFactory.GetBulkUpdate
+- uid: Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.Register
+  name: Register()
+  href: api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.html#Kros_Data_BulkActions_SqlServer_SqlServerBulkActionFactory_Register
+  commentId: M:Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.Register
+  fullName: Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.Register()
+  nameWithType: SqlServerBulkActionFactory.Register()
+- uid: Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.Register*
+  name: Register
+  href: api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.html#Kros_Data_BulkActions_SqlServer_SqlServerBulkActionFactory_Register_
+  commentId: Overload:Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.Register
+  isSpec: "True"
+  fullName: Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.Register
+  nameWithType: SqlServerBulkActionFactory.Register
 - uid: Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert
   name: SqlServerBulkInsert
   href: api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.html
@@ -1919,6 +2280,31 @@ references:
   isSpec: "True"
   fullName: Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.Insert
   nameWithType: SqlServerBulkInsert.Insert
+- uid: Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.InsertAsync(Kros.Data.BulkActions.IBulkActionDataReader)
+  name: InsertAsync(IBulkActionDataReader)
+  href: api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.html#Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert_InsertAsync_Kros_Data_BulkActions_IBulkActionDataReader_
+  commentId: M:Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.InsertAsync(Kros.Data.BulkActions.IBulkActionDataReader)
+  fullName: Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.InsertAsync(Kros.Data.BulkActions.IBulkActionDataReader)
+  nameWithType: SqlServerBulkInsert.InsertAsync(IBulkActionDataReader)
+- uid: Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.InsertAsync(System.Data.DataTable)
+  name: InsertAsync(DataTable)
+  href: api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.html#Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert_InsertAsync_System_Data_DataTable_
+  commentId: M:Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.InsertAsync(System.Data.DataTable)
+  fullName: Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.InsertAsync(System.Data.DataTable)
+  nameWithType: SqlServerBulkInsert.InsertAsync(DataTable)
+- uid: Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.InsertAsync(System.Data.IDataReader)
+  name: InsertAsync(IDataReader)
+  href: api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.html#Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert_InsertAsync_System_Data_IDataReader_
+  commentId: M:Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.InsertAsync(System.Data.IDataReader)
+  fullName: Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.InsertAsync(System.Data.IDataReader)
+  nameWithType: SqlServerBulkInsert.InsertAsync(IDataReader)
+- uid: Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.InsertAsync*
+  name: InsertAsync
+  href: api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.html#Kros_Data_BulkActions_SqlServer_SqlServerBulkInsert_InsertAsync_
+  commentId: Overload:Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.InsertAsync
+  isSpec: "True"
+  fullName: Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.InsertAsync
+  nameWithType: SqlServerBulkInsert.InsertAsync
 - uid: Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate
   name: SqlServerBulkUpdate
   href: api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.html
@@ -1989,19 +2375,19 @@ references:
   isSpec: "True"
   fullName: Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.CreateTempTable
   nameWithType: SqlServerBulkUpdate.CreateTempTable
-- uid: Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.DoneTempTable(System.String)
-  name: DoneTempTable(String)
-  href: api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.html#Kros_Data_BulkActions_SqlServer_SqlServerBulkUpdate_DoneTempTable_System_String_
-  commentId: M:Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.DoneTempTable(System.String)
-  fullName: Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.DoneTempTable(System.String)
-  nameWithType: SqlServerBulkUpdate.DoneTempTable(String)
-- uid: Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.DoneTempTable*
-  name: DoneTempTable
-  href: api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.html#Kros_Data_BulkActions_SqlServer_SqlServerBulkUpdate_DoneTempTable_
-  commentId: Overload:Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.DoneTempTable
+- uid: Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.DoneTempTableAsync(System.String,System.Boolean)
+  name: DoneTempTableAsync(String, Boolean)
+  href: api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.html#Kros_Data_BulkActions_SqlServer_SqlServerBulkUpdate_DoneTempTableAsync_System_String_System_Boolean_
+  commentId: M:Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.DoneTempTableAsync(System.String,System.Boolean)
+  fullName: Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.DoneTempTableAsync(System.String, System.Boolean)
+  nameWithType: SqlServerBulkUpdate.DoneTempTableAsync(String, Boolean)
+- uid: Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.DoneTempTableAsync*
+  name: DoneTempTableAsync
+  href: api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.html#Kros_Data_BulkActions_SqlServer_SqlServerBulkUpdate_DoneTempTableAsync_
+  commentId: Overload:Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.DoneTempTableAsync
   isSpec: "True"
-  fullName: Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.DoneTempTable
-  nameWithType: SqlServerBulkUpdate.DoneTempTable
+  fullName: Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.DoneTempTableAsync
+  nameWithType: SqlServerBulkUpdate.DoneTempTableAsync
 - uid: Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.GetTempTableName
   name: GetTempTableName()
   href: api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.html#Kros_Data_BulkActions_SqlServer_SqlServerBulkUpdate_GetTempTableName
@@ -2028,19 +2414,19 @@ references:
   isSpec: "True"
   fullName: Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.InvokeAction
   nameWithType: SqlServerBulkUpdate.InvokeAction
-- uid: Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.UpdateDestinationTable(System.Data.IDataReader,System.String)
-  name: UpdateDestinationTable(IDataReader, String)
-  href: api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.html#Kros_Data_BulkActions_SqlServer_SqlServerBulkUpdate_UpdateDestinationTable_System_Data_IDataReader_System_String_
-  commentId: M:Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.UpdateDestinationTable(System.Data.IDataReader,System.String)
-  fullName: Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.UpdateDestinationTable(System.Data.IDataReader, System.String)
-  nameWithType: SqlServerBulkUpdate.UpdateDestinationTable(IDataReader, String)
-- uid: Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.UpdateDestinationTable*
-  name: UpdateDestinationTable
-  href: api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.html#Kros_Data_BulkActions_SqlServer_SqlServerBulkUpdate_UpdateDestinationTable_
-  commentId: Overload:Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.UpdateDestinationTable
+- uid: Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.UpdateDestinationTableAsync(System.Data.IDataReader,System.String,System.Boolean)
+  name: UpdateDestinationTableAsync(IDataReader, String, Boolean)
+  href: api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.html#Kros_Data_BulkActions_SqlServer_SqlServerBulkUpdate_UpdateDestinationTableAsync_System_Data_IDataReader_System_String_System_Boolean_
+  commentId: M:Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.UpdateDestinationTableAsync(System.Data.IDataReader,System.String,System.Boolean)
+  fullName: Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.UpdateDestinationTableAsync(System.Data.IDataReader, System.String, System.Boolean)
+  nameWithType: SqlServerBulkUpdate.UpdateDestinationTableAsync(IDataReader, String, Boolean)
+- uid: Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.UpdateDestinationTableAsync*
+  name: UpdateDestinationTableAsync
+  href: api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.html#Kros_Data_BulkActions_SqlServer_SqlServerBulkUpdate_UpdateDestinationTableAsync_
+  commentId: Overload:Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.UpdateDestinationTableAsync
   isSpec: "True"
-  fullName: Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.UpdateDestinationTable
-  nameWithType: SqlServerBulkUpdate.UpdateDestinationTable
+  fullName: Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.UpdateDestinationTableAsync
+  nameWithType: SqlServerBulkUpdate.UpdateDestinationTableAsync
 - uid: Kros.Data.ConnectionHelper
   name: ConnectionHelper
   href: api/Kros.Utils/Kros.Data.ConnectionHelper.html
@@ -2313,6 +2699,19 @@ references:
   isSpec: "True"
   fullName: Kros.Data.IIdGenerator.GetNext
   nameWithType: IIdGenerator.GetNext
+- uid: Kros.Data.IIdGenerator.InitDatabaseForIdGenerator
+  name: InitDatabaseForIdGenerator()
+  href: api/Kros.Utils/Kros.Data.IIdGenerator.html#Kros_Data_IIdGenerator_InitDatabaseForIdGenerator
+  commentId: M:Kros.Data.IIdGenerator.InitDatabaseForIdGenerator
+  fullName: Kros.Data.IIdGenerator.InitDatabaseForIdGenerator()
+  nameWithType: IIdGenerator.InitDatabaseForIdGenerator()
+- uid: Kros.Data.IIdGenerator.InitDatabaseForIdGenerator*
+  name: InitDatabaseForIdGenerator
+  href: api/Kros.Utils/Kros.Data.IIdGenerator.html#Kros_Data_IIdGenerator_InitDatabaseForIdGenerator_
+  commentId: Overload:Kros.Data.IIdGenerator.InitDatabaseForIdGenerator
+  isSpec: "True"
+  fullName: Kros.Data.IIdGenerator.InitDatabaseForIdGenerator
+  nameWithType: IIdGenerator.InitDatabaseForIdGenerator
 - uid: Kros.Data.IIdGeneratorFactory
   name: IIdGeneratorFactory
   href: api/Kros.Utils/Kros.Data.IIdGeneratorFactory.html
@@ -2384,6 +2783,12 @@ references:
   commentId: F:Kros.Data.MsAccess.MsAccessDataHelper.AceProviderBase
   fullName: Kros.Data.MsAccess.MsAccessDataHelper.AceProviderBase
   nameWithType: MsAccessDataHelper.AceProviderBase
+- uid: Kros.Data.MsAccess.MsAccessDataHelper.ClientId
+  name: ClientId
+  href: api/Kros.Utils.MsAccess/Kros.Data.MsAccess.MsAccessDataHelper.html#Kros_Data_MsAccess_MsAccessDataHelper_ClientId
+  commentId: F:Kros.Data.MsAccess.MsAccessDataHelper.ClientId
+  fullName: Kros.Data.MsAccess.MsAccessDataHelper.ClientId
+  nameWithType: MsAccessDataHelper.ClientId
 - uid: Kros.Data.MsAccess.MsAccessDataHelper.CreateConnectionString(System.String,Kros.Data.MsAccess.ProviderType)
   name: CreateConnectionString(String, ProviderType)
   href: api/Kros.Utils.MsAccess/Kros.Data.MsAccess.MsAccessDataHelper.html#Kros_Data_MsAccess_MsAccessDataHelper_CreateConnectionString_System_String_Kros_Data_MsAccess_ProviderType_
@@ -2820,19 +3225,6 @@ references:
   isSpec: "True"
   fullName: Kros.Data.Schema.ColumnSchema.AllowNull
   nameWithType: ColumnSchema.AllowNull
-- uid: Kros.Data.Schema.ColumnSchema.DbType
-  name: DbType
-  href: api/Kros.Utils/Kros.Data.Schema.ColumnSchema.html#Kros_Data_Schema_ColumnSchema_DbType
-  commentId: P:Kros.Data.Schema.ColumnSchema.DbType
-  fullName: Kros.Data.Schema.ColumnSchema.DbType
-  nameWithType: ColumnSchema.DbType
-- uid: Kros.Data.Schema.ColumnSchema.DbType*
-  name: DbType
-  href: api/Kros.Utils/Kros.Data.Schema.ColumnSchema.html#Kros_Data_Schema_ColumnSchema_DbType_
-  commentId: Overload:Kros.Data.Schema.ColumnSchema.DbType
-  isSpec: "True"
-  fullName: Kros.Data.Schema.ColumnSchema.DbType
-  nameWithType: ColumnSchema.DbType
 - uid: Kros.Data.Schema.ColumnSchema.DefaultAllowNull
   name: DefaultAllowNull
   href: api/Kros.Utils/Kros.Data.Schema.ColumnSchema.html#Kros_Data_Schema_ColumnSchema_DefaultAllowNull
@@ -3043,19 +3435,6 @@ references:
   isSpec: "True"
   fullName: Kros.Data.Schema.ColumnSchema.Table
   nameWithType: ColumnSchema.Table
-- uid: Kros.Data.Schema.ColumnSchema.ToString
-  name: ToString()
-  href: api/Kros.Utils/Kros.Data.Schema.ColumnSchema.html#Kros_Data_Schema_ColumnSchema_ToString
-  commentId: M:Kros.Data.Schema.ColumnSchema.ToString
-  fullName: Kros.Data.Schema.ColumnSchema.ToString()
-  nameWithType: ColumnSchema.ToString()
-- uid: Kros.Data.Schema.ColumnSchema.ToString*
-  name: ToString
-  href: api/Kros.Utils/Kros.Data.Schema.ColumnSchema.html#Kros_Data_Schema_ColumnSchema_ToString_
-  commentId: Overload:Kros.Data.Schema.ColumnSchema.ToString
-  isSpec: "True"
-  fullName: Kros.Data.Schema.ColumnSchema.ToString
-  nameWithType: ColumnSchema.ToString
 - uid: Kros.Data.Schema.ColumnSchema.ToStringDefaultValue
   name: ToStringDefaultValue()
   href: api/Kros.Utils/Kros.Data.Schema.ColumnSchema.html#Kros_Data_Schema_ColumnSchema_ToStringDefaultValue
@@ -4524,19 +4903,6 @@ references:
   isSpec: "True"
   fullName: Kros.Data.Schema.MsAccess.MsAccessColumnSchema.MsAccessColumnSchema
   nameWithType: MsAccessColumnSchema.MsAccessColumnSchema
-- uid: Kros.Data.Schema.MsAccess.MsAccessColumnSchema.DbType
-  name: DbType
-  href: api/Kros.Utils.MsAccess/Kros.Data.Schema.MsAccess.MsAccessColumnSchema.html#Kros_Data_Schema_MsAccess_MsAccessColumnSchema_DbType
-  commentId: P:Kros.Data.Schema.MsAccess.MsAccessColumnSchema.DbType
-  fullName: Kros.Data.Schema.MsAccess.MsAccessColumnSchema.DbType
-  nameWithType: MsAccessColumnSchema.DbType
-- uid: Kros.Data.Schema.MsAccess.MsAccessColumnSchema.DbType*
-  name: DbType
-  href: api/Kros.Utils.MsAccess/Kros.Data.Schema.MsAccess.MsAccessColumnSchema.html#Kros_Data_Schema_MsAccess_MsAccessColumnSchema_DbType_
-  commentId: Overload:Kros.Data.Schema.MsAccess.MsAccessColumnSchema.DbType
-  isSpec: "True"
-  fullName: Kros.Data.Schema.MsAccess.MsAccessColumnSchema.DbType
-  nameWithType: MsAccessColumnSchema.DbType
 - uid: Kros.Data.Schema.MsAccess.MsAccessColumnSchema.OleDbType
   name: OleDbType
   href: api/Kros.Utils.MsAccess/Kros.Data.Schema.MsAccess.MsAccessColumnSchema.html#Kros_Data_Schema_MsAccess_MsAccessColumnSchema_OleDbType
@@ -5492,19 +5858,6 @@ references:
   isSpec: "True"
   fullName: Kros.Data.Schema.SqlServer.SqlServerColumnSchema.SqlServerColumnSchema
   nameWithType: SqlServerColumnSchema.SqlServerColumnSchema
-- uid: Kros.Data.Schema.SqlServer.SqlServerColumnSchema.DbType
-  name: DbType
-  href: api/Kros.Utils/Kros.Data.Schema.SqlServer.SqlServerColumnSchema.html#Kros_Data_Schema_SqlServer_SqlServerColumnSchema_DbType
-  commentId: P:Kros.Data.Schema.SqlServer.SqlServerColumnSchema.DbType
-  fullName: Kros.Data.Schema.SqlServer.SqlServerColumnSchema.DbType
-  nameWithType: SqlServerColumnSchema.DbType
-- uid: Kros.Data.Schema.SqlServer.SqlServerColumnSchema.DbType*
-  name: DbType
-  href: api/Kros.Utils/Kros.Data.Schema.SqlServer.SqlServerColumnSchema.html#Kros_Data_Schema_SqlServer_SqlServerColumnSchema_DbType_
-  commentId: Overload:Kros.Data.Schema.SqlServer.SqlServerColumnSchema.DbType
-  isSpec: "True"
-  fullName: Kros.Data.Schema.SqlServer.SqlServerColumnSchema.DbType
-  nameWithType: SqlServerColumnSchema.DbType
 - uid: Kros.Data.Schema.SqlServer.SqlServerColumnSchema.SetParameterDbType(System.Data.IDataParameter)
   name: SetParameterDbType(IDataParameter)
   href: api/Kros.Utils/Kros.Data.Schema.SqlServer.SqlServerColumnSchema.html#Kros_Data_Schema_SqlServer_SqlServerColumnSchema_SetParameterDbType_System_Data_IDataParameter_
@@ -6880,6 +7233,19 @@ references:
   isSpec: "True"
   fullName: Kros.Data.Schema.TableSchema.PrimaryKey
   nameWithType: TableSchema.PrimaryKey
+- uid: Kros.Data.Schema.TableSchema.SetPrimaryKey(System.String,System.Boolean)
+  name: SetPrimaryKey(String, Boolean)
+  href: api/Kros.Utils/Kros.Data.Schema.TableSchema.html#Kros_Data_Schema_TableSchema_SetPrimaryKey_System_String_System_Boolean_
+  commentId: M:Kros.Data.Schema.TableSchema.SetPrimaryKey(System.String,System.Boolean)
+  fullName: Kros.Data.Schema.TableSchema.SetPrimaryKey(System.String, System.Boolean)
+  nameWithType: TableSchema.SetPrimaryKey(String, Boolean)
+- uid: Kros.Data.Schema.TableSchema.SetPrimaryKey*
+  name: SetPrimaryKey
+  href: api/Kros.Utils/Kros.Data.Schema.TableSchema.html#Kros_Data_Schema_TableSchema_SetPrimaryKey_
+  commentId: Overload:Kros.Data.Schema.TableSchema.SetPrimaryKey
+  isSpec: "True"
+  fullName: Kros.Data.Schema.TableSchema.SetPrimaryKey
+  nameWithType: TableSchema.SetPrimaryKey
 - uid: Kros.Data.Schema.TableSchema.ToString
   name: ToString()
   href: api/Kros.Utils/Kros.Data.Schema.TableSchema.html#Kros_Data_Schema_TableSchema_ToString
@@ -6983,6 +7349,37 @@ references:
   commentId: N:Kros.Data.SqlServer
   fullName: Kros.Data.SqlServer
   nameWithType: Kros.Data.SqlServer
+- uid: Kros.Data.SqlServer.SqlConnectionExtensions
+  name: SqlConnectionExtensions
+  href: api/Kros.Utils/Kros.Data.SqlServer.SqlConnectionExtensions.html
+  commentId: T:Kros.Data.SqlServer.SqlConnectionExtensions
+  fullName: Kros.Data.SqlServer.SqlConnectionExtensions
+  nameWithType: SqlConnectionExtensions
+- uid: Kros.Data.SqlServer.SqlConnectionExtensions.GetVersion(System.Data.SqlClient.SqlConnection)
+  name: GetVersion(SqlConnection)
+  href: api/Kros.Utils/Kros.Data.SqlServer.SqlConnectionExtensions.html#Kros_Data_SqlServer_SqlConnectionExtensions_GetVersion_System_Data_SqlClient_SqlConnection_
+  commentId: M:Kros.Data.SqlServer.SqlConnectionExtensions.GetVersion(System.Data.SqlClient.SqlConnection)
+  fullName: Kros.Data.SqlServer.SqlConnectionExtensions.GetVersion(System.Data.SqlClient.SqlConnection)
+  nameWithType: SqlConnectionExtensions.GetVersion(SqlConnection)
+- uid: Kros.Data.SqlServer.SqlConnectionExtensions.GetVersion*
+  name: GetVersion
+  href: api/Kros.Utils/Kros.Data.SqlServer.SqlConnectionExtensions.html#Kros_Data_SqlServer_SqlConnectionExtensions_GetVersion_
+  commentId: Overload:Kros.Data.SqlServer.SqlConnectionExtensions.GetVersion
+  isSpec: "True"
+  fullName: Kros.Data.SqlServer.SqlConnectionExtensions.GetVersion
+  nameWithType: SqlConnectionExtensions.GetVersion
+- uid: Kros.Data.SqlServer.SqlServerDataHelper
+  name: SqlServerDataHelper
+  href: api/Kros.Utils/Kros.Data.SqlServer.SqlServerDataHelper.html
+  commentId: T:Kros.Data.SqlServer.SqlServerDataHelper
+  fullName: Kros.Data.SqlServer.SqlServerDataHelper
+  nameWithType: SqlServerDataHelper
+- uid: Kros.Data.SqlServer.SqlServerDataHelper.ClientId
+  name: ClientId
+  href: api/Kros.Utils/Kros.Data.SqlServer.SqlServerDataHelper.html#Kros_Data_SqlServer_SqlServerDataHelper_ClientId
+  commentId: F:Kros.Data.SqlServer.SqlServerDataHelper.ClientId
+  fullName: Kros.Data.SqlServer.SqlServerDataHelper.ClientId
+  nameWithType: SqlServerDataHelper.ClientId
 - uid: Kros.Data.SqlServer.SqlServerErrorCode
   name: SqlServerErrorCode
   href: api/Kros.Utils/Kros.Data.SqlServer.SqlServerErrorCode.html
@@ -7158,12 +7555,6 @@ references:
   isSpec: "True"
   fullName: Kros.Data.SqlServer.SqlServerIdGeneratorFactory.SqlServerIdGeneratorFactory
   nameWithType: SqlServerIdGeneratorFactory.SqlServerIdGeneratorFactory
-- uid: Kros.Data.SqlServer.SqlServerIdGeneratorFactory.DefaultIdStoreTableName
-  name: DefaultIdStoreTableName
-  href: api/Kros.Utils/Kros.Data.SqlServer.SqlServerIdGeneratorFactory.html#Kros_Data_SqlServer_SqlServerIdGeneratorFactory_DefaultIdStoreTableName
-  commentId: F:Kros.Data.SqlServer.SqlServerIdGeneratorFactory.DefaultIdStoreTableName
-  fullName: Kros.Data.SqlServer.SqlServerIdGeneratorFactory.DefaultIdStoreTableName
-  nameWithType: SqlServerIdGeneratorFactory.DefaultIdStoreTableName
 - uid: Kros.Data.SqlServer.SqlServerIdGeneratorFactory.GetGenerator(System.String)
   name: GetGenerator(String)
   href: api/Kros.Utils/Kros.Data.SqlServer.SqlServerIdGeneratorFactory.html#Kros_Data_SqlServer_SqlServerIdGeneratorFactory_GetGenerator_System_String_
@@ -7196,6 +7587,162 @@ references:
   isSpec: "True"
   fullName: Kros.Data.SqlServer.SqlServerIdGeneratorFactory.Register
   nameWithType: SqlServerIdGeneratorFactory.Register
+- uid: Kros.Data.SqlServer.SqlServerVersions
+  name: SqlServerVersions
+  href: api/Kros.Utils/Kros.Data.SqlServer.SqlServerVersions.html
+  commentId: T:Kros.Data.SqlServer.SqlServerVersions
+  fullName: Kros.Data.SqlServer.SqlServerVersions
+  nameWithType: SqlServerVersions
+- uid: Kros.Data.SqlServer.SqlServerVersions.Server2005
+  name: Server2005
+  href: api/Kros.Utils/Kros.Data.SqlServer.SqlServerVersions.html#Kros_Data_SqlServer_SqlServerVersions_Server2005
+  commentId: F:Kros.Data.SqlServer.SqlServerVersions.Server2005
+  fullName: Kros.Data.SqlServer.SqlServerVersions.Server2005
+  nameWithType: SqlServerVersions.Server2005
+- uid: Kros.Data.SqlServer.SqlServerVersions.Server2005SP1
+  name: Server2005SP1
+  href: api/Kros.Utils/Kros.Data.SqlServer.SqlServerVersions.html#Kros_Data_SqlServer_SqlServerVersions_Server2005SP1
+  commentId: F:Kros.Data.SqlServer.SqlServerVersions.Server2005SP1
+  fullName: Kros.Data.SqlServer.SqlServerVersions.Server2005SP1
+  nameWithType: SqlServerVersions.Server2005SP1
+- uid: Kros.Data.SqlServer.SqlServerVersions.Server2005SP2
+  name: Server2005SP2
+  href: api/Kros.Utils/Kros.Data.SqlServer.SqlServerVersions.html#Kros_Data_SqlServer_SqlServerVersions_Server2005SP2
+  commentId: F:Kros.Data.SqlServer.SqlServerVersions.Server2005SP2
+  fullName: Kros.Data.SqlServer.SqlServerVersions.Server2005SP2
+  nameWithType: SqlServerVersions.Server2005SP2
+- uid: Kros.Data.SqlServer.SqlServerVersions.Server2005SP3
+  name: Server2005SP3
+  href: api/Kros.Utils/Kros.Data.SqlServer.SqlServerVersions.html#Kros_Data_SqlServer_SqlServerVersions_Server2005SP3
+  commentId: F:Kros.Data.SqlServer.SqlServerVersions.Server2005SP3
+  fullName: Kros.Data.SqlServer.SqlServerVersions.Server2005SP3
+  nameWithType: SqlServerVersions.Server2005SP3
+- uid: Kros.Data.SqlServer.SqlServerVersions.Server2005SP4
+  name: Server2005SP4
+  href: api/Kros.Utils/Kros.Data.SqlServer.SqlServerVersions.html#Kros_Data_SqlServer_SqlServerVersions_Server2005SP4
+  commentId: F:Kros.Data.SqlServer.SqlServerVersions.Server2005SP4
+  fullName: Kros.Data.SqlServer.SqlServerVersions.Server2005SP4
+  nameWithType: SqlServerVersions.Server2005SP4
+- uid: Kros.Data.SqlServer.SqlServerVersions.Server2008
+  name: Server2008
+  href: api/Kros.Utils/Kros.Data.SqlServer.SqlServerVersions.html#Kros_Data_SqlServer_SqlServerVersions_Server2008
+  commentId: F:Kros.Data.SqlServer.SqlServerVersions.Server2008
+  fullName: Kros.Data.SqlServer.SqlServerVersions.Server2008
+  nameWithType: SqlServerVersions.Server2008
+- uid: Kros.Data.SqlServer.SqlServerVersions.Server2008R2
+  name: Server2008R2
+  href: api/Kros.Utils/Kros.Data.SqlServer.SqlServerVersions.html#Kros_Data_SqlServer_SqlServerVersions_Server2008R2
+  commentId: F:Kros.Data.SqlServer.SqlServerVersions.Server2008R2
+  fullName: Kros.Data.SqlServer.SqlServerVersions.Server2008R2
+  nameWithType: SqlServerVersions.Server2008R2
+- uid: Kros.Data.SqlServer.SqlServerVersions.Server2008R2SP1
+  name: Server2008R2SP1
+  href: api/Kros.Utils/Kros.Data.SqlServer.SqlServerVersions.html#Kros_Data_SqlServer_SqlServerVersions_Server2008R2SP1
+  commentId: F:Kros.Data.SqlServer.SqlServerVersions.Server2008R2SP1
+  fullName: Kros.Data.SqlServer.SqlServerVersions.Server2008R2SP1
+  nameWithType: SqlServerVersions.Server2008R2SP1
+- uid: Kros.Data.SqlServer.SqlServerVersions.Server2008R2SP2
+  name: Server2008R2SP2
+  href: api/Kros.Utils/Kros.Data.SqlServer.SqlServerVersions.html#Kros_Data_SqlServer_SqlServerVersions_Server2008R2SP2
+  commentId: F:Kros.Data.SqlServer.SqlServerVersions.Server2008R2SP2
+  fullName: Kros.Data.SqlServer.SqlServerVersions.Server2008R2SP2
+  nameWithType: SqlServerVersions.Server2008R2SP2
+- uid: Kros.Data.SqlServer.SqlServerVersions.Server2008R2SP3
+  name: Server2008R2SP3
+  href: api/Kros.Utils/Kros.Data.SqlServer.SqlServerVersions.html#Kros_Data_SqlServer_SqlServerVersions_Server2008R2SP3
+  commentId: F:Kros.Data.SqlServer.SqlServerVersions.Server2008R2SP3
+  fullName: Kros.Data.SqlServer.SqlServerVersions.Server2008R2SP3
+  nameWithType: SqlServerVersions.Server2008R2SP3
+- uid: Kros.Data.SqlServer.SqlServerVersions.Server2008SP1
+  name: Server2008SP1
+  href: api/Kros.Utils/Kros.Data.SqlServer.SqlServerVersions.html#Kros_Data_SqlServer_SqlServerVersions_Server2008SP1
+  commentId: F:Kros.Data.SqlServer.SqlServerVersions.Server2008SP1
+  fullName: Kros.Data.SqlServer.SqlServerVersions.Server2008SP1
+  nameWithType: SqlServerVersions.Server2008SP1
+- uid: Kros.Data.SqlServer.SqlServerVersions.Server2008SP2
+  name: Server2008SP2
+  href: api/Kros.Utils/Kros.Data.SqlServer.SqlServerVersions.html#Kros_Data_SqlServer_SqlServerVersions_Server2008SP2
+  commentId: F:Kros.Data.SqlServer.SqlServerVersions.Server2008SP2
+  fullName: Kros.Data.SqlServer.SqlServerVersions.Server2008SP2
+  nameWithType: SqlServerVersions.Server2008SP2
+- uid: Kros.Data.SqlServer.SqlServerVersions.Server2008SP3
+  name: Server2008SP3
+  href: api/Kros.Utils/Kros.Data.SqlServer.SqlServerVersions.html#Kros_Data_SqlServer_SqlServerVersions_Server2008SP3
+  commentId: F:Kros.Data.SqlServer.SqlServerVersions.Server2008SP3
+  fullName: Kros.Data.SqlServer.SqlServerVersions.Server2008SP3
+  nameWithType: SqlServerVersions.Server2008SP3
+- uid: Kros.Data.SqlServer.SqlServerVersions.Server2012
+  name: Server2012
+  href: api/Kros.Utils/Kros.Data.SqlServer.SqlServerVersions.html#Kros_Data_SqlServer_SqlServerVersions_Server2012
+  commentId: F:Kros.Data.SqlServer.SqlServerVersions.Server2012
+  fullName: Kros.Data.SqlServer.SqlServerVersions.Server2012
+  nameWithType: SqlServerVersions.Server2012
+- uid: Kros.Data.SqlServer.SqlServerVersions.Server2012SP1
+  name: Server2012SP1
+  href: api/Kros.Utils/Kros.Data.SqlServer.SqlServerVersions.html#Kros_Data_SqlServer_SqlServerVersions_Server2012SP1
+  commentId: F:Kros.Data.SqlServer.SqlServerVersions.Server2012SP1
+  fullName: Kros.Data.SqlServer.SqlServerVersions.Server2012SP1
+  nameWithType: SqlServerVersions.Server2012SP1
+- uid: Kros.Data.SqlServer.SqlServerVersions.Server2012SP2
+  name: Server2012SP2
+  href: api/Kros.Utils/Kros.Data.SqlServer.SqlServerVersions.html#Kros_Data_SqlServer_SqlServerVersions_Server2012SP2
+  commentId: F:Kros.Data.SqlServer.SqlServerVersions.Server2012SP2
+  fullName: Kros.Data.SqlServer.SqlServerVersions.Server2012SP2
+  nameWithType: SqlServerVersions.Server2012SP2
+- uid: Kros.Data.SqlServer.SqlServerVersions.Server2012SP3
+  name: Server2012SP3
+  href: api/Kros.Utils/Kros.Data.SqlServer.SqlServerVersions.html#Kros_Data_SqlServer_SqlServerVersions_Server2012SP3
+  commentId: F:Kros.Data.SqlServer.SqlServerVersions.Server2012SP3
+  fullName: Kros.Data.SqlServer.SqlServerVersions.Server2012SP3
+  nameWithType: SqlServerVersions.Server2012SP3
+- uid: Kros.Data.SqlServer.SqlServerVersions.Server2012SP4
+  name: Server2012SP4
+  href: api/Kros.Utils/Kros.Data.SqlServer.SqlServerVersions.html#Kros_Data_SqlServer_SqlServerVersions_Server2012SP4
+  commentId: F:Kros.Data.SqlServer.SqlServerVersions.Server2012SP4
+  fullName: Kros.Data.SqlServer.SqlServerVersions.Server2012SP4
+  nameWithType: SqlServerVersions.Server2012SP4
+- uid: Kros.Data.SqlServer.SqlServerVersions.Server2014
+  name: Server2014
+  href: api/Kros.Utils/Kros.Data.SqlServer.SqlServerVersions.html#Kros_Data_SqlServer_SqlServerVersions_Server2014
+  commentId: F:Kros.Data.SqlServer.SqlServerVersions.Server2014
+  fullName: Kros.Data.SqlServer.SqlServerVersions.Server2014
+  nameWithType: SqlServerVersions.Server2014
+- uid: Kros.Data.SqlServer.SqlServerVersions.Server2014SP1
+  name: Server2014SP1
+  href: api/Kros.Utils/Kros.Data.SqlServer.SqlServerVersions.html#Kros_Data_SqlServer_SqlServerVersions_Server2014SP1
+  commentId: F:Kros.Data.SqlServer.SqlServerVersions.Server2014SP1
+  fullName: Kros.Data.SqlServer.SqlServerVersions.Server2014SP1
+  nameWithType: SqlServerVersions.Server2014SP1
+- uid: Kros.Data.SqlServer.SqlServerVersions.Server2014SP2
+  name: Server2014SP2
+  href: api/Kros.Utils/Kros.Data.SqlServer.SqlServerVersions.html#Kros_Data_SqlServer_SqlServerVersions_Server2014SP2
+  commentId: F:Kros.Data.SqlServer.SqlServerVersions.Server2014SP2
+  fullName: Kros.Data.SqlServer.SqlServerVersions.Server2014SP2
+  nameWithType: SqlServerVersions.Server2014SP2
+- uid: Kros.Data.SqlServer.SqlServerVersions.Server2016
+  name: Server2016
+  href: api/Kros.Utils/Kros.Data.SqlServer.SqlServerVersions.html#Kros_Data_SqlServer_SqlServerVersions_Server2016
+  commentId: F:Kros.Data.SqlServer.SqlServerVersions.Server2016
+  fullName: Kros.Data.SqlServer.SqlServerVersions.Server2016
+  nameWithType: SqlServerVersions.Server2016
+- uid: Kros.Data.SqlServer.SqlServerVersions.Server2016SP1
+  name: Server2016SP1
+  href: api/Kros.Utils/Kros.Data.SqlServer.SqlServerVersions.html#Kros_Data_SqlServer_SqlServerVersions_Server2016SP1
+  commentId: F:Kros.Data.SqlServer.SqlServerVersions.Server2016SP1
+  fullName: Kros.Data.SqlServer.SqlServerVersions.Server2016SP1
+  nameWithType: SqlServerVersions.Server2016SP1
+- uid: Kros.Data.SqlServer.SqlServerVersions.Server2016SP2
+  name: Server2016SP2
+  href: api/Kros.Utils/Kros.Data.SqlServer.SqlServerVersions.html#Kros_Data_SqlServer_SqlServerVersions_Server2016SP2
+  commentId: F:Kros.Data.SqlServer.SqlServerVersions.Server2016SP2
+  fullName: Kros.Data.SqlServer.SqlServerVersions.Server2016SP2
+  nameWithType: SqlServerVersions.Server2016SP2
+- uid: Kros.Data.SqlServer.SqlServerVersions.Server2017
+  name: Server2017
+  href: api/Kros.Utils/Kros.Data.SqlServer.SqlServerVersions.html#Kros_Data_SqlServer_SqlServerVersions_Server2017
+  commentId: F:Kros.Data.SqlServer.SqlServerVersions.Server2017
+  fullName: Kros.Data.SqlServer.SqlServerVersions.Server2017
+  nameWithType: SqlServerVersions.Server2017
 - uid: Kros.Extensions
   name: Kros.Extensions
   href: api/Kros.Utils/Kros.Extensions.html
@@ -7266,6 +7813,67 @@ references:
   commentId: T:Kros.Extensions.StringExtensions
   fullName: Kros.Extensions.StringExtensions
   nameWithType: StringExtensions
+- uid: Kros.Extensions.StringExtensions.Format(System.String,System.IFormatProvider,System.Object)
+  name: Format(String, IFormatProvider, Object)
+  href: api/Kros.Utils/Kros.Extensions.StringExtensions.html#Kros_Extensions_StringExtensions_Format_System_String_System_IFormatProvider_System_Object_
+  commentId: M:Kros.Extensions.StringExtensions.Format(System.String,System.IFormatProvider,System.Object)
+  fullName: Kros.Extensions.StringExtensions.Format(System.String, System.IFormatProvider, System.Object)
+  nameWithType: StringExtensions.Format(String, IFormatProvider, Object)
+- uid: Kros.Extensions.StringExtensions.Format(System.String,System.IFormatProvider,System.Object,System.Object)
+  name: Format(String, IFormatProvider, Object, Object)
+  href: api/Kros.Utils/Kros.Extensions.StringExtensions.html#Kros_Extensions_StringExtensions_Format_System_String_System_IFormatProvider_System_Object_System_Object_
+  commentId: M:Kros.Extensions.StringExtensions.Format(System.String,System.IFormatProvider,System.Object,System.Object)
+  fullName: Kros.Extensions.StringExtensions.Format(System.String, System.IFormatProvider, System.Object, System.Object)
+  nameWithType: StringExtensions.Format(String, IFormatProvider, Object, Object)
+- uid: Kros.Extensions.StringExtensions.Format(System.String,System.IFormatProvider,System.Object,System.Object,System.Object)
+  name: Format(String, IFormatProvider, Object, Object, Object)
+  href: api/Kros.Utils/Kros.Extensions.StringExtensions.html#Kros_Extensions_StringExtensions_Format_System_String_System_IFormatProvider_System_Object_System_Object_System_Object_
+  commentId: M:Kros.Extensions.StringExtensions.Format(System.String,System.IFormatProvider,System.Object,System.Object,System.Object)
+  fullName: Kros.Extensions.StringExtensions.Format(System.String, System.IFormatProvider, System.Object, System.Object, System.Object)
+  nameWithType: StringExtensions.Format(String, IFormatProvider, Object, Object, Object)
+- uid: Kros.Extensions.StringExtensions.Format(System.String,System.IFormatProvider,System.Object[])
+  name: Format(String, IFormatProvider, Object[])
+  href: api/Kros.Utils/Kros.Extensions.StringExtensions.html#Kros_Extensions_StringExtensions_Format_System_String_System_IFormatProvider_System_Object___
+  commentId: M:Kros.Extensions.StringExtensions.Format(System.String,System.IFormatProvider,System.Object[])
+  name.vb: Format(String, IFormatProvider, Object())
+  fullName: Kros.Extensions.StringExtensions.Format(System.String, System.IFormatProvider, System.Object[])
+  fullName.vb: Kros.Extensions.StringExtensions.Format(System.String, System.IFormatProvider, System.Object())
+  nameWithType: StringExtensions.Format(String, IFormatProvider, Object[])
+  nameWithType.vb: StringExtensions.Format(String, IFormatProvider, Object())
+- uid: Kros.Extensions.StringExtensions.Format(System.String,System.Object)
+  name: Format(String, Object)
+  href: api/Kros.Utils/Kros.Extensions.StringExtensions.html#Kros_Extensions_StringExtensions_Format_System_String_System_Object_
+  commentId: M:Kros.Extensions.StringExtensions.Format(System.String,System.Object)
+  fullName: Kros.Extensions.StringExtensions.Format(System.String, System.Object)
+  nameWithType: StringExtensions.Format(String, Object)
+- uid: Kros.Extensions.StringExtensions.Format(System.String,System.Object,System.Object)
+  name: Format(String, Object, Object)
+  href: api/Kros.Utils/Kros.Extensions.StringExtensions.html#Kros_Extensions_StringExtensions_Format_System_String_System_Object_System_Object_
+  commentId: M:Kros.Extensions.StringExtensions.Format(System.String,System.Object,System.Object)
+  fullName: Kros.Extensions.StringExtensions.Format(System.String, System.Object, System.Object)
+  nameWithType: StringExtensions.Format(String, Object, Object)
+- uid: Kros.Extensions.StringExtensions.Format(System.String,System.Object,System.Object,System.Object)
+  name: Format(String, Object, Object, Object)
+  href: api/Kros.Utils/Kros.Extensions.StringExtensions.html#Kros_Extensions_StringExtensions_Format_System_String_System_Object_System_Object_System_Object_
+  commentId: M:Kros.Extensions.StringExtensions.Format(System.String,System.Object,System.Object,System.Object)
+  fullName: Kros.Extensions.StringExtensions.Format(System.String, System.Object, System.Object, System.Object)
+  nameWithType: StringExtensions.Format(String, Object, Object, Object)
+- uid: Kros.Extensions.StringExtensions.Format(System.String,System.Object[])
+  name: Format(String, Object[])
+  href: api/Kros.Utils/Kros.Extensions.StringExtensions.html#Kros_Extensions_StringExtensions_Format_System_String_System_Object___
+  commentId: M:Kros.Extensions.StringExtensions.Format(System.String,System.Object[])
+  name.vb: Format(String, Object())
+  fullName: Kros.Extensions.StringExtensions.Format(System.String, System.Object[])
+  fullName.vb: Kros.Extensions.StringExtensions.Format(System.String, System.Object())
+  nameWithType: StringExtensions.Format(String, Object[])
+  nameWithType.vb: StringExtensions.Format(String, Object())
+- uid: Kros.Extensions.StringExtensions.Format*
+  name: Format
+  href: api/Kros.Utils/Kros.Extensions.StringExtensions.html#Kros_Extensions_StringExtensions_Format_
+  commentId: Overload:Kros.Extensions.StringExtensions.Format
+  isSpec: "True"
+  fullName: Kros.Extensions.StringExtensions.Format
+  nameWithType: StringExtensions.Format
 - uid: Kros.Extensions.StringExtensions.IsNullOrEmpty(System.String)
   name: IsNullOrEmpty(String)
   href: api/Kros.Utils/Kros.Extensions.StringExtensions.html#Kros_Extensions_StringExtensions_IsNullOrEmpty_System_String_
@@ -8111,6 +8719,19 @@ references:
   fullName.vb: Kros.KORM.Database.ExecuteStoredProcedure(Of TResult)(System.String, Kros.KORM.Query.CommandParameterCollection)
   nameWithType: Database.ExecuteStoredProcedure<TResult>(String, CommandParameterCollection)
   nameWithType.vb: Database.ExecuteStoredProcedure(Of TResult)(String, CommandParameterCollection)
+- uid: Kros.KORM.Database.InitDatabaseForIdGenerator
+  name: InitDatabaseForIdGenerator()
+  href: api/Kros.KORM/Kros.KORM.Database.html#Kros_KORM_Database_InitDatabaseForIdGenerator
+  commentId: M:Kros.KORM.Database.InitDatabaseForIdGenerator
+  fullName: Kros.KORM.Database.InitDatabaseForIdGenerator()
+  nameWithType: Database.InitDatabaseForIdGenerator()
+- uid: Kros.KORM.Database.InitDatabaseForIdGenerator*
+  name: InitDatabaseForIdGenerator
+  href: api/Kros.KORM/Kros.KORM.Database.html#Kros_KORM_Database_InitDatabaseForIdGenerator_
+  commentId: Overload:Kros.KORM.Database.InitDatabaseForIdGenerator
+  isSpec: "True"
+  fullName: Kros.KORM.Database.InitDatabaseForIdGenerator
+  nameWithType: Database.InitDatabaseForIdGenerator
 - uid: Kros.KORM.Database.Log
   name: Log
   href: api/Kros.KORM/Kros.KORM.Database.html#Kros_KORM_Database_Log
@@ -8190,12 +8811,12 @@ references:
   commentId: T:Kros.KORM.Exceptions.CompositePrimaryKeyException
   fullName: Kros.KORM.Exceptions.CompositePrimaryKeyException
   nameWithType: CompositePrimaryKeyException
-- uid: Kros.KORM.Exceptions.CompositePrimaryKeyException.#ctor(System.String)
-  name: CompositePrimaryKeyException(String)
-  href: api/Kros.KORM/Kros.KORM.Exceptions.CompositePrimaryKeyException.html#Kros_KORM_Exceptions_CompositePrimaryKeyException__ctor_System_String_
-  commentId: M:Kros.KORM.Exceptions.CompositePrimaryKeyException.#ctor(System.String)
-  fullName: Kros.KORM.Exceptions.CompositePrimaryKeyException.CompositePrimaryKeyException(System.String)
-  nameWithType: CompositePrimaryKeyException.CompositePrimaryKeyException(String)
+- uid: Kros.KORM.Exceptions.CompositePrimaryKeyException.#ctor(System.String,System.String)
+  name: CompositePrimaryKeyException(String, String)
+  href: api/Kros.KORM/Kros.KORM.Exceptions.CompositePrimaryKeyException.html#Kros_KORM_Exceptions_CompositePrimaryKeyException__ctor_System_String_System_String_
+  commentId: M:Kros.KORM.Exceptions.CompositePrimaryKeyException.#ctor(System.String,System.String)
+  fullName: Kros.KORM.Exceptions.CompositePrimaryKeyException.CompositePrimaryKeyException(System.String, System.String)
+  nameWithType: CompositePrimaryKeyException.CompositePrimaryKeyException(String, String)
 - uid: Kros.KORM.Exceptions.CompositePrimaryKeyException.#ctor*
   name: CompositePrimaryKeyException
   href: api/Kros.KORM/Kros.KORM.Exceptions.CompositePrimaryKeyException.html#Kros_KORM_Exceptions_CompositePrimaryKeyException__ctor_
@@ -8203,6 +8824,19 @@ references:
   isSpec: "True"
   fullName: Kros.KORM.Exceptions.CompositePrimaryKeyException.CompositePrimaryKeyException
   nameWithType: CompositePrimaryKeyException.CompositePrimaryKeyException
+- uid: Kros.KORM.Exceptions.CompositePrimaryKeyException.TableName
+  name: TableName
+  href: api/Kros.KORM/Kros.KORM.Exceptions.CompositePrimaryKeyException.html#Kros_KORM_Exceptions_CompositePrimaryKeyException_TableName
+  commentId: P:Kros.KORM.Exceptions.CompositePrimaryKeyException.TableName
+  fullName: Kros.KORM.Exceptions.CompositePrimaryKeyException.TableName
+  nameWithType: CompositePrimaryKeyException.TableName
+- uid: Kros.KORM.Exceptions.CompositePrimaryKeyException.TableName*
+  name: TableName
+  href: api/Kros.KORM/Kros.KORM.Exceptions.CompositePrimaryKeyException.html#Kros_KORM_Exceptions_CompositePrimaryKeyException_TableName_
+  commentId: Overload:Kros.KORM.Exceptions.CompositePrimaryKeyException.TableName
+  isSpec: "True"
+  fullName: Kros.KORM.Exceptions.CompositePrimaryKeyException.TableName
+  nameWithType: CompositePrimaryKeyException.TableName
 - uid: Kros.KORM.Exceptions.MissingPrimaryKeyException
   name: MissingPrimaryKeyException
   href: api/Kros.KORM/Kros.KORM.Exceptions.MissingPrimaryKeyException.html
@@ -8481,6 +9115,19 @@ references:
   fullName.vb: Kros.KORM.IDatabase.ExecuteStoredProcedure(Of TResult)(System.String, Kros.KORM.Query.CommandParameterCollection)
   nameWithType: IDatabase.ExecuteStoredProcedure<TResult>(String, CommandParameterCollection)
   nameWithType.vb: IDatabase.ExecuteStoredProcedure(Of TResult)(String, CommandParameterCollection)
+- uid: Kros.KORM.IDatabase.InitDatabaseForIdGenerator
+  name: InitDatabaseForIdGenerator()
+  href: api/Kros.KORM/Kros.KORM.IDatabase.html#Kros_KORM_IDatabase_InitDatabaseForIdGenerator
+  commentId: M:Kros.KORM.IDatabase.InitDatabaseForIdGenerator
+  fullName: Kros.KORM.IDatabase.InitDatabaseForIdGenerator()
+  nameWithType: IDatabase.InitDatabaseForIdGenerator()
+- uid: Kros.KORM.IDatabase.InitDatabaseForIdGenerator*
+  name: InitDatabaseForIdGenerator
+  href: api/Kros.KORM/Kros.KORM.IDatabase.html#Kros_KORM_IDatabase_InitDatabaseForIdGenerator_
+  commentId: Overload:Kros.KORM.IDatabase.InitDatabaseForIdGenerator
+  isSpec: "True"
+  fullName: Kros.KORM.IDatabase.InitDatabaseForIdGenerator
+  nameWithType: IDatabase.InitDatabaseForIdGenerator
 - uid: Kros.KORM.IDatabase.ModelBuilder
   name: ModelBuilder
   href: api/Kros.KORM/Kros.KORM.IDatabase.html#Kros_KORM_IDatabase_ModelBuilder
@@ -8929,25 +9576,6 @@ references:
   isSpec: "True"
   fullName: Kros.KORM.Metadata.Attribute.ConverterAttribute.Converter
   nameWithType: ConverterAttribute.Converter
-- uid: Kros.KORM.Metadata.Attribute.DbTypeAttribute
-  name: DbTypeAttribute
-  href: api/Kros.KORM/Kros.KORM.Metadata.Attribute.DbTypeAttribute.html
-  commentId: T:Kros.KORM.Metadata.Attribute.DbTypeAttribute
-  fullName: Kros.KORM.Metadata.Attribute.DbTypeAttribute
-  nameWithType: DbTypeAttribute
-- uid: Kros.KORM.Metadata.Attribute.DbTypeAttribute.Type
-  name: Type
-  href: api/Kros.KORM/Kros.KORM.Metadata.Attribute.DbTypeAttribute.html#Kros_KORM_Metadata_Attribute_DbTypeAttribute_Type
-  commentId: P:Kros.KORM.Metadata.Attribute.DbTypeAttribute.Type
-  fullName: Kros.KORM.Metadata.Attribute.DbTypeAttribute.Type
-  nameWithType: DbTypeAttribute.Type
-- uid: Kros.KORM.Metadata.Attribute.DbTypeAttribute.Type*
-  name: Type
-  href: api/Kros.KORM/Kros.KORM.Metadata.Attribute.DbTypeAttribute.html#Kros_KORM_Metadata_Attribute_DbTypeAttribute_Type_
-  commentId: Overload:Kros.KORM.Metadata.Attribute.DbTypeAttribute.Type
-  isSpec: "True"
-  fullName: Kros.KORM.Metadata.Attribute.DbTypeAttribute.Type
-  nameWithType: DbTypeAttribute.Type
 - uid: Kros.KORM.Metadata.Attribute.KeyAttribute
   name: KeyAttribute
   href: api/Kros.KORM/Kros.KORM.Metadata.Attribute.KeyAttribute.html
@@ -9855,6 +10483,32 @@ references:
   fullName.vb: Kros.KORM.Query.DbSet(Of T).BulkInsert
   nameWithType: DbSet<T>.BulkInsert
   nameWithType.vb: DbSet(Of T).BulkInsert
+- uid: Kros.KORM.Query.DbSet`1.BulkInsertAsync
+  name: BulkInsertAsync()
+  href: api/Kros.KORM/Kros.KORM.Query.DbSet-1.html#Kros_KORM_Query_DbSet_1_BulkInsertAsync
+  commentId: M:Kros.KORM.Query.DbSet`1.BulkInsertAsync
+  fullName: Kros.KORM.Query.DbSet<T>.BulkInsertAsync()
+  fullName.vb: Kros.KORM.Query.DbSet(Of T).BulkInsertAsync()
+  nameWithType: DbSet<T>.BulkInsertAsync()
+  nameWithType.vb: DbSet(Of T).BulkInsertAsync()
+- uid: Kros.KORM.Query.DbSet`1.BulkInsertAsync(System.Collections.Generic.IEnumerable{`0})
+  name: BulkInsertAsync(IEnumerable<T>)
+  href: api/Kros.KORM/Kros.KORM.Query.DbSet-1.html#Kros_KORM_Query_DbSet_1_BulkInsertAsync_System_Collections_Generic_IEnumerable__0__
+  commentId: M:Kros.KORM.Query.DbSet`1.BulkInsertAsync(System.Collections.Generic.IEnumerable{`0})
+  name.vb: BulkInsertAsync(IEnumerable(Of T))
+  fullName: Kros.KORM.Query.DbSet<T>.BulkInsertAsync(System.Collections.Generic.IEnumerable<T>)
+  fullName.vb: Kros.KORM.Query.DbSet(Of T).BulkInsertAsync(System.Collections.Generic.IEnumerable(Of T))
+  nameWithType: DbSet<T>.BulkInsertAsync(IEnumerable<T>)
+  nameWithType.vb: DbSet(Of T).BulkInsertAsync(IEnumerable(Of T))
+- uid: Kros.KORM.Query.DbSet`1.BulkInsertAsync*
+  name: BulkInsertAsync
+  href: api/Kros.KORM/Kros.KORM.Query.DbSet-1.html#Kros_KORM_Query_DbSet_1_BulkInsertAsync_
+  commentId: Overload:Kros.KORM.Query.DbSet`1.BulkInsertAsync
+  isSpec: "True"
+  fullName: Kros.KORM.Query.DbSet<T>.BulkInsertAsync
+  fullName.vb: Kros.KORM.Query.DbSet(Of T).BulkInsertAsync
+  nameWithType: DbSet<T>.BulkInsertAsync
+  nameWithType.vb: DbSet(Of T).BulkInsertAsync
 - uid: Kros.KORM.Query.DbSet`1.BulkUpdate
   name: BulkUpdate()
   href: api/Kros.KORM/Kros.KORM.Query.DbSet-1.html#Kros_KORM_Query_DbSet_1_BulkUpdate
@@ -9899,6 +10553,50 @@ references:
   fullName.vb: Kros.KORM.Query.DbSet(Of T).BulkUpdate
   nameWithType: DbSet<T>.BulkUpdate
   nameWithType.vb: DbSet(Of T).BulkUpdate
+- uid: Kros.KORM.Query.DbSet`1.BulkUpdateAsync
+  name: BulkUpdateAsync()
+  href: api/Kros.KORM/Kros.KORM.Query.DbSet-1.html#Kros_KORM_Query_DbSet_1_BulkUpdateAsync
+  commentId: M:Kros.KORM.Query.DbSet`1.BulkUpdateAsync
+  fullName: Kros.KORM.Query.DbSet<T>.BulkUpdateAsync()
+  fullName.vb: Kros.KORM.Query.DbSet(Of T).BulkUpdateAsync()
+  nameWithType: DbSet<T>.BulkUpdateAsync()
+  nameWithType.vb: DbSet(Of T).BulkUpdateAsync()
+- uid: Kros.KORM.Query.DbSet`1.BulkUpdateAsync(System.Action{System.Data.IDbConnection,System.Data.IDbTransaction,System.String})
+  name: BulkUpdateAsync(Action<IDbConnection, IDbTransaction, String>)
+  href: api/Kros.KORM/Kros.KORM.Query.DbSet-1.html#Kros_KORM_Query_DbSet_1_BulkUpdateAsync_System_Action_System_Data_IDbConnection_System_Data_IDbTransaction_System_String__
+  commentId: M:Kros.KORM.Query.DbSet`1.BulkUpdateAsync(System.Action{System.Data.IDbConnection,System.Data.IDbTransaction,System.String})
+  name.vb: BulkUpdateAsync(Action(Of IDbConnection, IDbTransaction, String))
+  fullName: Kros.KORM.Query.DbSet<T>.BulkUpdateAsync(System.Action<System.Data.IDbConnection, System.Data.IDbTransaction, System.String>)
+  fullName.vb: Kros.KORM.Query.DbSet(Of T).BulkUpdateAsync(System.Action(Of System.Data.IDbConnection, System.Data.IDbTransaction, System.String))
+  nameWithType: DbSet<T>.BulkUpdateAsync(Action<IDbConnection, IDbTransaction, String>)
+  nameWithType.vb: DbSet(Of T).BulkUpdateAsync(Action(Of IDbConnection, IDbTransaction, String))
+- uid: Kros.KORM.Query.DbSet`1.BulkUpdateAsync(System.Collections.Generic.IEnumerable{`0})
+  name: BulkUpdateAsync(IEnumerable<T>)
+  href: api/Kros.KORM/Kros.KORM.Query.DbSet-1.html#Kros_KORM_Query_DbSet_1_BulkUpdateAsync_System_Collections_Generic_IEnumerable__0__
+  commentId: M:Kros.KORM.Query.DbSet`1.BulkUpdateAsync(System.Collections.Generic.IEnumerable{`0})
+  name.vb: BulkUpdateAsync(IEnumerable(Of T))
+  fullName: Kros.KORM.Query.DbSet<T>.BulkUpdateAsync(System.Collections.Generic.IEnumerable<T>)
+  fullName.vb: Kros.KORM.Query.DbSet(Of T).BulkUpdateAsync(System.Collections.Generic.IEnumerable(Of T))
+  nameWithType: DbSet<T>.BulkUpdateAsync(IEnumerable<T>)
+  nameWithType.vb: DbSet(Of T).BulkUpdateAsync(IEnumerable(Of T))
+- uid: Kros.KORM.Query.DbSet`1.BulkUpdateAsync(System.Collections.Generic.IEnumerable{`0},System.Action{System.Data.IDbConnection,System.Data.IDbTransaction,System.String})
+  name: BulkUpdateAsync(IEnumerable<T>, Action<IDbConnection, IDbTransaction, String>)
+  href: api/Kros.KORM/Kros.KORM.Query.DbSet-1.html#Kros_KORM_Query_DbSet_1_BulkUpdateAsync_System_Collections_Generic_IEnumerable__0__System_Action_System_Data_IDbConnection_System_Data_IDbTransaction_System_String__
+  commentId: M:Kros.KORM.Query.DbSet`1.BulkUpdateAsync(System.Collections.Generic.IEnumerable{`0},System.Action{System.Data.IDbConnection,System.Data.IDbTransaction,System.String})
+  name.vb: BulkUpdateAsync(IEnumerable(Of T), Action(Of IDbConnection, IDbTransaction, String))
+  fullName: Kros.KORM.Query.DbSet<T>.BulkUpdateAsync(System.Collections.Generic.IEnumerable<T>, System.Action<System.Data.IDbConnection, System.Data.IDbTransaction, System.String>)
+  fullName.vb: Kros.KORM.Query.DbSet(Of T).BulkUpdateAsync(System.Collections.Generic.IEnumerable(Of T), System.Action(Of System.Data.IDbConnection, System.Data.IDbTransaction, System.String))
+  nameWithType: DbSet<T>.BulkUpdateAsync(IEnumerable<T>, Action<IDbConnection, IDbTransaction, String>)
+  nameWithType.vb: DbSet(Of T).BulkUpdateAsync(IEnumerable(Of T), Action(Of IDbConnection, IDbTransaction, String))
+- uid: Kros.KORM.Query.DbSet`1.BulkUpdateAsync*
+  name: BulkUpdateAsync
+  href: api/Kros.KORM/Kros.KORM.Query.DbSet-1.html#Kros_KORM_Query_DbSet_1_BulkUpdateAsync_
+  commentId: Overload:Kros.KORM.Query.DbSet`1.BulkUpdateAsync
+  isSpec: "True"
+  fullName: Kros.KORM.Query.DbSet<T>.BulkUpdateAsync
+  fullName.vb: Kros.KORM.Query.DbSet(Of T).BulkUpdateAsync
+  nameWithType: DbSet<T>.BulkUpdateAsync
+  nameWithType.vb: DbSet(Of T).BulkUpdateAsync
 - uid: Kros.KORM.Query.DbSet`1.Clear
   name: Clear()
   href: api/Kros.KORM/Kros.KORM.Query.DbSet-1.html#Kros_KORM_Query_DbSet_1_Clear
@@ -9933,6 +10631,23 @@ references:
   fullName.vb: Kros.KORM.Query.DbSet(Of T).CommitChanges
   nameWithType: DbSet<T>.CommitChanges
   nameWithType.vb: DbSet(Of T).CommitChanges
+- uid: Kros.KORM.Query.DbSet`1.CommitChangesAsync
+  name: CommitChangesAsync()
+  href: api/Kros.KORM/Kros.KORM.Query.DbSet-1.html#Kros_KORM_Query_DbSet_1_CommitChangesAsync
+  commentId: M:Kros.KORM.Query.DbSet`1.CommitChangesAsync
+  fullName: Kros.KORM.Query.DbSet<T>.CommitChangesAsync()
+  fullName.vb: Kros.KORM.Query.DbSet(Of T).CommitChangesAsync()
+  nameWithType: DbSet<T>.CommitChangesAsync()
+  nameWithType.vb: DbSet(Of T).CommitChangesAsync()
+- uid: Kros.KORM.Query.DbSet`1.CommitChangesAsync*
+  name: CommitChangesAsync
+  href: api/Kros.KORM/Kros.KORM.Query.DbSet-1.html#Kros_KORM_Query_DbSet_1_CommitChangesAsync_
+  commentId: Overload:Kros.KORM.Query.DbSet`1.CommitChangesAsync
+  isSpec: "True"
+  fullName: Kros.KORM.Query.DbSet<T>.CommitChangesAsync
+  fullName.vb: Kros.KORM.Query.DbSet(Of T).CommitChangesAsync
+  nameWithType: DbSet<T>.CommitChangesAsync
+  nameWithType.vb: DbSet(Of T).CommitChangesAsync
 - uid: Kros.KORM.Query.DbSet`1.Delete(`0)
   name: Delete(T)
   href: api/Kros.KORM/Kros.KORM.Query.DbSet-1.html#Kros_KORM_Query_DbSet_1_Delete__0_
@@ -10144,12 +10859,6 @@ references:
   fullName.vb: Kros.KORM.Query.Expressions.ColumnsExpression.Create(Of T, TResult)(System.Func(Of T, TResult), Kros.KORM.Metadata.TableInfo)
   nameWithType: ColumnsExpression.Create<T, TResult>(Func<T, TResult>, TableInfo)
   nameWithType.vb: ColumnsExpression.Create(Of T, TResult)(Func(Of T, TResult), TableInfo)
-- uid: Kros.KORM.Query.Expressions.ColumnsExpression.SelectStatement
-  name: SelectStatement
-  href: api/Kros.KORM/Kros.KORM.Query.Expressions.ColumnsExpression.html#Kros_KORM_Query_Expressions_ColumnsExpression_SelectStatement
-  commentId: F:Kros.KORM.Query.Expressions.ColumnsExpression.SelectStatement
-  fullName: Kros.KORM.Query.Expressions.ColumnsExpression.SelectStatement
-  nameWithType: ColumnsExpression.SelectStatement
 - uid: Kros.KORM.Query.Expressions.GroupByExpression
   name: GroupByExpression
   href: api/Kros.KORM/Kros.KORM.Query.Expressions.GroupByExpression.html
@@ -10544,15 +11253,15 @@ references:
   commentId: T:Kros.KORM.Query.Expressions.SqlExpression
   fullName: Kros.KORM.Query.Expressions.SqlExpression
   nameWithType: SqlExpression
-- uid: Kros.KORM.Query.Expressions.SqlExpression.#ctor(System.String,System.Object[])
-  name: SqlExpression(String, Object[])
-  href: api/Kros.KORM/Kros.KORM.Query.Expressions.SqlExpression.html#Kros_KORM_Query_Expressions_SqlExpression__ctor_System_String_System_Object___
-  commentId: M:Kros.KORM.Query.Expressions.SqlExpression.#ctor(System.String,System.Object[])
-  name.vb: SqlExpression(String, Object())
-  fullName: Kros.KORM.Query.Expressions.SqlExpression.SqlExpression(System.String, System.Object[])
-  fullName.vb: Kros.KORM.Query.Expressions.SqlExpression.SqlExpression(System.String, System.Object())
-  nameWithType: SqlExpression.SqlExpression(String, Object[])
-  nameWithType.vb: SqlExpression.SqlExpression(String, Object())
+- uid: Kros.KORM.Query.Expressions.SqlExpression.#ctor(Kros.KORM.Query.Sql.RawSqlString,System.Object[])
+  name: SqlExpression(RawSqlString, Object[])
+  href: api/Kros.KORM/Kros.KORM.Query.Expressions.SqlExpression.html#Kros_KORM_Query_Expressions_SqlExpression__ctor_Kros_KORM_Query_Sql_RawSqlString_System_Object___
+  commentId: M:Kros.KORM.Query.Expressions.SqlExpression.#ctor(Kros.KORM.Query.Sql.RawSqlString,System.Object[])
+  name.vb: SqlExpression(RawSqlString, Object())
+  fullName: Kros.KORM.Query.Expressions.SqlExpression.SqlExpression(Kros.KORM.Query.Sql.RawSqlString, System.Object[])
+  fullName.vb: Kros.KORM.Query.Expressions.SqlExpression.SqlExpression(Kros.KORM.Query.Sql.RawSqlString, System.Object())
+  nameWithType: SqlExpression.SqlExpression(RawSqlString, Object[])
+  nameWithType.vb: SqlExpression.SqlExpression(RawSqlString, Object())
 - uid: Kros.KORM.Query.Expressions.SqlExpression.#ctor*
   name: SqlExpression
   href: api/Kros.KORM/Kros.KORM.Query.Expressions.SqlExpression.html#Kros_KORM_Query_Expressions_SqlExpression__ctor_
@@ -10630,15 +11339,15 @@ references:
   commentId: T:Kros.KORM.Query.Expressions.WhereExpression
   fullName: Kros.KORM.Query.Expressions.WhereExpression
   nameWithType: WhereExpression
-- uid: Kros.KORM.Query.Expressions.WhereExpression.#ctor(System.String,System.Object[])
-  name: WhereExpression(String, Object[])
-  href: api/Kros.KORM/Kros.KORM.Query.Expressions.WhereExpression.html#Kros_KORM_Query_Expressions_WhereExpression__ctor_System_String_System_Object___
-  commentId: M:Kros.KORM.Query.Expressions.WhereExpression.#ctor(System.String,System.Object[])
-  name.vb: WhereExpression(String, Object())
-  fullName: Kros.KORM.Query.Expressions.WhereExpression.WhereExpression(System.String, System.Object[])
-  fullName.vb: Kros.KORM.Query.Expressions.WhereExpression.WhereExpression(System.String, System.Object())
-  nameWithType: WhereExpression.WhereExpression(String, Object[])
-  nameWithType.vb: WhereExpression.WhereExpression(String, Object())
+- uid: Kros.KORM.Query.Expressions.WhereExpression.#ctor(Kros.KORM.Query.Sql.RawSqlString,System.Object[])
+  name: WhereExpression(RawSqlString, Object[])
+  href: api/Kros.KORM/Kros.KORM.Query.Expressions.WhereExpression.html#Kros_KORM_Query_Expressions_WhereExpression__ctor_Kros_KORM_Query_Sql_RawSqlString_System_Object___
+  commentId: M:Kros.KORM.Query.Expressions.WhereExpression.#ctor(Kros.KORM.Query.Sql.RawSqlString,System.Object[])
+  name.vb: WhereExpression(RawSqlString, Object())
+  fullName: Kros.KORM.Query.Expressions.WhereExpression.WhereExpression(Kros.KORM.Query.Sql.RawSqlString, System.Object[])
+  fullName.vb: Kros.KORM.Query.Expressions.WhereExpression.WhereExpression(Kros.KORM.Query.Sql.RawSqlString, System.Object())
+  nameWithType: WhereExpression.WhereExpression(RawSqlString, Object[])
+  nameWithType.vb: WhereExpression.WhereExpression(RawSqlString, Object())
 - uid: Kros.KORM.Query.Expressions.WhereExpression.#ctor*
   name: WhereExpression
   href: api/Kros.KORM/Kros.KORM.Query.Expressions.WhereExpression.html#Kros_KORM_Query_Expressions_WhereExpression__ctor_
@@ -10743,6 +11452,32 @@ references:
   fullName.vb: Kros.KORM.Query.IDbSet(Of T).BulkInsert
   nameWithType: IDbSet<T>.BulkInsert
   nameWithType.vb: IDbSet(Of T).BulkInsert
+- uid: Kros.KORM.Query.IDbSet`1.BulkInsertAsync
+  name: BulkInsertAsync()
+  href: api/Kros.KORM/Kros.KORM.Query.IDbSet-1.html#Kros_KORM_Query_IDbSet_1_BulkInsertAsync
+  commentId: M:Kros.KORM.Query.IDbSet`1.BulkInsertAsync
+  fullName: Kros.KORM.Query.IDbSet<T>.BulkInsertAsync()
+  fullName.vb: Kros.KORM.Query.IDbSet(Of T).BulkInsertAsync()
+  nameWithType: IDbSet<T>.BulkInsertAsync()
+  nameWithType.vb: IDbSet(Of T).BulkInsertAsync()
+- uid: Kros.KORM.Query.IDbSet`1.BulkInsertAsync(System.Collections.Generic.IEnumerable{`0})
+  name: BulkInsertAsync(IEnumerable<T>)
+  href: api/Kros.KORM/Kros.KORM.Query.IDbSet-1.html#Kros_KORM_Query_IDbSet_1_BulkInsertAsync_System_Collections_Generic_IEnumerable__0__
+  commentId: M:Kros.KORM.Query.IDbSet`1.BulkInsertAsync(System.Collections.Generic.IEnumerable{`0})
+  name.vb: BulkInsertAsync(IEnumerable(Of T))
+  fullName: Kros.KORM.Query.IDbSet<T>.BulkInsertAsync(System.Collections.Generic.IEnumerable<T>)
+  fullName.vb: Kros.KORM.Query.IDbSet(Of T).BulkInsertAsync(System.Collections.Generic.IEnumerable(Of T))
+  nameWithType: IDbSet<T>.BulkInsertAsync(IEnumerable<T>)
+  nameWithType.vb: IDbSet(Of T).BulkInsertAsync(IEnumerable(Of T))
+- uid: Kros.KORM.Query.IDbSet`1.BulkInsertAsync*
+  name: BulkInsertAsync
+  href: api/Kros.KORM/Kros.KORM.Query.IDbSet-1.html#Kros_KORM_Query_IDbSet_1_BulkInsertAsync_
+  commentId: Overload:Kros.KORM.Query.IDbSet`1.BulkInsertAsync
+  isSpec: "True"
+  fullName: Kros.KORM.Query.IDbSet<T>.BulkInsertAsync
+  fullName.vb: Kros.KORM.Query.IDbSet(Of T).BulkInsertAsync
+  nameWithType: IDbSet<T>.BulkInsertAsync
+  nameWithType.vb: IDbSet(Of T).BulkInsertAsync
 - uid: Kros.KORM.Query.IDbSet`1.BulkUpdate
   name: BulkUpdate()
   href: api/Kros.KORM/Kros.KORM.Query.IDbSet-1.html#Kros_KORM_Query_IDbSet_1_BulkUpdate
@@ -10787,6 +11522,50 @@ references:
   fullName.vb: Kros.KORM.Query.IDbSet(Of T).BulkUpdate
   nameWithType: IDbSet<T>.BulkUpdate
   nameWithType.vb: IDbSet(Of T).BulkUpdate
+- uid: Kros.KORM.Query.IDbSet`1.BulkUpdateAsync
+  name: BulkUpdateAsync()
+  href: api/Kros.KORM/Kros.KORM.Query.IDbSet-1.html#Kros_KORM_Query_IDbSet_1_BulkUpdateAsync
+  commentId: M:Kros.KORM.Query.IDbSet`1.BulkUpdateAsync
+  fullName: Kros.KORM.Query.IDbSet<T>.BulkUpdateAsync()
+  fullName.vb: Kros.KORM.Query.IDbSet(Of T).BulkUpdateAsync()
+  nameWithType: IDbSet<T>.BulkUpdateAsync()
+  nameWithType.vb: IDbSet(Of T).BulkUpdateAsync()
+- uid: Kros.KORM.Query.IDbSet`1.BulkUpdateAsync(System.Action{System.Data.IDbConnection,System.Data.IDbTransaction,System.String})
+  name: BulkUpdateAsync(Action<IDbConnection, IDbTransaction, String>)
+  href: api/Kros.KORM/Kros.KORM.Query.IDbSet-1.html#Kros_KORM_Query_IDbSet_1_BulkUpdateAsync_System_Action_System_Data_IDbConnection_System_Data_IDbTransaction_System_String__
+  commentId: M:Kros.KORM.Query.IDbSet`1.BulkUpdateAsync(System.Action{System.Data.IDbConnection,System.Data.IDbTransaction,System.String})
+  name.vb: BulkUpdateAsync(Action(Of IDbConnection, IDbTransaction, String))
+  fullName: Kros.KORM.Query.IDbSet<T>.BulkUpdateAsync(System.Action<System.Data.IDbConnection, System.Data.IDbTransaction, System.String>)
+  fullName.vb: Kros.KORM.Query.IDbSet(Of T).BulkUpdateAsync(System.Action(Of System.Data.IDbConnection, System.Data.IDbTransaction, System.String))
+  nameWithType: IDbSet<T>.BulkUpdateAsync(Action<IDbConnection, IDbTransaction, String>)
+  nameWithType.vb: IDbSet(Of T).BulkUpdateAsync(Action(Of IDbConnection, IDbTransaction, String))
+- uid: Kros.KORM.Query.IDbSet`1.BulkUpdateAsync(System.Collections.Generic.IEnumerable{`0})
+  name: BulkUpdateAsync(IEnumerable<T>)
+  href: api/Kros.KORM/Kros.KORM.Query.IDbSet-1.html#Kros_KORM_Query_IDbSet_1_BulkUpdateAsync_System_Collections_Generic_IEnumerable__0__
+  commentId: M:Kros.KORM.Query.IDbSet`1.BulkUpdateAsync(System.Collections.Generic.IEnumerable{`0})
+  name.vb: BulkUpdateAsync(IEnumerable(Of T))
+  fullName: Kros.KORM.Query.IDbSet<T>.BulkUpdateAsync(System.Collections.Generic.IEnumerable<T>)
+  fullName.vb: Kros.KORM.Query.IDbSet(Of T).BulkUpdateAsync(System.Collections.Generic.IEnumerable(Of T))
+  nameWithType: IDbSet<T>.BulkUpdateAsync(IEnumerable<T>)
+  nameWithType.vb: IDbSet(Of T).BulkUpdateAsync(IEnumerable(Of T))
+- uid: Kros.KORM.Query.IDbSet`1.BulkUpdateAsync(System.Collections.Generic.IEnumerable{`0},System.Action{System.Data.IDbConnection,System.Data.IDbTransaction,System.String})
+  name: BulkUpdateAsync(IEnumerable<T>, Action<IDbConnection, IDbTransaction, String>)
+  href: api/Kros.KORM/Kros.KORM.Query.IDbSet-1.html#Kros_KORM_Query_IDbSet_1_BulkUpdateAsync_System_Collections_Generic_IEnumerable__0__System_Action_System_Data_IDbConnection_System_Data_IDbTransaction_System_String__
+  commentId: M:Kros.KORM.Query.IDbSet`1.BulkUpdateAsync(System.Collections.Generic.IEnumerable{`0},System.Action{System.Data.IDbConnection,System.Data.IDbTransaction,System.String})
+  name.vb: BulkUpdateAsync(IEnumerable(Of T), Action(Of IDbConnection, IDbTransaction, String))
+  fullName: Kros.KORM.Query.IDbSet<T>.BulkUpdateAsync(System.Collections.Generic.IEnumerable<T>, System.Action<System.Data.IDbConnection, System.Data.IDbTransaction, System.String>)
+  fullName.vb: Kros.KORM.Query.IDbSet(Of T).BulkUpdateAsync(System.Collections.Generic.IEnumerable(Of T), System.Action(Of System.Data.IDbConnection, System.Data.IDbTransaction, System.String))
+  nameWithType: IDbSet<T>.BulkUpdateAsync(IEnumerable<T>, Action<IDbConnection, IDbTransaction, String>)
+  nameWithType.vb: IDbSet(Of T).BulkUpdateAsync(IEnumerable(Of T), Action(Of IDbConnection, IDbTransaction, String))
+- uid: Kros.KORM.Query.IDbSet`1.BulkUpdateAsync*
+  name: BulkUpdateAsync
+  href: api/Kros.KORM/Kros.KORM.Query.IDbSet-1.html#Kros_KORM_Query_IDbSet_1_BulkUpdateAsync_
+  commentId: Overload:Kros.KORM.Query.IDbSet`1.BulkUpdateAsync
+  isSpec: "True"
+  fullName: Kros.KORM.Query.IDbSet<T>.BulkUpdateAsync
+  fullName.vb: Kros.KORM.Query.IDbSet(Of T).BulkUpdateAsync
+  nameWithType: IDbSet<T>.BulkUpdateAsync
+  nameWithType.vb: IDbSet(Of T).BulkUpdateAsync
 - uid: Kros.KORM.Query.IDbSet`1.Clear
   name: Clear()
   href: api/Kros.KORM/Kros.KORM.Query.IDbSet-1.html#Kros_KORM_Query_IDbSet_1_Clear
@@ -10821,6 +11600,23 @@ references:
   fullName.vb: Kros.KORM.Query.IDbSet(Of T).CommitChanges
   nameWithType: IDbSet<T>.CommitChanges
   nameWithType.vb: IDbSet(Of T).CommitChanges
+- uid: Kros.KORM.Query.IDbSet`1.CommitChangesAsync
+  name: CommitChangesAsync()
+  href: api/Kros.KORM/Kros.KORM.Query.IDbSet-1.html#Kros_KORM_Query_IDbSet_1_CommitChangesAsync
+  commentId: M:Kros.KORM.Query.IDbSet`1.CommitChangesAsync
+  fullName: Kros.KORM.Query.IDbSet<T>.CommitChangesAsync()
+  fullName.vb: Kros.KORM.Query.IDbSet(Of T).CommitChangesAsync()
+  nameWithType: IDbSet<T>.CommitChangesAsync()
+  nameWithType.vb: IDbSet(Of T).CommitChangesAsync()
+- uid: Kros.KORM.Query.IDbSet`1.CommitChangesAsync*
+  name: CommitChangesAsync
+  href: api/Kros.KORM/Kros.KORM.Query.IDbSet-1.html#Kros_KORM_Query_IDbSet_1_CommitChangesAsync_
+  commentId: Overload:Kros.KORM.Query.IDbSet`1.CommitChangesAsync
+  isSpec: "True"
+  fullName: Kros.KORM.Query.IDbSet<T>.CommitChangesAsync
+  fullName.vb: Kros.KORM.Query.IDbSet(Of T).CommitChangesAsync
+  nameWithType: IDbSet<T>.CommitChangesAsync
+  nameWithType.vb: IDbSet(Of T).CommitChangesAsync
 - uid: Kros.KORM.Query.IDbSet`1.Delete(`0)
   name: Delete(T)
   href: api/Kros.KORM/Kros.KORM.Query.IDbSet-1.html#Kros_KORM_Query_IDbSet_1_Delete__0_
@@ -10994,15 +11790,23 @@ references:
   fullName.vb: Kros.KORM.Query.IProjectionQuery(Of T)
   nameWithType: IProjectionQuery<T>
   nameWithType.vb: IProjectionQuery(Of T)
-- uid: Kros.KORM.Query.IProjectionQuery`1.Any(System.String,System.Object[])
-  name: Any(String, Object[])
-  href: api/Kros.KORM/Kros.KORM.Query.IProjectionQuery-1.html#Kros_KORM_Query_IProjectionQuery_1_Any_System_String_System_Object___
-  commentId: M:Kros.KORM.Query.IProjectionQuery`1.Any(System.String,System.Object[])
-  name.vb: Any(String, Object())
-  fullName: Kros.KORM.Query.IProjectionQuery<T>.Any(System.String, System.Object[])
-  fullName.vb: Kros.KORM.Query.IProjectionQuery(Of T).Any(System.String, System.Object())
-  nameWithType: IProjectionQuery<T>.Any(String, Object[])
-  nameWithType.vb: IProjectionQuery(Of T).Any(String, Object())
+- uid: Kros.KORM.Query.IProjectionQuery`1.Any(Kros.KORM.Query.Sql.RawSqlString,System.Object[])
+  name: Any(RawSqlString, Object[])
+  href: api/Kros.KORM/Kros.KORM.Query.IProjectionQuery-1.html#Kros_KORM_Query_IProjectionQuery_1_Any_Kros_KORM_Query_Sql_RawSqlString_System_Object___
+  commentId: M:Kros.KORM.Query.IProjectionQuery`1.Any(Kros.KORM.Query.Sql.RawSqlString,System.Object[])
+  name.vb: Any(RawSqlString, Object())
+  fullName: Kros.KORM.Query.IProjectionQuery<T>.Any(Kros.KORM.Query.Sql.RawSqlString, System.Object[])
+  fullName.vb: Kros.KORM.Query.IProjectionQuery(Of T).Any(Kros.KORM.Query.Sql.RawSqlString, System.Object())
+  nameWithType: IProjectionQuery<T>.Any(RawSqlString, Object[])
+  nameWithType.vb: IProjectionQuery(Of T).Any(RawSqlString, Object())
+- uid: Kros.KORM.Query.IProjectionQuery`1.Any(System.FormattableString)
+  name: Any(FormattableString)
+  href: api/Kros.KORM/Kros.KORM.Query.IProjectionQuery-1.html#Kros_KORM_Query_IProjectionQuery_1_Any_System_FormattableString_
+  commentId: M:Kros.KORM.Query.IProjectionQuery`1.Any(System.FormattableString)
+  fullName: Kros.KORM.Query.IProjectionQuery<T>.Any(System.FormattableString)
+  fullName.vb: Kros.KORM.Query.IProjectionQuery(Of T).Any(System.FormattableString)
+  nameWithType: IProjectionQuery<T>.Any(FormattableString)
+  nameWithType.vb: IProjectionQuery(Of T).Any(FormattableString)
 - uid: Kros.KORM.Query.IProjectionQuery`1.Any*
   name: Any
   href: api/Kros.KORM/Kros.KORM.Query.IProjectionQuery-1.html#Kros_KORM_Query_IProjectionQuery_1_Any_
@@ -11012,15 +11816,23 @@ references:
   fullName.vb: Kros.KORM.Query.IProjectionQuery(Of T).Any
   nameWithType: IProjectionQuery<T>.Any
   nameWithType.vb: IProjectionQuery(Of T).Any
-- uid: Kros.KORM.Query.IProjectionQuery`1.FirstOrDefault(System.String,System.Object[])
-  name: FirstOrDefault(String, Object[])
-  href: api/Kros.KORM/Kros.KORM.Query.IProjectionQuery-1.html#Kros_KORM_Query_IProjectionQuery_1_FirstOrDefault_System_String_System_Object___
-  commentId: M:Kros.KORM.Query.IProjectionQuery`1.FirstOrDefault(System.String,System.Object[])
-  name.vb: FirstOrDefault(String, Object())
-  fullName: Kros.KORM.Query.IProjectionQuery<T>.FirstOrDefault(System.String, System.Object[])
-  fullName.vb: Kros.KORM.Query.IProjectionQuery(Of T).FirstOrDefault(System.String, System.Object())
-  nameWithType: IProjectionQuery<T>.FirstOrDefault(String, Object[])
-  nameWithType.vb: IProjectionQuery(Of T).FirstOrDefault(String, Object())
+- uid: Kros.KORM.Query.IProjectionQuery`1.FirstOrDefault(Kros.KORM.Query.Sql.RawSqlString,System.Object[])
+  name: FirstOrDefault(RawSqlString, Object[])
+  href: api/Kros.KORM/Kros.KORM.Query.IProjectionQuery-1.html#Kros_KORM_Query_IProjectionQuery_1_FirstOrDefault_Kros_KORM_Query_Sql_RawSqlString_System_Object___
+  commentId: M:Kros.KORM.Query.IProjectionQuery`1.FirstOrDefault(Kros.KORM.Query.Sql.RawSqlString,System.Object[])
+  name.vb: FirstOrDefault(RawSqlString, Object())
+  fullName: Kros.KORM.Query.IProjectionQuery<T>.FirstOrDefault(Kros.KORM.Query.Sql.RawSqlString, System.Object[])
+  fullName.vb: Kros.KORM.Query.IProjectionQuery(Of T).FirstOrDefault(Kros.KORM.Query.Sql.RawSqlString, System.Object())
+  nameWithType: IProjectionQuery<T>.FirstOrDefault(RawSqlString, Object[])
+  nameWithType.vb: IProjectionQuery(Of T).FirstOrDefault(RawSqlString, Object())
+- uid: Kros.KORM.Query.IProjectionQuery`1.FirstOrDefault(System.FormattableString)
+  name: FirstOrDefault(FormattableString)
+  href: api/Kros.KORM/Kros.KORM.Query.IProjectionQuery-1.html#Kros_KORM_Query_IProjectionQuery_1_FirstOrDefault_System_FormattableString_
+  commentId: M:Kros.KORM.Query.IProjectionQuery`1.FirstOrDefault(System.FormattableString)
+  fullName: Kros.KORM.Query.IProjectionQuery<T>.FirstOrDefault(System.FormattableString)
+  fullName.vb: Kros.KORM.Query.IProjectionQuery(Of T).FirstOrDefault(System.FormattableString)
+  nameWithType: IProjectionQuery<T>.FirstOrDefault(FormattableString)
+  nameWithType.vb: IProjectionQuery(Of T).FirstOrDefault(FormattableString)
 - uid: Kros.KORM.Query.IProjectionQuery`1.FirstOrDefault*
   name: FirstOrDefault
   href: api/Kros.KORM/Kros.KORM.Query.IProjectionQuery-1.html#Kros_KORM_Query_IProjectionQuery_1_FirstOrDefault_
@@ -11064,15 +11876,23 @@ references:
   fullName.vb: Kros.KORM.Query.IProjectionQuery(Of T).OrderBy
   nameWithType: IProjectionQuery<T>.OrderBy
   nameWithType.vb: IProjectionQuery(Of T).OrderBy
-- uid: Kros.KORM.Query.IProjectionQuery`1.Where(System.String,System.Object[])
-  name: Where(String, Object[])
-  href: api/Kros.KORM/Kros.KORM.Query.IProjectionQuery-1.html#Kros_KORM_Query_IProjectionQuery_1_Where_System_String_System_Object___
-  commentId: M:Kros.KORM.Query.IProjectionQuery`1.Where(System.String,System.Object[])
-  name.vb: Where(String, Object())
-  fullName: Kros.KORM.Query.IProjectionQuery<T>.Where(System.String, System.Object[])
-  fullName.vb: Kros.KORM.Query.IProjectionQuery(Of T).Where(System.String, System.Object())
-  nameWithType: IProjectionQuery<T>.Where(String, Object[])
-  nameWithType.vb: IProjectionQuery(Of T).Where(String, Object())
+- uid: Kros.KORM.Query.IProjectionQuery`1.Where(Kros.KORM.Query.Sql.RawSqlString,System.Object[])
+  name: Where(RawSqlString, Object[])
+  href: api/Kros.KORM/Kros.KORM.Query.IProjectionQuery-1.html#Kros_KORM_Query_IProjectionQuery_1_Where_Kros_KORM_Query_Sql_RawSqlString_System_Object___
+  commentId: M:Kros.KORM.Query.IProjectionQuery`1.Where(Kros.KORM.Query.Sql.RawSqlString,System.Object[])
+  name.vb: Where(RawSqlString, Object())
+  fullName: Kros.KORM.Query.IProjectionQuery<T>.Where(Kros.KORM.Query.Sql.RawSqlString, System.Object[])
+  fullName.vb: Kros.KORM.Query.IProjectionQuery(Of T).Where(Kros.KORM.Query.Sql.RawSqlString, System.Object())
+  nameWithType: IProjectionQuery<T>.Where(RawSqlString, Object[])
+  nameWithType.vb: IProjectionQuery(Of T).Where(RawSqlString, Object())
+- uid: Kros.KORM.Query.IProjectionQuery`1.Where(System.FormattableString)
+  name: Where(FormattableString)
+  href: api/Kros.KORM/Kros.KORM.Query.IProjectionQuery-1.html#Kros_KORM_Query_IProjectionQuery_1_Where_System_FormattableString_
+  commentId: M:Kros.KORM.Query.IProjectionQuery`1.Where(System.FormattableString)
+  fullName: Kros.KORM.Query.IProjectionQuery<T>.Where(System.FormattableString)
+  fullName.vb: Kros.KORM.Query.IProjectionQuery(Of T).Where(System.FormattableString)
+  nameWithType: IProjectionQuery<T>.Where(FormattableString)
+  nameWithType.vb: IProjectionQuery(Of T).Where(FormattableString)
 - uid: Kros.KORM.Query.IProjectionQuery`1.Where*
   name: Where
   href: api/Kros.KORM/Kros.KORM.Query.IProjectionQuery-1.html#Kros_KORM_Query_IProjectionQuery_1_Where_
@@ -11143,15 +11963,23 @@ references:
   fullName.vb: Kros.KORM.Query.IQuery(Of T).Select(Of TResult)(System.Func(Of T, TResult))
   nameWithType: IQuery<T>.Select<TResult>(Func<T, TResult>)
   nameWithType.vb: IQuery(Of T).Select(Of TResult)(Func(Of T, TResult))
-- uid: Kros.KORM.Query.IQuery`1.Sql(System.String,System.Object[])
-  name: Sql(String, Object[])
-  href: api/Kros.KORM/Kros.KORM.Query.IQuery-1.html#Kros_KORM_Query_IQuery_1_Sql_System_String_System_Object___
-  commentId: M:Kros.KORM.Query.IQuery`1.Sql(System.String,System.Object[])
-  name.vb: Sql(String, Object())
-  fullName: Kros.KORM.Query.IQuery<T>.Sql(System.String, System.Object[])
-  fullName.vb: Kros.KORM.Query.IQuery(Of T).Sql(System.String, System.Object())
-  nameWithType: IQuery<T>.Sql(String, Object[])
-  nameWithType.vb: IQuery(Of T).Sql(String, Object())
+- uid: Kros.KORM.Query.IQuery`1.Sql(Kros.KORM.Query.Sql.RawSqlString,System.Object[])
+  name: Sql(RawSqlString, Object[])
+  href: api/Kros.KORM/Kros.KORM.Query.IQuery-1.html#Kros_KORM_Query_IQuery_1_Sql_Kros_KORM_Query_Sql_RawSqlString_System_Object___
+  commentId: M:Kros.KORM.Query.IQuery`1.Sql(Kros.KORM.Query.Sql.RawSqlString,System.Object[])
+  name.vb: Sql(RawSqlString, Object())
+  fullName: Kros.KORM.Query.IQuery<T>.Sql(Kros.KORM.Query.Sql.RawSqlString, System.Object[])
+  fullName.vb: Kros.KORM.Query.IQuery(Of T).Sql(Kros.KORM.Query.Sql.RawSqlString, System.Object())
+  nameWithType: IQuery<T>.Sql(RawSqlString, Object[])
+  nameWithType.vb: IQuery(Of T).Sql(RawSqlString, Object())
+- uid: Kros.KORM.Query.IQuery`1.Sql(System.FormattableString)
+  name: Sql(FormattableString)
+  href: api/Kros.KORM/Kros.KORM.Query.IQuery-1.html#Kros_KORM_Query_IQuery_1_Sql_System_FormattableString_
+  commentId: M:Kros.KORM.Query.IQuery`1.Sql(System.FormattableString)
+  fullName: Kros.KORM.Query.IQuery<T>.Sql(System.FormattableString)
+  fullName.vb: Kros.KORM.Query.IQuery(Of T).Sql(System.FormattableString)
+  nameWithType: IQuery<T>.Sql(FormattableString)
+  nameWithType.vb: IQuery(Of T).Sql(FormattableString)
 - uid: Kros.KORM.Query.IQuery`1.Sql*
   name: Sql
   href: api/Kros.KORM/Kros.KORM.Query.IQuery-1.html#Kros_KORM_Query_IQuery_1_Sql_
@@ -11317,19 +12145,22 @@ references:
   fullName.vb: Kros.KORM.Query.IQueryProvider.Execute(Of T)(Kros.KORM.Query.IQuery(Of T))
   nameWithType: IQueryProvider.Execute<T>(IQuery<T>)
   nameWithType.vb: IQueryProvider.Execute(Of T)(IQuery(Of T))
-- uid: Kros.KORM.Query.IQueryProvider.ExecuteInTransaction(System.Action)
-  name: ExecuteInTransaction(Action)
-  href: api/Kros.KORM/Kros.KORM.Query.IQueryProvider.html#Kros_KORM_Query_IQueryProvider_ExecuteInTransaction_System_Action_
-  commentId: M:Kros.KORM.Query.IQueryProvider.ExecuteInTransaction(System.Action)
-  fullName: Kros.KORM.Query.IQueryProvider.ExecuteInTransaction(System.Action)
-  nameWithType: IQueryProvider.ExecuteInTransaction(Action)
-- uid: Kros.KORM.Query.IQueryProvider.ExecuteInTransaction*
-  name: ExecuteInTransaction
-  href: api/Kros.KORM/Kros.KORM.Query.IQueryProvider.html#Kros_KORM_Query_IQueryProvider_ExecuteInTransaction_
-  commentId: Overload:Kros.KORM.Query.IQueryProvider.ExecuteInTransaction
+- uid: Kros.KORM.Query.IQueryProvider.ExecuteInTransactionAsync(System.Func{System.Threading.Tasks.Task})
+  name: ExecuteInTransactionAsync(Func<Task>)
+  href: api/Kros.KORM/Kros.KORM.Query.IQueryProvider.html#Kros_KORM_Query_IQueryProvider_ExecuteInTransactionAsync_System_Func_System_Threading_Tasks_Task__
+  commentId: M:Kros.KORM.Query.IQueryProvider.ExecuteInTransactionAsync(System.Func{System.Threading.Tasks.Task})
+  name.vb: ExecuteInTransactionAsync(Func(Of Task))
+  fullName: Kros.KORM.Query.IQueryProvider.ExecuteInTransactionAsync(System.Func<System.Threading.Tasks.Task>)
+  fullName.vb: Kros.KORM.Query.IQueryProvider.ExecuteInTransactionAsync(System.Func(Of System.Threading.Tasks.Task))
+  nameWithType: IQueryProvider.ExecuteInTransactionAsync(Func<Task>)
+  nameWithType.vb: IQueryProvider.ExecuteInTransactionAsync(Func(Of Task))
+- uid: Kros.KORM.Query.IQueryProvider.ExecuteInTransactionAsync*
+  name: ExecuteInTransactionAsync
+  href: api/Kros.KORM/Kros.KORM.Query.IQueryProvider.html#Kros_KORM_Query_IQueryProvider_ExecuteInTransactionAsync_
+  commentId: Overload:Kros.KORM.Query.IQueryProvider.ExecuteInTransactionAsync
   isSpec: "True"
-  fullName: Kros.KORM.Query.IQueryProvider.ExecuteInTransaction
-  nameWithType: IQueryProvider.ExecuteInTransaction
+  fullName: Kros.KORM.Query.IQueryProvider.ExecuteInTransactionAsync
+  nameWithType: IQueryProvider.ExecuteInTransactionAsync
 - uid: Kros.KORM.Query.IQueryProvider.ExecuteNonQuery(System.String)
   name: ExecuteNonQuery(String)
   href: api/Kros.KORM/Kros.KORM.Query.IQueryProvider.html#Kros_KORM_Query_IQueryProvider_ExecuteNonQuery_System_String_
@@ -11362,6 +12193,19 @@ references:
   isSpec: "True"
   fullName: Kros.KORM.Query.IQueryProvider.ExecuteNonQueryCommand
   nameWithType: IQueryProvider.ExecuteNonQueryCommand
+- uid: Kros.KORM.Query.IQueryProvider.ExecuteNonQueryCommandAsync(System.Data.Common.DbCommand)
+  name: ExecuteNonQueryCommandAsync(DbCommand)
+  href: api/Kros.KORM/Kros.KORM.Query.IQueryProvider.html#Kros_KORM_Query_IQueryProvider_ExecuteNonQueryCommandAsync_System_Data_Common_DbCommand_
+  commentId: M:Kros.KORM.Query.IQueryProvider.ExecuteNonQueryCommandAsync(System.Data.Common.DbCommand)
+  fullName: Kros.KORM.Query.IQueryProvider.ExecuteNonQueryCommandAsync(System.Data.Common.DbCommand)
+  nameWithType: IQueryProvider.ExecuteNonQueryCommandAsync(DbCommand)
+- uid: Kros.KORM.Query.IQueryProvider.ExecuteNonQueryCommandAsync*
+  name: ExecuteNonQueryCommandAsync
+  href: api/Kros.KORM/Kros.KORM.Query.IQueryProvider.html#Kros_KORM_Query_IQueryProvider_ExecuteNonQueryCommandAsync_
+  commentId: Overload:Kros.KORM.Query.IQueryProvider.ExecuteNonQueryCommandAsync
+  isSpec: "True"
+  fullName: Kros.KORM.Query.IQueryProvider.ExecuteNonQueryCommandAsync
+  nameWithType: IQueryProvider.ExecuteNonQueryCommandAsync
 - uid: Kros.KORM.Query.IQueryProvider.ExecuteScalar*
   name: ExecuteScalar
   href: api/Kros.KORM/Kros.KORM.Query.IQueryProvider.html#Kros_KORM_Query_IQueryProvider_ExecuteScalar_
@@ -11763,19 +12607,22 @@ references:
   fullName.vb: Kros.KORM.Query.QueryProvider.Execute(Of TResult)(System.Linq.Expressions.Expression)
   nameWithType: QueryProvider.Execute<TResult>(Expression)
   nameWithType.vb: QueryProvider.Execute(Of TResult)(Expression)
-- uid: Kros.KORM.Query.QueryProvider.ExecuteInTransaction(System.Action)
-  name: ExecuteInTransaction(Action)
-  href: api/Kros.KORM/Kros.KORM.Query.QueryProvider.html#Kros_KORM_Query_QueryProvider_ExecuteInTransaction_System_Action_
-  commentId: M:Kros.KORM.Query.QueryProvider.ExecuteInTransaction(System.Action)
-  fullName: Kros.KORM.Query.QueryProvider.ExecuteInTransaction(System.Action)
-  nameWithType: QueryProvider.ExecuteInTransaction(Action)
-- uid: Kros.KORM.Query.QueryProvider.ExecuteInTransaction*
-  name: ExecuteInTransaction
-  href: api/Kros.KORM/Kros.KORM.Query.QueryProvider.html#Kros_KORM_Query_QueryProvider_ExecuteInTransaction_
-  commentId: Overload:Kros.KORM.Query.QueryProvider.ExecuteInTransaction
+- uid: Kros.KORM.Query.QueryProvider.ExecuteInTransactionAsync(System.Func{System.Threading.Tasks.Task})
+  name: ExecuteInTransactionAsync(Func<Task>)
+  href: api/Kros.KORM/Kros.KORM.Query.QueryProvider.html#Kros_KORM_Query_QueryProvider_ExecuteInTransactionAsync_System_Func_System_Threading_Tasks_Task__
+  commentId: M:Kros.KORM.Query.QueryProvider.ExecuteInTransactionAsync(System.Func{System.Threading.Tasks.Task})
+  name.vb: ExecuteInTransactionAsync(Func(Of Task))
+  fullName: Kros.KORM.Query.QueryProvider.ExecuteInTransactionAsync(System.Func<System.Threading.Tasks.Task>)
+  fullName.vb: Kros.KORM.Query.QueryProvider.ExecuteInTransactionAsync(System.Func(Of System.Threading.Tasks.Task))
+  nameWithType: QueryProvider.ExecuteInTransactionAsync(Func<Task>)
+  nameWithType.vb: QueryProvider.ExecuteInTransactionAsync(Func(Of Task))
+- uid: Kros.KORM.Query.QueryProvider.ExecuteInTransactionAsync*
+  name: ExecuteInTransactionAsync
+  href: api/Kros.KORM/Kros.KORM.Query.QueryProvider.html#Kros_KORM_Query_QueryProvider_ExecuteInTransactionAsync_
+  commentId: Overload:Kros.KORM.Query.QueryProvider.ExecuteInTransactionAsync
   isSpec: "True"
-  fullName: Kros.KORM.Query.QueryProvider.ExecuteInTransaction
-  nameWithType: QueryProvider.ExecuteInTransaction
+  fullName: Kros.KORM.Query.QueryProvider.ExecuteInTransactionAsync
+  nameWithType: QueryProvider.ExecuteInTransactionAsync
 - uid: Kros.KORM.Query.QueryProvider.ExecuteNonQuery(System.String)
   name: ExecuteNonQuery(String)
   href: api/Kros.KORM/Kros.KORM.Query.QueryProvider.html#Kros_KORM_Query_QueryProvider_ExecuteNonQuery_System_String_
@@ -11808,6 +12655,19 @@ references:
   isSpec: "True"
   fullName: Kros.KORM.Query.QueryProvider.ExecuteNonQueryCommand
   nameWithType: QueryProvider.ExecuteNonQueryCommand
+- uid: Kros.KORM.Query.QueryProvider.ExecuteNonQueryCommandAsync(System.Data.Common.DbCommand)
+  name: ExecuteNonQueryCommandAsync(DbCommand)
+  href: api/Kros.KORM/Kros.KORM.Query.QueryProvider.html#Kros_KORM_Query_QueryProvider_ExecuteNonQueryCommandAsync_System_Data_Common_DbCommand_
+  commentId: M:Kros.KORM.Query.QueryProvider.ExecuteNonQueryCommandAsync(System.Data.Common.DbCommand)
+  fullName: Kros.KORM.Query.QueryProvider.ExecuteNonQueryCommandAsync(System.Data.Common.DbCommand)
+  nameWithType: QueryProvider.ExecuteNonQueryCommandAsync(DbCommand)
+- uid: Kros.KORM.Query.QueryProvider.ExecuteNonQueryCommandAsync*
+  name: ExecuteNonQueryCommandAsync
+  href: api/Kros.KORM/Kros.KORM.Query.QueryProvider.html#Kros_KORM_Query_QueryProvider_ExecuteNonQueryCommandAsync_
+  commentId: Overload:Kros.KORM.Query.QueryProvider.ExecuteNonQueryCommandAsync
+  isSpec: "True"
+  fullName: Kros.KORM.Query.QueryProvider.ExecuteNonQueryCommandAsync
+  nameWithType: QueryProvider.ExecuteNonQueryCommandAsync
 - uid: Kros.KORM.Query.QueryProvider.ExecuteScalar*
   name: ExecuteScalar
   href: api/Kros.KORM/Kros.KORM.Query.QueryProvider.html#Kros_KORM_Query_QueryProvider_ExecuteScalar_
@@ -12820,38 +13680,66 @@ references:
   isSpec: "True"
   fullName: Kros.KORM.Query.Sql.ParameterExtractingExpressionVisitor.Visit
   nameWithType: ParameterExtractingExpressionVisitor.Visit
-- uid: Kros.KORM.Query.Sql.SqlServerQuerySqlGenerator
-  name: SqlServerQuerySqlGenerator
-  href: api/Kros.KORM/Kros.KORM.Query.Sql.SqlServerQuerySqlGenerator.html
-  commentId: T:Kros.KORM.Query.Sql.SqlServerQuerySqlGenerator
-  fullName: Kros.KORM.Query.Sql.SqlServerQuerySqlGenerator
-  nameWithType: SqlServerQuerySqlGenerator
-- uid: Kros.KORM.Query.Sql.SqlServerQuerySqlGenerator.#ctor(Kros.KORM.Metadata.IDatabaseMapper)
-  name: SqlServerQuerySqlGenerator(IDatabaseMapper)
-  href: api/Kros.KORM/Kros.KORM.Query.Sql.SqlServerQuerySqlGenerator.html#Kros_KORM_Query_Sql_SqlServerQuerySqlGenerator__ctor_Kros_KORM_Metadata_IDatabaseMapper_
-  commentId: M:Kros.KORM.Query.Sql.SqlServerQuerySqlGenerator.#ctor(Kros.KORM.Metadata.IDatabaseMapper)
-  fullName: Kros.KORM.Query.Sql.SqlServerQuerySqlGenerator.SqlServerQuerySqlGenerator(Kros.KORM.Metadata.IDatabaseMapper)
-  nameWithType: SqlServerQuerySqlGenerator.SqlServerQuerySqlGenerator(IDatabaseMapper)
-- uid: Kros.KORM.Query.Sql.SqlServerQuerySqlGenerator.#ctor*
-  name: SqlServerQuerySqlGenerator
-  href: api/Kros.KORM/Kros.KORM.Query.Sql.SqlServerQuerySqlGenerator.html#Kros_KORM_Query_Sql_SqlServerQuerySqlGenerator__ctor_
-  commentId: Overload:Kros.KORM.Query.Sql.SqlServerQuerySqlGenerator.#ctor
+- uid: Kros.KORM.Query.Sql.RawSqlString
+  name: RawSqlString
+  href: api/Kros.KORM/Kros.KORM.Query.Sql.RawSqlString.html
+  commentId: T:Kros.KORM.Query.Sql.RawSqlString
+  fullName: Kros.KORM.Query.Sql.RawSqlString
+  nameWithType: RawSqlString
+- uid: Kros.KORM.Query.Sql.RawSqlString.#ctor(System.String)
+  name: RawSqlString(String)
+  href: api/Kros.KORM/Kros.KORM.Query.Sql.RawSqlString.html#Kros_KORM_Query_Sql_RawSqlString__ctor_System_String_
+  commentId: M:Kros.KORM.Query.Sql.RawSqlString.#ctor(System.String)
+  fullName: Kros.KORM.Query.Sql.RawSqlString.RawSqlString(System.String)
+  nameWithType: RawSqlString.RawSqlString(String)
+- uid: Kros.KORM.Query.Sql.RawSqlString.#ctor*
+  name: RawSqlString
+  href: api/Kros.KORM/Kros.KORM.Query.Sql.RawSqlString.html#Kros_KORM_Query_Sql_RawSqlString__ctor_
+  commentId: Overload:Kros.KORM.Query.Sql.RawSqlString.#ctor
   isSpec: "True"
-  fullName: Kros.KORM.Query.Sql.SqlServerQuerySqlGenerator.SqlServerQuerySqlGenerator
-  nameWithType: SqlServerQuerySqlGenerator.SqlServerQuerySqlGenerator
-- uid: Kros.KORM.Query.Sql.SqlServerQuerySqlGenerator.GenerateSql(System.Linq.Expressions.Expression)
-  name: GenerateSql(Expression)
-  href: api/Kros.KORM/Kros.KORM.Query.Sql.SqlServerQuerySqlGenerator.html#Kros_KORM_Query_Sql_SqlServerQuerySqlGenerator_GenerateSql_System_Linq_Expressions_Expression_
-  commentId: M:Kros.KORM.Query.Sql.SqlServerQuerySqlGenerator.GenerateSql(System.Linq.Expressions.Expression)
-  fullName: Kros.KORM.Query.Sql.SqlServerQuerySqlGenerator.GenerateSql(System.Linq.Expressions.Expression)
-  nameWithType: SqlServerQuerySqlGenerator.GenerateSql(Expression)
-- uid: Kros.KORM.Query.Sql.SqlServerQuerySqlGenerator.GenerateSql*
-  name: GenerateSql
-  href: api/Kros.KORM/Kros.KORM.Query.Sql.SqlServerQuerySqlGenerator.html#Kros_KORM_Query_Sql_SqlServerQuerySqlGenerator_GenerateSql_
-  commentId: Overload:Kros.KORM.Query.Sql.SqlServerQuerySqlGenerator.GenerateSql
+  fullName: Kros.KORM.Query.Sql.RawSqlString.RawSqlString
+  nameWithType: RawSqlString.RawSqlString
+- uid: Kros.KORM.Query.Sql.RawSqlString.Format
+  name: Format
+  href: api/Kros.KORM/Kros.KORM.Query.Sql.RawSqlString.html#Kros_KORM_Query_Sql_RawSqlString_Format
+  commentId: P:Kros.KORM.Query.Sql.RawSqlString.Format
+  fullName: Kros.KORM.Query.Sql.RawSqlString.Format
+  nameWithType: RawSqlString.Format
+- uid: Kros.KORM.Query.Sql.RawSqlString.Format*
+  name: Format
+  href: api/Kros.KORM/Kros.KORM.Query.Sql.RawSqlString.html#Kros_KORM_Query_Sql_RawSqlString_Format_
+  commentId: Overload:Kros.KORM.Query.Sql.RawSqlString.Format
   isSpec: "True"
-  fullName: Kros.KORM.Query.Sql.SqlServerQuerySqlGenerator.GenerateSql
-  nameWithType: SqlServerQuerySqlGenerator.GenerateSql
+  fullName: Kros.KORM.Query.Sql.RawSqlString.Format
+  nameWithType: RawSqlString.Format
+- uid: Kros.KORM.Query.Sql.RawSqlString.op_Implicit(System.FormattableString)~Kros.KORM.Query.Sql.RawSqlString
+  name: Implicit(FormattableString to RawSqlString)
+  href: api/Kros.KORM/Kros.KORM.Query.Sql.RawSqlString.html#Kros_KORM_Query_Sql_RawSqlString_op_Implicit_System_FormattableString__Kros_KORM_Query_Sql_RawSqlString
+  commentId: M:Kros.KORM.Query.Sql.RawSqlString.op_Implicit(System.FormattableString)~Kros.KORM.Query.Sql.RawSqlString
+  name.vb: Widening(FormattableString to RawSqlString)
+  fullName: Kros.KORM.Query.Sql.RawSqlString.Implicit(System.FormattableString to Kros.KORM.Query.Sql.RawSqlString)
+  fullName.vb: Kros.KORM.Query.Sql.RawSqlString.Widening(System.FormattableString to Kros.KORM.Query.Sql.RawSqlString)
+  nameWithType: RawSqlString.Implicit(FormattableString to RawSqlString)
+  nameWithType.vb: RawSqlString.Widening(FormattableString to RawSqlString)
+- uid: Kros.KORM.Query.Sql.RawSqlString.op_Implicit(System.String)~Kros.KORM.Query.Sql.RawSqlString
+  name: Implicit(String to RawSqlString)
+  href: api/Kros.KORM/Kros.KORM.Query.Sql.RawSqlString.html#Kros_KORM_Query_Sql_RawSqlString_op_Implicit_System_String__Kros_KORM_Query_Sql_RawSqlString
+  commentId: M:Kros.KORM.Query.Sql.RawSqlString.op_Implicit(System.String)~Kros.KORM.Query.Sql.RawSqlString
+  name.vb: Widening(String to RawSqlString)
+  fullName: Kros.KORM.Query.Sql.RawSqlString.Implicit(System.String to Kros.KORM.Query.Sql.RawSqlString)
+  fullName.vb: Kros.KORM.Query.Sql.RawSqlString.Widening(System.String to Kros.KORM.Query.Sql.RawSqlString)
+  nameWithType: RawSqlString.Implicit(String to RawSqlString)
+  nameWithType.vb: RawSqlString.Widening(String to RawSqlString)
+- uid: Kros.KORM.Query.Sql.RawSqlString.op_Implicit*
+  name: Implicit
+  href: api/Kros.KORM/Kros.KORM.Query.Sql.RawSqlString.html#Kros_KORM_Query_Sql_RawSqlString_op_Implicit_
+  commentId: Overload:Kros.KORM.Query.Sql.RawSqlString.op_Implicit
+  isSpec: "True"
+  name.vb: Widening
+  fullName: Kros.KORM.Query.Sql.RawSqlString.Implicit
+  fullName.vb: Kros.KORM.Query.Sql.RawSqlString.Widening
+  nameWithType: RawSqlString.Implicit
+  nameWithType.vb: RawSqlString.Widening
 - uid: Kros.KORM.Query.SqlServerQueryProvider
   name: SqlServerQueryProvider
   href: api/Kros.KORM/Kros.KORM.Query.SqlServerQueryProvider.html
@@ -12960,43 +13848,36 @@ references:
   commentId: N:Kros.Net
   fullName: Kros.Net
   nameWithType: Kros.Net
-- uid: Kros.Net.IWebClient
-  name: IWebClient
-  href: api/Kros.Utils/Kros.Net.IWebClient.html
-  commentId: T:Kros.Net.IWebClient
-  fullName: Kros.Net.IWebClient
-  nameWithType: IWebClient
-- uid: Kros.Net.IWebClient.OpenRead(System.String)
-  name: OpenRead(String)
-  href: api/Kros.Utils/Kros.Net.IWebClient.html#Kros_Net_IWebClient_OpenRead_System_String_
-  commentId: M:Kros.Net.IWebClient.OpenRead(System.String)
-  fullName: Kros.Net.IWebClient.OpenRead(System.String)
-  nameWithType: IWebClient.OpenRead(String)
-- uid: Kros.Net.IWebClient.OpenRead*
-  name: OpenRead
-  href: api/Kros.Utils/Kros.Net.IWebClient.html#Kros_Net_IWebClient_OpenRead_
-  commentId: Overload:Kros.Net.IWebClient.OpenRead
-  isSpec: "True"
-  fullName: Kros.Net.IWebClient.OpenRead
-  nameWithType: IWebClient.OpenRead
 - uid: Kros.Net.NetworkChecker
   name: NetworkChecker
   href: api/Kros.Utils/Kros.Net.NetworkChecker.html
   commentId: T:Kros.Net.NetworkChecker
   fullName: Kros.Net.NetworkChecker
   nameWithType: NetworkChecker
-- uid: Kros.Net.NetworkChecker.#ctor(System.String)
-  name: NetworkChecker(String)
-  href: api/Kros.Utils/Kros.Net.NetworkChecker.html#Kros_Net_NetworkChecker__ctor_System_String_
-  commentId: M:Kros.Net.NetworkChecker.#ctor(System.String)
-  fullName: Kros.Net.NetworkChecker.NetworkChecker(System.String)
-  nameWithType: NetworkChecker.NetworkChecker(String)
-- uid: Kros.Net.NetworkChecker.#ctor(System.String,System.Int32,System.Int32)
-  name: NetworkChecker(String, Int32, Int32)
-  href: api/Kros.Utils/Kros.Net.NetworkChecker.html#Kros_Net_NetworkChecker__ctor_System_String_System_Int32_System_Int32_
-  commentId: M:Kros.Net.NetworkChecker.#ctor(System.String,System.Int32,System.Int32)
-  fullName: Kros.Net.NetworkChecker.NetworkChecker(System.String, System.Int32, System.Int32)
-  nameWithType: NetworkChecker.NetworkChecker(String, Int32, Int32)
+- uid: Kros.Net.NetworkChecker.#ctor(System.Uri)
+  name: NetworkChecker(Uri)
+  href: api/Kros.Utils/Kros.Net.NetworkChecker.html#Kros_Net_NetworkChecker__ctor_System_Uri_
+  commentId: M:Kros.Net.NetworkChecker.#ctor(System.Uri)
+  fullName: Kros.Net.NetworkChecker.NetworkChecker(System.Uri)
+  nameWithType: NetworkChecker.NetworkChecker(Uri)
+- uid: Kros.Net.NetworkChecker.#ctor(System.Uri,System.TimeSpan,System.TimeSpan)
+  name: NetworkChecker(Uri, TimeSpan, TimeSpan)
+  href: api/Kros.Utils/Kros.Net.NetworkChecker.html#Kros_Net_NetworkChecker__ctor_System_Uri_System_TimeSpan_System_TimeSpan_
+  commentId: M:Kros.Net.NetworkChecker.#ctor(System.Uri,System.TimeSpan,System.TimeSpan)
+  fullName: Kros.Net.NetworkChecker.NetworkChecker(System.Uri, System.TimeSpan, System.TimeSpan)
+  nameWithType: NetworkChecker.NetworkChecker(Uri, TimeSpan, TimeSpan)
+- uid: Kros.Net.NetworkChecker.#ctor(System.Uri,System.Uri)
+  name: NetworkChecker(Uri, Uri)
+  href: api/Kros.Utils/Kros.Net.NetworkChecker.html#Kros_Net_NetworkChecker__ctor_System_Uri_System_Uri_
+  commentId: M:Kros.Net.NetworkChecker.#ctor(System.Uri,System.Uri)
+  fullName: Kros.Net.NetworkChecker.NetworkChecker(System.Uri, System.Uri)
+  nameWithType: NetworkChecker.NetworkChecker(Uri, Uri)
+- uid: Kros.Net.NetworkChecker.#ctor(System.Uri,System.Uri,System.TimeSpan,System.TimeSpan)
+  name: NetworkChecker(Uri, Uri, TimeSpan, TimeSpan)
+  href: api/Kros.Utils/Kros.Net.NetworkChecker.html#Kros_Net_NetworkChecker__ctor_System_Uri_System_Uri_System_TimeSpan_System_TimeSpan_
+  commentId: M:Kros.Net.NetworkChecker.#ctor(System.Uri,System.Uri,System.TimeSpan,System.TimeSpan)
+  fullName: Kros.Net.NetworkChecker.NetworkChecker(System.Uri, System.Uri, System.TimeSpan, System.TimeSpan)
+  nameWithType: NetworkChecker.NetworkChecker(Uri, Uri, TimeSpan, TimeSpan)
 - uid: Kros.Net.NetworkChecker.#ctor*
   name: NetworkChecker
   href: api/Kros.Utils/Kros.Net.NetworkChecker.html#Kros_Net_NetworkChecker__ctor_
@@ -13017,6 +13898,19 @@ references:
   isSpec: "True"
   fullName: Kros.Net.NetworkChecker.IsNetworkAvailable
   nameWithType: NetworkChecker.IsNetworkAvailable
+- uid: Kros.Net.NetworkChecker.ProxyAddress
+  name: ProxyAddress
+  href: api/Kros.Utils/Kros.Net.NetworkChecker.html#Kros_Net_NetworkChecker_ProxyAddress
+  commentId: P:Kros.Net.NetworkChecker.ProxyAddress
+  fullName: Kros.Net.NetworkChecker.ProxyAddress
+  nameWithType: NetworkChecker.ProxyAddress
+- uid: Kros.Net.NetworkChecker.ProxyAddress*
+  name: ProxyAddress
+  href: api/Kros.Utils/Kros.Net.NetworkChecker.html#Kros_Net_NetworkChecker_ProxyAddress_
+  commentId: Overload:Kros.Net.NetworkChecker.ProxyAddress
+  isSpec: "True"
+  fullName: Kros.Net.NetworkChecker.ProxyAddress
+  nameWithType: NetworkChecker.ProxyAddress
 - uid: Kros.Net.NetworkChecker.RequestTimeout
   name: RequestTimeout
   href: api/Kros.Utils/Kros.Net.NetworkChecker.html#Kros_Net_NetworkChecker_RequestTimeout

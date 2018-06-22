@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IDatabaseSchemaLoader
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,7 +83,7 @@
   
   <h1 id="Kros_Data_Schema_IDatabaseSchemaLoader" data-uid="Kros.Data.Schema.IDatabaseSchemaLoader" class="text-break">Interface IDatabaseSchemaLoader
   </h1>
-  <div class="markdown level0 summary"><p>Rozhranie pre triedy, načítavajúce schému databázy.</p>
+  <div class="markdown level0 summary"><p>Interface for loading database schema.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Kros.Data.Schema.html">Kros.Data.Schema</a></h6>
@@ -96,7 +96,7 @@
   </h3>
   <a id="Kros_Data_Schema_IDatabaseSchemaLoader_LoadSchema_" data-uid="Kros.Data.Schema.IDatabaseSchemaLoader.LoadSchema*"></a>
   <h4 id="Kros_Data_Schema_IDatabaseSchemaLoader_LoadSchema_System_Object_" data-uid="Kros.Data.Schema.IDatabaseSchemaLoader.LoadSchema(System.Object)">LoadSchema(Object)</h4>
-  <div class="markdown level1 summary"><p>Načíta celú schému databázy určenej spojením <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
+  <div class="markdown level1 summary"><p>Loads whole database schema in <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -116,7 +116,7 @@
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Spojenie na databázu.</p>
+        <td><p>Database connection.</p>
 </td>
       </tr>
     </tbody>
@@ -132,14 +132,14 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.DatabaseSchema.html">DatabaseSchema</a></td>
-        <td><p>Vráti schému celej databázy.</p>
+        <td><p>Schema of whole database.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_Schema_IDatabaseSchemaLoader_LoadTableSchema_" data-uid="Kros.Data.Schema.IDatabaseSchemaLoader.LoadTableSchema*"></a>
   <h4 id="Kros_Data_Schema_IDatabaseSchemaLoader_LoadTableSchema_System_Object_System_String_" data-uid="Kros.Data.Schema.IDatabaseSchemaLoader.LoadTableSchema(System.Object,System.String)">LoadTableSchema(Object, String)</h4>
-  <div class="markdown level1 summary"><p>Načíta schému tabuľky <code data-dev-comment-type="paramref" class="paramref">tableName</code> z databázy <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
+  <div class="markdown level1 summary"><p>Loads schema of table <code data-dev-comment-type="paramref" class="paramref">tableName</code> from database <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -159,13 +159,13 @@
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Spojenie na databázu.</p>
+        <td><p>Database connection.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">tableName</span></td>
-        <td><p>Meno tabuľky, ktorej schéma sa načíta.</p>
+        <td><p>Name of the table to load schema.</p>
 </td>
       </tr>
     </tbody>
@@ -181,14 +181,14 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.TableSchema.html">TableSchema</a></td>
-        <td><p>Vráti načítanú schému tabuľky, alebo hodnotu <code>null</code>, ak taká tabuľka neexistuje.</p>
+        <td><p>Table schema or <span class="xref">null</span>, if specified table does not exist.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_Schema_IDatabaseSchemaLoader_SupportsConnectionType_" data-uid="Kros.Data.Schema.IDatabaseSchemaLoader.SupportsConnectionType*"></a>
   <h4 id="Kros_Data_Schema_IDatabaseSchemaLoader_SupportsConnectionType_System_Object_" data-uid="Kros.Data.Schema.IDatabaseSchemaLoader.SupportsConnectionType(System.Object)">SupportsConnectionType(Object)</h4>
-  <div class="markdown level1 summary"><p>Kontroluje, či trieda dokáže načítať schému zo zadaného spojenia <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
+  <div class="markdown level1 summary"><p>Checks, if specific loader can load schema from <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -208,7 +208,7 @@
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Spojenie na databázu.</p>
+        <td><p>Database connection.</p>
 </td>
       </tr>
     </tbody>
@@ -224,7 +224,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p><span class="xref">true</span>, ak je možné načítať schému databázy, <span class="xref">false</span>, ak to možné nie je.</p>
+        <td><p><span class="xref">true</span> if loader can load schema, <span class="xref">false</span> otherwise.</p>
 </td>
       </tr>
     </tbody>

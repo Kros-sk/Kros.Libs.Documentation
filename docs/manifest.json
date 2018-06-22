@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "D:/_Projekty/GitHub/Kros.Libs.Documentation/docfx_project",
+  "source_base_path": "D:/_Projekty/GitHub/kros.libs/Documentation",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -18,7 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM.MsAccess/Kros.KORM.Query.MsAccess.MsAccessQueryProvider.html",
-          "hash": "QRZTZUka9oFQKgyn+U5iQA=="
+          "hash": "BOQ1lG3XJB5WnSHcwj+5yw=="
         }
       },
       "is_incremental": false,
@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM.MsAccess/Kros.KORM.Query.MsAccess.MsAccessQueryProviderFactory.html",
-          "hash": "sa8SOJ376J3JS49lU8a/6w=="
+          "hash": "1YpGCDZse/rctqKtZ0RB5A=="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM.MsAccess/Kros.KORM.Query.MsAccess.html",
-          "hash": "Pk7nC3RXIRYbntINqjjRLQ=="
+          "hash": "SMlQuEmlmuGQyMibqTFAHA=="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM.MsAccess/Kros.KORM.Query.Sql.MsAccess.MsAccessQuerySqlGenerator.html",
-          "hash": "kAfb5YZ1dXOf9OpMM5z0FQ=="
+          "hash": "DajdMUAiPPS9iTFmZ68VaA=="
         }
       },
       "is_incremental": false,
@@ -66,19 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM.MsAccess/Kros.KORM.Query.Sql.MsAccess.html",
-          "hash": "9UTch3iM0x0uRKJ+buu/Gg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "api/Kros.KORM.MsAccess/index.md",
-      "output": {
-        ".html": {
-          "relative_path": "api/Kros.KORM.MsAccess/index.html",
-          "hash": "urYKuaRVAWxwThHJE+9/Tw=="
+          "hash": "PCN6iAuvL2nKhVchYoxxBw=="
         }
       },
       "is_incremental": false,
@@ -102,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.CommandGenerator.ICommandGenerator-1.html",
-          "hash": "O8t+6Bbf90KVY8iitpqLZg=="
+          "hash": "36OiY9bOIUKthQu8/33cSQ=="
         }
       },
       "is_incremental": false,
@@ -114,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.CommandGenerator.html",
-          "hash": "+YE1y/DYUAnpPGlpg3wHnQ=="
+          "hash": "RJzy434HZiAWCAgRsRKnvw=="
         }
       },
       "is_incremental": false,
@@ -126,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Converter.IConverter.html",
-          "hash": "1a7m8jk9R8SPT7/p0gzunQ=="
+          "hash": "PN2kZ+ZFNsGta1mzmajeRA=="
         }
       },
       "is_incremental": false,
@@ -138,7 +126,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Converter.html",
-          "hash": "EFf1lolqmqqJIMTlmE5OFg=="
+          "hash": "ylkvnQpLPM29ICLZm466uw=="
         }
       },
       "is_incremental": false,
@@ -150,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Data.ITransaction.html",
-          "hash": "TYGvsQpLkLgb8S/OP9a+TA=="
+          "hash": "p1MaP9MHNHPSNPN7a3llDw=="
         }
       },
       "is_incremental": false,
@@ -162,7 +150,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Data.html",
-          "hash": "345frZ3fR+QXZNmZ6Iqevg=="
+          "hash": "OIOVCgUeu4WTYNuWBwKemw=="
         }
       },
       "is_incremental": false,
@@ -174,7 +162,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Database.html",
-          "hash": "VCDy/I9lyMMFbsCAEzI8OQ=="
+          "hash": "Jhm7+foZPEsARsDqReWn7A=="
         }
       },
       "is_incremental": false,
@@ -186,7 +174,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Exceptions.AlreadyInCollectionException.html",
-          "hash": "NwkIpanT7mHUGPADag63pg=="
+          "hash": "7jvrirPcUj+XoPn0enmPUQ=="
         }
       },
       "is_incremental": false,
@@ -198,7 +186,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Exceptions.CompositePrimaryKeyException.html",
-          "hash": "cyMuCdR3YB0Lb3cue4e9CQ=="
+          "hash": "TSa/vWRROWBLrWvrW10vnA=="
         }
       },
       "is_incremental": false,
@@ -210,7 +198,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Exceptions.MissingPrimaryKeyException.html",
-          "hash": "GG5RxA7+69be8mD56kHgYQ=="
+          "hash": "MbJ3fP/s2cPqcH+hu69btg=="
         }
       },
       "is_incremental": false,
@@ -222,7 +210,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Exceptions.html",
-          "hash": "bimtA7w891yH/rdSMe9VIw=="
+          "hash": "+FWtymhp+af8uwEamAkbiA=="
         }
       },
       "is_incremental": false,
@@ -234,7 +222,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Helper.ILogger.html",
-          "hash": "W5n+AXxyvi562Gnr/9iUww=="
+          "hash": "hf5gxtWzmJrUiqbM5Naazg=="
         }
       },
       "is_incremental": false,
@@ -246,7 +234,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Helper.Logger.html",
-          "hash": "EQQawfBWPuac7gKREIdqnw=="
+          "hash": "cP8hle5YZvA8AOeHbQDEzA=="
         }
       },
       "is_incremental": false,
@@ -258,7 +246,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Helper.MethodName-1.html",
-          "hash": "+F5V7Z9x+mt6fyilLI5Egw=="
+          "hash": "XEQskjoPdxpjeskkaohmsQ=="
         }
       },
       "is_incremental": false,
@@ -270,7 +258,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Helper.PropertyName-1.html",
-          "hash": "JfZJK3tVY0/jFDQqgEJp1A=="
+          "hash": "6fLbxPHCrP0L2Ukz7seVOw=="
         }
       },
       "is_incremental": false,
@@ -282,7 +270,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Helper.html",
-          "hash": "7U1SEygL+vvbqytdTKPHeQ=="
+          "hash": "xafEFFwSxtPQJ0UAWojLiw=="
         }
       },
       "is_incremental": false,
@@ -294,7 +282,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.IDatabase.html",
-          "hash": "CTK6JAUVBd72mExBWrEDWg=="
+          "hash": "KtTPpKiq50qWwbFVS/E7LQ=="
         }
       },
       "is_incremental": false,
@@ -306,7 +294,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Injection.IInjectionConfigurator-1.html",
-          "hash": "T1TzvcNYSihYn3PCL5R2UQ=="
+          "hash": "5BfUNln3iGEzbZh1sQhSew=="
         }
       },
       "is_incremental": false,
@@ -318,7 +306,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Injection.IInjector.html",
-          "hash": "AGr3A2LJmGEPJv9n+Y58ZQ=="
+          "hash": "elpthbijZtMUc5HaR+Ap+A=="
         }
       },
       "is_incremental": false,
@@ -330,7 +318,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Injection.html",
-          "hash": "dzcC2zXixoey7fdpb5gS+Q=="
+          "hash": "QlUeBURsa+WjZrmvywR4Ug=="
         }
       },
       "is_incremental": false,
@@ -342,7 +330,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Materializer.DynamicMethodModelFactory.html",
-          "hash": "mCl0kn52CO5Raeh5Qns+rw=="
+          "hash": "cAEVTeCHTOOHv4SwjFxuHQ=="
         }
       },
       "is_incremental": false,
@@ -354,7 +342,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Materializer.IMaterialize.html",
-          "hash": "EUHaEePrl6QEF8zoQ3aijw=="
+          "hash": "bPXE++EkrIPv9U9DDnkQ4w=="
         }
       },
       "is_incremental": false,
@@ -366,7 +354,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Materializer.IModelBuilder.html",
-          "hash": "s39xSQTQ3TNzM0hSuK5xVA=="
+          "hash": "u71xUj7hePj7MFTXvXKJtQ=="
         }
       },
       "is_incremental": false,
@@ -378,7 +366,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Materializer.IModelFactory.html",
-          "hash": "MycpXIXCj+7L76FHxT7UXw=="
+          "hash": "EaXyNHXWud4m4VLDJLcwrg=="
         }
       },
       "is_incremental": false,
@@ -390,7 +378,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Materializer.ModelBuilder.ModelBuilderEnumerable-1.html",
-          "hash": "MudybCL+ar1AYkqGaNybtw=="
+          "hash": "z57f9TH2MUhY5NWmWYnUVw=="
         }
       },
       "is_incremental": false,
@@ -402,7 +390,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Materializer.ModelBuilder.ModelBuilderEnumerator-1.html",
-          "hash": "HZlRecHjwBKdWW1lApbcEA=="
+          "hash": "tSHaE1nx0/Q0boDCoE7CaQ=="
         }
       },
       "is_incremental": false,
@@ -414,7 +402,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Materializer.ModelBuilder.html",
-          "hash": "RZI5W+Bz0R7Y7S9iwcSDlQ=="
+          "hash": "rVN70sQ8PLjR+w1EwjBfyA=="
         }
       },
       "is_incremental": false,
@@ -426,7 +414,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Materializer.html",
-          "hash": "Bt08ku4AVJ9ocbYl7tb/UQ=="
+          "hash": "aRAPpHjqEEJFwEdK4ZCXXw=="
         }
       },
       "is_incremental": false,
@@ -438,7 +426,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Metadata.Attribute.AliasAttribute.html",
-          "hash": "DITq9hdjhNfYuklWtR0yLQ=="
+          "hash": "LXCROq7L2TnwPP2CDfg+BA=="
         }
       },
       "is_incremental": false,
@@ -450,19 +438,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Metadata.Attribute.ConverterAttribute.html",
-          "hash": "xlQp4MsaWq1KVKMA4kvgfw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Kros.KORM/Kros.KORM.Metadata.Attribute.DbTypeAttribute.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Kros.KORM/Kros.KORM.Metadata.Attribute.DbTypeAttribute.html",
-          "hash": "gRBHzEHlCCao9Z/XSmYE5A=="
+          "hash": "BgHogMq3PGZpcSA9ax/kdg=="
         }
       },
       "is_incremental": false,
@@ -474,7 +450,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Metadata.Attribute.KeyAttribute.html",
-          "hash": "kMaOytj3Cug25Eth7cvFJQ=="
+          "hash": "jMqBrEw+sTWq4xVegz3+8w=="
         }
       },
       "is_incremental": false,
@@ -486,7 +462,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Metadata.Attribute.NoMapAttribute.html",
-          "hash": "MGrmToS4ISWsvIe7r1e2QQ=="
+          "hash": "ECvrPIbZs1+rgypK+940FQ=="
         }
       },
       "is_incremental": false,
@@ -498,7 +474,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Metadata.Attribute.html",
-          "hash": "/GNYyFPCcmUL+GL3iZ+flQ=="
+          "hash": "FE4fbuUFGLU3nc9O1aX0/w=="
         }
       },
       "is_incremental": false,
@@ -510,7 +486,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Metadata.AutoIncrementMethodType.html",
-          "hash": "xK7/famvBLXGLfBvY4gsoQ=="
+          "hash": "gZ41ClpI0VDl2GTKrocalQ=="
         }
       },
       "is_incremental": false,
@@ -522,7 +498,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Metadata.ColumnInfo.html",
-          "hash": "LnS0+j9q4kz37DlzPZ8K/w=="
+          "hash": "OHlz4bbve4IWvEQq+/wtcA=="
         }
       },
       "is_incremental": false,
@@ -534,7 +510,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Metadata.ConventionModelMapper.html",
-          "hash": "mWNqQS7xzDp7VZjp9z+liA=="
+          "hash": "pFOlzm2qE1xBW1ienYjejQ=="
         }
       },
       "is_incremental": false,
@@ -546,7 +522,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Metadata.DatabaseMapper.html",
-          "hash": "z0TchBCV+vZECkGkauX0/A=="
+          "hash": "3xUvEEOJlfjAwabPz2mJQA=="
         }
       },
       "is_incremental": false,
@@ -558,7 +534,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Metadata.IDatabaseMapper.html",
-          "hash": "SqMVA0W2oi6vMhDhaHVHxw=="
+          "hash": "kLNoZ1nJ8ESSUP93JABoQA=="
         }
       },
       "is_incremental": false,
@@ -570,7 +546,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Metadata.IModelMapper.html",
-          "hash": "a0XiRLCgbpZr3vB2aiImVQ=="
+          "hash": "9eS8c2/Nzwij/DX84c6W7g=="
         }
       },
       "is_incremental": false,
@@ -582,7 +558,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Metadata.TableInfo.html",
-          "hash": "iNvBnj4jUPIsdpY+D9C3nQ=="
+          "hash": "vlcINubB07PawNtBC+FbYg=="
         }
       },
       "is_incremental": false,
@@ -594,7 +570,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Metadata.html",
-          "hash": "tLfWtlKk95iBfm+kL21S9A=="
+          "hash": "p7TDMLe8SMcroywfe2V3Ng=="
         }
       },
       "is_incremental": false,
@@ -606,7 +582,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.CommandParameter.html",
-          "hash": "8/MVpemZN9KIXLoShmJlrw=="
+          "hash": "xVctCG8Zaa80mbY3chCzhQ=="
         }
       },
       "is_incremental": false,
@@ -618,7 +594,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.CommandParameterCollection.html",
-          "hash": "GqB4h7vpHF0/OAEkCzxaCg=="
+          "hash": "/RsWPczR0DLttmrOgAkn/Q=="
         }
       },
       "is_incremental": false,
@@ -630,7 +606,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.DbSet-1.html",
-          "hash": "4hD44399p6fuAy/jcOeiSQ=="
+          "hash": "+o1kc9wF/TgFet92fVgPjw=="
         }
       },
       "is_incremental": false,
@@ -642,7 +618,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.Expressions.ArgsExpression.html",
-          "hash": "KrdyAu4ONUssaxdEAWJ2Ng=="
+          "hash": "/BeqLmgUSHdQ0BYHTRxGCg=="
         }
       },
       "is_incremental": false,
@@ -654,7 +630,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.Expressions.ColumnsExpression.html",
-          "hash": "iTPPnTHkSVBoINCvMTRYgw=="
+          "hash": "rQ+QrNi0fX2w7iKYeQzonw=="
         }
       },
       "is_incremental": false,
@@ -666,7 +642,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.Expressions.GroupByExpression.html",
-          "hash": "wEHj45u8MATrm62rbMkAaQ=="
+          "hash": "bO4uNphs+25FidB2ZASRUg=="
         }
       },
       "is_incremental": false,
@@ -678,7 +654,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.Expressions.OrderByExpression.html",
-          "hash": "ZS0b4caP/Ee597uZ6lW1jw=="
+          "hash": "wzRfNuhoUX/PTS9sOU2NMA=="
         }
       },
       "is_incremental": false,
@@ -690,7 +666,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.Expressions.QueryExpression.html",
-          "hash": "mTXgHGF/qavykzdiZ4QHlg=="
+          "hash": "1a7OD2+2nW2R60COKN6WNA=="
         }
       },
       "is_incremental": false,
@@ -702,7 +678,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.Expressions.SelectExpression.html",
-          "hash": "oeVOsRNXd8RwM6p/C3easw=="
+          "hash": "KoxLyAut5Ggv9oNedAB9fA=="
         }
       },
       "is_incremental": false,
@@ -714,7 +690,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.Expressions.SqlExpression.html",
-          "hash": "VVgv38EffFZOoSlmpXzXJQ=="
+          "hash": "9QoYTmQLn6YxSjfwa4YUKA=="
         }
       },
       "is_incremental": false,
@@ -726,7 +702,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.Expressions.TableExpression.html",
-          "hash": "ecYWERCKfxS2Ts2k5KMinA=="
+          "hash": "MXCzz0qqUxV0EU8zo5Z7lw=="
         }
       },
       "is_incremental": false,
@@ -738,7 +714,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.Expressions.WhereExpression.html",
-          "hash": "j8/QMabDVcOmJXX9OFt8bQ=="
+          "hash": "VZFiyEH7q/4EpmpDw48Jag=="
         }
       },
       "is_incremental": false,
@@ -750,7 +726,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.Expressions.html",
-          "hash": "DBJ1NiRg2GbccOe5x32Sag=="
+          "hash": "HZb/7gMOXY+hyQynna7SAw=="
         }
       },
       "is_incremental": false,
@@ -762,7 +738,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.IDbSet-1.html",
-          "hash": "5blKJ64kNyCxHKLfZhyBDQ=="
+          "hash": "Qko6U3h1Ub6URJUbd+GHsQ=="
         }
       },
       "is_incremental": false,
@@ -774,7 +750,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.IFilteredQuery-1.html",
-          "hash": "b7NNKdR/ZPMZdL0eLhCFDA=="
+          "hash": "XQ7TJNYyXL+wbo+giz8y0w=="
         }
       },
       "is_incremental": false,
@@ -786,7 +762,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.IGroupedQuery-1.html",
-          "hash": "vYB2ANxviY2bq3fMPeuIwQ=="
+          "hash": "O6hnazp/UV1mPOM12E232g=="
         }
       },
       "is_incremental": false,
@@ -798,7 +774,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.IOrderedQuery-1.html",
-          "hash": "jojF+KYAhTXBQzE7NdgkXg=="
+          "hash": "QIzuTTa1GbEQyx8EKCvCmQ=="
         }
       },
       "is_incremental": false,
@@ -810,7 +786,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.IProjectionQuery-1.html",
-          "hash": "bXeifae/tuu9t5tOw4D+Ww=="
+          "hash": "N5jCyjswrnxNJvpgGekXjQ=="
         }
       },
       "is_incremental": false,
@@ -822,7 +798,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.IQuery-1.html",
-          "hash": "JhTDxdsLAaAv9e/PE/QuUA=="
+          "hash": "evHYcuViESd7XXNdYlPnlQ=="
         }
       },
       "is_incremental": false,
@@ -834,7 +810,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.IQueryBase-1.html",
-          "hash": "uBMrvz7v2+vKGcoF1z9DIQ=="
+          "hash": "IywT+E8Ot1uoebgHB3gf7w=="
         }
       },
       "is_incremental": false,
@@ -846,7 +822,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.IQueryProvider.html",
-          "hash": "oD0hDj6JWMS3JQqSNcwovA=="
+          "hash": "BhfDuQzw11m+/AzdSbpq/w=="
         }
       },
       "is_incremental": false,
@@ -858,7 +834,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.IQueryProviderFactory.html",
-          "hash": "Z537YnEkmSwf1jBA/0UQLQ=="
+          "hash": "GTlke8L3mPNOupVQdhwgzw=="
         }
       },
       "is_incremental": false,
@@ -870,7 +846,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.QueryProvider.html",
-          "hash": "afAja4j6XXQ5clnxpSnGYw=="
+          "hash": "N9CHWavKb1ok8Czj4c8r5A=="
         }
       },
       "is_incremental": false,
@@ -882,7 +858,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.QueryProviderFactories.html",
-          "hash": "kNY74CvIK81YBThbzLDaYw=="
+          "hash": "oq+/0qlKaprdKUTGOxFHag=="
         }
       },
       "is_incremental": false,
@@ -894,7 +870,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.Sql.DefaultQuerySqlGenerator.OrderBy.html",
-          "hash": "3JUOKKytrGCBBjydtBNBzw=="
+          "hash": "RFEXOlW3DKNRGmk2SPxf+Q=="
         }
       },
       "is_incremental": false,
@@ -906,7 +882,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.Sql.DefaultQuerySqlGenerator.OrderType.html",
-          "hash": "cPlS+CHfgVDqbbNPFKG7nA=="
+          "hash": "ERmmy+biE4PK22VJZbG6/A=="
         }
       },
       "is_incremental": false,
@@ -918,7 +894,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.Sql.DefaultQuerySqlGenerator.Parameters.html",
-          "hash": "BjVH0EAiTZS8V2dEzy1QnQ=="
+          "hash": "J5BW95DFW7gk+TCzpGzuPQ=="
         }
       },
       "is_incremental": false,
@@ -930,7 +906,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.Sql.DefaultQuerySqlGenerator.html",
-          "hash": "NO/Kg/9eKDVGuwfpX6IQDA=="
+          "hash": "Sm48erl/4YRWoKOkrpUNGQ=="
         }
       },
       "is_incremental": false,
@@ -942,7 +918,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.Sql.ISqlExpressionVisitor.html",
-          "hash": "1TKqWzH8ElMfbumL3dhpHw=="
+          "hash": "BTsTQB+igaKTKeqHz3I1Ig=="
         }
       },
       "is_incremental": false,
@@ -954,7 +930,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.Sql.ParameterExtractingExpressionVisitor.html",
-          "hash": "rK3QFh+J4x0QTosXa1OwQA=="
+          "hash": "NN6bDvrSVSVV/Awb9FpRzg=="
         }
       },
       "is_incremental": false,
@@ -962,11 +938,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Kros.KORM/Kros.KORM.Query.Sql.SqlServerQuerySqlGenerator.yml",
+      "source_relative_path": "api/Kros.KORM/Kros.KORM.Query.Sql.RawSqlString.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Kros.KORM/Kros.KORM.Query.Sql.SqlServerQuerySqlGenerator.html",
-          "hash": "ekaFFc9wGKZudfWc8QEv5w=="
+          "relative_path": "api/Kros.KORM/Kros.KORM.Query.Sql.RawSqlString.html",
+          "hash": "58L2mkf9uKv98zSVzWQLPg=="
         }
       },
       "is_incremental": false,
@@ -978,7 +954,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.Sql.html",
-          "hash": "kjlIaE8cfaFkGsmLi4SWug=="
+          "hash": "F4ZGz76w65pVj/jCTb6+YQ=="
         }
       },
       "is_incremental": false,
@@ -990,7 +966,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.SqlServerQueryProvider.html",
-          "hash": "3a9b2chosWjBdkdWlbukFA=="
+          "hash": "qZae65PAq2R5mTJuPEl3lA=="
         }
       },
       "is_incremental": false,
@@ -1002,7 +978,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.SqlServerQueryProviderFactory.html",
-          "hash": "fr+panjrxvx/9o/bnbN3Aw=="
+          "hash": "T5KD9bg7DDd6qACmG+bppg=="
         }
       },
       "is_incremental": false,
@@ -1014,7 +990,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.Query.html",
-          "hash": "olJzErXB1GakAy3sBsfOjw=="
+          "hash": "F+l6YQteRyD18VVg00os6A=="
         }
       },
       "is_incremental": false,
@@ -1026,19 +1002,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/Kros.KORM.html",
-          "hash": "4zQlILYxvKC4JyIUVFuAKA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "api/Kros.KORM/index.md",
-      "output": {
-        ".html": {
-          "relative_path": "api/Kros.KORM/index.html",
-          "hash": "YxPbUweT/l7f/49D7tUXCg=="
+          "hash": "03wZid15v7SzHFCJo9rsrg=="
         }
       },
       "is_incremental": false,
@@ -1050,7 +1014,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.KORM/toc.html",
-          "hash": "Bx2wcL267NLbRlwtSFcGYQ=="
+          "hash": "cjTqn5ymmsondlUh4zsr2A=="
         }
       },
       "is_incremental": false,
@@ -1062,7 +1026,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.BulkInsertColumnType.html",
-          "hash": "CMaikPQD4BbE4fM+D/82Lg=="
+          "hash": "Q1gy2lP97+SoJceZWT7WUw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.MsAccessBulkActionFactory.html",
+          "hash": "lgc54PQLw1IDGdmR6C4wTA=="
         }
       },
       "is_incremental": false,
@@ -1074,7 +1050,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.MsAccessBulkInsert.html",
-          "hash": "7iuyjFHGblsVZxsXl3P29A=="
+          "hash": "2nLb8Fjh+MFn9qXPVydR3Q=="
         }
       },
       "is_incremental": false,
@@ -1086,7 +1062,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.MsAccessBulkInsertColumn.html",
-          "hash": "5zD2rGb1cuA6brjDF/DLCQ=="
+          "hash": "vRX8Uu2ryql9oM3/SRuCqA=="
         }
       },
       "is_incremental": false,
@@ -1098,7 +1074,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.MsAccessBulkInsertColumnCollection.html",
-          "hash": "XOulEKRML5EzZZlYJicEXw=="
+          "hash": "qsQDD0Dotem4wSaZrUBGOw=="
         }
       },
       "is_incremental": false,
@@ -1110,7 +1086,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.MsAccessBulkUpdate.html",
-          "hash": "jJZdBN/Bls4vChEAiWgkfA=="
+          "hash": "RdIfX8IL3TUdVg488usL+Q=="
         }
       },
       "is_incremental": false,
@@ -1122,7 +1098,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils.MsAccess/Kros.Data.BulkActions.MsAccess.html",
-          "hash": "1NVf12J9kvONeqWCAKzRlA=="
+          "hash": "64YxNVB0Oy7BU0qBsql4Xg=="
         }
       },
       "is_incremental": false,
@@ -1134,7 +1110,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils.MsAccess/Kros.Data.MsAccess.Extensions.html",
-          "hash": "qIcf7DdRF5q61UPBrSYssA=="
+          "hash": "Gjeaso0tMv4BTXNB/7kuuQ=="
         }
       },
       "is_incremental": false,
@@ -1146,7 +1122,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils.MsAccess/Kros.Data.MsAccess.MsAccessDataHelper.html",
-          "hash": "V0moqZOb2C/sAO01YFqxTw=="
+          "hash": "fVDNOUhjQjRI5hxE45CivQ=="
         }
       },
       "is_incremental": false,
@@ -1158,7 +1134,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils.MsAccess/Kros.Data.MsAccess.MsAccessErrorCode.html",
-          "hash": "Th//P3B6U686TFvlCiIttw=="
+          "hash": "nrjwxioqRHtrokH0RvP4Pw=="
         }
       },
       "is_incremental": false,
@@ -1170,7 +1146,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils.MsAccess/Kros.Data.MsAccess.MsAccessIdGenerator.html",
-          "hash": "gLaK5f/bOs9QThYPVWKhpA=="
+          "hash": "2xygPgVylFiu8QwOgSblFw=="
         }
       },
       "is_incremental": false,
@@ -1182,7 +1158,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils.MsAccess/Kros.Data.MsAccess.MsAccessIdGeneratorFactory.html",
-          "hash": "o4r28luNfoL6Ujsz5eCoyw=="
+          "hash": "W/pqsUG9Rp5ttuzAGvIvSg=="
         }
       },
       "is_incremental": false,
@@ -1194,7 +1170,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils.MsAccess/Kros.Data.MsAccess.ProviderType.html",
-          "hash": "aeEQQtaMrhMWQb+6BJ4h+w=="
+          "hash": "0Ngt38ZeI702hPu0xLq9jQ=="
         }
       },
       "is_incremental": false,
@@ -1206,7 +1182,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils.MsAccess/Kros.Data.MsAccess.html",
-          "hash": "zgVroLVSBIYL5cXNMNFGbA=="
+          "hash": "f/X4D1uoXZIMH0Vhifgf7A=="
         }
       },
       "is_incremental": false,
@@ -1218,7 +1194,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils.MsAccess/Kros.Data.Schema.MsAccess.MsAccessCacheKeyGenerator.html",
-          "hash": "iA1zuUO2IeOjXYtI833mrQ=="
+          "hash": "4Pi9MaXULAjGq6iVJHbHqg=="
         }
       },
       "is_incremental": false,
@@ -1230,7 +1206,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils.MsAccess/Kros.Data.Schema.MsAccess.MsAccessColumnSchema.html",
-          "hash": "VRm1MtnerXzxcGvOjtORjQ=="
+          "hash": "jZhsdOhfyHDKc779A0h+ZA=="
         }
       },
       "is_incremental": false,
@@ -1242,7 +1218,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils.MsAccess/Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.html",
-          "hash": "vIbSgrXk8u/KtTal03SMeg=="
+          "hash": "SXt9XvvFbmyVrr5PMbMhow=="
         }
       },
       "is_incremental": false,
@@ -1254,7 +1230,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils.MsAccess/Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.ColumnsSchemaNames.html",
-          "hash": "hVICqOwziSsnRsndL/k9sg=="
+          "hash": "WJI4pZMTAeprTvO7hgFCeQ=="
         }
       },
       "is_incremental": false,
@@ -1266,7 +1242,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils.MsAccess/Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.IndexesSchemaNames.html",
-          "hash": "09rfaBNL9Z/cu56Wmy2y1g=="
+          "hash": "3qme7XK8iD2EjsjdB7f3rg=="
         }
       },
       "is_incremental": false,
@@ -1278,7 +1254,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils.MsAccess/Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.ProceduresSchemaNames.html",
-          "hash": "swPY4MNwPhWVVoJSix/pcg=="
+          "hash": "Ch2zym/I+efNkgGpTlUMjA=="
         }
       },
       "is_incremental": false,
@@ -1290,7 +1266,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils.MsAccess/Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.SchemaNames.html",
-          "hash": "Ya6tJiPk+/Tm7VB+VZFq7g=="
+          "hash": "5ub9gZUzoufshhZ5tpCFyg=="
         }
       },
       "is_incremental": false,
@@ -1302,7 +1278,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils.MsAccess/Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.TableTypes.html",
-          "hash": "KCumitomOcpQJnsTzJlEFg=="
+          "hash": "vwfse1J+ByGrDeU0+wJeGQ=="
         }
       },
       "is_incremental": false,
@@ -1314,7 +1290,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils.MsAccess/Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.TablesSchemaNames.html",
-          "hash": "G3EibzVbZxHKx6CNCSVpRA=="
+          "hash": "ZE4wMZdEcuz9pN9nxTiz5A=="
         }
       },
       "is_incremental": false,
@@ -1326,7 +1302,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils.MsAccess/Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.ViewsSchemaNames.html",
-          "hash": "HZ+9W0rKJPdGGiv9zcz1vg=="
+          "hash": "dChwNWX+DMwIGMn+VBz/0A=="
         }
       },
       "is_incremental": false,
@@ -1338,7 +1314,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils.MsAccess/Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.html",
-          "hash": "L09tVI5AGNM4nszkhWA8WA=="
+          "hash": "4QlqCwfibxWkbmXGsK9Fmw=="
         }
       },
       "is_incremental": false,
@@ -1350,7 +1326,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils.MsAccess/Kros.Data.Schema.MsAccess.html",
-          "hash": "rPN/2PYo7uCEClnvaQGLcA=="
+          "hash": "xouxzjxf6Xwv7T1kQIK84Q=="
         }
       },
       "is_incremental": false,
@@ -1362,7 +1338,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils.MsAccess/Kros.UnitTests.MsAccessTestHelper.html",
-          "hash": "FYXbXLVMTTPQYhjWG7i6vw=="
+          "hash": "RkcRIcviFdmiapoaQmUDzQ=="
         }
       },
       "is_incremental": false,
@@ -1377,7 +1353,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils.MsAccess/Kros.UnitTests.html",
-          "hash": "rU6c3wC3MPZrj4e3se/3qg=="
+          "hash": "dzQ9faibRF+us+DJRerJ5Q=="
         }
       },
       "is_incremental": false,
@@ -1389,7 +1365,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils.MsAccess/Kros.Utils.MsAccess.LibraryInitializer.html",
-          "hash": "KXY1yK/SqyCHihEzVJ6+QQ=="
+          "hash": "PLqwoRMcWg7mc3XBwWjLoA=="
         }
       },
       "is_incremental": false,
@@ -1401,19 +1377,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils.MsAccess/Kros.Utils.MsAccess.html",
-          "hash": "1YrDliRry7xNWL3ZDJRa/g=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "api/Kros.Utils.MsAccess/index.md",
-      "output": {
-        ".html": {
-          "relative_path": "api/Kros.Utils.MsAccess/index.html",
-          "hash": "k53uYMD1Jy/OVafb139sug=="
+          "hash": "qC+Q1GSKi91/fw4GeKOvkA=="
         }
       },
       "is_incremental": false,
@@ -1425,7 +1389,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils.MsAccess/toc.html",
-          "hash": "kg6pKSYdmIGpx+Yyj0JU0A=="
+          "hash": "/GFjIFL9XSXN3asUOehL/A=="
         }
       },
       "is_incremental": false,
@@ -1437,7 +1401,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Caching.Cache-2.html",
-          "hash": "LgPULQ9x3AnftfO6KziRNw=="
+          "hash": "+uS25tzZMAH2t9U+wfnkaA=="
         }
       },
       "is_incremental": false,
@@ -1449,7 +1413,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Caching.ICache-2.html",
-          "hash": "0oUSVJFoydJLcSM8ZerUvA=="
+          "hash": "LIs45QsihAFjyNgZF494ng=="
         }
       },
       "is_incremental": false,
@@ -1461,7 +1425,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Caching.html",
-          "hash": "q+wqoa4tKsEg5+F/6C6q/g=="
+          "hash": "hVO9y+X2A4/kdeX4RapA2w=="
         }
       },
       "is_incremental": false,
@@ -1473,7 +1437,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.BulkActions.BulkActionDataReader.html",
-          "hash": "rkkeDb26LR6LKSUqC+wGUQ=="
+          "hash": "UdJXLX7K1QQ5Hu0/PxwQgg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kros.Utils/Kros.Data.BulkActions.BulkActionFactories.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kros.Utils/Kros.Data.BulkActions.BulkActionFactories.html",
+          "hash": "H00B4/Vef57MaJcd53/ImQ=="
         }
       },
       "is_incremental": false,
@@ -1485,7 +1461,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.BulkActions.BulkUpdateBase.html",
-          "hash": "i7U3U5UcHTZNT+XpirYW2w=="
+          "hash": "VF/6xHTGI67ZxlwEaN1VLw=="
         }
       },
       "is_incremental": false,
@@ -1497,7 +1473,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.BulkActions.EnumerableDataReader-1.html",
-          "hash": "38jkfoXol3FgOlQos417+Q=="
+          "hash": "gZM5TbXWGbLCGoqHRJl4cA=="
         }
       },
       "is_incremental": false,
@@ -1509,7 +1485,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.BulkActions.IBulkActionDataReader.html",
-          "hash": "pHch1UOLocJtJEQX+mu6tg=="
+          "hash": "Nika3Qn0AYBD3lEXHZBXbw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kros.Utils/Kros.Data.BulkActions.IBulkActionFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kros.Utils/Kros.Data.BulkActions.IBulkActionFactory.html",
+          "hash": "roM0mDDYGSyCx4p8DDhXoQ=="
         }
       },
       "is_incremental": false,
@@ -1521,7 +1509,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.BulkActions.IBulkInsert.html",
-          "hash": "/XuWDxHQbDeStLY2WOErLQ=="
+          "hash": "3vVBPZ5zhimCHopL8I+obw=="
         }
       },
       "is_incremental": false,
@@ -1533,7 +1521,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.BulkActions.IBulkUpdate.html",
-          "hash": "t3PalOVbUIgy/6C5Sh3tfw=="
+          "hash": "1/2z/+2VfY/qHczzLiCtlg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkActionFactory.html",
+          "hash": "N87ZgjUnagYMYLqSGj6Kfg=="
         }
       },
       "is_incremental": false,
@@ -1545,7 +1545,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkInsert.html",
-          "hash": "5+xveyeaGdraqPwP3GGo/w=="
+          "hash": "UiI+Jh72hiONoKxBBIlLhw=="
         }
       },
       "is_incremental": false,
@@ -1557,7 +1557,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.BulkActions.SqlServer.SqlServerBulkUpdate.html",
-          "hash": "p6tz96eTLWdfUItez8olFQ=="
+          "hash": "VkzMF7sFzSuchAisOlxDTA=="
         }
       },
       "is_incremental": false,
@@ -1569,7 +1569,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.BulkActions.SqlServer.html",
-          "hash": "qqLV+48aQ7d0G/igKQxwjg=="
+          "hash": "qtK+7E6qYS3/iS3wbXb8dA=="
         }
       },
       "is_incremental": false,
@@ -1581,7 +1581,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.BulkActions.html",
-          "hash": "LM8XxfXMStdL//VuiS5xkQ=="
+          "hash": "zbqb0WwN7I+1XCtFua8lvA=="
         }
       },
       "is_incremental": false,
@@ -1593,7 +1593,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.ConnectionHelper.html",
-          "hash": "45P35zhHYY0IdnSRbtCbDQ=="
+          "hash": "AQPisNJgzoycCBX9nlOrWQ=="
         }
       },
       "is_incremental": false,
@@ -1605,7 +1605,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.DataExtensions.html",
-          "hash": "wpmfLeD8bXrpNX7xn1uzJQ=="
+          "hash": "euTZjldj0s4IqAxl3L+g/g=="
         }
       },
       "is_incremental": false,
@@ -1617,7 +1617,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.IIdGenerator.html",
-          "hash": "30OP03rjD7dfA/hHdAnz1A=="
+          "hash": "5YxuZ7kMVbmwUnmxyaH3Hg=="
         }
       },
       "is_incremental": false,
@@ -1629,7 +1629,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.IIdGeneratorFactory.html",
-          "hash": "RuDWDBD6HkZVri7V8ZTQ8w=="
+          "hash": "AhJPpfQUIreitf7indgDRg=="
         }
       },
       "is_incremental": false,
@@ -1641,7 +1641,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.IdGeneratorBase.html",
-          "hash": "grAR6KH9cZYQC5drIna1XQ=="
+          "hash": "/rlqf6nZ6MzqOgrdKf6hkw=="
         }
       },
       "is_incremental": false,
@@ -1653,7 +1653,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.IdGeneratorFactories.html",
-          "hash": "M22LUCXf3ZV94YIlbPofvA=="
+          "hash": "1JmIVqm6wxbMxt12bZEHTA=="
         }
       },
       "is_incremental": false,
@@ -1665,7 +1665,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.ColumnSchema.DefaultValues.html",
-          "hash": "H8Bm3uZw/c41jvQb1GaGeQ=="
+          "hash": "aCC1TrryN3OHI79YqzDj2Q=="
         }
       },
       "is_incremental": false,
@@ -1677,7 +1677,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.ColumnSchema.html",
-          "hash": "03BEJX/XNN0kODkv0+6OFQ=="
+          "hash": "H+7MuHBGSvmpP6jVwXoIoQ=="
         }
       },
       "is_incremental": false,
@@ -1689,7 +1689,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.ColumnSchemaCollection.html",
-          "hash": "hv1cst4RWUXlaeHjzPWCsA=="
+          "hash": "w36N1Luzm11PyuhlqQ4w6w=="
         }
       },
       "is_incremental": false,
@@ -1701,7 +1701,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.DatabaseSchema.html",
-          "hash": "P22+GvAfxf2uDvSiuenVMw=="
+          "hash": "jMNunmxHWQ1o/kv9KH8QaA=="
         }
       },
       "is_incremental": false,
@@ -1713,7 +1713,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.DatabaseSchemaCache.html",
-          "hash": "qM2ulGgg7BjE2EHr8Ql6Hw=="
+          "hash": "XsIcVW4TOwJDfiERl34KOw=="
         }
       },
       "is_incremental": false,
@@ -1725,7 +1725,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.DatabaseSchemaLoader.html",
-          "hash": "iS8Q/hdplS9KfkfKbKgxdQ=="
+          "hash": "SJaNtlvZZIyAC2UU+aYllw=="
         }
       },
       "is_incremental": false,
@@ -1737,7 +1737,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.DefaultValueParsers.ParseDefaultValueFunction.html",
-          "hash": "S+pP0ce4vsmcIgQWYz7EYA=="
+          "hash": "NzBVo4mTaQ4bfRehrYFYJQ=="
         }
       },
       "is_incremental": false,
@@ -1749,7 +1749,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.DefaultValueParsers.html",
-          "hash": "xbYt4JZTlAfmOtSDffsCxA=="
+          "hash": "I76ZEDH/SdWib7Mx+lyuyQ=="
         }
       },
       "is_incremental": false,
@@ -1761,7 +1761,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.ForeignKeyRule.html",
-          "hash": "W32RslCLBRo7yY2CzB5OTw=="
+          "hash": "FevHt9lw+k7ArlZTWfDw3w=="
         }
       },
       "is_incremental": false,
@@ -1773,7 +1773,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.ForeignKeySchema.html",
-          "hash": "KEIfi/nQxTmnxeJjfavSzg=="
+          "hash": "V0DOL5IKxRrv4J2qY0jmKg=="
         }
       },
       "is_incremental": false,
@@ -1785,7 +1785,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.ForeignKeySchemaCollection.html",
-          "hash": "aN2lCrwasjfieyoE9iPnnQ=="
+          "hash": "3G31VlHddxs7JyZFgrxF9g=="
         }
       },
       "is_incremental": false,
@@ -1797,7 +1797,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.IDatabaseSchemaCache.html",
-          "hash": "v6jS7zl2VV6XuOn4aPbtUQ=="
+          "hash": "5hrDfygKiu/GYzC26L4aeA=="
         }
       },
       "is_incremental": false,
@@ -1809,7 +1809,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.IDatabaseSchemaLoader-1.html",
-          "hash": "xchVI7pXWOA3EMG8vwanXw=="
+          "hash": "vLoBBUtQZxI7v7aCDY+mVg=="
         }
       },
       "is_incremental": false,
@@ -1821,7 +1821,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.IDatabaseSchemaLoader.html",
-          "hash": "XMfu8hhYldFZ1ge4C4rj+A=="
+          "hash": "IfAjVfvce1c7MqPwAIq0VQ=="
         }
       },
       "is_incremental": false,
@@ -1833,7 +1833,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.ISchemaCacheKeyGenerator-1.html",
-          "hash": "k7XHWSYiccrcoe5DK3wyvA=="
+          "hash": "YQcRoWAuDt0jW6ElVDNVCw=="
         }
       },
       "is_incremental": false,
@@ -1845,7 +1845,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.ISchemaCacheKeyGenerator.html",
-          "hash": "BXMD8n/IJYlX3RXuf8/1mA=="
+          "hash": "FJ4JuGW2rT0LL5XoKsr1Vg=="
         }
       },
       "is_incremental": false,
@@ -1857,7 +1857,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.IndexColumnSchema.html",
-          "hash": "hPqsijU0bE+Xf6Fh3A56lg=="
+          "hash": "4nzV5KCtkizW2+p2SSiJNQ=="
         }
       },
       "is_incremental": false,
@@ -1869,7 +1869,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.IndexColumnSchemaCollection.html",
-          "hash": "aV0FAiOVYNjby4cnh/Bc9w=="
+          "hash": "7BoFRxYFFAyG1Gycjcwe2A=="
         }
       },
       "is_incremental": false,
@@ -1881,7 +1881,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.IndexSchema.html",
-          "hash": "Fnx9DlgsTIXP1ptvD5ZYNQ=="
+          "hash": "gT2S/sCPCC+1HalxTDT3Yg=="
         }
       },
       "is_incremental": false,
@@ -1893,7 +1893,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.IndexSchemaCollection.html",
-          "hash": "mU/uY6TDrqdEneRCjR6pyg=="
+          "hash": "hcOs8D+akLrvKhkSXP7iBQ=="
         }
       },
       "is_incremental": false,
@@ -1905,7 +1905,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.IndexType.html",
-          "hash": "yf+dVamJc79g2ynOqD7Sew=="
+          "hash": "MfZtLTcAN1aOpj9+gOVXkA=="
         }
       },
       "is_incremental": false,
@@ -1917,7 +1917,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.SortOrder.html",
-          "hash": "DIG5wNjcTEmxVFGw48SlSA=="
+          "hash": "kubOPqPJq6kOApcb9ulMKg=="
         }
       },
       "is_incremental": false,
@@ -1929,7 +1929,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.SqlServer.SqlServerCacheKeyGenerator.html",
-          "hash": "HfzES0vcwfgr72Y/DOiq8w=="
+          "hash": "2ksh7pJ21dyW2o85vu+cxw=="
         }
       },
       "is_incremental": false,
@@ -1941,7 +1941,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.SqlServer.SqlServerColumnSchema.html",
-          "hash": "lOrVH+yagyCrZi3eP9Db7g=="
+          "hash": "T8nVLSumkqfOuOPjUpQd4A=="
         }
       },
       "is_incremental": false,
@@ -1953,7 +1953,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.SqlServer.SqlServerParseDefaultValueEventArgs.html",
-          "hash": "pB/wLbnzqBA+FdXX/ymYWQ=="
+          "hash": "ljyEN84EruGm24fKCk/5RA=="
         }
       },
       "is_incremental": false,
@@ -1965,7 +1965,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.ColumnSetColumnsSchemaNames.html",
-          "hash": "cmFPmZ9QB948CSNEzUyyOw=="
+          "hash": "7lBtoKlXLLy56Jed+DNaNg=="
         }
       },
       "is_incremental": false,
@@ -1977,7 +1977,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.ColumnsSchemaNames.html",
-          "hash": "D5VebUwCfvDbEvqX7nUiBg=="
+          "hash": "2p9ZpIknk3wMvVnMyeryew=="
         }
       },
       "is_incremental": false,
@@ -1989,7 +1989,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.DatabasesSchemaNames.html",
-          "hash": "aPqEruMYHkU0gbr0EyKh7g=="
+          "hash": "ZYnNgcIxoFbqeMRdS28NJg=="
         }
       },
       "is_incremental": false,
@@ -2001,7 +2001,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.ForeignKeysSchemaNames.html",
-          "hash": "UqT2TqxUoZN5zQieHGDUyQ=="
+          "hash": "uSBqIrzJTDJ2wPr3n20srA=="
         }
       },
       "is_incremental": false,
@@ -2013,7 +2013,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.IndexColumnsSchemaNames.html",
-          "hash": "qcjkGrOBnHHBZifRUeAWUg=="
+          "hash": "i4jxhFXVPvrr11nY3ufd3Q=="
         }
       },
       "is_incremental": false,
@@ -2025,7 +2025,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.IndexesSchemaNames.html",
-          "hash": "2ZzfkA34+D0FE1GJiDHlag=="
+          "hash": "CdiD1I1sW2V7rC/xTgVhQg=="
         }
       },
       "is_incremental": false,
@@ -2037,7 +2037,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.ProcedureParametersSchemaNames.html",
-          "hash": "yFeN0wmlfAV9tl0F2XfzpA=="
+          "hash": "8dZIdFikn0onDlCOk5Mjvw=="
         }
       },
       "is_incremental": false,
@@ -2049,7 +2049,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.ProceduresSchemaNames.html",
-          "hash": "GFzwe9fIY2rnogqFmP+6MQ=="
+          "hash": "+4/ssGhFi9wLiBsP8woOkg=="
         }
       },
       "is_incremental": false,
@@ -2061,7 +2061,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.SchemaNames.html",
-          "hash": "GPCpa0cwSouDNTvSHNvP+g=="
+          "hash": "m0iC6MJ318G7lBp295R9iw=="
         }
       },
       "is_incremental": false,
@@ -2073,7 +2073,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.TablesSchemaNames.html",
-          "hash": "MzuOOuwXDDPntYgDbJ4Igg=="
+          "hash": "JbJBMMz43oKd8urcl7gxpw=="
         }
       },
       "is_incremental": false,
@@ -2085,7 +2085,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.UserDefinedTypesSchemaNames.html",
-          "hash": "AA7W//NTuEHOF5BzBSfvTQ=="
+          "hash": "r6A8wt7MqwuUp//GCbwgYQ=="
         }
       },
       "is_incremental": false,
@@ -2097,7 +2097,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.UsersSchemaNames.html",
-          "hash": "4JI+8mUgZuVMnZsXOBFuoQ=="
+          "hash": "IA/Ou7Tch//Ldw113Qkl6g=="
         }
       },
       "is_incremental": false,
@@ -2109,7 +2109,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.ViewColumnsSchemaNames.html",
-          "hash": "Cr4WF6V9muAX9XAsOraSKA=="
+          "hash": "R93WfIDi155GEx9PsJnlQA=="
         }
       },
       "is_incremental": false,
@@ -2121,7 +2121,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.ViewsSchemaNames.html",
-          "hash": "LYSKjstf8dENU5DErF6nNA=="
+          "hash": "Sc4sKNrkf5Q4qJ6hts4xPg=="
         }
       },
       "is_incremental": false,
@@ -2133,7 +2133,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.html",
-          "hash": "S5tkornkE9/TRysYJLQUJA=="
+          "hash": "fPxSTSJBhNHe8LdO82aLXw=="
         }
       },
       "is_incremental": false,
@@ -2145,7 +2145,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.SqlServer.html",
-          "hash": "gq5b91jJwLXp+cT8JJENCA=="
+          "hash": "S+v1R4o3FzwfVtKJBmgnuQ=="
         }
       },
       "is_incremental": false,
@@ -2157,7 +2157,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.TableSchema.html",
-          "hash": "GPZUppQeCEtGD+G56izs5w=="
+          "hash": "Bg+IXzFRSFn0B36Xq5dzaw=="
         }
       },
       "is_incremental": false,
@@ -2169,7 +2169,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.TableSchemaCollection.html",
-          "hash": "67W3Kynd/eK4dIWQPg2ayg=="
+          "hash": "1eMf1ti1mv9TbvmfdugPcg=="
         }
       },
       "is_incremental": false,
@@ -2181,7 +2181,31 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.Schema.html",
-          "hash": "Q4NSIJImAixXV9eYbsjx2g=="
+          "hash": "zy6ohYvkJWEUaW86zFMowA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kros.Utils/Kros.Data.SqlServer.SqlConnectionExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kros.Utils/Kros.Data.SqlServer.SqlConnectionExtensions.html",
+          "hash": "9C/3Ow32abPXH58SwJ8b6g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kros.Utils/Kros.Data.SqlServer.SqlServerDataHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kros.Utils/Kros.Data.SqlServer.SqlServerDataHelper.html",
+          "hash": "fvY0OxP6Lqjulu/FwsS7jA=="
         }
       },
       "is_incremental": false,
@@ -2193,7 +2217,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.SqlServer.SqlServerErrorCode.html",
-          "hash": "2FXH0mOMeq104kwoi/0aeg=="
+          "hash": "bK4O1kvakRg/KAol1Mux8w=="
         }
       },
       "is_incremental": false,
@@ -2205,7 +2229,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.SqlServer.SqlServerIdGenerator.html",
-          "hash": "pBa52K0TohINKNtQpocwaA=="
+          "hash": "numnoKHD/WtkkL9lQxCfAA=="
         }
       },
       "is_incremental": false,
@@ -2217,7 +2241,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.SqlServer.SqlServerIdGeneratorFactory.html",
-          "hash": "QgFtU4pPZ2pZ5oD4YY+GCg=="
+          "hash": "VH5pLORyEfRjr1TQbh3Pmg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kros.Utils/Kros.Data.SqlServer.SqlServerVersions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kros.Utils/Kros.Data.SqlServer.SqlServerVersions.html",
+          "hash": "auC1ezhtirIK9FMPaOSQ0g=="
         }
       },
       "is_incremental": false,
@@ -2229,7 +2265,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.SqlServer.html",
-          "hash": "mFeuAy79ffR+AlibCJ8+VQ=="
+          "hash": "OuMdjMu+uuy4/TYOYv92Gg=="
         }
       },
       "is_incremental": false,
@@ -2241,7 +2277,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Data.html",
-          "hash": "Z4WqYJk5GzQuJGH8gHpykQ=="
+          "hash": "ZSVg7+8djDwkW7+p1HTtEw=="
         }
       },
       "is_incremental": false,
@@ -2253,7 +2289,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Extensions.DateTimeExtensions.html",
-          "hash": "bBdfsQ1VMS2M6J2Uz5pH5Q=="
+          "hash": "r5BOVMFAdM0p7beouvpQ3w=="
         }
       },
       "is_incremental": false,
@@ -2265,7 +2301,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Extensions.StringExtensions.html",
-          "hash": "cLK6qcpn1KGOa0I1ARgfDg=="
+          "hash": "Bpb+DmrPib6XSCg9YxCUzQ=="
         }
       },
       "is_incremental": false,
@@ -2277,7 +2313,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Extensions.html",
-          "hash": "S49BHpZpdmRLRzmQAityRg=="
+          "hash": "YNeXVsUZ7Is90BEtwJMVZw=="
         }
       },
       "is_incremental": false,
@@ -2289,7 +2325,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.IO.PathFormatter.html",
-          "hash": "VZyYDLkTthx6ePp2PZx0dA=="
+          "hash": "XDHS100ThFXFHnN6WtPNkQ=="
         }
       },
       "is_incremental": false,
@@ -2301,7 +2337,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.IO.PathHelper.html",
-          "hash": "dG10swVurQF2xCXb4qRlZw=="
+          "hash": "wOF91wPxoNPD33RNhTiuiQ=="
         }
       },
       "is_incremental": false,
@@ -2313,19 +2349,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.IO.html",
-          "hash": "oH9LnELgE632ruTVc0Qgpg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Kros.Utils/Kros.Net.IWebClient.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Kros.Utils/Kros.Net.IWebClient.html",
-          "hash": "E0diF/2UsLJWXVaC932h2Q=="
+          "hash": "bpRMKIRIisL1Eo5+CVS/JQ=="
         }
       },
       "is_incremental": false,
@@ -2337,7 +2361,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Net.NetworkChecker.html",
-          "hash": "TkoTAnoV/WGE2flqC4Qy/w=="
+          "hash": "GHAwO24CKT7z4+B78XL1kg=="
         }
       },
       "is_incremental": false,
@@ -2349,7 +2373,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Net.html",
-          "hash": "8rBRQs66R1E3VKi94vwczw=="
+          "hash": "s8JX9/mc1cbq79jeK+AOrw=="
         }
       },
       "is_incremental": false,
@@ -2361,7 +2385,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.UnitTests.SqlServerDatabaseTestBase.html",
-          "hash": "4qJ5nVDyTPPpACp63Ixh6g=="
+          "hash": "IrlXZxP29pxmxmZRqVpInw=="
         }
       },
       "is_incremental": false,
@@ -2373,22 +2397,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.UnitTests.SqlServerTestHelper.html",
-          "hash": "iEHwSbTyv4WujTEZ+5G3Uw=="
+          "hash": "GmtZ1LQWThMWvm/+TXoaUQ=="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "DuplicateUids"
-      ],
       "type": "ManagedReference",
       "source_relative_path": "api/Kros.Utils/Kros.UnitTests.yml",
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.UnitTests.html",
-          "hash": "ccNrUYP+bTYwP0Q9e94SNg=="
+          "hash": "z/0OIyF1vLaumphpw78Qbw=="
         }
       },
       "is_incremental": false,
@@ -2400,7 +2421,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Utils.Check.html",
-          "hash": "c5twBIi+8K9JQ9TrYMVXnQ=="
+          "hash": "Fv1aocBUWRpVGgJ3N2cI7A=="
         }
       },
       "is_incremental": false,
@@ -2412,7 +2433,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Utils.DateTimeProvider.html",
-          "hash": "Q+Du3y8HeIWDVVOhs2bL3A=="
+          "hash": "f4T+eY7yvE7T/IQnLtkHlQ=="
         }
       },
       "is_incremental": false,
@@ -2424,7 +2445,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Utils.IDiContainer.html",
-          "hash": "N/+G9PHIvwfAolwWjSjufQ=="
+          "hash": "4Etmqu4fvSf3I8DCkM4bCA=="
         }
       },
       "is_incremental": false,
@@ -2436,7 +2457,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Utils.Suspender.html",
-          "hash": "EKnVn2CFxP9xl1zwBuGhHA=="
+          "hash": "mnZKUlZYLZ5EJWw9PvvUJw=="
         }
       },
       "is_incremental": false,
@@ -2448,19 +2469,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/Kros.Utils.html",
-          "hash": "udo0WR554IYOE6xvHYtbhQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "api/Kros.Utils/index.md",
-      "output": {
-        ".html": {
-          "relative_path": "api/Kros.Utils/index.html",
-          "hash": "dE4n455eJjkkfXDk0CFU0A=="
+          "hash": "wK+mE7fq6TiTRh9fRgik5w=="
         }
       },
       "is_incremental": false,
@@ -2472,7 +2481,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Kros.Utils/toc.html",
-          "hash": "fEGgcZCzhWjGgr+QZrJtzw=="
+          "hash": "vC1XuF2b38HQQIbF1JpUNw=="
         }
       },
       "is_incremental": false,
@@ -2484,7 +2493,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "/dGqKufKTHvevTRFdE/URw=="
+          "hash": "Qpf2e77P6z1vbQcg9q9Nlw=="
         }
       },
       "is_incremental": false,
@@ -2536,12 +2545,15 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "UidNotFound"
+      ],
       "type": "Conceptual",
       "source_relative_path": "index.md",
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "do7rNXO0iprS0ahwsS9cLg=="
+          "hash": "iKW2xRojTpUSAtk8AOKm/A=="
         }
       },
       "is_incremental": false,
@@ -2567,9 +2579,9 @@
         "incrementalPhase": "build"
       },
       "processors": {
-        "ResourceDocumentProcessor": {
+        "TocDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor ResourceDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
         "ManagedReferenceDocumentProcessor": {
@@ -2580,9 +2592,9 @@
           "can_incremental": true,
           "incrementalPhase": "build"
         },
-        "TocDocumentProcessor": {
+        "ResourceDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         }
       }
