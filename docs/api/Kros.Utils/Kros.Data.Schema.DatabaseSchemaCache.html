@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class DatabaseSchemaCache
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,9 +83,10 @@
   
   <h1 id="Kros_Data_Schema_DatabaseSchemaCache" data-uid="Kros.Data.Schema.DatabaseSchemaCache" class="text-break">Class DatabaseSchemaCache
   </h1>
-  <div class="markdown level0 summary"><p>Implementácia <a class="xref" href="Kros.Data.Schema.IDatabaseSchemaCache.html">IDatabaseSchemaCache</a>. Po pridaní loader-ov umožňuje načítavať schému databázy.
-Načítanie schémy je pomalá záležitosť a preto sa načítaná schéma kešuje. Pri ďalšej požiadavke na rovnakú schému
-sa už nenačíta z databázy, ale je vrátená z keše.</p>
+  <div class="markdown level0 summary"><p>Implementation of <a class="xref" href="Kros.Data.Schema.IDatabaseSchemaCache.html">IDatabaseSchemaCache</a>. It allows to load database schemas after adding appropriate
+loaders (<a class="xref" href="Kros.Data.Schema.DatabaseSchemaCache.html#Kros_Data_Schema_DatabaseSchemaCache_AddSchemaLoader_Kros_Data_Schema_IDatabaseSchemaLoader_Kros_Data_Schema_ISchemaCacheKeyGenerator_">AddSchemaLoader(IDatabaseSchemaLoader, ISchemaCacheKeyGenerator)</a>). Loading of a database
+schema is quite slow, that&apos;s why loaded schemas are cached. On next request for the same schema, it is not
+loaded from database, but returned from cache.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -104,19 +105,18 @@ sa už nenačíta z databázy, ale je vrátená z keše.</p>
     <pre><code class="lang-csharp hljs">public class DatabaseSchemaCache : IDatabaseSchemaCache</code></pre>
   </div>
   <h5 id="Kros_Data_Schema_DatabaseSchemaCache_remarks"><strong>Remarks</strong></h5>
-  <div class="markdown level0 remarks"><p><code>DatabaseSchemaCache</code> je potrebné inicializovať potrebným loaderom <a class="xref" href="Kros.Data.Schema.IDatabaseSchemaLoader.html">IDatabaseSchemaLoader</a>,
-ktorý načíta schému. Zároveň každý loader musí mať špecifikovaný generátor kľúča <a class="xref" href="Kros.Data.Schema.ISchemaCacheKeyGenerator.html">ISchemaCacheKeyGenerator</a>.
-Generátory kľúča pre rôzne typy databáz musia vytvárať navzájom rôzne kľúče, aby sa nestalo, že dva rôzne generátory
-vygenerujú rovnaký kľúč.</p>
-<p>Pre jednoduché použitie je implementovaná vlastnosť <a class="xref" href="Kros.Data.Schema.DatabaseSchemaCache.html#Kros_Data_Schema_DatabaseSchemaCache_Default">Default</a>
-a nie je tak nutné si vytvárať vlastnú inštanciu keše.</p>
+  <div class="markdown level0 remarks"><p>It is necessary to initialize <code>DatabaseSchemaCache</code> with loaders (<a class="xref" href="Kros.Data.Schema.IDatabaseSchemaLoader.html">IDatabaseSchemaLoader</a>)
+and every loader must have its cache key generator (<a class="xref" href="Kros.Data.Schema.ISchemaCacheKeyGenerator.html">ISchemaCacheKeyGenerator</a>). Different cache key
+generators should generate different keys.</p>
+<p>There is a property <a class="xref" href="Kros.Data.Schema.DatabaseSchemaCache.html#Kros_Data_Schema_DatabaseSchemaCache_Default">Default</a> intended for simple static use,
+so it is not necessary to create own instance.</p>
 </div>
   <h3 id="properties">Properties
   </h3>
   <a id="Kros_Data_Schema_DatabaseSchemaCache_Default_" data-uid="Kros.Data.Schema.DatabaseSchemaCache.Default*"></a>
   <h4 id="Kros_Data_Schema_DatabaseSchemaCache_Default" data-uid="Kros.Data.Schema.DatabaseSchemaCache.Default">Default</h4>
-  <div class="markdown level1 summary"><p>Inštancia <code>DatabaseSchemaCache</code> určená na bežné použitie. Štandardne obsahuje loader pre SQL Server
-(<a class="xref" href="Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.html">SqlServerSchemaLoader</a>).</p>
+  <div class="markdown level1 summary"><p>Instance of <code>DatabaseSchemaCache</code> intended for simple static use. By default, it contains a loader
+for Microsoft SQL Server (<a class="xref" href="Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.html">SqlServerSchemaLoader</a>).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -142,8 +142,8 @@ a nie je tak nutné si vytvárať vlastnú inštanciu keše.</p>
   </h3>
   <a id="Kros_Data_Schema_DatabaseSchemaCache_AddSchemaLoader_" data-uid="Kros.Data.Schema.DatabaseSchemaCache.AddSchemaLoader*"></a>
   <h4 id="Kros_Data_Schema_DatabaseSchemaCache_AddSchemaLoader_Kros_Data_Schema_IDatabaseSchemaLoader_Kros_Data_Schema_ISchemaCacheKeyGenerator_" data-uid="Kros.Data.Schema.DatabaseSchemaCache.AddSchemaLoader(Kros.Data.Schema.IDatabaseSchemaLoader,Kros.Data.Schema.ISchemaCacheKeyGenerator)">AddSchemaLoader(IDatabaseSchemaLoader, ISchemaCacheKeyGenerator)</h4>
-  <div class="markdown level1 summary"><p>Pridá do keše <code data-dev-comment-type="paramref" class="paramref">loader</code> na načítavanie schémy databázy, spolu s generátorom kľúčov pre načítanú
-shému <code data-dev-comment-type="paramref" class="paramref">keyGenerator</code>.</p>
+  <div class="markdown level1 summary"><p>Adds <code data-dev-comment-type="paramref" class="paramref">loader</code> together with its cache key generator <code data-dev-comment-type="paramref" class="paramref">keyGenerator</code> to the
+inner loaders list.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -163,14 +163,13 @@ shému <code data-dev-comment-type="paramref" class="paramref">keyGenerator</cod
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.IDatabaseSchemaLoader.html">IDatabaseSchemaLoader</a></td>
         <td><span class="parametername">loader</span></td>
-        <td><p>Loader pre načítavanie schémy databázy.</p>
+        <td><p>Database schema loader.</p>
 </td>
       </tr>
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.ISchemaCacheKeyGenerator.html">ISchemaCacheKeyGenerator</a></td>
         <td><span class="parametername">keyGenerator</span></td>
-        <td><p>Generátor kľúča pre schému databázy. Databáza sa interne drží v keši pod vygenerovaným
-kľúčom.</p>
+        <td><p>Schema cache key generator for <code data-dev-comment-type="paramref" class="paramref">loader</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -186,16 +185,15 @@ kľúčom.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Hodnota <code data-dev-comment-type="paramref" class="paramref">loader</code> alebo <code data-dev-comment-type="paramref" class="paramref">keyGenerator</code>
-je <code>null</code>.</p>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">loader</code> or <code data-dev-comment-type="paramref" class="paramref">keyGenerator</code>
+is <span class="xref">null</span>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_Schema_DatabaseSchemaCache_ClearAllSchemas_" data-uid="Kros.Data.Schema.DatabaseSchemaCache.ClearAllSchemas*"></a>
   <h4 id="Kros_Data_Schema_DatabaseSchemaCache_ClearAllSchemas" data-uid="Kros.Data.Schema.DatabaseSchemaCache.ClearAllSchemas">ClearAllSchemas()</h4>
-  <div class="markdown level1 summary"><p>Vyčistí celú keš - vymaže všetky načítané schémy.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -203,8 +201,7 @@ je <code>null</code>.</p>
   </div>
   <a id="Kros_Data_Schema_DatabaseSchemaCache_ClearSchema_" data-uid="Kros.Data.Schema.DatabaseSchemaCache.ClearSchema*"></a>
   <h4 id="Kros_Data_Schema_DatabaseSchemaCache_ClearSchema_System_Object_" data-uid="Kros.Data.Schema.DatabaseSchemaCache.ClearSchema(System.Object)">ClearSchema(Object)</h4>
-  <div class="markdown level1 summary"><p>Zruší z keše schému databázy načítanú pre spojenie <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -223,8 +220,7 @@ je <code>null</code>.</p>
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Spojenie na databázu.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -239,15 +235,15 @@ je <code>null</code>.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.InvalidOperationException</span></td>
-        <td><p>Keš neobsahuje loader pre spojenie na databázu
-<code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
+        <td><p>The cache does not contain a loader for database type
+specified by <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_Schema_DatabaseSchemaCache_ClearSchemaLoaders_" data-uid="Kros.Data.Schema.DatabaseSchemaCache.ClearSchemaLoaders*"></a>
   <h4 id="Kros_Data_Schema_DatabaseSchemaCache_ClearSchemaLoaders" data-uid="Kros.Data.Schema.DatabaseSchemaCache.ClearSchemaLoaders">ClearSchemaLoaders()</h4>
-  <div class="markdown level1 summary"><p>Vymaže všetky loader-y schém.</p>
+  <div class="markdown level1 summary"><p>Removes all database schema loaders.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -256,8 +252,7 @@ je <code>null</code>.</p>
   </div>
   <a id="Kros_Data_Schema_DatabaseSchemaCache_GetSchema_" data-uid="Kros.Data.Schema.DatabaseSchemaCache.GetSchema*"></a>
   <h4 id="Kros_Data_Schema_DatabaseSchemaCache_GetSchema_System_Object_" data-uid="Kros.Data.Schema.DatabaseSchemaCache.GetSchema(System.Object)">GetSchema(Object)</h4>
-  <div class="markdown level1 summary"><p>Vráti schému databázy pre spojenie <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -276,8 +271,7 @@ je <code>null</code>.</p>
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Spojenie na databázu.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -292,8 +286,7 @@ je <code>null</code>.</p>
     <tbody>
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.DatabaseSchema.html">DatabaseSchema</a></td>
-        <td><p>Schéma danej databázy.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -308,17 +301,15 @@ je <code>null</code>.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.InvalidOperationException</span></td>
-        <td><p>Keš neobsahuje loader pre spojenie na databázu
-<code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
+        <td><p>The cache does not contain a loader for database type
+specified by <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_Schema_DatabaseSchemaCache_RefreshSchema_" data-uid="Kros.Data.Schema.DatabaseSchemaCache.RefreshSchema*"></a>
   <h4 id="Kros_Data_Schema_DatabaseSchemaCache_RefreshSchema_System_Object_" data-uid="Kros.Data.Schema.DatabaseSchemaCache.RefreshSchema(System.Object)">RefreshSchema(Object)</h4>
-  <div class="markdown level1 summary"><p>Načíta schému databázy pre spojenie <code data-dev-comment-type="paramref" class="paramref">connection</code>. Schéma je načítaná priamo z databázy aj v prípade,
-že už je uložená v keši.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -337,8 +328,7 @@ je <code>null</code>.</p>
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Spojenie na databázu.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -353,8 +343,7 @@ je <code>null</code>.</p>
     <tbody>
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.DatabaseSchema.html">DatabaseSchema</a></td>
-        <td><p>Schéma danej databázy.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -369,15 +358,15 @@ je <code>null</code>.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.InvalidOperationException</span></td>
-        <td><p>Keš neobsahuje loader pre spojenie na databázu
-<code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
+        <td><p>The cache does not contain a loader for database type
+specified by <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_Schema_DatabaseSchemaCache_RemoveSchemaLoader_" data-uid="Kros.Data.Schema.DatabaseSchemaCache.RemoveSchemaLoader*"></a>
   <h4 id="Kros_Data_Schema_DatabaseSchemaCache_RemoveSchemaLoader_Kros_Data_Schema_IDatabaseSchemaLoader_" data-uid="Kros.Data.Schema.DatabaseSchemaCache.RemoveSchemaLoader(Kros.Data.Schema.IDatabaseSchemaLoader)">RemoveSchemaLoader(IDatabaseSchemaLoader)</h4>
-  <div class="markdown level1 summary"><p>Vymaže zadaný <code data-dev-comment-type="paramref" class="paramref">loader</code> databázovej schémy.</p>
+  <div class="markdown level1 summary"><p>Removes specified <code data-dev-comment-type="paramref" class="paramref">loader</code> from inner loaders list.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -397,7 +386,7 @@ je <code>null</code>.</p>
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.IDatabaseSchemaLoader.html">IDatabaseSchemaLoader</a></td>
         <td><span class="parametername">loader</span></td>
-        <td><p>Loader databázovej schémy, ktorý sa má vymazať.</p>
+        <td><p>Database schema loader to be removed.</p>
 </td>
       </tr>
     </tbody>

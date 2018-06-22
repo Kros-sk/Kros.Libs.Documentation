@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IQueryBase&lt;T&gt;
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -166,7 +166,10 @@ Returns a maximum of 2033 characters.</p>
     </tbody>
   </table>
   <h5 id="Kros_KORM_Query_IQueryBase_1_ExecuteScalar_examples">Examples</h5>
-  <pre><code source="..\Examples\Kros.KORM.Examples\IQueryExample.cs" region="ExecuteScalar"></code></pre>
+  <pre><code class="cs" source="..\..\..\..\Documentation\Examples\Kros.KORM.Examples\IQueryExample.cs" region="ExecuteScalar">                var id = (int)database.Query&lt;Person>()
+                .Select(p => new { p.Id })
+                .Where(&quot;FirstName = @p1 AND LastName = @p2&quot;, &quot;Michael&quot;, &quot;Štúr&quot;)
+                .ExecuteScalar();</code></pre>
 
   <a id="Kros_KORM_Query_IQueryBase_1_ExecuteScalar_" data-uid="Kros.KORM.Query.IQueryBase`1.ExecuteScalar*"></a>
   <h4 id="Kros_KORM_Query_IQueryBase_1_ExecuteScalar__1" data-uid="Kros.KORM.Query.IQueryBase`1.ExecuteScalar``1">ExecuteScalar&lt;TRet&gt;()</h4>
@@ -176,6 +179,7 @@ Returns a maximum of 2033 characters.</p>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">TRet? ExecuteScalar&lt;TRet&gt;()
+
     where TRet : struct</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
@@ -212,7 +216,10 @@ Returns a maximum of 2033 characters.</p>
     </tbody>
   </table>
   <h5 id="Kros_KORM_Query_IQueryBase_1_ExecuteScalar__1_examples">Examples</h5>
-  <pre><code source="..\Examples\Kros.KORM.Examples\IQueryExample.cs" region="ExecuteScalar"></code></pre>
+  <pre><code class="cs" source="..\..\..\..\Documentation\Examples\Kros.KORM.Examples\IQueryExample.cs" region="ExecuteScalar">                var id = (int)database.Query&lt;Person>()
+                .Select(p => new { p.Id })
+                .Where(&quot;FirstName = @p1 AND LastName = @p2&quot;, &quot;Michael&quot;, &quot;Štúr&quot;)
+                .ExecuteScalar();</code></pre>
 
   <a id="Kros_KORM_Query_IQueryBase_1_ExecuteStringScalar_" data-uid="Kros.KORM.Query.IQueryBase`1.ExecuteStringScalar*"></a>
   <h4 id="Kros_KORM_Query_IQueryBase_1_ExecuteStringScalar" data-uid="Kros.KORM.Query.IQueryBase`1.ExecuteStringScalar">ExecuteStringScalar()</h4>
@@ -242,7 +249,10 @@ Returns a maximum of 2033 characters.</p>
     </tbody>
   </table>
   <h5 id="Kros_KORM_Query_IQueryBase_1_ExecuteStringScalar_examples">Examples</h5>
-  <pre><code source="..\Examples\Kros.KORM.Examples\IQueryExample.cs" region="ExecuteScalar"></code></pre>
+  <pre><code class="cs" source="..\..\..\..\Documentation\Examples\Kros.KORM.Examples\IQueryExample.cs" region="ExecuteScalar">                var id = (int)database.Query&lt;Person>()
+                .Select(p => new { p.Id })
+                .Where(&quot;FirstName = @p1 AND LastName = @p2&quot;, &quot;Michael&quot;, &quot;Štúr&quot;)
+                .ExecuteScalar();</code></pre>
 
 </article>
           </div>

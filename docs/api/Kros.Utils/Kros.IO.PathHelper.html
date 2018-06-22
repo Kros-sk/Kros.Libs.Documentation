@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class PathHelper
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,7 +83,7 @@
   
   <h1 id="Kros_IO_PathHelper" data-uid="Kros.IO.PathHelper" class="text-break">Class PathHelper
   </h1>
-  <div class="markdown level0 summary"><p>Pomocná trieda na prácu s cestami k súborom/zložkám.</p>
+  <div class="markdown level0 summary"><p>Helpers for working with file/folder paths.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -101,7 +101,7 @@
   </h3>
   <a id="Kros_IO_PathHelper_BuildPath_" data-uid="Kros.IO.PathHelper.BuildPath*"></a>
   <h4 id="Kros_IO_PathHelper_BuildPath_System_String___" data-uid="Kros.IO.PathHelper.BuildPath(System.String[])">BuildPath(String[])</h4>
-  <div class="markdown level1 summary"><p>Spojí zadané časti <code data-dev-comment-type="paramref" class="paramref">parts</code> do reťazca predstavujúceho cestu k súboru/zložke.</p>
+  <div class="markdown level1 summary"><p>Joins parts <code data-dev-comment-type="paramref" class="paramref">parts</code> to one string, representing path to a file/folder.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -121,7 +121,7 @@
       <tr>
         <td><span class="xref">System.String</span>[]</td>
         <td><span class="parametername">parts</span></td>
-        <td><p>Časti cesty.</p>
+        <td><p>Path parts.</p>
 </td>
       </tr>
     </tbody>
@@ -137,15 +137,15 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><p>Vytvorená cesta.</p>
+        <td><p>Created path.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <h5 id="Kros_IO_PathHelper_BuildPath_System_String____remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>
-Metóda pracuje podobne ako štandardná .NET metóda
-<span class="xref">System.IO.Path.Combine(System.String[])</span>, s pár upravenými detailami.
+The method works similarly as standard .NET method <span class="xref">System.IO.Path.Combine(System.String[])</span>,
+with some different details:
 <ul><li></li><li></li></ul>
 </p>
 </div>
@@ -160,21 +160,20 @@ Metóda pracuje podobne ako štandardná .NET metóda
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Vstupný parameter <code data-dev-comment-type="paramref" class="paramref">parts</code> má hodnotu <span class="xref">null</span>,
-alebo niektorá z jeho častí je <span class="xref">null</span>.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">parts</code> or any of its item is <span class="xref">null</span>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Niektorý z reťazcov v zozname <code data-dev-comment-type="paramref" class="paramref">parts</code>
-obsahuje nepovolené znaky, definované v <span class="xref">System.IO.Path.GetInvalidPathChars</span>.</p>
+        <td><p>Any of the item in <code data-dev-comment-type="paramref" class="paramref">parts</code> contains invalid characters
+defined in <span class="xref">System.IO.Path.GetInvalidPathChars</span>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_IO_PathHelper_GetTempPath_" data-uid="Kros.IO.PathHelper.GetTempPath*"></a>
   <h4 id="Kros_IO_PathHelper_GetTempPath" data-uid="Kros.IO.PathHelper.GetTempPath">GetTempPath()</h4>
-  <div class="markdown level1 summary"><p>Adresárová cesta ku systémovej zložke pre dočasné súbory <legacybold>bez</legacybold> lomítka na konci.</p>
+  <div class="markdown level1 summary"><p>Returns path to system temporary folder (<span class="xref">System.IO.Path.GetTempPath</span>) <strong>without</strong> trailing directory separator.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -198,7 +197,8 @@ obsahuje nepovolené znaky, definované v <span class="xref">System.IO.Path.GetI
   </table>
   <a id="Kros_IO_PathHelper_IsNetworkPath_" data-uid="Kros.IO.PathHelper.IsNetworkPath*"></a>
   <h4 id="Kros_IO_PathHelper_IsNetworkPath_System_String_" data-uid="Kros.IO.PathHelper.IsNetworkPath(System.String)">IsNetworkPath(String)</h4>
-  <div class="markdown level1 summary"><p>Zistí, či dané umiestnenie, adresár alebo súbor sídli na zdieľanom adresári na sieti.</p>
+  <div class="markdown level1 summary"><p>Checks, if specified <code data-dev-comment-type="paramref" class="paramref">path</code> is network share path. The path is considered network share path,
+if it begins with <code>\</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -218,7 +218,7 @@ obsahuje nepovolené znaky, definované v <span class="xref">System.IO.Path.GetI
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">path</span></td>
-        <td><p>Cesta, ktorá sa testuje.</p>
+        <td><p>Checked path.</p>
 </td>
       </tr>
     </tbody>
@@ -234,15 +234,15 @@ obsahuje nepovolené znaky, definované v <span class="xref">System.IO.Path.GetI
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p><span class="xref">true</span>, ak <code data-dev-comment-type="paramref" class="paramref">path</code> je sieťová cesta, inak <span class="xref">false</span>.</p>
+        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">path</code> is network share path, <span class="xref">false</span> otherwise.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_IO_PathHelper_ReplaceInvalidPathChars_" data-uid="Kros.IO.PathHelper.ReplaceInvalidPathChars*"></a>
   <h4 id="Kros_IO_PathHelper_ReplaceInvalidPathChars_System_String_" data-uid="Kros.IO.PathHelper.ReplaceInvalidPathChars(System.String)">ReplaceInvalidPathChars(String)</h4>
-  <div class="markdown level1 summary"><p>V reťazci <code data-dev-comment-type="paramref" class="paramref">pathName</code> nahradí zakázané znaky pre názov súboru za pomlčku (<strong>-</strong>).
-Ak je vo vstupnom reťazci viacero zakázaných znakov za sebou, sú všetky ako skupina nahradené jednou pomlčkou.</p>
+  <div class="markdown level1 summary"><p>Replaces invalid characters in <code data-dev-comment-type="paramref" class="paramref">pathName</code> with dash (<code>-</code>). If there are
+several succesive invalid characters, they all are replaced only by one dash.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -262,7 +262,7 @@ Ak je vo vstupnom reťazci viacero zakázaných znakov za sebou, sú všetky ako
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">pathName</span></td>
-        <td><p>Vstupný reťazec, predstavujúci názov súboru.</p>
+        <td><p>Input path.</p>
 </td>
       </tr>
     </tbody>
@@ -282,11 +282,12 @@ Ak je vo vstupnom reťazci viacero zakázaných znakov za sebou, sú všetky ako
       </tr>
     </tbody>
   </table>
+  <h5 id="Kros_IO_PathHelper_ReplaceInvalidPathChars_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><inheritdoc cref="M:Kros.IO.PathHelper.ReplaceInvalidPathChars(System.String,System.String)"></inheritdoc></div>
   <a id="Kros_IO_PathHelper_ReplaceInvalidPathChars_" data-uid="Kros.IO.PathHelper.ReplaceInvalidPathChars*"></a>
   <h4 id="Kros_IO_PathHelper_ReplaceInvalidPathChars_System_String_System_String_" data-uid="Kros.IO.PathHelper.ReplaceInvalidPathChars(System.String,System.String)">ReplaceInvalidPathChars(String, String)</h4>
-  <div class="markdown level1 summary"><p>V reťazci <code data-dev-comment-type="paramref" class="paramref">pathName</code> nahradí zakázané znaky pre názov súboru za reťazec
-<code data-dev-comment-type="paramref" class="paramref">replacement</code>. Ak je vo vstupnom reťazci viacero zakázaných znakov za sebou,
-sú všetky ako skupina nahradené jedným znakom.</p>
+  <div class="markdown level1 summary"><p>Replaces invalid characters in <code data-dev-comment-type="paramref" class="paramref">pathName</code> with <code data-dev-comment-type="paramref" class="paramref">replacement</code>. If there are
+several succesive invalid characters, they all are replaced only by one <code data-dev-comment-type="paramref" class="paramref">replacement</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -306,14 +307,14 @@ sú všetky ako skupina nahradené jedným znakom.</p>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">pathName</span></td>
-        <td><p>Vstupný reťazec, predstavujúci názov súboru.</p>
+        <td><p>Input path.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">replacement</span></td>
-        <td><p>Reťazec, ktorým sa nahrádzajú zakázané znaky. Ak je <span class="xref">null</span>,
-použije sa prázdny reťazec, tzn. zakázané znaky sa zo vstupného reťazca odstránia.</p>
+        <td><p>Value, by which are replaced invalid path charactes. If the value is <span class="xref">null</span>,
+empty stirng is used, so invalid characters are removed.</p>
 </td>
       </tr>
     </tbody>
@@ -329,12 +330,15 @@ použije sa prázdny reťazec, tzn. zakázané znaky sa zo vstupného reťazca o
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><p>Reťazec s nahradenými zakázanými znakmi. Ak vstupná hodnota <code data-dev-comment-type="paramref" class="paramref">pathName</code>
-je <span class="xref">null</span>, je vrátený prázdny reťazec (<code>string.Empty</code>).</p>
+        <td><p>String with invalid path characters replaced. If input <code data-dev-comment-type="paramref" class="paramref">pathName</code> is <span class="xref">null</span>,
+empty string is returned.</p>
 </td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Kros_IO_PathHelper_ReplaceInvalidPathChars_System_String_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Replaced are all characters in <span class="xref">System.IO.Path.GetInvalidFileNameChars</span> and <span class="xref">System.IO.Path.GetInvalidPathChars</span>.</p>
+</div>
 </article>
           </div>
           

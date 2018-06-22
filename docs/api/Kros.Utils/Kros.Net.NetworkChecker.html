@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class NetworkChecker
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,7 +83,7 @@
   
   <h1 id="Kros_Net_NetworkChecker" data-uid="Kros.Net.NetworkChecker" class="text-break">Class NetworkChecker
   </h1>
-  <div class="markdown level0 summary"><p>Trieda určená na testovanie dostupnosti internetového spojenia.</p>
+  <div class="markdown level0 summary"><p>Class dedicated for simple testing of internet connectivity.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -98,21 +98,20 @@
     <pre><code class="lang-csharp hljs">public class NetworkChecker</code></pre>
   </div>
   <h5 id="Kros_Net_NetworkChecker_remarks"><strong>Remarks</strong></h5>
-  <div class="markdown level0 remarks"><p>Nestačí testovať pomocou <span class="xref">System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable</span>,
-pretože táto metóda zistí či je počítač v sieti. Nezistí či je reálne dostupný internet.
-Taktiež netestujeme pomocou pingovania, pretože niektorí správcovia zakazujú ping.</p>
-<p>Takže testujeme pomocou dotazu na konkrétnu službu.</p>
+  <div class="markdown level0 remarks"><p>It is not sufficient to test connectivity using <span class="xref">System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable</span>, because that
+method just checks, if the computer is in some network. It does not check if internet is really available.
+Internet availability is not checked using ping (<span class="xref">System.Net.NetworkInformation.Ping</span>), because this method is often blocked.
+The availability is tested using a request to specific service.</p>
 </div>
   <h3 id="constructors">Constructors
   </h3>
   <a id="Kros_Net_NetworkChecker__ctor_" data-uid="Kros.Net.NetworkChecker.#ctor*"></a>
-  <h4 id="Kros_Net_NetworkChecker__ctor_System_String_" data-uid="Kros.Net.NetworkChecker.#ctor(System.String)">NetworkChecker(String)</h4>
-  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Kros.Net.NetworkChecker.html">NetworkChecker</a> class.</p>
-</div>
+  <h4 id="Kros_Net_NetworkChecker__ctor_System_Uri_" data-uid="Kros.Net.NetworkChecker.#ctor(System.Uri)">NetworkChecker(Uri)</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public NetworkChecker(string testingAddress)</code></pre>
+    <pre><code class="lang-csharp hljs">public NetworkChecker(Uri serviceAddress)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -125,21 +124,19 @@ Taktiež netestujeme pomocou pingovania, pretože niektorí správcovia zakazuj�
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">testingAddress</span></td>
-        <td><p>Webová adresa služby, ktorú testujeme.</p>
-</td>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">serviceAddress</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Net_NetworkChecker__ctor_" data-uid="Kros.Net.NetworkChecker.#ctor*"></a>
-  <h4 id="Kros_Net_NetworkChecker__ctor_System_String_System_Int32_System_Int32_" data-uid="Kros.Net.NetworkChecker.#ctor(System.String,System.Int32,System.Int32)">NetworkChecker(String, Int32, Int32)</h4>
-  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Kros.Net.NetworkChecker.html">NetworkChecker</a> class.</p>
-</div>
+  <h4 id="Kros_Net_NetworkChecker__ctor_System_Uri_System_TimeSpan_System_TimeSpan_" data-uid="Kros.Net.NetworkChecker.#ctor(System.Uri,System.TimeSpan,System.TimeSpan)">NetworkChecker(Uri, TimeSpan, TimeSpan)</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public NetworkChecker(string serviceAddress, int requestTimeout, int responseCacheExpiration)</code></pre>
+    <pre><code class="lang-csharp hljs">public NetworkChecker(Uri serviceAddress, TimeSpan requestTimeout, TimeSpan responseCacheExpiration)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -152,38 +149,111 @@ Taktiež netestujeme pomocou pingovania, pretože niektorí správcovia zakazuj�
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
+        <td><span class="xref">System.Uri</span></td>
         <td><span class="parametername">serviceAddress</span></td>
-        <td><p>Webová adresa služby, ktorú testujeme.</p>
-</td>
+        <td></td>
       </tr>
       <tr>
-        <td><span class="xref">System.Int32</span></td>
+        <td><span class="xref">System.TimeSpan</span></td>
         <td><span class="parametername">requestTimeout</span></td>
-        <td><p>Maximálna doba čakania na odpoveď zo server. Keď uplynie a odpoveď sme nedostali, tak považujeme,
-že internet/služba nie je dostupný.
-V milisekundách.</p>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.TimeSpan</span></td>
+        <td><span class="parametername">responseCacheExpiration</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Kros_Net_NetworkChecker__ctor_" data-uid="Kros.Net.NetworkChecker.#ctor*"></a>
+  <h4 id="Kros_Net_NetworkChecker__ctor_System_Uri_System_Uri_" data-uid="Kros.Net.NetworkChecker.#ctor(System.Uri,System.Uri)">NetworkChecker(Uri, Uri)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NetworkChecker(Uri serviceAddress, Uri proxyAddress)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">serviceAddress</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">proxyAddress</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Kros_Net_NetworkChecker__ctor_" data-uid="Kros.Net.NetworkChecker.#ctor*"></a>
+  <h4 id="Kros_Net_NetworkChecker__ctor_System_Uri_System_Uri_System_TimeSpan_System_TimeSpan_" data-uid="Kros.Net.NetworkChecker.#ctor(System.Uri,System.Uri,System.TimeSpan,System.TimeSpan)">NetworkChecker(Uri, Uri, TimeSpan, TimeSpan)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Kros.Net.NetworkChecker.html">NetworkChecker</a> with address <code data-dev-comment-type="paramref" class="paramref">serviceAddress</code>
+and aditional parameters.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NetworkChecker(Uri serviceAddress, Uri proxyAddress, TimeSpan requestTimeout, TimeSpan responseCacheExpiration)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">serviceAddress</span></td>
+        <td><p>The address for requests checking internet availability. It must be <code>http</code>
+or <code>https</code> address.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Int32</span></td>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">proxyAddress</span></td>
+        <td><p>The address of a proxy server (optional).</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.TimeSpan</span></td>
+        <td><span class="parametername">requestTimeout</span></td>
+        <td><p>Maximum time for waiting for the response from server. If the response will not
+came in this time, we consider that the internet is not available.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.TimeSpan</span></td>
         <td><span class="parametername">responseCacheExpiration</span></td>
-        <td><p>čas v milisekundách, ktorý udáva ako dlho sa bude používať zapamätaná informácia o tom, že ide internet.</p>
+        <td><p>Time during which the last response will be remembered
+and so no requests to <code data-dev-comment-type="paramref" class="paramref">serviceAddress</code> will be performed.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <h3 id="properties">Properties
   </h3>
-  <a id="Kros_Net_NetworkChecker_RequestTimeout_" data-uid="Kros.Net.NetworkChecker.RequestTimeout*"></a>
-  <h4 id="Kros_Net_NetworkChecker_RequestTimeout" data-uid="Kros.Net.NetworkChecker.RequestTimeout">RequestTimeout</h4>
-  <div class="markdown level1 summary"><p>Maximálna doba čakania na odpoveď zo server. Keď uplynie a odpoveď sme nedostali, tak považujeme,
-že internet/služba nie je dostupný. Hodnota je v milisekundách.</p>
+  <a id="Kros_Net_NetworkChecker_ProxyAddress_" data-uid="Kros.Net.NetworkChecker.ProxyAddress*"></a>
+  <h4 id="Kros_Net_NetworkChecker_ProxyAddress" data-uid="Kros.Net.NetworkChecker.ProxyAddress">ProxyAddress</h4>
+  <div class="markdown level1 summary"><p>Address of a proxy server.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int RequestTimeout { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Uri ProxyAddress { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -195,19 +265,45 @@ V milisekundách.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Int32</span></td>
+        <td><span class="xref">System.Uri</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Kros_Net_NetworkChecker_RequestTimeout_" data-uid="Kros.Net.NetworkChecker.RequestTimeout*"></a>
+  <h4 id="Kros_Net_NetworkChecker_RequestTimeout" data-uid="Kros.Net.NetworkChecker.RequestTimeout">RequestTimeout</h4>
+  <div class="markdown level1 summary"><p>Maximum time for waiting for the response from server. If the response will not
+came in this time, we consider that the internet is not available. Default timeout is 1 second.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeSpan RequestTimeout { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.TimeSpan</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Net_NetworkChecker_ResponseCacheExpiration_" data-uid="Kros.Net.NetworkChecker.ResponseCacheExpiration*"></a>
   <h4 id="Kros_Net_NetworkChecker_ResponseCacheExpiration" data-uid="Kros.Net.NetworkChecker.ResponseCacheExpiration">ResponseCacheExpiration</h4>
-  <div class="markdown level1 summary"><p>Hodnota, ktorá udáva ako dlho sa bude používať zapamätaná informácia o tom, že internet je dostupný. V milisekundách.</p>
+  <div class="markdown level1 summary"><p>Time during which the last response will be remembered and so no other requests to <a class="xref" href="Kros.Net.NetworkChecker.html#Kros_Net_NetworkChecker_ServiceAddress">ServiceAddress</a>
+will be performed. Default value is 3 minutes.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int ResponseCacheExpiration { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public TimeSpan ResponseCacheExpiration { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -219,19 +315,19 @@ V milisekundách.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Int32</span></td>
+        <td><span class="xref">System.TimeSpan</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Net_NetworkChecker_ServiceAddress_" data-uid="Kros.Net.NetworkChecker.ServiceAddress*"></a>
   <h4 id="Kros_Net_NetworkChecker_ServiceAddress" data-uid="Kros.Net.NetworkChecker.ServiceAddress">ServiceAddress</h4>
-  <div class="markdown level1 summary"><p>Webová adresa služby, ktorú testujeme.</p>
+  <div class="markdown level1 summary"><p>Web address to which requests are made to check internet availability.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string ServiceAddress { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Uri ServiceAddress { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -243,7 +339,7 @@ V milisekundách.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
+        <td><span class="xref">System.Uri</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -252,9 +348,9 @@ V milisekundách.</p>
   </h3>
   <a id="Kros_Net_NetworkChecker_IsNetworkAvailable_" data-uid="Kros.Net.NetworkChecker.IsNetworkAvailable*"></a>
   <h4 id="Kros_Net_NetworkChecker_IsNetworkAvailable" data-uid="Kros.Net.NetworkChecker.IsNetworkAvailable">IsNetworkAvailable()</h4>
-  <div class="markdown level1 summary"><p>Skontroluje či je internet (konkrétna služba <a class="xref" href="Kros.Net.NetworkChecker.html#Kros_Net_NetworkChecker_ServiceAddress">ServiceAddress</a>) k dispozícií.
-Kladnú odpoveď kešuje a reálny test prevedie len pokiaľ uplynul čas platnosti keše
-<a class="xref" href="Kros.Net.NetworkChecker.html#Kros_Net_NetworkChecker_ResponseCacheExpiration">ResponseCacheExpiration</a>.</p>
+  <div class="markdown level1 summary"><p>Checks if the internet (specifically the service at the address <a class="xref" href="Kros.Net.NetworkChecker.html#Kros_Net_NetworkChecker_ServiceAddress">ServiceAddress</a>) is available.
+Positive response is cached for the time specified in <a class="xref" href="Kros.Net.NetworkChecker.html#Kros_Net_NetworkChecker_ResponseCacheExpiration">ResponseCacheExpiration</a>,
+so another request to the service is made after this time.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -272,8 +368,7 @@ Kladnú odpoveď kešuje a reálny test prevedie len pokiaľ uplynul čas platno
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p><span class="xref">true</span>, ak je (respektíve v danom časovom intervale bol dostupný internet).
-<span class="xref">false</span> ak internet nie je dostupný.</p>
+        <td><p><span class="xref">true</span> if internet (service) is available <span class="xref">false</span> otherwise.</p>
 </td>
       </tr>
     </tbody>

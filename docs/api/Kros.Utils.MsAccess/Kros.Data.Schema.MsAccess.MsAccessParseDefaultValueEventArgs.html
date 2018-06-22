@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class MsAccessParseDefaultValueEventArgs
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,7 +83,7 @@
   
   <h1 id="Kros_Data_Schema_MsAccess_MsAccessParseDefaultValueEventArgs" data-uid="Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs" class="text-break">Class MsAccessParseDefaultValueEventArgs
   </h1>
-  <div class="markdown level0 summary"><p>Argumenty pre udalosť <a class="xref" href="Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.html#Kros_Data_Schema_MsAccess_MsAccessSchemaLoader_ParseDefaultValue">ParseDefaultValue</a>.</p>
+  <div class="markdown level0 summary"><p>Arguments for the event <a class="xref" href="Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.html#Kros_Data_Schema_MsAccess_MsAccessSchemaLoader_ParseDefaultValue">ParseDefaultValue</a>.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -102,7 +102,7 @@
   </h3>
   <a id="Kros_Data_Schema_MsAccess_MsAccessParseDefaultValueEventArgs__ctor_" data-uid="Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.#ctor*"></a>
   <h4 id="Kros_Data_Schema_MsAccess_MsAccessParseDefaultValueEventArgs__ctor_System_String_System_String_System_Data_OleDb_OleDbType_System_String_System_Object_" data-uid="Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.#ctor(System.String,System.String,System.Data.OleDb.OleDbType,System.String,System.Object)">MsAccessParseDefaultValueEventArgs(String, String, OleDbType, String, Object)</h4>
-  <div class="markdown level1 summary"><p>Vytvorí inštanciu so zadanými parametrami.</p>
+  <div class="markdown level1 summary"><p>Creates and initializes instance of arguments.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -122,31 +122,27 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">tableName</span></td>
-        <td><p>Meno tabuľky ktorej schéma sa načítava.</p>
-</td>
+        <td><inheritdoc cref="P:Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.TableName"></inheritdoc></td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">columnName</span></td>
-        <td><p>Meno stĺpca, ktorého predvolená hodnota sa parsuje.</p>
-</td>
+        <td><inheritdoc cref="P:Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.ColumnName"></inheritdoc></td>
       </tr>
       <tr>
         <td><span class="xref">System.Data.OleDb.OleDbType</span></td>
         <td><span class="parametername">oleDbType</span></td>
-        <td><p>Dátový typ stĺpca, ktorého predvolená hodnota sa parsuje.</p>
-</td>
+        <td><inheritdoc cref="P:Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.OleDbType"></inheritdoc></td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">defaultValueString</span></td>
-        <td><p>Predvolená hodnota stĺpca, tzn. reťazec, ktorý sa parsuje.</p>
-</td>
+        <td><inheritdoc cref="P:Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.DefaultValueString"></inheritdoc></td>
       </tr>
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">defaultValue</span></td>
-        <td><p>Hodnota, ktorá bola získaná štandardným parserom.</p>
+        <td><p>Value, which was obtained by default parser.</p>
 </td>
       </tr>
     </tbody>
@@ -155,7 +151,7 @@
   </h3>
   <a id="Kros_Data_Schema_MsAccess_MsAccessParseDefaultValueEventArgs_ColumnName_" data-uid="Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.ColumnName*"></a>
   <h4 id="Kros_Data_Schema_MsAccess_MsAccessParseDefaultValueEventArgs_ColumnName" data-uid="Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.ColumnName">ColumnName</h4>
-  <div class="markdown level1 summary"><p>Meno stĺpca, ktorého predvolená hodnota sa parsuje.</p>
+  <div class="markdown level1 summary"><p>Column name which default value is being parsed.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -179,7 +175,8 @@
   </table>
   <a id="Kros_Data_Schema_MsAccess_MsAccessParseDefaultValueEventArgs_DefaultValue_" data-uid="Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.DefaultValue*"></a>
   <h4 id="Kros_Data_Schema_MsAccess_MsAccessParseDefaultValueEventArgs_DefaultValue" data-uid="Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.DefaultValue">DefaultValue</h4>
-  <div class="markdown level1 summary"><p>Hodnota, ktorá bola získaná štandardným parserom. Pri vlastnej obsluhe je potrebné tu nastaviť vlastnú hodnotu.</p>
+  <div class="markdown level1 summary"><p>Value, which was obtained by default parser. Set this value, when using custom logic for parsing default value
+in event handler.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -203,7 +200,7 @@
   </table>
   <a id="Kros_Data_Schema_MsAccess_MsAccessParseDefaultValueEventArgs_DefaultValueString_" data-uid="Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.DefaultValueString*"></a>
   <h4 id="Kros_Data_Schema_MsAccess_MsAccessParseDefaultValueEventArgs_DefaultValueString" data-uid="Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.DefaultValueString">DefaultValueString</h4>
-  <div class="markdown level1 summary"><p>Predvolená hodnota stĺpca, tzn. reťazec, ktorý sa parsuje.</p>
+  <div class="markdown level1 summary"><p>Default value of a column. It is the string which is being parsed.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -227,7 +224,8 @@
   </table>
   <a id="Kros_Data_Schema_MsAccess_MsAccessParseDefaultValueEventArgs_Handled_" data-uid="Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.Handled*"></a>
   <h4 id="Kros_Data_Schema_MsAccess_MsAccessParseDefaultValueEventArgs_Handled" data-uid="Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.Handled">Handled</h4>
-  <div class="markdown level1 summary"><p>Je potrebné nastaviť na <span class="xref">true</span>, ak bola v obsluhe udalosti nastavená vlastná hodnota <a class="xref" href="Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.html#Kros_Data_Schema_MsAccess_MsAccessParseDefaultValueEventArgs_DefaultValue">DefaultValue</a>.</p>
+  <div class="markdown level1 summary"><p>Flag indicating if default value was parsed using custom logic in event handler. Set this to <span class="xref">true</span>
+if you set your own default value in <a class="xref" href="Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.html#Kros_Data_Schema_MsAccess_MsAccessParseDefaultValueEventArgs_DefaultValue">DefaultValue</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -251,7 +249,7 @@
   </table>
   <a id="Kros_Data_Schema_MsAccess_MsAccessParseDefaultValueEventArgs_OleDbType_" data-uid="Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.OleDbType*"></a>
   <h4 id="Kros_Data_Schema_MsAccess_MsAccessParseDefaultValueEventArgs_OleDbType" data-uid="Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.OleDbType">OleDbType</h4>
-  <div class="markdown level1 summary"><p>Dátový typ stĺpca, ktorého predvolená hodnota sa parsuje.</p>
+  <div class="markdown level1 summary"><p>Data type of column which default value is being parsed.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -275,7 +273,7 @@
   </table>
   <a id="Kros_Data_Schema_MsAccess_MsAccessParseDefaultValueEventArgs_TableName_" data-uid="Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.TableName*"></a>
   <h4 id="Kros_Data_Schema_MsAccess_MsAccessParseDefaultValueEventArgs_TableName" data-uid="Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.TableName">TableName</h4>
-  <div class="markdown level1 summary"><p>Meno tabuľky ktorej schéma sa načítava.</p>
+  <div class="markdown level1 summary"><p>Table which schema is being loaded.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>

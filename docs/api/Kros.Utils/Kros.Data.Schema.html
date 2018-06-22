@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Namespace Kros.Data.Schema
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -88,89 +88,88 @@
     <h3 id="classes">Classes
   </h3>
       <h4><a class="xref" href="Kros.Data.Schema.ColumnSchema.html">ColumnSchema</a></h4>
-      <section><p>Schéma stĺpca databázovej tabuľky.</p>
+      <section><p>Schema of a database table column.</p>
 </section>
       <h4><a class="xref" href="Kros.Data.Schema.ColumnSchema.DefaultValues.html">ColumnSchema.DefaultValues</a></h4>
-      <section><p>Predvolené hodnoty stĺpcov pre jednotlivé dátové typy:
+      <section><p>Columns&apos; default values for individual data types.
 <ul><li></li><li></li><li></li><li></li><li></li></ul></p>
 </section>
       <h4><a class="xref" href="Kros.Data.Schema.ColumnSchemaCollection.html">ColumnSchemaCollection</a></h4>
-      <section><p>Zoznam stĺpcov tabuľky <a class="xref" href="Kros.Data.Schema.TableSchema.html">TableSchema</a>.</p>
+      <section><p>List of columns for table <a class="xref" href="Kros.Data.Schema.TableSchema.html">TableSchema</a>.</p>
 </section>
       <h4><a class="xref" href="Kros.Data.Schema.DatabaseSchema.html">DatabaseSchema</a></h4>
-      <section><p>Schéma databázy.</p>
+      <section><p>Database schema.</p>
 </section>
       <h4><a class="xref" href="Kros.Data.Schema.DatabaseSchemaCache.html">DatabaseSchemaCache</a></h4>
-      <section><p>Implementácia <a class="xref" href="Kros.Data.Schema.IDatabaseSchemaCache.html">IDatabaseSchemaCache</a>. Po pridaní loader-ov umožňuje načítavať schému databázy.
-Načítanie schémy je pomalá záležitosť a preto sa načítaná schéma kešuje. Pri ďalšej požiadavke na rovnakú schému
-sa už nenačíta z databázy, ale je vrátená z keše.</p>
+      <section><p>Implementation of <a class="xref" href="Kros.Data.Schema.IDatabaseSchemaCache.html">IDatabaseSchemaCache</a>. It allows to load database schemas after adding appropriate
+loaders (<a class="xref" href="Kros.Data.Schema.DatabaseSchemaCache.html#Kros_Data_Schema_DatabaseSchemaCache_AddSchemaLoader_Kros_Data_Schema_IDatabaseSchemaLoader_Kros_Data_Schema_ISchemaCacheKeyGenerator_">AddSchemaLoader(IDatabaseSchemaLoader, ISchemaCacheKeyGenerator)</a>). Loading of a database
+schema is quite slow, that&apos;s why loaded schemas are cached. On next request for the same schema, it is not
+loaded from database, but returned from cache.</p>
 </section>
       <h4><a class="xref" href="Kros.Data.Schema.DatabaseSchemaLoader.html">DatabaseSchemaLoader</a></h4>
-      <section><p>Pomocná trieda na jednoduché načítavanie schémy databáz. Obsahuje zoznam loader-ov pre konkrétne databázy a tak
-je možné použiť ju transparentne pre ľubovoľný typ databázy. Pri požiadavke je vždy načítaná aktuálna schéma,
-tzn. schémy sa nekešujú.</p>
+      <section><p>Helper class for simple loading of database schemas. It contains inner list of different loaders, so it can be used
+for loading database schema for different databases. Fresh database schema is loaded for every request,
+it means, loaded schemas are not cached.</p>
 </section>
       <h4><a class="xref" href="Kros.Data.Schema.DefaultValueParsers.html">DefaultValueParsers</a></h4>
-      <section><p>Štandardné parsery pre predvolené hodnoty stĺpcov databáz. Predvolené hodnoty sú v databáze uložené ako reťazec
-a je potrebné ich konvertovať na typ daného stĺpca. Ak sa hodnotu nepodarilo skonvertovať na určený typ,
-vždy je vrátená hodnota <code>null</code>.</p>
+      <section><p>Standard parsers for columns&apos; default values. The default values in database are stored as string and it is
+necessary to convert them to the specific column&apos;s type. If conversion to desired type fails, the returned
+value is always <span class="xref">null</span>.</p>
 </section>
       <h4><a class="xref" href="Kros.Data.Schema.ForeignKeySchema.html">ForeignKeySchema</a></h4>
-      <section><p>Schéma cudzieho kľúča tabuľky.</p>
+      <section><p>The schema of the foreign key of the database table.</p>
 </section>
       <h4><a class="xref" href="Kros.Data.Schema.ForeignKeySchemaCollection.html">ForeignKeySchemaCollection</a></h4>
-      <section><p>Zoznam cudzích kľúčov tabuľky <a class="xref" href="Kros.Data.Schema.TableSchema.html">TableSchema</a>.</p>
+      <section><p>List of foreign keys for table <a class="xref" href="Kros.Data.Schema.TableSchema.html">TableSchema</a>.</p>
 </section>
       <h4><a class="xref" href="Kros.Data.Schema.IndexColumnSchema.html">IndexColumnSchema</a></h4>
-      <section><p>Schéma stĺpca v indexe tabuľky.</p>
+      <section><p>Schema of a column of an index.</p>
 </section>
       <h4><a class="xref" href="Kros.Data.Schema.IndexColumnSchemaCollection.html">IndexColumnSchemaCollection</a></h4>
-      <section><p>Zoznam stĺpcov indexu tabuľky.</p>
+      <section><p>List of index columns.</p>
 </section>
       <h4><a class="xref" href="Kros.Data.Schema.IndexSchema.html">IndexSchema</a></h4>
-      <section><p>Schéma indexu tabuľky.</p>
+      <section><p>Schema of a table&apos;s index.</p>
 </section>
       <h4><a class="xref" href="Kros.Data.Schema.IndexSchemaCollection.html">IndexSchemaCollection</a></h4>
-      <section><p>Zoznam indexov tabuľky <a class="xref" href="Kros.Data.Schema.TableSchema.html">TableSchema</a>.</p>
+      <section><p>List of indexes for table <a class="xref" href="Kros.Data.Schema.TableSchema.html">TableSchema</a>.</p>
 </section>
       <h4><a class="xref" href="Kros.Data.Schema.TableSchema.html">TableSchema</a></h4>
-      <section><p>Schéma databázovej tabuľky.</p>
+      <section><p>Schema of a database table.</p>
 </section>
       <h4><a class="xref" href="Kros.Data.Schema.TableSchemaCollection.html">TableSchemaCollection</a></h4>
-      <section><p>Zoznam tabuliek databázy.</p>
+      <section><p>List of tables for <a class="xref" href="Kros.Data.Schema.DatabaseSchema.html">DatabaseSchema</a>.</p>
 </section>
     <h3 id="interfaces">Interfaces
   </h3>
       <h4><a class="xref" href="Kros.Data.Schema.IDatabaseSchemaCache.html">IDatabaseSchemaCache</a></h4>
-      <section><p>Rozhranie pre triedy načítavajúce a kešujúce schému databázy.</p>
+      <section><p>Interface for classes which loads and caches database schema.</p>
 </section>
       <h4><a class="xref" href="Kros.Data.Schema.IDatabaseSchemaLoader.html">IDatabaseSchemaLoader</a></h4>
-      <section><p>Rozhranie pre triedy, načítavajúce schému databázy.</p>
+      <section><p>Interface for loading database schema.</p>
 </section>
       <h4><a class="xref" href="Kros.Data.Schema.IDatabaseSchemaLoader-1.html">IDatabaseSchemaLoader&lt;T&gt;</a></h4>
-      <section><p>Rozhranie pre triedy, načítavajúce schému databázy.</p>
-</section>
+      <section></section>
       <h4><a class="xref" href="Kros.Data.Schema.ISchemaCacheKeyGenerator.html">ISchemaCacheKeyGenerator</a></h4>
-      <section><p>Generátor kľúča pre spojenie na databázu. Používa ho <a class="xref" href="Kros.Data.Schema.DatabaseSchemaCache.html">DatabaseSchemaCache</a>.</p>
+      <section><p>Cache key generator for <a class="xref" href="Kros.Data.Schema.DatabaseSchemaCache.html">DatabaseSchemaCache</a>.</p>
 </section>
       <h4><a class="xref" href="Kros.Data.Schema.ISchemaCacheKeyGenerator-1.html">ISchemaCacheKeyGenerator&lt;T&gt;</a></h4>
-      <section><p>Generátor kľúča pre spojenie na databázu. Používa ho <a class="xref" href="Kros.Data.Schema.DatabaseSchemaCache.html">DatabaseSchemaCache</a>.</p>
-</section>
+      <section></section>
     <h3 id="enums">Enums
   </h3>
       <h4><a class="xref" href="Kros.Data.Schema.ForeignKeyRule.html">ForeignKeyRule</a></h4>
-      <section><p>Pravidlo cudzieho kľúča - ako sa zachovať k detským záznamom po zmenení/zmazaní hlavného nadradeného.</p>
+      <section><p>Foreign key rule. Defines what to do with child records when the value of parent record changes or is deleted.</p>
 </section>
       <h4><a class="xref" href="Kros.Data.Schema.IndexType.html">IndexType</a></h4>
-      <section><p>Typ indexu tabuľky.</p>
+      <section><p>Table index type.</p>
 </section>
       <h4><a class="xref" href="Kros.Data.Schema.SortOrder.html">SortOrder</a></h4>
-      <section><p>Zoradenie indexového stĺpca.</p>
+      <section><p>Sort order of an index column.</p>
 </section>
     <h3 id="delegates">Delegates
   </h3>
       <h4><a class="xref" href="Kros.Data.Schema.DefaultValueParsers.ParseDefaultValueFunction.html">DefaultValueParsers.ParseDefaultValueFunction</a></h4>
-      <section><p>Hlavička funkcie, ktorá parsuje predvolenú hodnotu stĺpca.</p>
+      <section><p>Delegate for function which parses default value.</p>
 </section>
 </article>
           </div>

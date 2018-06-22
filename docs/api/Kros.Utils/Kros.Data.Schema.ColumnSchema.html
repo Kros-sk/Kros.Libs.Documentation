@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class ColumnSchema
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,7 +83,7 @@
   
   <h1 id="Kros_Data_Schema_ColumnSchema" data-uid="Kros.Data.Schema.ColumnSchema" class="text-break">Class ColumnSchema
   </h1>
-  <div class="markdown level0 summary"><p>Schéma stĺpca databázovej tabuľky.</p>
+  <div class="markdown level0 summary"><p>Schema of a database table column.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -102,7 +102,7 @@
   </h3>
   <a id="Kros_Data_Schema_ColumnSchema__ctor_" data-uid="Kros.Data.Schema.ColumnSchema.#ctor*"></a>
   <h4 id="Kros_Data_Schema_ColumnSchema__ctor_System_String_System_Boolean_System_Object_System_Int32_" data-uid="Kros.Data.Schema.ColumnSchema.#ctor(System.String,System.Boolean,System.Object,System.Int32)">ColumnSchema(String, Boolean, Object, Int32)</h4>
-  <div class="markdown level1 summary"><p>Vytvorí inštanciu schémy stĺpca s menom <code data-dev-comment-type="paramref" class="paramref">name</code> a ostatnými hodnotami.</p>
+  <div class="markdown level1 summary"><p>Creates an instance of column schema with <code data-dev-comment-type="paramref" class="paramref">name</code> and specified parameters.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -122,25 +122,25 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">name</span></td>
-        <td><p>Meno stĺpca.</p>
+        <td><p>Column&apos;s name</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><span class="parametername">allowNull</span></td>
-        <td><p>Určuje, či stĺpec má povolenú <strong>NULL</strong> hodnotu.</p>
+        <td><p>Specifies if column accepts <strong>NULL</strong> value.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">defaultValue</span></td>
-        <td><p>Predvolená hodnota stĺpca.</p>
+        <td><p>Column&apos;s default value.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">size</span></td>
-        <td><p>Maximálna dĺžka textových stĺpcov. Ak je neobmedzená, hodnota je <strong>0</strong>.</p>
+        <td><p>Maximum length of text columns. If value is <strong>0</strong>, maximum length is unlimited.</p>
 </td>
       </tr>
     </tbody>
@@ -156,13 +156,13 @@
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Meno stĺpca <code data-dev-comment-type="paramref" class="paramref">name</code> má hodnotu <code>null</code>.</p>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">name</code> is <span class="xref">null</span>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Meno stĺpca <code data-dev-comment-type="paramref" class="paramref">name</code> nie je zadané: je prázdny reťazec,
-alebo reťazec bielych znakov.</p>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">name</code> is empty string, or string containing only
+whitespace characters.</p>
 </td>
       </tr>
     </tbody>
@@ -170,7 +170,7 @@ alebo reťazec bielych znakov.</p>
   <h3 id="fields">Fields
   </h3>
   <h4 id="Kros_Data_Schema_ColumnSchema_DefaultAllowNull" data-uid="Kros.Data.Schema.ColumnSchema.DefaultAllowNull">DefaultAllowNull</h4>
-  <div class="markdown level1 summary"><p>Predvolené nastavenie pre <a class="xref" href="Kros.Data.Schema.ColumnSchema.html#Kros_Data_Schema_ColumnSchema_AllowNull">AllowNull</a>. Hodnota je <span class="xref">false</span>.</p>
+  <div class="markdown level1 summary"><p>Default value for column&apos;s <a class="xref" href="Kros.Data.Schema.ColumnSchema.html#Kros_Data_Schema_ColumnSchema_AllowNull">AllowNull</a>. The value is <span class="xref">false</span>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -193,7 +193,7 @@ alebo reťazec bielych znakov.</p>
     </tbody>
   </table>
   <h4 id="Kros_Data_Schema_ColumnSchema_DefaultDefaultValue" data-uid="Kros.Data.Schema.ColumnSchema.DefaultDefaultValue">DefaultDefaultValue</h4>
-  <div class="markdown level1 summary"><p>Predvolená hodnota stĺpca, ktorá sa použije, ak nie je žiadna definovaná. Hodnota je <span class="xref">System.DBNull</span>.</p>
+  <div class="markdown level1 summary"><p>Value for the column&apos;s <a class="xref" href="Kros.Data.Schema.ColumnSchema.html#Kros_Data_Schema_ColumnSchema_DefaultValue">DefaultValue</a>, if none is defined. The value is <span class="xref">System.DBNull</span>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -216,7 +216,7 @@ alebo reťazec bielych znakov.</p>
     </tbody>
   </table>
   <h4 id="Kros_Data_Schema_ColumnSchema_DefaultSize" data-uid="Kros.Data.Schema.ColumnSchema.DefaultSize">DefaultSize</h4>
-  <div class="markdown level1 summary"><p>Predvolená hodnota pre <a class="xref" href="Kros.Data.Schema.ColumnSchema.html#Kros_Data_Schema_ColumnSchema_Size">Size</a>. Hodnota je <code>0</code>.</p>
+  <div class="markdown level1 summary"><p>Default value for column&apos;s <a class="xref" href="Kros.Data.Schema.ColumnSchema.html#Kros_Data_Schema_ColumnSchema_Size">Size</a>. The value is <code>0</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -242,7 +242,7 @@ alebo reťazec bielych znakov.</p>
   </h3>
   <a id="Kros_Data_Schema_ColumnSchema_AllowNull_" data-uid="Kros.Data.Schema.ColumnSchema.AllowNull*"></a>
   <h4 id="Kros_Data_Schema_ColumnSchema_AllowNull" data-uid="Kros.Data.Schema.ColumnSchema.AllowNull">AllowNull</h4>
-  <div class="markdown level1 summary"><p>Určuje, či stĺpec má povolenú <strong>NULL</strong> hodnotu.</p>
+  <div class="markdown level1 summary"><p>Specifies if <strong>NULL</strong> value is allowed.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -264,33 +264,9 @@ alebo reťazec bielych znakov.</p>
       </tr>
     </tbody>
   </table>
-  <a id="Kros_Data_Schema_ColumnSchema_DbType_" data-uid="Kros.Data.Schema.ColumnSchema.DbType*"></a>
-  <h4 id="Kros_Data_Schema_ColumnSchema_DbType" data-uid="Kros.Data.Schema.ColumnSchema.DbType">DbType</h4>
-  <div class="markdown level1 summary"><p>Dátový typ stĺpca ako hodnota enumerátu <a class="xref" href="Kros.Data.Schema.ColumnSchema.html#Kros_Data_Schema_ColumnSchema_DbType">DbType</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract DbType DbType { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Data.DbType</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <a id="Kros_Data_Schema_ColumnSchema_DefaultValue_" data-uid="Kros.Data.Schema.ColumnSchema.DefaultValue*"></a>
   <h4 id="Kros_Data_Schema_ColumnSchema_DefaultValue" data-uid="Kros.Data.Schema.ColumnSchema.DefaultValue">DefaultValue</h4>
-  <div class="markdown level1 summary"><p>Predvolená hodnota stĺpca.</p>
+  <div class="markdown level1 summary"><p>Column&apos;s default value.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -314,7 +290,7 @@ alebo reťazec bielych znakov.</p>
   </table>
   <a id="Kros_Data_Schema_ColumnSchema_FullName_" data-uid="Kros.Data.Schema.ColumnSchema.FullName*"></a>
   <h4 id="Kros_Data_Schema_ColumnSchema_FullName" data-uid="Kros.Data.Schema.ColumnSchema.FullName">FullName</h4>
-  <div class="markdown level1 summary"><p>Plné meno stĺpca aj s názvom tabuľky, ak stĺpec nejakej tabuľke patrí.</p>
+  <div class="markdown level1 summary"><p>Full name of the column, together with the table name (if column belongs to table).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -338,7 +314,7 @@ alebo reťazec bielych znakov.</p>
   </table>
   <a id="Kros_Data_Schema_ColumnSchema_Name_" data-uid="Kros.Data.Schema.ColumnSchema.Name*"></a>
   <h4 id="Kros_Data_Schema_ColumnSchema_Name" data-uid="Kros.Data.Schema.ColumnSchema.Name">Name</h4>
-  <div class="markdown level1 summary"><p>Meno stĺpca.</p>
+  <div class="markdown level1 summary"><p>Column name.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -362,7 +338,7 @@ alebo reťazec bielych znakov.</p>
   </table>
   <a id="Kros_Data_Schema_ColumnSchema_Size_" data-uid="Kros.Data.Schema.ColumnSchema.Size*"></a>
   <h4 id="Kros_Data_Schema_ColumnSchema_Size" data-uid="Kros.Data.Schema.ColumnSchema.Size">Size</h4>
-  <div class="markdown level1 summary"><p>Maximálna dĺžka textových stĺpcov. Ak je neobmedzená, hodnota je <strong>0</strong>.</p>
+  <div class="markdown level1 summary"><p>Maximum length of text columns. If value is <strong>0</strong>, maximum length is unlimited.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -386,8 +362,8 @@ alebo reťazec bielych znakov.</p>
   </table>
   <a id="Kros_Data_Schema_ColumnSchema_Table_" data-uid="Kros.Data.Schema.ColumnSchema.Table*"></a>
   <h4 id="Kros_Data_Schema_ColumnSchema_Table" data-uid="Kros.Data.Schema.ColumnSchema.Table">Table</h4>
-  <div class="markdown level1 summary"><p>Tabuľka, ktorej stĺpec patrí. Tabuľka je nastavená automaticky pri pridaní stĺpca do zoznamu
-<a class="xref" href="Kros.Data.Schema.ColumnSchemaCollection.html">ColumnSchemaCollection</a>.</p>
+  <div class="markdown level1 summary"><p>The table to which the column belongs. The table is set automatically when the column is added to table&apos;s
+<a class="xref" href="Kros.Data.Schema.TableSchema.html#Kros_Data_Schema_TableSchema_Columns">Columns</a> collection.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -413,7 +389,7 @@ alebo reťazec bielych znakov.</p>
   </h3>
   <a id="Kros_Data_Schema_ColumnSchema_SetParameterDbType_" data-uid="Kros.Data.Schema.ColumnSchema.SetParameterDbType*"></a>
   <h4 id="Kros_Data_Schema_ColumnSchema_SetParameterDbType_System_Data_IDataParameter_" data-uid="Kros.Data.Schema.ColumnSchema.SetParameterDbType(System.Data.IDataParameter)">SetParameterDbType(IDataParameter)</h4>
-  <div class="markdown level1 summary"><p>Parametru <code data-dev-comment-type="paramref" class="paramref">param</code> nastaví dátový typ.</p>
+  <div class="markdown level1 summary"><p>Sets data type to command parameter <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -433,44 +409,19 @@ alebo reťazec bielych znakov.</p>
       <tr>
         <td><span class="xref">System.Data.IDataParameter</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Parameter pre databázové príkazy <span class="xref">System.Data.IDbCommand</span>.</p>
+        <td><p>Parameter for <span class="xref">System.Data.IDbCommand</span> commands.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <a id="Kros_Data_Schema_ColumnSchema_ToString_" data-uid="Kros.Data.Schema.ColumnSchema.ToString*"></a>
-  <h4 id="Kros_Data_Schema_ColumnSchema_ToString" data-uid="Kros.Data.Schema.ColumnSchema.ToString">ToString()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">System.Object.ToString()</span></div>
   <a id="Kros_Data_Schema_ColumnSchema_ToStringDefaultValue_" data-uid="Kros.Data.Schema.ColumnSchema.ToStringDefaultValue*"></a>
   <h4 id="Kros_Data_Schema_ColumnSchema_ToStringDefaultValue" data-uid="Kros.Data.Schema.ColumnSchema.ToStringDefaultValue">ToStringDefaultValue()</h4>
-  <div class="markdown level1 summary"><p>Vráti predvolenú hodnotu stĺpca. Tá sapoužije v metóde <a class="xref" href="Kros.Data.Schema.ColumnSchema.html#Kros_Data_Schema_ColumnSchema_ToString">ToString()</a>.</p>
+  <div class="markdown level1 summary"><p>Returns value for <a class="xref" href="Kros.Data.Schema.ColumnSchema.html#Kros_Data_Schema_ColumnSchema_DefaultValue">DefaultValue</a> for use in <code>ToString()</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual object ToStringDefaultValue()</code></pre>
+    <pre><code class="lang-csharp hljs">protected object ToStringDefaultValue()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -483,8 +434,8 @@ alebo reťazec bielych znakov.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Object</span></td>
-        <td><p>Ak predvolená hodnota je <span class="xref">System.DBNull</span>, je vrátený reťazec <code>NULL</code>. Inak je vrátená
-samotná predvolená hodnota <a class="xref" href="Kros.Data.Schema.ColumnSchema.html#Kros_Data_Schema_ColumnSchema_DefaultValue">DefaultValue</a>.</p>
+        <td><p>String &quot;<code>NULL</code>&quot; if value of <a class="xref" href="Kros.Data.Schema.ColumnSchema.html#Kros_Data_Schema_ColumnSchema_DefaultValue">DefaultValue</a> is <span class="xref">System.DBNull</span> or
+<span class="xref">null</span>. Otherwise returns <a class="xref" href="Kros.Data.Schema.ColumnSchema.html#Kros_Data_Schema_ColumnSchema_DefaultValue">DefaultValue</a>.</p>
 </td>
       </tr>
     </tbody>

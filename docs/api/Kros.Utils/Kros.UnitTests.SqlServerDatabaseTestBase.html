@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class SqlServerDatabaseTestBase
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,8 +83,8 @@
   
   <h1 id="Kros_UnitTests_SqlServerDatabaseTestBase" data-uid="Kros.UnitTests.SqlServerDatabaseTestBase" class="text-break">Class SqlServerDatabaseTestBase
   </h1>
-  <div class="markdown level0 summary"><p>Základná trieda pre databázové integračné testy nad SQL Server-om. Trieda sa stará o vytvorenie a inicializáciu
-databázy, v ktorej bežia testy. V potomkoch sa už len používa spojenie na vytvorenú databázu.</p>
+  <div class="markdown level0 summary"><p>Base class for database integration tests on Microsoft SQL Server. The class takes care of creating and initialization
+of database. Inherited classes just use connection to this database.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -100,23 +100,38 @@ databázy, v ktorej bežia testy. V potomkoch sa už len používa spojenie na v
   </div>
   <h5 id="Kros_UnitTests_SqlServerDatabaseTestBase_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p><p>
-Trieda vytvorí databázu pre testy vo svojom konštruktore a pri volaní <a class="xref" href="Kros.UnitTests.SqlServerDatabaseTestBase.html#Kros_UnitTests_SqlServerDatabaseTestBase_Dispose">Dispose()</a> je táto databáza
-zmazaná. Databázu je možné aj inicializovať nastavením <a class="xref" href="Kros.UnitTests.SqlServerDatabaseTestBase.html#Kros_UnitTests_SqlServerDatabaseTestBase_DatabaseInitScripts">DatabaseInitScripts</a>, aby bolo pre testy
-pripravené všetko potrebné.
+Database with unique name is created at the begining and it is deleted when <a class="xref" href="Kros.UnitTests.SqlServerDatabaseTestBase.html#Kros_UnitTests_SqlServerDatabaseTestBase_Dispose">Dispose()</a> is called.
+The created database may be initielized with own scripts in <a class="xref" href="Kros.UnitTests.SqlServerDatabaseTestBase.html#Kros_UnitTests_SqlServerDatabaseTestBase_DatabaseInitScripts">DatabaseInitScripts</a>.
 </p>
 <p>
-V potomkoch je potrebné prepísať metódy <a class="xref" href="Kros.UnitTests.SqlServerDatabaseTestBase.html#Kros_UnitTests_SqlServerDatabaseTestBase_BaseConnectionString">BaseConnectionString</a> a nastaviť tak spojenie na server,
-kde sa databáza vytvorí. V jednej testovacej triede je možné mať ľubovoľné množstvo testov.
-<code>xUnit</code> pre každý test vytvára novú inštanciu triedy, takže každý test bude mať svoju vlastnú inicializovanú
-databázu.
+Descendant classes must override <a class="xref" href="Kros.UnitTests.SqlServerDatabaseTestBase.html#Kros_UnitTests_SqlServerDatabaseTestBase_BaseConnectionString">BaseConnectionString</a> to set the connection to SQL Server.
 </p></p>
-<pre><code class="cs" source="..\Examples\Kros.Utils\SqlServerDatabaseTestBaseExamples.cs" region="SqlServerDatabaseTestBase"></code></pre>
+<pre><code class="cs" source="..\..\..\..\Documentation\Examples\Kros.Utils\SqlServerDatabaseTestBaseExamples.cs" region="SqlServerDatabaseTestBase">public class SomeDatabaseTests
+    : Kros.UnitTests.SqlServerDatabaseTestBase
+{
+    protected override string BaseConnectionString => &quot;Data Source=TESTSQLSERVER;Integrated Security=True&quot;;
+
+    [Fact]
+    public void Test1()
+    {
+        using (var cmd = ServerHelper.Connection.CreateCommand())
+        {
+            // Use cmd to execute queries.
+        }
+    }
+
+    [Fact]
+    public void Test2()
+    {
+
+    }
+}</code></pre>
 </div>
   <h3 id="constructors">Constructors
   </h3>
   <a id="Kros_UnitTests_SqlServerDatabaseTestBase__ctor_" data-uid="Kros.UnitTests.SqlServerDatabaseTestBase.#ctor*"></a>
   <h4 id="Kros_UnitTests_SqlServerDatabaseTestBase__ctor" data-uid="Kros.UnitTests.SqlServerDatabaseTestBase.#ctor">SqlServerDatabaseTestBase()</h4>
-  <div class="markdown level1 summary"><p>Vytvorí inštanciu triedy a inicializuje <a class="xref" href="Kros.UnitTests.SqlServerDatabaseTestBase.html#Kros_UnitTests_SqlServerDatabaseTestBase_ServerHelper">ServerHelper</a>.</p>
+  <div class="markdown level1 summary"><p>Creates an instance of <code>SqlServerDatabaseTestBase</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -127,8 +142,8 @@ databázu.
   </h3>
   <a id="Kros_UnitTests_SqlServerDatabaseTestBase_BaseConnectionString_" data-uid="Kros.UnitTests.SqlServerDatabaseTestBase.BaseConnectionString*"></a>
   <h4 id="Kros_UnitTests_SqlServerDatabaseTestBase_BaseConnectionString" data-uid="Kros.UnitTests.SqlServerDatabaseTestBase.BaseConnectionString">BaseConnectionString</h4>
-  <div class="markdown level1 summary"><p>Základný connection string na server, kde sa vytvorí databáza. Connection string neobsahuje meno konkrétnej
-databázy, pretože to je generované, aby každý test išiel izolovane vo vlastnej databáze.</p>
+  <div class="markdown level1 summary"><p>Base connection string to SQL Server, where database will be created. It does not need to have database name,
+because it will be generated to make it unique.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -150,15 +165,15 @@ databázy, pretože to je generované, aby každý test išiel izolovane vo vlas
       </tr>
     </tbody>
   </table>
-  <h5 id="Kros_UnitTests_SqlServerDatabaseTestBase_BaseConnectionString_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Pozri tiež <a class="xref" href="Kros.UnitTests.SqlServerTestHelper.html#Kros_UnitTests_SqlServerTestHelper_BaseConnectionString">BaseConnectionString</a>,
-resp. celú triedu <a class="xref" href="Kros.UnitTests.SqlServerTestHelper.html">SqlServerTestHelper</a>.</p>
-</div>
+  <h5 id="Kros_UnitTests_SqlServerDatabaseTestBase_BaseConnectionString_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Kros.UnitTests.SqlServerTestHelper.html">SqlServerTestHelper</a></div>
+      <div><a class="xref" href="Kros.UnitTests.SqlServerTestHelper.html#Kros_UnitTests_SqlServerTestHelper_BaseConnectionString">BaseConnectionString</a></div>
+  </div>
   <a id="Kros_UnitTests_SqlServerDatabaseTestBase_BaseDatabaseName_" data-uid="Kros.UnitTests.SqlServerDatabaseTestBase.BaseDatabaseName*"></a>
   <h4 id="Kros_UnitTests_SqlServerDatabaseTestBase_BaseDatabaseName" data-uid="Kros.UnitTests.SqlServerDatabaseTestBase.BaseDatabaseName">BaseDatabaseName</h4>
-  <div class="markdown level1 summary"><p>Základný názov databázy, ktorá sa vytvorí. K tomuto názvu je ešte pridaný náhodný GUID, aby bolo meno
-databázy unikátne. Štandardne vráti plný názov aktuálnej triedy (<code>GetType().FullName</code>) s pridaným
-podčiarovníkom na konci (napr. <code>Kros.Utils.UnitTests.SomeTestClass_</code>).</p>
+  <div class="markdown level1 summary"><p>Base database name. GUID is appended to this name to make it unique.
+Default implementation returns class full name (<code>GetType().FullName</code>) with underscore (<code>_</code>) appended.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -180,13 +195,14 @@ podčiarovníkom na konci (napr. <code>Kros.Utils.UnitTests.SomeTestClass_</code
       </tr>
     </tbody>
   </table>
-  <h5 id="Kros_UnitTests_SqlServerDatabaseTestBase_BaseDatabaseName_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Pozri tiež <a class="xref" href="Kros.UnitTests.SqlServerTestHelper.html#Kros_UnitTests_SqlServerTestHelper_BaseDatabaseName">BaseDatabaseName</a>,
-resp. celú triedu <a class="xref" href="Kros.UnitTests.SqlServerTestHelper.html">SqlServerTestHelper</a>.</p>
-</div>
+  <h5 id="Kros_UnitTests_SqlServerDatabaseTestBase_BaseDatabaseName_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Kros.UnitTests.SqlServerTestHelper.html#Kros_UnitTests_SqlServerTestHelper_BaseDatabaseName">BaseDatabaseName</a></div>
+      <div><a class="xref" href="Kros.UnitTests.SqlServerTestHelper.html">SqlServerTestHelper</a></div>
+  </div>
   <a id="Kros_UnitTests_SqlServerDatabaseTestBase_DatabaseInitScripts_" data-uid="Kros.UnitTests.SqlServerDatabaseTestBase.DatabaseInitScripts*"></a>
   <h4 id="Kros_UnitTests_SqlServerDatabaseTestBase_DatabaseInitScripts" data-uid="Kros.UnitTests.SqlServerDatabaseTestBase.DatabaseInitScripts">DatabaseInitScripts</h4>
-  <div class="markdown level1 summary"><p>Skripty pre inicializáciu databázy do počiatočného stavu pre testy.</p>
+  <div class="markdown level1 summary"><p>SQL scripts for initializing created database.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -209,14 +225,12 @@ resp. celú triedu <a class="xref" href="Kros.UnitTests.SqlServerTestHelper.html
     </tbody>
   </table>
   <h5 id="Kros_UnitTests_SqlServerDatabaseTestBase_DatabaseInitScripts_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Trieda automaticky vytvorí prázdnu databázu. Ak je potrebné mať databázu nejako konkrétne inicializovanú
-(vytvorné tabuľky, pripravené dáta...), v tejto vlatnosti je zoznam skriptov, ktoré sa po vytvorení databázy
-spustia.</p>
+  <div class="markdown level1 remarks"><p>The class creates a database for tests using <a class="xref" href="Kros.UnitTests.SqlServerTestHelper.html">SqlServerTestHelper</a>. If it is necessary to have
+this database initialized (tables, data...), this is the list of scripts for it.</p>
 </div>
   <a id="Kros_UnitTests_SqlServerDatabaseTestBase_ServerHelper_" data-uid="Kros.UnitTests.SqlServerDatabaseTestBase.ServerHelper*"></a>
   <h4 id="Kros_UnitTests_SqlServerDatabaseTestBase_ServerHelper" data-uid="Kros.UnitTests.SqlServerDatabaseTestBase.ServerHelper">ServerHelper</h4>
-  <div class="markdown level1 summary"><p>Helper pre testy na sql serveri. Obsahuje hlavne spojenie na databázu, v ktorej testy bežia
-(<code>ServerHelper.Connection</code>).</p>
+  <div class="markdown level1 summary"><p>Helper for accessing database using its <a class="xref" href="Kros.UnitTests.SqlServerTestHelper.html#Kros_UnitTests_SqlServerTestHelper_Connection">Connection</a> property.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -275,8 +289,8 @@ spustia.</p>
   </table>
   <a id="Kros_UnitTests_SqlServerDatabaseTestBase_CheckDisposed_" data-uid="Kros.UnitTests.SqlServerDatabaseTestBase.CheckDisposed*"></a>
   <h4 id="Kros_UnitTests_SqlServerDatabaseTestBase_CheckDisposed" data-uid="Kros.UnitTests.SqlServerDatabaseTestBase.CheckDisposed">CheckDisposed()</h4>
-  <div class="markdown level1 summary"><p>Kontroluje, či inštancia nebola uvoľnená. Ak už bola (bola zavolaná jej metóda <a class="xref" href="Kros.UnitTests.SqlServerDatabaseTestBase.html#Kros_UnitTests_SqlServerDatabaseTestBase_Dispose">Dispose()</a>),
-vyvolá výnimku <span class="xref">System.ObjectDisposedException</span>.</p>
+  <div class="markdown level1 summary"><p>Checks, if the instance was disposed of (<a class="xref" href="Kros.UnitTests.SqlServerDatabaseTestBase.html#Kros_UnitTests_SqlServerDatabaseTestBase_Dispose">Dispose()</a> was called). If yes, it throws
+<span class="xref">System.ObjectDisposedException</span>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -294,8 +308,7 @@ vyvolá výnimku <span class="xref">System.ObjectDisposedException</span>.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ObjectDisposedException</span></td>
-        <td><p>Vyvolaná pri použití triedy, ak už bola na nej zavolaná
-metóda <a class="xref" href="Kros.UnitTests.SqlServerDatabaseTestBase.html#Kros_UnitTests_SqlServerDatabaseTestBase_Dispose">Dispose()</a>.</p>
+        <td><p>If the instance was already disposed of.</p>
 </td>
       </tr>
     </tbody>

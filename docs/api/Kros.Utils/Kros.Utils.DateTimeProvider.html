@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class DateTimeProvider
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,10 +83,7 @@
   
   <h1 id="Kros_Utils_DateTimeProvider" data-uid="Kros.Utils.DateTimeProvider" class="text-break">Class DateTimeProvider
   </h1>
-  <div class="markdown level0 summary"><p>Trieda sprístupňujúca dátum a čas, aby bolo možné &quot;fixovať&quot; čas v testoch</p>
-<ul>
-<li><a class="xref" href="Kros.Utils.DateTimeProvider.html#Kros_Utils_DateTimeProvider_InjectActualDateTime_System_DateTime_">InjectActualDateTime(DateTime)</a>.</li>
-</ul>
+  <div class="markdown level0 summary"><p>Class for &quot;freezing&quot; date and time to constant value. Usable for example in tests.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -102,21 +99,26 @@
   </div>
   <h5 id="Kros_Utils_DateTimeProvider_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>
-Aktuálny čas je dostupný vlastnosťou <a class="xref" href="Kros.Utils.DateTimeProvider.html#Kros_Utils_DateTimeProvider_Now">Now</a>, vlastný čas je možné podhodiť volaním
-<a class="xref" href="Kros.Utils.DateTimeProvider.html#Kros_Utils_DateTimeProvider_InjectActualDateTime_System_DateTime_">InjectActualDateTime(DateTime)</a>:
-<pre><code class="cs" source="..\Examples\Kros.Utils\DateTimeProviderExamples.cs" region="BasicExample"></code></pre>
+Current time is accessible in <a class="xref" href="Kros.Utils.DateTimeProvider.html#Kros_Utils_DateTimeProvider_Now">Now</a> property. Own time can be injected using
+<a class="xref" href="Kros.Utils.DateTimeProvider.html#Kros_Utils_DateTimeProvider_InjectActualDateTime_System_DateTime_">InjectActualDateTime(DateTime)</a>.
 </p>
+<pre><code class="cs" source="..\..\..\..\Documentation\Examples\Kros.Utils\DateTimeProviderExamples.cs" region="BasicExample">    private void BasicExample()
+    {
+        using (DateTimeProvider.InjectActualDateTime(new DateTime(1978, 12, 10)))
+        {
+            Console.WriteLine(DateTimeProvider.Now.ToString(&quot;d.M.yyyy&quot;)); // Writes 10.12.1978
+        }
+    }</code></pre>
 <p>
-Natavená hodnota je platná pre aktuálne vlákno, tzn. v dvoch rôznych vláknach je možné mať rôzne nastavené
-hodnoty (<span class="xref">System.ThreadStaticAttribute</span>).
+Set value is valid for current thread only, so it is possible to have different values in different threads.
 </p>
 </div>
   <h3 id="properties">Properties
   </h3>
   <a id="Kros_Utils_DateTimeProvider_Now_" data-uid="Kros.Utils.DateTimeProvider.Now*"></a>
   <h4 id="Kros_Utils_DateTimeProvider_Now" data-uid="Kros.Utils.DateTimeProvider.Now">Now</h4>
-  <div class="markdown level1 summary"><p>Ak bol čas fixne nastavený metódou <a class="xref" href="Kros.Utils.DateTimeProvider.html#Kros_Utils_DateTimeProvider_InjectActualDateTime_System_DateTime_">InjectActualDateTime(DateTime)</a>, je vrátený ten. Inak je vrátený
-reálny čas <span class="xref">System.DateTime.Now</span>.</p>
+  <div class="markdown level1 summary"><p>Returns own date and time, if it was set by <a class="xref" href="Kros.Utils.DateTimeProvider.html#Kros_Utils_DateTimeProvider_InjectActualDateTime_System_DateTime_">InjectActualDateTime(DateTime)</a>. If it was not set,
+<span class="xref">System.DateTime.Now</span> is returned.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -150,7 +152,8 @@ reálny čas <span class="xref">System.DateTime.Now</span>.</p>
   </div>
   <a id="Kros_Utils_DateTimeProvider_InjectActualDateTime_" data-uid="Kros.Utils.DateTimeProvider.InjectActualDateTime*"></a>
   <h4 id="Kros_Utils_DateTimeProvider_InjectActualDateTime_System_DateTime_" data-uid="Kros.Utils.DateTimeProvider.InjectActualDateTime(System.DateTime)">InjectActualDateTime(DateTime)</h4>
-  <div class="markdown level1 summary"><p>Nastaví fixný čas, ktorý provider potom vracia vo vlastnosti <a class="xref" href="Kros.Utils.DateTimeProvider.html#Kros_Utils_DateTimeProvider_Now">Now</a>. Používa sa v <code>using</code> bloku.</p>
+  <div class="markdown level1 summary"><p>Sets time <code data-dev-comment-type="paramref" class="paramref">actualDateTime</code>, which will be returned in <a class="xref" href="Kros.Utils.DateTimeProvider.html#Kros_Utils_DateTimeProvider_Now">Now</a> property.
+Use it in <code>using</code> block.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -170,7 +173,7 @@ reálny čas <span class="xref">System.DateTime.Now</span>.</p>
       <tr>
         <td><span class="xref">System.DateTime</span></td>
         <td><span class="parametername">actualDateTime</span></td>
-        <td><p>Hodnota, ktorú bude provider vracať.</p>
+        <td><p>Required date and time value.</p>
 </td>
       </tr>
     </tbody>

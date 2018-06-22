@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class WhereExpression
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -118,13 +118,13 @@
   <h3 id="constructors">Constructors
   </h3>
   <a id="Kros_KORM_Query_Expressions_WhereExpression__ctor_" data-uid="Kros.KORM.Query.Expressions.WhereExpression.#ctor*"></a>
-  <h4 id="Kros_KORM_Query_Expressions_WhereExpression__ctor_System_String_System_Object___" data-uid="Kros.KORM.Query.Expressions.WhereExpression.#ctor(System.String,System.Object[])">WhereExpression(String, Object[])</h4>
+  <h4 id="Kros_KORM_Query_Expressions_WhereExpression__ctor_Kros_KORM_Query_Sql_RawSqlString_System_Object___" data-uid="Kros.KORM.Query.Expressions.WhereExpression.#ctor(Kros.KORM.Query.Sql.RawSqlString,System.Object[])">WhereExpression(RawSqlString, Object[])</h4>
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Kros.KORM.Query.Expressions.TableExpression.html">TableExpression</a> class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public WhereExpression(string whereCondition, params object[] args)</code></pre>
+    <pre><code class="lang-csharp hljs">public WhereExpression(RawSqlString whereCondition, params object[] args)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -137,7 +137,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
+        <td><a class="xref" href="Kros.KORM.Query.Sql.RawSqlString.html">RawSqlString</a></td>
         <td><span class="parametername">whereCondition</span></td>
         <td><p>The where condition.</p>
 </td>
@@ -179,7 +179,9 @@
   </h3>
   <a id="Kros_KORM_Query_Expressions_WhereExpression_Accept_" data-uid="Kros.KORM.Query.Expressions.WhereExpression.Accept*"></a>
   <h4 id="Kros_KORM_Query_Expressions_WhereExpression_Accept_System_Linq_Expressions_ExpressionVisitor_" data-uid="Kros.KORM.Query.Expressions.WhereExpression.Accept(System.Linq.Expressions.ExpressionVisitor)">Accept(ExpressionVisitor)</h4>
-  <div class="markdown level1 summary"><p>Dispatches to the specific visit method for this node type. For example, <span class="xref">System.Linq.Expressions.MethodCallExpression</span> calls the <span class="xref">System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(System.Linq.Expressions.MethodCallExpression)</span>.</p>
+  <div class="markdown level1 summary"><p>Dispatches to the specific visit method for this node type. For example,
+<span class="xref">System.Linq.Expressions.MethodCallExpression</span> calls the
+<span class="xref">System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(System.Linq.Expressions.MethodCallExpression)</span>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>

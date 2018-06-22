@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Enum ForeignKeyRule
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,7 +83,7 @@
   
   <h1 id="Kros_Data_Schema_ForeignKeyRule" data-uid="Kros.Data.Schema.ForeignKeyRule" class="text-break">Enum ForeignKeyRule
   </h1>
-  <div class="markdown level0 summary"><p>Pravidlo cudzieho kľúča - ako sa zachovať k detským záznamom po zmenení/zmazaní hlavného nadradeného.</p>
+  <div class="markdown level0 summary"><p>Foreign key rule. Defines what to do with child records when the value of parent record changes or is deleted.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Kros.Data.Schema.html">Kros.Data.Schema</a></h6>
@@ -104,22 +104,26 @@
     <tbody>
       <tr>
         <td id="Kros_Data_Schema_ForeignKeyRule_Cascade">Cascade</td>
-        <td><p>Zmena v hlavnej tabuľke sa propaguje do detských záznamov.</p>
+        <td><p>Corresponding rows are updated in the referencing table when that row is updated in the parent table.</p>
 </td>
       </tr>
       <tr>
         <td id="Kros_Data_Schema_ForeignKeyRule_NoAction">NoAction</td>
-        <td><p>Žiadna akcia.</p>
+        <td><p>No action is taken. .</p>
 </td>
       </tr>
       <tr>
         <td id="Kros_Data_Schema_ForeignKeyRule_SetDefault">SetDefault</td>
-        <td><p>Pri zmene hlavného záznamu sa cudzí kľúč v detských záznamoch nastaví na predvolenú hodnotu stĺpca.</p>
+        <td><p>All the values that make up the foreign key are set to their default values when the corresponding row in the parent
+table is updated. For this constraint to execute, all foreign key columns must have default definitions.
+If a column is nullable, and there is no explicit default value set, NULL becomes the implicit default value
+of the column.</p>
 </td>
       </tr>
       <tr>
         <td id="Kros_Data_Schema_ForeignKeyRule_SetNull">SetNull</td>
-        <td><p>Pri zmene hlavného záznamu sa cudzí kľúč v detských záznamoch nastaví na <code>NULL</code>.</p>
+        <td><p>All the values that make up the foreign key are set to NULL when the corresponding row in the parent table is updated.
+For this constraint to execute, the foreign key columns must be nullable.</p>
 </td>
       </tr>
     </tbody>

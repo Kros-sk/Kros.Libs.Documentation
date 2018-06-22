@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class IndexColumnSchemaCollection
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,7 +83,7 @@
   
   <h1 id="Kros_Data_Schema_IndexColumnSchemaCollection" data-uid="Kros.Data.Schema.IndexColumnSchemaCollection" class="text-break">Class IndexColumnSchemaCollection
   </h1>
-  <div class="markdown level0 summary"><p>Zoznam stĺpcov indexu tabuľky.</p>
+  <div class="markdown level0 summary"><p>List of index columns.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -100,15 +100,14 @@
     <pre><code class="lang-csharp hljs">public class IndexColumnSchemaCollection : KeyedCollection&lt;string, IndexColumnSchema&gt;, IList&lt;IndexColumnSchema&gt;, ICollection&lt;IndexColumnSchema&gt;, IList, ICollection, IReadOnlyList&lt;IndexColumnSchema&gt;, IReadOnlyCollection&lt;IndexColumnSchema&gt;, IEnumerable&lt;IndexColumnSchema&gt;, IEnumerable</code></pre>
   </div>
   <h5 id="Kros_Data_Schema_IndexColumnSchemaCollection_remarks"><strong>Remarks</strong></h5>
-  <div class="markdown level0 remarks"><p>Stĺpcom pridaným do zoznamu je automaticky nastavený index <a class="xref" href="Kros.Data.Schema.IndexColumnSchema.html#Kros_Data_Schema_IndexColumnSchema_Index">Index</a>.
-Do zoznamu nie je možné pridať stĺpec, ktorý už patrí inému indexu. V takom prípade je vyvolaná výnimka
-<span class="xref">System.InvalidOperationException</span>.</p>
+  <div class="markdown level0 remarks"><p>To the columns added to this list is automatically set their <a class="xref" href="Kros.Data.Schema.IndexColumnSchema.html#Kros_Data_Schema_IndexColumnSchema_Index">Index</a>.
+The column can belong only to one index.</p>
 </div>
   <h3 id="constructors">Constructors
   </h3>
   <a id="Kros_Data_Schema_IndexColumnSchemaCollection__ctor_" data-uid="Kros.Data.Schema.IndexColumnSchemaCollection.#ctor*"></a>
   <h4 id="Kros_Data_Schema_IndexColumnSchemaCollection__ctor_Kros_Data_Schema_IndexSchema_" data-uid="Kros.Data.Schema.IndexColumnSchemaCollection.#ctor(Kros.Data.Schema.IndexSchema)">IndexColumnSchemaCollection(IndexSchema)</h4>
-  <div class="markdown level1 summary"><p>Vytvorí zoznam stĺpcov pre index <code data-dev-comment-type="paramref" class="paramref">index</code>.</p>
+  <div class="markdown level1 summary"><p>Creates a new list of columns for index <code data-dev-comment-type="paramref" class="paramref">index</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -128,7 +127,7 @@ Do zoznamu nie je možné pridať stĺpec, ktorý už patrí inému indexu. V ta
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.IndexSchema.html">IndexSchema</a></td>
         <td><span class="parametername">index</span></td>
-        <td><p>Index.</p>
+        <td><p>The index to which column list belongs.</p>
 </td>
       </tr>
     </tbody>
@@ -144,7 +143,7 @@ Do zoznamu nie je možné pridať stĺpec, ktorý už patrí inému indexu. V ta
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Hodnota <code data-dev-comment-type="paramref" class="paramref">index</code> je <code>null</code>.</p>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">index</code> is <span class="xref">null</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -153,7 +152,7 @@ Do zoznamu nie je možné pridať stĺpec, ktorý už patrí inému indexu. V ta
   </h3>
   <a id="Kros_Data_Schema_IndexColumnSchemaCollection_Index_" data-uid="Kros.Data.Schema.IndexColumnSchemaCollection.Index*"></a>
   <h4 id="Kros_Data_Schema_IndexColumnSchemaCollection_Index" data-uid="Kros.Data.Schema.IndexColumnSchemaCollection.Index">Index</h4>
-  <div class="markdown level1 summary"><p>Index, ktorému zoznam patrí.</p>
+  <div class="markdown level1 summary"><p>The index to which column list belongs.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -179,8 +178,7 @@ Do zoznamu nie je možné pridať stĺpec, ktorý už patrí inému indexu. V ta
   </h3>
   <a id="Kros_Data_Schema_IndexColumnSchemaCollection_Add_" data-uid="Kros.Data.Schema.IndexColumnSchemaCollection.Add*"></a>
   <h4 id="Kros_Data_Schema_IndexColumnSchemaCollection_Add_System_String_" data-uid="Kros.Data.Schema.IndexColumnSchemaCollection.Add(System.String)">Add(String)</h4>
-  <div class="markdown level1 summary"><p>Vytvorí nový stĺpec v zozname s menom <code data-dev-comment-type="paramref" class="paramref">columnName</code> a zoradením
-<a class="xref" href="Kros.Data.Schema.SortOrder.html#Kros_Data_Schema_SortOrder_Ascending">Ascending</a>.</p>
+  <div class="markdown level1 summary"><p>Creates the new index column with name <code data-dev-comment-type="paramref" class="paramref">columnName</code> and adds it to the list.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -200,7 +198,7 @@ Do zoznamu nie je možné pridať stĺpec, ktorý už patrí inému indexu. V ta
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">columnName</span></td>
-        <td><p>Meno stĺpca.</p>
+        <td><p>Column name.</p>
 </td>
       </tr>
     </tbody>
@@ -216,7 +214,7 @@ Do zoznamu nie je možné pridať stĺpec, ktorý už patrí inému indexu. V ta
     <tbody>
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.IndexColumnSchema.html">IndexColumnSchema</a></td>
-        <td><p>Vytvorený stĺpec.</p>
+        <td><p>Created column.</p>
 </td>
       </tr>
     </tbody>
@@ -232,20 +230,21 @@ Do zoznamu nie je možné pridať stĺpec, ktorý už patrí inému indexu. V ta
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Hodnota <code data-dev-comment-type="paramref" class="paramref">columnName</code> je <code>null</code>.</p>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">columnName</code> is <span class="xref">null</span>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Hodnota <code data-dev-comment-type="paramref" class="paramref">columnName</code> je prázdny reťazec, alebo reťazec bielych
-znakov.</p>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">columnName</code> is empty string, or string containing only
+whitespace characters.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_Schema_IndexColumnSchemaCollection_Add_" data-uid="Kros.Data.Schema.IndexColumnSchemaCollection.Add*"></a>
   <h4 id="Kros_Data_Schema_IndexColumnSchemaCollection_Add_System_String_Kros_Data_Schema_SortOrder_" data-uid="Kros.Data.Schema.IndexColumnSchemaCollection.Add(System.String,Kros.Data.Schema.SortOrder)">Add(String, SortOrder)</h4>
-  <div class="markdown level1 summary"><p>Vytvorí nový stĺpec v zozname s menom <code data-dev-comment-type="paramref" class="paramref">columnName</code> a zoradením <code data-dev-comment-type="paramref" class="paramref">order</code>.</p>
+  <div class="markdown level1 summary"><p>Creates the new index column with name <code data-dev-comment-type="paramref" class="paramref">columnName</code> and sort order <code data-dev-comment-type="paramref" class="paramref">order</code>
+and adds it to the list.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -265,13 +264,13 @@ znakov.</p>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">columnName</span></td>
-        <td><p>Meno stĺpca.</p>
+        <td><p>Column name.</p>
 </td>
       </tr>
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.SortOrder.html">SortOrder</a></td>
         <td><span class="parametername">order</span></td>
-        <td><p>Zoradenie stĺpca.</p>
+        <td><p>Column sort order.</p>
 </td>
       </tr>
     </tbody>
@@ -287,7 +286,7 @@ znakov.</p>
     <tbody>
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.IndexColumnSchema.html">IndexColumnSchema</a></td>
-        <td><p>Vytvorený stĺpec.</p>
+        <td><p>Created column.</p>
 </td>
       </tr>
     </tbody>
@@ -303,13 +302,13 @@ znakov.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Hodnota <code data-dev-comment-type="paramref" class="paramref">columnName</code> je <code>null</code>.</p>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">columnName</code> is <span class="xref">null</span>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Hodnota <code data-dev-comment-type="paramref" class="paramref">columnName</code> je prázdny reťazec, alebo reťazec bielych
-znakov.</p>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">columnName</code> is empty string, or string containing only
+whitespace characters.</p>
 </td>
       </tr>
     </tbody>

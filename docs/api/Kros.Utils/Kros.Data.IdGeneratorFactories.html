@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class IdGeneratorFactories
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,7 +83,11 @@
   
   <h1 id="Kros_Data_IdGeneratorFactories" data-uid="Kros.Data.IdGeneratorFactories" class="text-break">Class IdGeneratorFactories
   </h1>
-  <div class="markdown level0 summary"><p>Reprezentuje množinu registrovaných <a class="xref" href="Kros.Data.IIdGeneratorFactory.html">IIdGeneratorFactory</a>. Umožňuje ich registráciu a získavanie.</p>
+  <div class="markdown level0 summary"><p>Helper class for ID generator factories (<a class="xref" href="Kros.Data.IIdGeneratorFactory.html">IIdGeneratorFactory</a>) for different databases.
+Factories are registered in the class using
+<a class="xref" href="Kros.Data.IdGeneratorFactories.html#Kros_Data_IdGeneratorFactories_Register__1_System_String_System_Func_System_Data_Common_DbConnection_Kros_Data_IIdGeneratorFactory__System_Func_System_String_Kros_Data_IIdGeneratorFactory__">Register&lt;TConnection&gt;(String, Func&lt;DbConnection, IIdGeneratorFactory&gt;, Func&lt;String, IIdGeneratorFactory&gt;)</a>
+method. Two factory methods are registered for every connection (database) type. One for creating generator
+with connection instance and one with connection string.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -97,11 +101,14 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static class IdGeneratorFactories</code></pre>
   </div>
+  <h5 id="Kros_Data_IdGeneratorFactories_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p><a class="xref" href="Kros.Data.SqlServer.SqlServerIdGeneratorFactory.html">SqlServerIdGeneratorFactory</a> is automatically registered.</p>
+</div>
   <h3 id="methods">Methods
   </h3>
   <a id="Kros_Data_IdGeneratorFactories_GetFactory_" data-uid="Kros.Data.IdGeneratorFactories.GetFactory*"></a>
   <h4 id="Kros_Data_IdGeneratorFactories_GetFactory_System_Data_Common_DbConnection_" data-uid="Kros.Data.IdGeneratorFactories.GetFactory(System.Data.Common.DbConnection)">GetFactory(DbConnection)</h4>
-  <div class="markdown level1 summary"><p>Získanie <a class="xref" href="Kros.Data.IIdGeneratorFactory.html">IIdGeneratorFactory</a> so špecifickou connection.</p>
+  <div class="markdown level1 summary"><p>Returns <a class="xref" href="Kros.Data.IIdGeneratorFactory.html">IIdGeneratorFactory</a> for specified <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -121,7 +128,7 @@
       <tr>
         <td><span class="xref">System.Data.Common.DbConnection</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Connection, ktorá sa použije pre vykonanie dotazu na získanie identifikátorov.</p>
+        <td><p>Database connection.</p>
 </td>
       </tr>
     </tbody>
@@ -137,14 +144,31 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Kros.Data.IIdGeneratorFactory.html">IIdGeneratorFactory</a></td>
-        <td><p>Inštancia <a class="xref" href="Kros.Data.IIdGeneratorFactory.html">IIdGeneratorFactory</a>.</p>
+        <td><p>Instance of <a class="xref" href="Kros.Data.IIdGeneratorFactory.html">IIdGeneratorFactory</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.InvalidOperationException</span></td>
+        <td><p>Factory for type of <code data-dev-comment-type="paramref" class="paramref">connection</code> is not registered.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_IdGeneratorFactories_GetFactory_" data-uid="Kros.Data.IdGeneratorFactories.GetFactory*"></a>
   <h4 id="Kros_Data_IdGeneratorFactories_GetFactory_System_String_System_String_" data-uid="Kros.Data.IdGeneratorFactories.GetFactory(System.String,System.String)">GetFactory(String, String)</h4>
-  <div class="markdown level1 summary"><p>Získanie <a class="xref" href="Kros.Data.IIdGeneratorFactory.html">IIdGeneratorFactory</a> so špecifickým connection stringom.</p>
+  <div class="markdown level1 summary"><p>Returns <a class="xref" href="Kros.Data.IIdGeneratorFactory.html">IIdGeneratorFactory</a> for specified <code data-dev-comment-type="paramref" class="paramref">connectionString</code> and database
+type <code data-dev-comment-type="paramref" class="paramref">adoClientName</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -164,13 +188,13 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">connectionString</span></td>
-        <td><p>Connection string, na základe ktorého sa vytvorí connection pre vykonanie dotazu na získanie identifikátorov.</p>
+        <td><p>Connection string for database.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">adoClientName</span></td>
-        <td><p>Názov ado clienta. (napr. pre <span class="xref">System.Data.SqlClient.SqlConnection</span> to je: System.Data.SqlClient)</p>
+        <td><p>Name, which specifies database type.</p>
 </td>
       </tr>
     </tbody>
@@ -186,19 +210,38 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Kros.Data.IIdGeneratorFactory.html">IIdGeneratorFactory</a></td>
-        <td><p>Inštancia <a class="xref" href="Kros.Data.IIdGeneratorFactory.html">IIdGeneratorFactory</a>.</p>
+        <td><p>Instance of <a class="xref" href="Kros.Data.IIdGeneratorFactory.html">IIdGeneratorFactory</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.InvalidOperationException</span></td>
+        <td><p>Factory for database type specified by <code data-dev-comment-type="paramref" class="paramref">adoClientName</code> is not registered.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_IdGeneratorFactories_Register_" data-uid="Kros.Data.IdGeneratorFactories.Register*"></a>
   <h4 id="Kros_Data_IdGeneratorFactories_Register__1_System_String_System_Func_System_Data_Common_DbConnection_Kros_Data_IIdGeneratorFactory__System_Func_System_String_Kros_Data_IIdGeneratorFactory__" data-uid="Kros.Data.IdGeneratorFactories.Register``1(System.String,System.Func{System.Data.Common.DbConnection,Kros.Data.IIdGeneratorFactory},System.Func{System.String,Kros.Data.IIdGeneratorFactory})">Register&lt;TConnection&gt;(String, Func&lt;DbConnection, IIdGeneratorFactory&gt;, Func&lt;String, IIdGeneratorFactory&gt;)</h4>
-  <div class="markdown level1 summary"><p>Registruje factory metódu pre vytvorenie <a class="xref" href="Kros.Data.IIdGeneratorFactory.html">IIdGeneratorFactory</a> na základe connection a connection stringu.</p>
+  <div class="markdown level1 summary"><p>Registers ID generator factory methods <code data-dev-comment-type="paramref" class="paramref">factoryByConnection</code> and
+<code data-dev-comment-type="paramref" class="paramref">factoryByConnectionString</code> for database specified by connection type
+<code data-dev-comment-type="typeparamref" class="typeparamref">TConnection</code> and client name <code data-dev-comment-type="paramref" class="paramref">adoClientName</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Register&lt;TConnection&gt;(string adoClientName, Func&lt;DbConnection, IIdGeneratorFactory&gt; factoryByConnection, Func&lt;string, IIdGeneratorFactory&gt; factoryByConnectionString)
+
     where TConnection : DbConnection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -214,19 +257,21 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">adoClientName</span></td>
-        <td><p>Názov ado clienta. (napr. pre <span class="xref">System.Data.SqlClient.SqlConnection</span> to je: System.Data.SqlClient)</p>
+        <td><p>Name of the database client. It identifies specific database. For example client name for
+<a class="xref" href="Kros.Data.SqlServer.SqlServerIdGeneratorFactory.html">SqlServerIdGeneratorFactory</a> is &quot;System.Data.SqlClient&quot;
+(<a class="xref" href="Kros.Data.SqlServer.SqlServerDataHelper.html#Kros_Data_SqlServer_SqlServerDataHelper_ClientId">ClientId</a>).</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Data.Common.DbConnection</span>, <a class="xref" href="Kros.Data.IIdGeneratorFactory.html">IIdGeneratorFactory</a>&gt;</td>
         <td><span class="parametername">factoryByConnection</span></td>
-        <td><p>Factory metóda na vytvorenie <a class="xref" href="Kros.Data.IIdGeneratorFactory.html">IIdGeneratorFactory</a> so špecifickým connection stringom.</p>
+        <td><p>Factory method for creating <a class="xref" href="Kros.Data.IIdGeneratorFactory.html">IIdGeneratorFactory</a> with connection instance.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Func</span>&lt;<span class="xref">System.String</span>, <a class="xref" href="Kros.Data.IIdGeneratorFactory.html">IIdGeneratorFactory</a>&gt;</td>
         <td><span class="parametername">factoryByConnectionString</span></td>
-        <td><p>Factory metóda na vytvorenie <a class="xref" href="Kros.Data.IIdGeneratorFactory.html">IIdGeneratorFactory</a> so špecifickým connection stringom.</p>
+        <td><p>Factory method for creating <a class="xref" href="Kros.Data.IIdGeneratorFactory.html">IIdGeneratorFactory</a> with connection string.</p>
 </td>
       </tr>
     </tbody>
@@ -242,7 +287,29 @@
     <tbody>
       <tr>
         <td><span class="parametername">TConnection</span></td>
-        <td><p>Typ connection.</p>
+        <td><p>Database connection type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p>Value of any argument is <span class="xref">null</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">adoClientName</code> is empty string, or string
+containing only whitespace characters.</p>
 </td>
       </tr>
     </tbody>
@@ -251,7 +318,6 @@
   <div class="seealso">
       <div><a class="xref" href="Kros.Data.IIdGeneratorFactory.html">IIdGeneratorFactory</a></div>
       <div><a class="xref" href="Kros.Data.IIdGenerator.html">IIdGenerator</a></div>
-      <div><a class="xref" href="Kros.Data.IdGeneratorFactories.html">IdGeneratorFactories</a></div>
   </div>
 </article>
           </div>

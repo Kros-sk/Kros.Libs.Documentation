@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class Suspender
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,9 +83,9 @@
   
   <h1 id="Kros_Utils_Suspender" data-uid="Kros.Utils.Suspender" class="text-break">Class Suspender
   </h1>
-  <div class="markdown level0 summary"><p>Trieda, umožňujúca jednoduché pozastavenie práce. Pozastaviť prácu (<a class="xref" href="Kros.Utils.Suspender.html#Kros_Utils_Suspender_Suspend">Suspend()</a> je možné
-viackrát/vnorene. V takom prípade je nutné obnoviť prácu toľkokrát, koľkokrát bola pozastavená.
-Ideálne je používať <code>using</code> blok.</p>
+  <div class="markdown level0 summary"><p>Class for simple work suspending. It is poosible to suspend work (<a class="xref" href="Kros.Utils.Suspender.html#Kros_Utils_Suspender_Suspend">Suspend()</a>) several times, but in that
+case it is necessary to resume (<span class="xref">Kros.Utils.Suspender.Resume</span>) it the same number of times. The easiest way of suspending
+work is using the <code>using</code> block.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -101,18 +101,37 @@ Ideálne je používať <code>using</code> blok.</p>
     <pre><code class="lang-csharp hljs">public class Suspender</code></pre>
   </div>
   <h5 id="Kros_Utils_Suspender_remarks"><strong>Remarks</strong></h5>
-  <div class="markdown level0 remarks"><p>Vhodné použitie je napríklad pri inicialziáciách objektov. Počas inicializácie je častokrát potrebné nevykonávať určité
-funkcie. Rieši sa to príznakom, či beží inicializácia. Trieda <code>Suspender</code> zapúzdruje udržiavanie tohto príznaku,
-pričom je možné ho nastavovať viackrát za sebou - vnorene.</p>
+  <div class="markdown level0 remarks"><p>It is useful for example in object initialization. During the initialization it is often necessary not to perform
+certain actions. Standard way is using some flag if the initialization is running. The <code>Suspender</code> class
+encapsulates the management of this flag, while it is possible to set this flag several times in succession
+(nested work suspending).</p>
 </div>
   <h5 id="Kros_Utils_Suspender_examples"><strong>Examples</strong></h5>
-  <pre><code class="cs" source="..\Examples\Kros.Utils\SuspenderExamples.cs" region="Init"></code></pre>
+  <pre><code class="cs" source="..\..\..\..\Documentation\Examples\Kros.Utils\SuspenderExamples.cs" region="Init">        private Suspender _initSuspender = new Suspender();
+
+    private void Init()
+    {
+        using (_initSuspender.Suspend())
+        {
+            // Do initialization...
+        }
+    }
+
+    private void DoWork()
+    {
+        // Do general work.
+
+        if (!_initSuspender.IsSuspended)
+        {
+            // Do work only when not initializing.
+        }
+    }</code></pre>
 
   <h3 id="properties">Properties
   </h3>
   <a id="Kros_Utils_Suspender_IsSuspended_" data-uid="Kros.Utils.Suspender.IsSuspended*"></a>
   <h4 id="Kros_Utils_Suspender_IsSuspended" data-uid="Kros.Utils.Suspender.IsSuspended">IsSuspended</h4>
-  <div class="markdown level1 summary"><p>Vráti príznak, či je práca pozastavená (<span class="xref">true</span>), alebo nie (<span class="xref">false</span>).</p>
+  <div class="markdown level1 summary"><p>The flag, if work is (<span class="xref">true</span>), or not (<span class="xref">false</span>).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -138,8 +157,9 @@ pričom je možné ho nastavovať viackrát za sebou - vnorene.</p>
   </h3>
   <a id="Kros_Utils_Suspender_ResumeCore_" data-uid="Kros.Utils.Suspender.ResumeCore*"></a>
   <h4 id="Kros_Utils_Suspender_ResumeCore" data-uid="Kros.Utils.Suspender.ResumeCore">ResumeCore()</h4>
-  <div class="markdown level1 summary"><p>Metóda sa zavolá pri poslednom volaní <code>Resume</code>, tzn. pri zmene stavu <a class="xref" href="Kros.Utils.Suspender.html#Kros_Utils_Suspender_IsSuspended">IsSuspended</a>
-z <span class="xref">true</span> na <span class="xref">false</span>.</p>
+  <div class="markdown level1 summary"><p>Used for specific (inherited) suspender implementations. This method is executed when the work is resumed
+for the last time. So it means it is executed when <a class="xref" href="Kros.Utils.Suspender.html#Kros_Utils_Suspender_IsSuspended">IsSuspended</a> flag is changing from
+<span class="xref">true</span> to <span class="xref">false</span>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -147,15 +167,15 @@ z <span class="xref">true</span> na <span class="xref">false</span>.</p>
     <pre><code class="lang-csharp hljs">protected virtual void ResumeCore()</code></pre>
   </div>
   <h5 id="Kros_Utils_Suspender_ResumeCore_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Metóda je určená pre vlastné suspender-y, ktoré dedia z tejto triedy. V jej implementácii si vlastný suspender spraví
-potrebné veci pri obnovení stavu. Metóda sa volá iba raz, pri poslednom obnovení, tzn. až posledné volanie
-<code>Resume</code> zavolá <a class="xref" href="Kros.Utils.Suspender.html#Kros_Utils_Suspender_ResumeCore">ResumeCore()</a>. Metóda sa volá <legacybold>po</legacybold>
-zmene stavu suspendera, čiže hodnota <a class="xref" href="Kros.Utils.Suspender.html#Kros_Utils_Suspender_IsSuspended">IsSuspended</a> počas jej vykonávania je <span class="xref">false</span>.</p>
+  <div class="markdown level1 remarks"><p>Method is intended for implementing custom logic in own suspender when resuming work. It is executed only
+once during the last work resuming (preceding work resumings do not call <a class="xref" href="Kros.Utils.Suspender.html#Kros_Utils_Suspender_ResumeCore">ResumeCore()</a>).
+The method is called <strong>after</strong> the <a class="xref" href="Kros.Utils.Suspender.html#Kros_Utils_Suspender_IsSuspended">IsSuspended</a> flag is changed,
+so the value of flag while the method is executing is <span class="xref">false</span>.</p>
 </div>
   <a id="Kros_Utils_Suspender_Suspend_" data-uid="Kros.Utils.Suspender.Suspend*"></a>
   <h4 id="Kros_Utils_Suspender_Suspend" data-uid="Kros.Utils.Suspender.Suspend">Suspend()</h4>
-  <div class="markdown level1 summary"><p>Pozastaví prácu. Príznak <a class="xref" href="Kros.Utils.Suspender.html#Kros_Utils_Suspender_IsSuspended">IsSuspended</a> je nastavený na <span class="xref">true</span>. Ak je práca pozastavená viackrát,
-je potrebné ju aj rovnaký počet krát obnoviť.</p>
+  <div class="markdown level1 summary"><p>Suspends the - sets the <a class="xref" href="Kros.Utils.Suspender.html#Kros_Utils_Suspender_IsSuspended">IsSuspended</a> flag to <span class="xref">true</span>. If this method is called several
+times, it is necessary to call <span class="xref">Kros.Utils.Suspender.Resume</span> the same number of times to clear <a class="xref" href="Kros.Utils.Suspender.html#Kros_Utils_Suspender_IsSuspended">IsSuspended</a> flag.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -173,18 +193,38 @@ je potrebné ju aj rovnaký počet krát obnoviť.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.IDisposable</span></td>
-        <td><p>Vráti objekt, ktorého uvoľnením (<code>Dispose()</code>) sa práca obnoví. Vhodné je používať <code>using</code> blok.</p>
+        <td><p>Returns helper object, which automatically calls <span class="xref">Kros.Utils.Suspender.Resume</span> when disposed of, so it is convenient
+to use <code>using</code> block.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <h5 id="Kros_Utils_Suspender_Suspend_examples">Examples</h5>
-  <pre><code class="cs" source="..\Examples\Kros.Utils\SuspenderExamples.cs" region="Init"></code></pre>
+  <pre><code class="cs" source="..\..\..\..\Documentation\Examples\Kros.Utils\SuspenderExamples.cs" region="Init">        private Suspender _initSuspender = new Suspender();
+
+    private void Init()
+    {
+        using (_initSuspender.Suspend())
+        {
+            // Do initialization...
+        }
+    }
+
+    private void DoWork()
+    {
+        // Do general work.
+
+        if (!_initSuspender.IsSuspended)
+        {
+            // Do work only when not initializing.
+        }
+    }</code></pre>
 
   <a id="Kros_Utils_Suspender_SuspendCore_" data-uid="Kros.Utils.Suspender.SuspendCore*"></a>
   <h4 id="Kros_Utils_Suspender_SuspendCore" data-uid="Kros.Utils.Suspender.SuspendCore">SuspendCore()</h4>
-  <div class="markdown level1 summary"><p>Metóda sa zavolá pri prvom volaní <a class="xref" href="Kros.Utils.Suspender.html#Kros_Utils_Suspender_Suspend">Suspend()</a>, tzn. pri zmene stavu <a class="xref" href="Kros.Utils.Suspender.html#Kros_Utils_Suspender_IsSuspended">IsSuspended</a>
-z <span class="xref">false</span> na <span class="xref">true</span>.</p>
+  <div class="markdown level1 summary"><p>Used for specific (inherited) suspender implementations. This method is executed when <a class="xref" href="Kros.Utils.Suspender.html#Kros_Utils_Suspender_Suspend">Suspend()</a> is called
+for the first time. So it means it is executed when <a class="xref" href="Kros.Utils.Suspender.html#Kros_Utils_Suspender_IsSuspended">IsSuspended</a> flag is changing from
+<span class="xref">false</span> to <span class="xref">true</span>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -192,10 +232,10 @@ z <span class="xref">false</span> na <span class="xref">true</span>.</p>
     <pre><code class="lang-csharp hljs">protected virtual void SuspendCore()</code></pre>
   </div>
   <h5 id="Kros_Utils_Suspender_SuspendCore_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Metóda je určená pre vlastné suspender-y, ktoré dedia z tejto triedy. V jej implementácii si vlastný suspender spraví
-potrebné veci pri suspendovaní. Metóda sa volá iba pri prvom suspendovaní, tzn. každé ďalšie volanie
-<a class="xref" href="Kros.Utils.Suspender.html#Kros_Utils_Suspender_Suspend">Suspend()</a> už nevolá <a class="xref" href="Kros.Utils.Suspender.html#Kros_Utils_Suspender_SuspendCore">SuspendCore()</a>. Metóda sa volá <legacybold>pred</legacybold>
-zmenou stavu suspendera, čiže hodnota <a class="xref" href="Kros.Utils.Suspender.html#Kros_Utils_Suspender_IsSuspended">IsSuspended</a> počas jej vykonávania je <span class="xref">false</span>.</p>
+  <div class="markdown level1 remarks"><p>Method is intended for implementing custom logic in own suspender when suspending work. It is executed only
+once during the first call of <a class="xref" href="Kros.Utils.Suspender.html#Kros_Utils_Suspender_Suspend">Suspend()</a> (subsequent calls to <a class="xref" href="Kros.Utils.Suspender.html#Kros_Utils_Suspender_Suspend">Suspend()</a> do not call
+<a class="xref" href="Kros.Utils.Suspender.html#Kros_Utils_Suspender_SuspendCore">SuspendCore()</a>). The method is called <strong>before</strong> the <a class="xref" href="Kros.Utils.Suspender.html#Kros_Utils_Suspender_IsSuspended">IsSuspended</a> flag is changed,
+so the value of flag while the method is executing is <span class="xref">false</span>.</p>
 </div>
 </article>
           </div>

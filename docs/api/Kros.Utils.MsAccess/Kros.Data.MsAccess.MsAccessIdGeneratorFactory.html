@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class MsAccessIdGeneratorFactory
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,7 +83,7 @@
   
   <h1 id="Kros_Data_MsAccess_MsAccessIdGeneratorFactory" data-uid="Kros.Data.MsAccess.MsAccessIdGeneratorFactory" class="text-break">Class MsAccessIdGeneratorFactory
   </h1>
-  <div class="markdown level0 summary"><p>Interface popisujúci factory triedu, ktorá vie vytvoriť inštanciu <a class="xref" href="Kros.Data.MsAccess.MsAccessIdGenerator.html">MsAccessIdGenerator</a>.</p>
+  <div class="markdown level0 summary"><p>Creates an instances of <a class="xref" href="Kros.Data.MsAccess.MsAccessIdGenerator.html">MsAccessIdGenerator</a> for specified database.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -101,11 +101,30 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class MsAccessIdGeneratorFactory : IIdGeneratorFactory</code></pre>
   </div>
-  <h5 id="Kros_Data_MsAccess_MsAccessIdGeneratorFactory_remarks"><strong>Remarks</strong></h5>
-  <div class="markdown level0 remarks"><p>Štandardne sa nevytvára priamo ale cez <a class="xref" href="../Kros.Utils/Kros.Data.IdGeneratorFactories.html">IdGeneratorFactories</a>.</p>
-</div>
   <h5 id="Kros_Data_MsAccess_MsAccessIdGeneratorFactory_examples"><strong>Examples</strong></h5>
-  <pre><code class="cs" source="..\Examples\Kros.Utils\IdGeneratorExamples.cs" region="IdGeneratorFactory"></code></pre>
+  <pre><code class="cs" source="..\..\..\..\Documentation\Examples\Kros.Utils\IdGeneratorExamples.cs" region="IdGeneratorFactory">        public class PeopleService
+    {
+        private IIdGeneratorFactory _idGeneratorFactory;
+
+        public PeopleService(IIdGeneratorFactory idGeneratorFactory)
+        {
+            _idGeneratorFactory = Check.NotNull(idGeneratorFactory, nameof(idGeneratorFactory));
+        }
+
+        public void GenerateData()
+        {
+            using (var idGenerator = _idGeneratorFactory.GetGenerator(&quot;people&quot;, 1000))
+            {
+                for (int i = 0; i &lt; 1800; i++)
+                {
+                    var person = new Person()
+                    {
+                        Id = idGenerator.GetNext()
+                    };
+                };
+            }
+        }
+    }</code></pre>
 
   <h3 id="constructors">Constructors
   </h3>
@@ -252,7 +271,7 @@
   </table>
   <a id="Kros_Data_MsAccess_MsAccessIdGeneratorFactory_Register_" data-uid="Kros.Data.MsAccess.MsAccessIdGeneratorFactory.Register*"></a>
   <h4 id="Kros_Data_MsAccess_MsAccessIdGeneratorFactory_Register" data-uid="Kros.Data.MsAccess.MsAccessIdGeneratorFactory.Register">Register()</h4>
-  <div class="markdown level1 summary"><p>Registrovanie factory metód na vytvorenie inštancie do <a class="xref" href="../Kros.Utils/Kros.Data.IdGeneratorFactories.html">IdGeneratorFactories</a>.</p>
+  <div class="markdown level1 summary"><p>Registers factory methods for creating an instance of factory into <a class="xref" href="../Kros.Utils/Kros.Data.IdGeneratorFactories.html">IdGeneratorFactories</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>

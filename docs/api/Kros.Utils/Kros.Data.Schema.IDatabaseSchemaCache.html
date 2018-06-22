@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IDatabaseSchemaCache
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,7 +83,7 @@
   
   <h1 id="Kros_Data_Schema_IDatabaseSchemaCache" data-uid="Kros.Data.Schema.IDatabaseSchemaCache" class="text-break">Interface IDatabaseSchemaCache
   </h1>
-  <div class="markdown level0 summary"><p>Rozhranie pre triedy načítavajúce a kešujúce schému databázy.</p>
+  <div class="markdown level0 summary"><p>Interface for classes which loads and caches database schema.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Kros.Data.Schema.html">Kros.Data.Schema</a></h6>
@@ -92,11 +92,14 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public interface IDatabaseSchemaCache</code></pre>
   </div>
+  <h5 id="Kros_Data_Schema_IDatabaseSchemaCache_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>Loading of a database schema can take some time, so it is good to cache loaded schemas for later use.</p>
+</div>
   <h3 id="methods">Methods
   </h3>
   <a id="Kros_Data_Schema_IDatabaseSchemaCache_ClearAllSchemas_" data-uid="Kros.Data.Schema.IDatabaseSchemaCache.ClearAllSchemas*"></a>
   <h4 id="Kros_Data_Schema_IDatabaseSchemaCache_ClearAllSchemas" data-uid="Kros.Data.Schema.IDatabaseSchemaCache.ClearAllSchemas">ClearAllSchemas()</h4>
-  <div class="markdown level1 summary"><p>Vyčistí celú keš - vymaže všetky načítané schémy.</p>
+  <div class="markdown level1 summary"><p>Clears the whole cache (removes all cached schemas).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -105,7 +108,7 @@
   </div>
   <a id="Kros_Data_Schema_IDatabaseSchemaCache_ClearSchema_" data-uid="Kros.Data.Schema.IDatabaseSchemaCache.ClearSchema*"></a>
   <h4 id="Kros_Data_Schema_IDatabaseSchemaCache_ClearSchema_System_Object_" data-uid="Kros.Data.Schema.IDatabaseSchemaCache.ClearSchema(System.Object)">ClearSchema(Object)</h4>
-  <div class="markdown level1 summary"><p>Zruší z keše schému databázy načítanú pre spojenie <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
+  <div class="markdown level1 summary"><p>Removes cached schema loaded for <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -125,14 +128,14 @@
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Spojenie na databázu.</p>
+        <td><p>Database connection.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_Schema_IDatabaseSchemaCache_GetSchema_" data-uid="Kros.Data.Schema.IDatabaseSchemaCache.GetSchema*"></a>
   <h4 id="Kros_Data_Schema_IDatabaseSchemaCache_GetSchema_System_Object_" data-uid="Kros.Data.Schema.IDatabaseSchemaCache.GetSchema(System.Object)">GetSchema(Object)</h4>
-  <div class="markdown level1 summary"><p>Vráti schému databázy pre spojenie <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
+  <div class="markdown level1 summary"><p>Returns database schema <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -152,7 +155,7 @@
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Spojenie na databázu.</p>
+        <td><p>database connection.</p>
 </td>
       </tr>
     </tbody>
@@ -168,15 +171,15 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.DatabaseSchema.html">DatabaseSchema</a></td>
-        <td><p>Schéma danej databázy.</p>
+        <td><p>Loaded database schema.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_Schema_IDatabaseSchemaCache_RefreshSchema_" data-uid="Kros.Data.Schema.IDatabaseSchemaCache.RefreshSchema*"></a>
   <h4 id="Kros_Data_Schema_IDatabaseSchemaCache_RefreshSchema_System_Object_" data-uid="Kros.Data.Schema.IDatabaseSchemaCache.RefreshSchema(System.Object)">RefreshSchema(Object)</h4>
-  <div class="markdown level1 summary"><p>Načíta schému databázy pre spojenie <code data-dev-comment-type="paramref" class="paramref">connection</code>. Schéma je načítaná priamo z databázy aj v prípade,
-že už je uložená v keši.</p>
+  <div class="markdown level1 summary"><p>Loads database schema for <code data-dev-comment-type="paramref" class="paramref">connection</code>. The schema is loaded directly from database even when
+it is already cached. New loaded schema is cached.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -196,7 +199,7 @@
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Spojenie na databázu.</p>
+        <td><p>Database connection.</p>
 </td>
       </tr>
     </tbody>
@@ -212,7 +215,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.DatabaseSchema.html">DatabaseSchema</a></td>
-        <td><p>Schéma danej databázy.</p>
+        <td><p>Loaded database schema.</p>
 </td>
       </tr>
     </tbody>

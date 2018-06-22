@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Namespace Kros.Data
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -88,26 +88,28 @@
     <h3 id="classes">Classes
   </h3>
       <h4><a class="xref" href="Kros.Data.ConnectionHelper.html">ConnectionHelper</a></h4>
-      <section><p>Pomocná trieda pre otváranie spojenia na databázu. Trieda pri použití spojenie otvorí, ak je to potrebné a zase
-zatvorí, ak ho otvorila. V prípade, že spojenie už otvorené bolo, nerobí nič.</p>
+      <section><p>Helper class for opening database connection. It ensures opening and closing of the connection.</p>
 </section>
       <h4><a class="xref" href="Kros.Data.DataExtensions.html">DataExtensions</a></h4>
-      <section><p>Rozne rozšírenia dátových tried.</p>
+      <section><p>Extensions for various data classes.</p>
 </section>
       <h4><a class="xref" href="Kros.Data.IdGeneratorBase.html">IdGeneratorBase</a></h4>
-      <section><p>Základná trieda, ktorú stači zdediť aby sme mohli jednoduchšie vytvárať implementácie <a class="xref" href="Kros.Data.IIdGenerator.html">IIdGenerator</a>.
-Stará sa o dispose connection.</p>
+      <section><p>Base class for simple creation of implementations of <a class="xref" href="Kros.Data.IIdGenerator.html">IIdGenerator</a>.</p>
 </section>
       <h4><a class="xref" href="Kros.Data.IdGeneratorFactories.html">IdGeneratorFactories</a></h4>
-      <section><p>Reprezentuje množinu registrovaných <a class="xref" href="Kros.Data.IIdGeneratorFactory.html">IIdGeneratorFactory</a>. Umožňuje ich registráciu a získavanie.</p>
+      <section><p>Helper class for ID generator factories (<a class="xref" href="Kros.Data.IIdGeneratorFactory.html">IIdGeneratorFactory</a>) for different databases.
+Factories are registered in the class using
+<a class="xref" href="Kros.Data.IdGeneratorFactories.html#Kros_Data_IdGeneratorFactories_Register__1_System_String_System_Func_System_Data_Common_DbConnection_Kros_Data_IIdGeneratorFactory__System_Func_System_String_Kros_Data_IIdGeneratorFactory__">Register&lt;TConnection&gt;(String, Func&lt;DbConnection, IIdGeneratorFactory&gt;, Func&lt;String, IIdGeneratorFactory&gt;)</a>
+method. Two factory methods are registered for every connection (database) type. One for creating generator
+with connection instance and one with connection string.</p>
 </section>
     <h3 id="interfaces">Interfaces
   </h3>
       <h4><a class="xref" href="Kros.Data.IIdGenerator.html">IIdGenerator</a></h4>
-      <section><p>Interfejs popisujúci tiedu, ktorá generuje unikátne identifikátory pre záznamy v tabuľke.</p>
+      <section><p>Interface for generating IDs for records in database. In general, IDs are just sequential numbers.</p>
 </section>
       <h4><a class="xref" href="Kros.Data.IIdGeneratorFactory.html">IIdGeneratorFactory</a></h4>
-      <section><p>Interface popisujúci factory triedu, ktorá vie vytvoriť inštanciu <a class="xref" href="Kros.Data.IIdGenerator.html">IIdGenerator</a>.</p>
+      <section><p>Interface for factory classes, which create instances of <a class="xref" href="Kros.Data.IIdGenerator.html">IIdGenerator</a>.</p>
 </section>
 </article>
           </div>

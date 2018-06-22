@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IBulkActionDataReader
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,7 +83,7 @@
   
   <h1 id="Kros_Data_BulkActions_IBulkActionDataReader" data-uid="Kros.Data.BulkActions.IBulkActionDataReader" class="text-break">Interface IBulkActionDataReader
   </h1>
-  <div class="markdown level0 summary"><p>Rozhranie pre zdroj dát pre <a class="xref" href="Kros.Data.BulkActions.IBulkInsert.html">IBulkInsert</a>.</p>
+  <div class="markdown level0 summary"><p>Interface for data source used in bulk actions (<a class="xref" href="Kros.Data.BulkActions.IBulkInsert.html">IBulkInsert</a>, <a class="xref" href="Kros.Data.BulkActions.IBulkUpdate.html">IBulkUpdate</a>).</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Kros.Data.BulkActions.html">Kros.Data.BulkActions</a></h6>
@@ -96,7 +96,7 @@
   </h3>
   <a id="Kros_Data_BulkActions_IBulkActionDataReader_FieldCount_" data-uid="Kros.Data.BulkActions.IBulkActionDataReader.FieldCount*"></a>
   <h4 id="Kros_Data_BulkActions_IBulkActionDataReader_FieldCount" data-uid="Kros.Data.BulkActions.IBulkActionDataReader.FieldCount">FieldCount</h4>
-  <div class="markdown level1 summary"><p>Počet stĺpcov v dátovom riadku.</p>
+  <div class="markdown level1 summary"><p>Columns count of the data row.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -122,7 +122,7 @@
   </h3>
   <a id="Kros_Data_BulkActions_IBulkActionDataReader_GetName_" data-uid="Kros.Data.BulkActions.IBulkActionDataReader.GetName*"></a>
   <h4 id="Kros_Data_BulkActions_IBulkActionDataReader_GetName_System_Int32_" data-uid="Kros.Data.BulkActions.IBulkActionDataReader.GetName(System.Int32)">GetName(Int32)</h4>
-  <div class="markdown level1 summary"><p>Vráti názov stĺpca.</p>
+  <div class="markdown level1 summary"><p>Returns column name at position <code data-dev-comment-type="paramref" class="paramref">i</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -142,7 +142,7 @@
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">i</span></td>
-        <td><p>Index hľadaného stĺpca.</p>
+        <td><p>Index of column.</p>
 </td>
       </tr>
     </tbody>
@@ -158,7 +158,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><p>Meno stĺpca.</p>
+        <td><p>Column name.</p>
 </td>
       </tr>
     </tbody>
@@ -181,7 +181,7 @@
   </table>
   <a id="Kros_Data_BulkActions_IBulkActionDataReader_GetOrdinal_" data-uid="Kros.Data.BulkActions.IBulkActionDataReader.GetOrdinal*"></a>
   <h4 id="Kros_Data_BulkActions_IBulkActionDataReader_GetOrdinal_System_String_" data-uid="Kros.Data.BulkActions.IBulkActionDataReader.GetOrdinal(System.String)">GetOrdinal(String)</h4>
-  <div class="markdown level1 summary"><p>Vráti index stĺpca s menom <code data-dev-comment-type="paramref" class="paramref">name</code>.</p>
+  <div class="markdown level1 summary"><p>Return index of column with name <code data-dev-comment-type="paramref" class="paramref">name</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -201,7 +201,7 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">name</span></td>
-        <td><p>Meno hľadaného stĺpca.</p>
+        <td><p>Column name.</p>
 </td>
       </tr>
     </tbody>
@@ -217,14 +217,14 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Int32</span></td>
-        <td><p>Index hľadaného stĺpca.</p>
+        <td><p>Index of column.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_BulkActions_IBulkActionDataReader_GetValue_" data-uid="Kros.Data.BulkActions.IBulkActionDataReader.GetValue*"></a>
   <h4 id="Kros_Data_BulkActions_IBulkActionDataReader_GetValue_System_Int32_" data-uid="Kros.Data.BulkActions.IBulkActionDataReader.GetValue(System.Int32)">GetValue(Int32)</h4>
-  <div class="markdown level1 summary"><p>Vráti hodnotu zadaného stĺpca.</p>
+  <div class="markdown level1 summary"><p>Returns value of column at index <code data-dev-comment-type="paramref" class="paramref">i</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -244,7 +244,7 @@
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">i</span></td>
-        <td><p>Index stĺpca, ktorého hodnota sa vracia.</p>
+        <td><p>Column index.</p>
 </td>
       </tr>
     </tbody>
@@ -260,7 +260,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Object</span></td>
-        <td><p>Objekt - hodnota daného stĺpca.</p>
+        <td><p>Object - value of column.</p>
 </td>
       </tr>
     </tbody>
@@ -276,14 +276,14 @@
     <tbody>
       <tr>
         <td><span class="xref">System.IndexOutOfRangeException</span></td>
-        <td><p>Zadaný index bol mimo rozsah stĺpcov 0 až <a class="xref" href="Kros.Data.BulkActions.IBulkActionDataReader.html#Kros_Data_BulkActions_IBulkActionDataReader_FieldCount">FieldCount</a>.</p>
+        <td><p>Defined index is not between 0 and <a class="xref" href="Kros.Data.BulkActions.IBulkActionDataReader.html#Kros_Data_BulkActions_IBulkActionDataReader_FieldCount">FieldCount</a>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_BulkActions_IBulkActionDataReader_Read_" data-uid="Kros.Data.BulkActions.IBulkActionDataReader.Read*"></a>
   <h4 id="Kros_Data_BulkActions_IBulkActionDataReader_Read" data-uid="Kros.Data.BulkActions.IBulkActionDataReader.Read">Read()</h4>
-  <div class="markdown level1 summary"><p>Posunie reader na ďalší záznam.</p>
+  <div class="markdown level1 summary"><p>Moves reader to next record.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -301,7 +301,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p><span class="xref">true</span>, ak existuje ďalší záznam a reader bol posunutý, <span class="xref">false</span> ak už ďalší záznam neexistuje.</p>
+        <td><p><span class="xref">true</span> if next record exists and reader is moved,
+<span class="xref">false</span> if next record does not exist.</p>
 </td>
       </tr>
     </tbody>

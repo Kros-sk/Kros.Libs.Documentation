@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class AliasAttribute
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,7 +83,7 @@
   
   <h1 id="Kros_KORM_Metadata_Attribute_AliasAttribute" data-uid="Kros.KORM.Metadata.Attribute.AliasAttribute" class="text-break">Class AliasAttribute
   </h1>
-  <div class="markdown level0 summary"><p>Attribute which describe database name of property / class.</p>
+  <div class="markdown level0 summary"><p>Attribute which describe database name of property/class.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -124,6 +124,28 @@ public class AliasAttribute : Attribute, _Attribute</code></pre>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">alias</span></td>
         <td><p>The database alias.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">alias</code> is <span class="xref">null</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">alias</code> is empty string, or stirng
+containing whitespace characters only.</p>
 </td>
       </tr>
     </tbody>

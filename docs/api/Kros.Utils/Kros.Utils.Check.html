@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class Check
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,8 +83,8 @@
   
   <h1 id="Kros_Utils_Check" data-uid="Kros.Utils.Check" class="text-break">Class Check
   </h1>
-  <div class="markdown level0 summary"><p>Pomocná trieda na kontrolu argumentov metód. Každá kontrola, ak zlyhá, vyvolá nejaký druh výnimky
-<code>ArgumentException</code> (<span class="xref">System.ArgumentException</span>, <span class="xref">System.ArgumentNullException</span>,
+  <div class="markdown level0 summary"><p>Helper class for validating method parameters. Every validation throws some kind of <span class="xref">System.ArgumentException</span>
+if it fails (<span class="xref">System.ArgumentException</span>, <span class="xref">System.ArgumentNullException</span>,
 <span class="xref">System.ArgumentOutOfRangeException</span>).</p>
 </div>
   <div class="markdown level0 conceptual"></div>
@@ -100,18 +100,44 @@
     <pre><code class="lang-csharp hljs">public static class Check</code></pre>
   </div>
   <h5 id="Kros_Utils_Check_remarks"><strong>Remarks</strong></h5>
-  <div class="markdown level0 remarks"><p>Štandardný spôsob kontroly argumentov je:</p>
-<pre><code class="cs" source="..\Examples\Kros.Utils\CheckExamples.cs" region="CheckArgumentsOld"></code></pre>
-<p>S triedou <code>Check</code> je to jednoduché. Ak je to možné, jednotlivé kontroly vracajú vstupnú hodnotu,
-takže je možné na jednom riadku argument skontrolovať, aj priradiť:</p>
-<pre><code class="cs" source="..\Examples\Kros.Utils\CheckExamples.cs" region="CheckArgumentsNew"></code></pre>
+  <div class="markdown level0 remarks"><p>Default way of validating method parameters is:</p>
+<pre><code class="cs" source="..\..\..\..\Documentation\Examples\Kros.Utils\CheckExamples.cs" region="CheckArgumentsOld">    private string _value1;
+    private int _value2;
+
+    public void MethodWithParameters(string arg1, int arg2)
+    {
+        if (string.IsNullOrEmpty(arg1))
+        {
+            throw new ArgumentNullException(nameof(arg1));
+        }
+        if (arg2 &lt;= 0)
+        {
+            throw new ArgumentException(&quot;Hodnota parametra arg2 musí byť väčšia ako 0.&quot;, nameof(arg2));
+        }
+
+        _value1 = arg1;
+        _value2 = arg2;
+
+        // ...
+    }</code></pre>
+<pre><code>With the help of &lt;code&gt;Check&lt;/code&gt; class, this is very easy. If it is possible, the validation methods return input value,
+so the parameter&amp;apos;s value can be validated and assigned on one line:
+</code></pre><pre><code class="cs" source="..\..\..\..\Documentation\Examples\Kros.Utils\CheckExamples.cs" region="CheckArgumentsNew">    private string _value1;
+    private int _value2;
+
+    public void MethodWithParameters(string arg1, int arg2)
+    {
+        _value1 = Check.NotNullOrEmpty(arg1, nameof(arg1));
+        _value2 = Check.GreaterThan(arg2, 0, nameof(arg2));
+
+        // ...
+    }</code></pre>
 </div>
   <h3 id="methods">Methods
   </h3>
   <a id="Kros_Utils_Check_Equal_" data-uid="Kros.Utils.Check.Equal*"></a>
   <h4 id="Kros_Utils_Check_Equal__1___0___0_System_String_" data-uid="Kros.Utils.Check.Equal``1(``0,``0,System.String)">Equal&lt;T&gt;(T, T, String)</h4>
-  <div class="markdown level1 summary"><p>Hodnota parametra <code data-dev-comment-type="paramref" class="paramref">param</code> musí byť <code data-dev-comment-type="paramref" class="paramref">value</code>.
-Vyvolaná výnimka má nastavené meno parametra.</p>
+  <div class="markdown level1 summary"><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> must be <code data-dev-comment-type="paramref" class="paramref">value</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -131,19 +157,19 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Parameter.</p>
+        <td><p>Validated value.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">value</span></td>
-        <td><p>Požadovaná hodnota parametera.</p>
+        <td><p>Required value of the <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">paramName</span></td>
-        <td><p>Meno parametra.</p>
+        <td><p>Name of the method parameter.</p>
 </td>
       </tr>
     </tbody>
@@ -159,7 +185,7 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">T</span></td>
-        <td><p>Vstupný parameter <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
+        <td><p>Input value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -175,7 +201,7 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td><p>Typ parametra.</p>
+        <td><p>Type of the <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -191,15 +217,15 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Parameter nemá požadovanú hodnotu.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is not <code data-dev-comment-type="paramref" class="paramref">value</code>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Utils_Check_Equal_" data-uid="Kros.Utils.Check.Equal*"></a>
   <h4 id="Kros_Utils_Check_Equal__1___0___0_System_String_System_String_" data-uid="Kros.Utils.Check.Equal``1(``0,``0,System.String,System.String)">Equal&lt;T&gt;(T, T, String, String)</h4>
-  <div class="markdown level1 summary"><p>Hodnota parametra <code data-dev-comment-type="paramref" class="paramref">param</code> musí byť <code data-dev-comment-type="paramref" class="paramref">value</code>.
-Vyvolaná výnimka má nastavený text a meno parametra.</p>
+  <div class="markdown level1 summary"><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> must be <code data-dev-comment-type="paramref" class="paramref">value</code>.
+Thrown exception has custom message <code data-dev-comment-type="paramref" class="paramref">message</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -219,25 +245,25 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Parameter.</p>
+        <td><p>Validated value.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">value</span></td>
-        <td><p>Požadovaná hodnota parametera.</p>
+        <td><p>Required value of the <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">paramName</span></td>
-        <td><p>Meno parametra.</p>
+        <td><p>Name of the method parameter.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">message</span></td>
-        <td><p>Text výnimky.</p>
+        <td><p>Custom exception message.</p>
 </td>
       </tr>
     </tbody>
@@ -253,7 +279,7 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">T</span></td>
-        <td><p>Vstupný parameter <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
+        <td><p>Input value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -269,7 +295,7 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td><p>Typ parametra.</p>
+        <td><p>Type of the <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -285,20 +311,20 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Parameter nemá požadovanú hodnotu.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is not <code data-dev-comment-type="paramref" class="paramref">value</code>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Utils_Check_GreaterOrEqualThan_" data-uid="Kros.Utils.Check.GreaterOrEqualThan*"></a>
   <h4 id="Kros_Utils_Check_GreaterOrEqualThan__1___0___0_System_String_" data-uid="Kros.Utils.Check.GreaterOrEqualThan``1(``0,``0,System.String)">GreaterOrEqualThan&lt;T&gt;(T, T, String)</h4>
-  <div class="markdown level1 summary"><p>Hodnota parametra <code data-dev-comment-type="paramref" class="paramref">param</code> musí byť väčšia, alebo rovná <code data-dev-comment-type="paramref" class="paramref">value</code>.
-Vyvolaná výnimka má nastavené meno parametra.</p>
+  <div class="markdown level1 summary"><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> must be greater or equal than <code data-dev-comment-type="paramref" class="paramref">value</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static T GreaterOrEqualThan&lt;T&gt;(T param, T value, string paramName)
+
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -314,19 +340,19 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Parameter.</p>
+        <td><p>Validated value.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">value</span></td>
-        <td><p>Hodnota, s ktorou sa parameter porovnáva.</p>
+        <td><p>Checked value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">paramName</span></td>
-        <td><p>Meno parametra.</p>
+        <td><p>Name of the method parameter.</p>
 </td>
       </tr>
     </tbody>
@@ -342,7 +368,7 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">T</span></td>
-        <td><p>Vstupný parameter <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
+        <td><p>Input value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -358,7 +384,7 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td><p>Typ parametra.</p>
+        <td><p>Type of the <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -374,20 +400,22 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Hodnota parametra je menšia zadanej hodnote.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is less than
+<code data-dev-comment-type="paramref" class="paramref">value</code>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Utils_Check_GreaterOrEqualThan_" data-uid="Kros.Utils.Check.GreaterOrEqualThan*"></a>
   <h4 id="Kros_Utils_Check_GreaterOrEqualThan__1___0___0_System_String_System_String_" data-uid="Kros.Utils.Check.GreaterOrEqualThan``1(``0,``0,System.String,System.String)">GreaterOrEqualThan&lt;T&gt;(T, T, String, String)</h4>
-  <div class="markdown level1 summary"><p>Hodnota parametra <code data-dev-comment-type="paramref" class="paramref">param</code> musí byť väčšia, alebo rovná <code data-dev-comment-type="paramref" class="paramref">value</code>.
-Vyvolaná výnimka má nastavený text a meno parametra.</p>
+  <div class="markdown level1 summary"><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> must be greater or equal than <code data-dev-comment-type="paramref" class="paramref">value</code>.
+Thrown exception has custom message <code data-dev-comment-type="paramref" class="paramref">message</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static T GreaterOrEqualThan&lt;T&gt;(T param, T value, string paramName, string message)
+
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -403,25 +431,25 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Parameter.</p>
+        <td><p>Validated value.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">value</span></td>
-        <td><p>Hodnota, s ktorou sa parameter porovnáva.</p>
+        <td><p>Checked value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">paramName</span></td>
-        <td><p>Meno parametra.</p>
+        <td><p>Name of the method parameter.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">message</span></td>
-        <td><p>Text výnimky.</p>
+        <td><p>Custom exception message.</p>
 </td>
       </tr>
     </tbody>
@@ -437,7 +465,7 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">T</span></td>
-        <td><p>Vstupný parameter <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
+        <td><p>Input value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -453,7 +481,7 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td><p>Typ parametra.</p>
+        <td><p>Type of the <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -469,20 +497,21 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Hodnota parametra je menšia zadanej hodnote.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is less than
+<code data-dev-comment-type="paramref" class="paramref">value</code>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Utils_Check_GreaterThan_" data-uid="Kros.Utils.Check.GreaterThan*"></a>
   <h4 id="Kros_Utils_Check_GreaterThan__1___0___0_System_String_" data-uid="Kros.Utils.Check.GreaterThan``1(``0,``0,System.String)">GreaterThan&lt;T&gt;(T, T, String)</h4>
-  <div class="markdown level1 summary"><p>Hodnota parametra <code data-dev-comment-type="paramref" class="paramref">param</code> musí byť väčšia ako <code data-dev-comment-type="paramref" class="paramref">value</code>.
-Vyvolaná výnimka má nastavené meno parametra.</p>
+  <div class="markdown level1 summary"><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> must be greater than <code data-dev-comment-type="paramref" class="paramref">value</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static T GreaterThan&lt;T&gt;(T param, T value, string paramName)
+
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -498,19 +527,19 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Parameter.</p>
+        <td><p>Validated value.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">value</span></td>
-        <td><p>Hodnota, s ktorou sa parameter porovnáva.</p>
+        <td><p>Checked value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">paramName</span></td>
-        <td><p>Meno parametra.</p>
+        <td><p>Name of the method parameter.</p>
 </td>
       </tr>
     </tbody>
@@ -526,7 +555,7 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">T</span></td>
-        <td><p>Vstupný parameter <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
+        <td><p>Input value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -542,7 +571,7 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td><p>Typ parametra.</p>
+        <td><p>Type of the <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -558,20 +587,22 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Hodnota parametra je menšia, alebo rovná zadanej hodnote.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is less or equal than
+<code data-dev-comment-type="paramref" class="paramref">value</code>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Utils_Check_GreaterThan_" data-uid="Kros.Utils.Check.GreaterThan*"></a>
   <h4 id="Kros_Utils_Check_GreaterThan__1___0___0_System_String_System_String_" data-uid="Kros.Utils.Check.GreaterThan``1(``0,``0,System.String,System.String)">GreaterThan&lt;T&gt;(T, T, String, String)</h4>
-  <div class="markdown level1 summary"><p>Hodnota parametra <code data-dev-comment-type="paramref" class="paramref">param</code> musí byť väčšia ako <code data-dev-comment-type="paramref" class="paramref">value</code>.
-Vyvolaná výnimka má nastavený text a meno parametra.</p>
+  <div class="markdown level1 summary"><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> must be greater than <code data-dev-comment-type="paramref" class="paramref">value</code>.
+Thrown exception has custom message <code data-dev-comment-type="paramref" class="paramref">message</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static T GreaterThan&lt;T&gt;(T param, T value, string paramName, string message)
+
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -587,25 +618,25 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Parameter.</p>
+        <td><p>Validated value.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">value</span></td>
-        <td><p>Hodnota, s ktorou sa parameter porovnáva.</p>
+        <td><p>Checked value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">paramName</span></td>
-        <td><p>Meno parametra.</p>
+        <td><p>Name of the method parameter.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">message</span></td>
-        <td><p>Text výnimky.</p>
+        <td><p>Custom exception message.</p>
 </td>
       </tr>
     </tbody>
@@ -621,7 +652,7 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">T</span></td>
-        <td><p>Vstupný parameter <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
+        <td><p>Input value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -637,7 +668,7 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td><p>Typ parametra.</p>
+        <td><p>Type of the <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -653,15 +684,15 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Hodnota parametra je menšia, alebo rovná zadanej hodnote.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is less or equal than
+<code data-dev-comment-type="paramref" class="paramref">value</code>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Utils_Check_IsInList_" data-uid="Kros.Utils.Check.IsInList*"></a>
   <h4 id="Kros_Utils_Check_IsInList__1___0_System_Collections_Generic_IEnumerable___0__System_String_" data-uid="Kros.Utils.Check.IsInList``1(``0,System.Collections.Generic.IEnumerable{``0},System.String)">IsInList&lt;T&gt;(T, IEnumerable&lt;T&gt;, String)</h4>
-  <div class="markdown level1 summary"><p>Hodnota parametra <code data-dev-comment-type="paramref" class="paramref">param</code> musí byť v zozname <code data-dev-comment-type="paramref" class="paramref">list</code>.
-Vyvolaná výnimka má nastavené meno parametra.</p>
+  <div class="markdown level1 summary"><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> must be in list <code data-dev-comment-type="paramref" class="paramref">list</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -681,19 +712,19 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Hodnota, ktorá musí byť v zozname <code data-dev-comment-type="paramref" class="paramref">list</code>.</p>
+        <td><p>The value, which must be in the list <code data-dev-comment-type="paramref" class="paramref">list</code>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;T&gt;</td>
         <td><span class="parametername">list</span></td>
-        <td><p>Zoznam hodnôt, medzi ktorými sa musí nachádzať hodnota <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
+        <td><p>List of checked values.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">paramName</span></td>
-        <td><p>Meno parametra.</p>
+        <td><p>Name of the method parameter.</p>
 </td>
       </tr>
     </tbody>
@@ -709,7 +740,7 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">T</span></td>
-        <td><p>Vstupný parameter <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
+        <td><p>Input value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -725,7 +756,7 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td><p>Typ parametra.</p>
+        <td><p>Type of the <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -741,15 +772,15 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Hodnota parametra nie je v zadanom zozname.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is not in the list <code data-dev-comment-type="paramref" class="paramref">list</code>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Utils_Check_IsInList_" data-uid="Kros.Utils.Check.IsInList*"></a>
   <h4 id="Kros_Utils_Check_IsInList__1___0_System_Collections_Generic_IEnumerable___0__System_String_System_String_" data-uid="Kros.Utils.Check.IsInList``1(``0,System.Collections.Generic.IEnumerable{``0},System.String,System.String)">IsInList&lt;T&gt;(T, IEnumerable&lt;T&gt;, String, String)</h4>
-  <div class="markdown level1 summary"><p>Hodnota parametra <code data-dev-comment-type="paramref" class="paramref">param</code> musí byť v zozname <code data-dev-comment-type="paramref" class="paramref">list</code>.
-Vyvolaná výnimka má nastavený text a meno parametra.</p>
+  <div class="markdown level1 summary"><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> must be in list <code data-dev-comment-type="paramref" class="paramref">list</code>.
+Thrown exception has custom message <code data-dev-comment-type="paramref" class="paramref">message</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -769,25 +800,25 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Hodnota, ktorá musí byť v zozname <code data-dev-comment-type="paramref" class="paramref">list</code>.</p>
+        <td><p>The value, which must be in the list <code data-dev-comment-type="paramref" class="paramref">list</code>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;T&gt;</td>
         <td><span class="parametername">list</span></td>
-        <td><p>Zoznam hodnôt, medzi ktorými sa musí nachádzať hodnota <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
+        <td><p>List of checked values.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">paramName</span></td>
-        <td><p>Meno parametra.</p>
+        <td><p>Name of the method parameter.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">message</span></td>
-        <td><p>Text výnimky.</p>
+        <td><p>Custom exception message.</p>
 </td>
       </tr>
     </tbody>
@@ -803,7 +834,7 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">T</span></td>
-        <td><p>Vstupný parameter <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
+        <td><p>Input value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -819,7 +850,7 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td><p>Typ parametra.</p>
+        <td><p>Type of the <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -835,15 +866,14 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Hodnota parametra nie je v zadanom zozname.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is not in the list <code data-dev-comment-type="paramref" class="paramref">list</code>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Utils_Check_IsNotInList_" data-uid="Kros.Utils.Check.IsNotInList*"></a>
   <h4 id="Kros_Utils_Check_IsNotInList__1___0_System_Collections_Generic_IEnumerable___0__System_String_" data-uid="Kros.Utils.Check.IsNotInList``1(``0,System.Collections.Generic.IEnumerable{``0},System.String)">IsNotInList&lt;T&gt;(T, IEnumerable&lt;T&gt;, String)</h4>
-  <div class="markdown level1 summary"><p>Hodnota parametra <code data-dev-comment-type="paramref" class="paramref">param</code> nesmie byť v zozname <code data-dev-comment-type="paramref" class="paramref">list</code>.
-Vyvolaná výnimka má nastavené meno parametra.</p>
+  <div class="markdown level1 summary"><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> must not be in list <code data-dev-comment-type="paramref" class="paramref">list</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -863,19 +893,19 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Hodnota, ktorá nesmie byť v zozname <code data-dev-comment-type="paramref" class="paramref">list</code>.</p>
+        <td><p>The value, which must not be in the list <code data-dev-comment-type="paramref" class="paramref">list</code>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;T&gt;</td>
         <td><span class="parametername">list</span></td>
-        <td><p>Zoznam hodnôt, medzi ktorými sa hodnota <code data-dev-comment-type="paramref" class="paramref">param</code> nesmie nachádzať.</p>
+        <td><p>List of checked values.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">paramName</span></td>
-        <td><p>Meno parametra.</p>
+        <td><p>Name of the method parameter.</p>
 </td>
       </tr>
     </tbody>
@@ -891,7 +921,7 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">T</span></td>
-        <td><p>Vstupný parameter <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
+        <td><p>Input value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -907,7 +937,7 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td><p>Typ parametra.</p>
+        <td><p>Type of the <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -923,15 +953,15 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Hodnota parametra je v zadanom zozname.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is in the list <code data-dev-comment-type="paramref" class="paramref">list</code>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Utils_Check_IsNotInList_" data-uid="Kros.Utils.Check.IsNotInList*"></a>
   <h4 id="Kros_Utils_Check_IsNotInList__1___0_System_Collections_Generic_IEnumerable___0__System_String_System_String_" data-uid="Kros.Utils.Check.IsNotInList``1(``0,System.Collections.Generic.IEnumerable{``0},System.String,System.String)">IsNotInList&lt;T&gt;(T, IEnumerable&lt;T&gt;, String, String)</h4>
-  <div class="markdown level1 summary"><p>Hodnota parametra <code data-dev-comment-type="paramref" class="paramref">param</code> nesmie byť v zozname <code data-dev-comment-type="paramref" class="paramref">list</code>.
-Vyvolaná výnimka má nastavený text a meno parametra.</p>
+  <div class="markdown level1 summary"><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> must not be in list <code data-dev-comment-type="paramref" class="paramref">list</code>.
+Thrown exception has custom message <code data-dev-comment-type="paramref" class="paramref">message</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -951,25 +981,25 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Hodnota, ktorá nesmie byť v zozname <code data-dev-comment-type="paramref" class="paramref">list</code>.</p>
+        <td><p>The value, which must not be in the list <code data-dev-comment-type="paramref" class="paramref">list</code>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;T&gt;</td>
         <td><span class="parametername">list</span></td>
-        <td><p>Zoznam hodnôt, medzi ktorými sa hodnota <code data-dev-comment-type="paramref" class="paramref">param</code> nesmie nachádzať.</p>
+        <td><p>List of checked values.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">paramName</span></td>
-        <td><p>Meno parametra.</p>
+        <td><p>Name of the method parameter.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">message</span></td>
-        <td><p>Text výnimky.</p>
+        <td><p>Custom exception message.</p>
 </td>
       </tr>
     </tbody>
@@ -985,7 +1015,7 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">T</span></td>
-        <td><p>Vstupný parameter <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
+        <td><p>Input value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -1001,7 +1031,7 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td><p>Typ parametra.</p>
+        <td><p>Type of the <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -1017,15 +1047,14 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Hodnota parametra je v zadanom zozname.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is in the list <code data-dev-comment-type="paramref" class="paramref">list</code>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Utils_Check_IsNotOfType_" data-uid="Kros.Utils.Check.IsNotOfType*"></a>
   <h4 id="Kros_Utils_Check_IsNotOfType_System_Object_System_Type_System_String_" data-uid="Kros.Utils.Check.IsNotOfType(System.Object,System.Type,System.String)">IsNotOfType(Object, Type, String)</h4>
-  <div class="markdown level1 summary"><p>Parameter <code data-dev-comment-type="paramref" class="paramref">param</code> nesmie byť zadaného typu <code data-dev-comment-type="paramref" class="paramref">notExpectedType</code>. Vyvolaná výnimka má
-nastavené meno parametra.</p>
+  <div class="markdown level1 summary"><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> must not be of type <code data-dev-comment-type="paramref" class="paramref">notExpectedType</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1045,19 +1074,19 @@ nastavené meno parametra.</p>
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Parameter.</p>
+        <td><p>Validated value.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Type</span></td>
         <td><span class="parametername">notExpectedType</span></td>
-        <td><p>Parameter nesmie byť tohto typu.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> must not be of this type.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">paramName</span></td>
-        <td><p>Meno parametra.</p>
+        <td><p>Name of the method parameter.</p>
 </td>
       </tr>
     </tbody>
@@ -1073,15 +1102,15 @@ nastavené meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Parameter je zadaného typu.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is of forbidden type.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Utils_Check_IsNotOfType_" data-uid="Kros.Utils.Check.IsNotOfType*"></a>
   <h4 id="Kros_Utils_Check_IsNotOfType_System_Object_System_Type_System_String_System_String_" data-uid="Kros.Utils.Check.IsNotOfType(System.Object,System.Type,System.String,System.String)">IsNotOfType(Object, Type, String, String)</h4>
-  <div class="markdown level1 summary"><p>Parameter <code data-dev-comment-type="paramref" class="paramref">param</code> nesmie byť zadaného typu <code data-dev-comment-type="paramref" class="paramref">notExpectedType</code>. Vyvolaná výnimka má
-nastavený text a meno parametra.</p>
+  <div class="markdown level1 summary"><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> must not be of type <code data-dev-comment-type="paramref" class="paramref">notExpectedType</code>.
+Thrown exception has custom message <code data-dev-comment-type="paramref" class="paramref">message</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1101,25 +1130,25 @@ nastavený text a meno parametra.</p>
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Parameter.</p>
+        <td><p>Validated value.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Type</span></td>
         <td><span class="parametername">notExpectedType</span></td>
-        <td><p>Parameter nesmie byť tohto typu.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> must not be of this type.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">paramName</span></td>
-        <td><p>Meno parametra.</p>
+        <td><p>Name of the method parameter.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">message</span></td>
-        <td><p>Text výnimky.</p>
+        <td><p>Custom exception message.</p>
 </td>
       </tr>
     </tbody>
@@ -1135,15 +1164,14 @@ nastavený text a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Parameter je zadaného typu.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is of forbidden type.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Utils_Check_IsNotOfType_" data-uid="Kros.Utils.Check.IsNotOfType*"></a>
   <h4 id="Kros_Utils_Check_IsNotOfType__1_System_Object_System_String_" data-uid="Kros.Utils.Check.IsNotOfType``1(System.Object,System.String)">IsNotOfType&lt;T&gt;(Object, String)</h4>
-  <div class="markdown level1 summary"><p>Parameter <code data-dev-comment-type="paramref" class="paramref">param</code> nesmie byť zadaného typu <code data-dev-comment-type="typeparamref" class="typeparamref">T</code>. Vyvolaná výnimka má
-nastavené meno parametra.</p>
+  <div class="markdown level1 summary"><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> must not be of given type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1163,13 +1191,13 @@ nastavené meno parametra.</p>
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Parameter.</p>
+        <td><p>Validated value.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">paramName</span></td>
-        <td><p>Meno parametra.</p>
+        <td><p>Name of the method parameter.</p>
 </td>
       </tr>
     </tbody>
@@ -1185,7 +1213,7 @@ nastavené meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td><p>Parameter nesmie byť tohto typu.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> must not be of this type.</p>
 </td>
       </tr>
     </tbody>
@@ -1201,15 +1229,15 @@ nastavené meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Parameter je zadaného typu.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is of forbidden type.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Utils_Check_IsNotOfType_" data-uid="Kros.Utils.Check.IsNotOfType*"></a>
   <h4 id="Kros_Utils_Check_IsNotOfType__1_System_Object_System_String_System_String_" data-uid="Kros.Utils.Check.IsNotOfType``1(System.Object,System.String,System.String)">IsNotOfType&lt;T&gt;(Object, String, String)</h4>
-  <div class="markdown level1 summary"><p>Parameter <code data-dev-comment-type="paramref" class="paramref">param</code> nesmie byť zadaného typu <code data-dev-comment-type="typeparamref" class="typeparamref">T</code>. Vyvolaná výnimka má
-nastavený text a meno parametra.</p>
+  <div class="markdown level1 summary"><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> must not be of given type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code>.
+Thrown exception has custom message <code data-dev-comment-type="paramref" class="paramref">message</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1229,19 +1257,19 @@ nastavený text a meno parametra.</p>
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Parameter.</p>
+        <td><p>Validated value.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">paramName</span></td>
-        <td><p>Meno parametra.</p>
+        <td><p>Name of the method parameter.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">message</span></td>
-        <td><p>Text výnimky.</p>
+        <td><p>Custom exception message.</p>
 </td>
       </tr>
     </tbody>
@@ -1257,7 +1285,7 @@ nastavený text a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td><p>Parameter nesmie byť tohto typu.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> must not be of this type.</p>
 </td>
       </tr>
     </tbody>
@@ -1273,15 +1301,14 @@ nastavený text a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Parameter je zadaného typu.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is of forbidden type.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Utils_Check_IsOfType_" data-uid="Kros.Utils.Check.IsOfType*"></a>
   <h4 id="Kros_Utils_Check_IsOfType_System_Object_System_Type_System_String_" data-uid="Kros.Utils.Check.IsOfType(System.Object,System.Type,System.String)">IsOfType(Object, Type, String)</h4>
-  <div class="markdown level1 summary"><p>Parameter <code data-dev-comment-type="paramref" class="paramref">param</code> musí byť zadaného typu <code data-dev-comment-type="paramref" class="paramref">expectedType</code>. Vyvolaná výnimka má
-nastavené meno parametra.</p>
+  <div class="markdown level1 summary"><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> must be of given type <code data-dev-comment-type="paramref" class="paramref">expectedType</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1301,19 +1328,19 @@ nastavené meno parametra.</p>
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Parameter.</p>
+        <td><p>Validated value.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Type</span></td>
         <td><span class="parametername">expectedType</span></td>
-        <td><p>Typ, ktorého musí parameter byť.</p>
+        <td><p>Required type of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">paramName</span></td>
-        <td><p>Meno parametra.</p>
+        <td><p>Name of the method parameter.</p>
 </td>
       </tr>
     </tbody>
@@ -1329,15 +1356,15 @@ nastavené meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Parameter nie je požadovaného typu.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is not of required type.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Utils_Check_IsOfType_" data-uid="Kros.Utils.Check.IsOfType*"></a>
   <h4 id="Kros_Utils_Check_IsOfType_System_Object_System_Type_System_String_System_String_" data-uid="Kros.Utils.Check.IsOfType(System.Object,System.Type,System.String,System.String)">IsOfType(Object, Type, String, String)</h4>
-  <div class="markdown level1 summary"><p>Parameter <code data-dev-comment-type="paramref" class="paramref">param</code> musí byť zadaného typu <code data-dev-comment-type="paramref" class="paramref">expectedType</code>. Vyvolaná výnimka má
-nastavený text a meno parametra.</p>
+  <div class="markdown level1 summary"><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> must be of given type <code data-dev-comment-type="paramref" class="paramref">expectedType</code>.
+Thrown exception has custom message <code data-dev-comment-type="paramref" class="paramref">message</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1357,25 +1384,25 @@ nastavený text a meno parametra.</p>
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Parameter.</p>
+        <td><p>Validated value.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Type</span></td>
         <td><span class="parametername">expectedType</span></td>
-        <td><p>Typ, ktorého musí parameter byť.</p>
+        <td><p>Required type of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">paramName</span></td>
-        <td><p>Meno parametra.</p>
+        <td><p>Name of the method parameter.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">message</span></td>
-        <td><p>Text výnimky.</p>
+        <td><p>Custom exception message.</p>
 </td>
       </tr>
     </tbody>
@@ -1391,15 +1418,14 @@ nastavený text a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Parameter nie je požadovaného typu.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is not of required type.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Utils_Check_IsOfType_" data-uid="Kros.Utils.Check.IsOfType*"></a>
   <h4 id="Kros_Utils_Check_IsOfType__1_System_Object_System_String_" data-uid="Kros.Utils.Check.IsOfType``1(System.Object,System.String)">IsOfType&lt;T&gt;(Object, String)</h4>
-  <div class="markdown level1 summary"><p>Parameter <code data-dev-comment-type="paramref" class="paramref">param</code> musí byť zadaného typu <code data-dev-comment-type="typeparamref" class="typeparamref">T</code>. Vyvolaná výnimka má nastavené
-meno parametra.</p>
+  <div class="markdown level1 summary"><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> must be of given type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1419,13 +1445,13 @@ meno parametra.</p>
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Parameter.</p>
+        <td><p>Validated value.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">paramName</span></td>
-        <td><p>Meno parametra.</p>
+        <td><p>Name of the method parameter.</p>
 </td>
       </tr>
     </tbody>
@@ -1441,7 +1467,7 @@ meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td><p>Typ, ktorého musí parameter byť.</p>
+        <td><p>Expected type of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -1457,15 +1483,15 @@ meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Parameter nie je požadovaného typu.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is not of required type.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Utils_Check_IsOfType_" data-uid="Kros.Utils.Check.IsOfType*"></a>
   <h4 id="Kros_Utils_Check_IsOfType__1_System_Object_System_String_System_String_" data-uid="Kros.Utils.Check.IsOfType``1(System.Object,System.String,System.String)">IsOfType&lt;T&gt;(Object, String, String)</h4>
-  <div class="markdown level1 summary"><p>Parameter <code data-dev-comment-type="paramref" class="paramref">param</code> musí byť zadaného typu <code data-dev-comment-type="typeparamref" class="typeparamref">T</code>. Vyvolaná výnimka má nastavený text
-a meno parametra.</p>
+  <div class="markdown level1 summary"><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> must be of given type <code data-dev-comment-type="typeparamref" class="typeparamref">T</code>.
+Thrown exception has custom message <code data-dev-comment-type="paramref" class="paramref">message</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1485,19 +1511,19 @@ a meno parametra.</p>
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Parameter.</p>
+        <td><p>Validated value.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">paramName</span></td>
-        <td><p>Meno parametra.</p>
+        <td><p>Name of the method parameter.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">message</span></td>
-        <td><p>Text výnimky.</p>
+        <td><p>Custom exception message.</p>
 </td>
       </tr>
     </tbody>
@@ -1513,7 +1539,7 @@ a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td><p>Typ, ktorého musí parameter byť.</p>
+        <td><p>Expected type of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -1529,20 +1555,20 @@ a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Parameter nie je požadovaného typu.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is not of required type.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Utils_Check_LessOrEqualThan_" data-uid="Kros.Utils.Check.LessOrEqualThan*"></a>
   <h4 id="Kros_Utils_Check_LessOrEqualThan__1___0___0_System_String_" data-uid="Kros.Utils.Check.LessOrEqualThan``1(``0,``0,System.String)">LessOrEqualThan&lt;T&gt;(T, T, String)</h4>
-  <div class="markdown level1 summary"><p>Hodnota parametra <code data-dev-comment-type="paramref" class="paramref">param</code> musí byť menšia, alebo rovná <code data-dev-comment-type="paramref" class="paramref">value</code>.
-Vyvolaná výnimka má nastavené meno parametra.</p>
+  <div class="markdown level1 summary"><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> must be less or equal than <code data-dev-comment-type="paramref" class="paramref">value</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static T LessOrEqualThan&lt;T&gt;(T param, T value, string paramName)
+
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1558,19 +1584,19 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Parameter.</p>
+        <td><p>Validated value.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">value</span></td>
-        <td><p>Hodnota, s ktorou sa parameter porovnáva.</p>
+        <td><p>Checked value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">paramName</span></td>
-        <td><p>Meno parametra.</p>
+        <td><p>Name of the method parameter.</p>
 </td>
       </tr>
     </tbody>
@@ -1586,7 +1612,7 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">T</span></td>
-        <td><p>Vstupný parameter <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
+        <td><p>Input value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -1602,7 +1628,7 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td><p>Typ parametra.</p>
+        <td><p>Type of the <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -1618,20 +1644,22 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Hodnota parametra je väčšia zadanej hodnote.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is greater than
+<code data-dev-comment-type="paramref" class="paramref">value</code>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Utils_Check_LessOrEqualThan_" data-uid="Kros.Utils.Check.LessOrEqualThan*"></a>
   <h4 id="Kros_Utils_Check_LessOrEqualThan__1___0___0_System_String_System_String_" data-uid="Kros.Utils.Check.LessOrEqualThan``1(``0,``0,System.String,System.String)">LessOrEqualThan&lt;T&gt;(T, T, String, String)</h4>
-  <div class="markdown level1 summary"><p>Hodnota parametra <code data-dev-comment-type="paramref" class="paramref">param</code> musí byť menšia, alebo rovná <code data-dev-comment-type="paramref" class="paramref">value</code>.
-Vyvolaná výnimka má nastavený text a meno parametra.</p>
+  <div class="markdown level1 summary"><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> must be less or equal than <code data-dev-comment-type="paramref" class="paramref">value</code>.
+Thrown exception has custom message <code data-dev-comment-type="paramref" class="paramref">message</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static T LessOrEqualThan&lt;T&gt;(T param, T value, string paramName, string message)
+
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1647,25 +1675,25 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Parameter.</p>
+        <td><p>Validated value.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">value</span></td>
-        <td><p>Hodnota, s ktorou sa parameter porovnáva.</p>
+        <td><p>Checked value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">paramName</span></td>
-        <td><p>Meno parametra.</p>
+        <td><p>Name of the method parameter.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">message</span></td>
-        <td><p>Text výnimky.</p>
+        <td><p>Custom exception message.</p>
 </td>
       </tr>
     </tbody>
@@ -1681,7 +1709,7 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">T</span></td>
-        <td><p>Vstupný parameter <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
+        <td><p>Input value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -1697,7 +1725,7 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td><p>Typ parametra.</p>
+        <td><p>Type of the <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -1713,20 +1741,21 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Hodnota parametra je väčšia zadanej hodnote.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is greater than
+<code data-dev-comment-type="paramref" class="paramref">value</code>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Utils_Check_LessThan_" data-uid="Kros.Utils.Check.LessThan*"></a>
   <h4 id="Kros_Utils_Check_LessThan__1___0___0_System_String_" data-uid="Kros.Utils.Check.LessThan``1(``0,``0,System.String)">LessThan&lt;T&gt;(T, T, String)</h4>
-  <div class="markdown level1 summary"><p>Hodnota parametra <code data-dev-comment-type="paramref" class="paramref">param</code> musí byť menšia ako <code data-dev-comment-type="paramref" class="paramref">value</code>.
-Vyvolaná výnimka má nastavené meno parametra.</p>
+  <div class="markdown level1 summary"><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> must be less than <code data-dev-comment-type="paramref" class="paramref">value</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static T LessThan&lt;T&gt;(T param, T value, string paramName)
+
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1742,19 +1771,19 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Parameter.</p>
+        <td><p>Validated value.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">value</span></td>
-        <td><p>Hodnota, s ktorou sa parameter porovnáva.</p>
+        <td><p>Checked value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">paramName</span></td>
-        <td><p>Meno parametra.</p>
+        <td><p>Name of the method parameter.</p>
 </td>
       </tr>
     </tbody>
@@ -1770,7 +1799,7 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">T</span></td>
-        <td><p>Vstupný parameter <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
+        <td><p>Input value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -1786,7 +1815,7 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td><p>Typ parametra.</p>
+        <td><p>Type of the <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -1802,20 +1831,22 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Hodnota parametra je väčšia, alebo rovná zadanej hodnote.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is greater or equal than
+<code data-dev-comment-type="paramref" class="paramref">value</code>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Utils_Check_LessThan_" data-uid="Kros.Utils.Check.LessThan*"></a>
   <h4 id="Kros_Utils_Check_LessThan__1___0___0_System_String_System_String_" data-uid="Kros.Utils.Check.LessThan``1(``0,``0,System.String,System.String)">LessThan&lt;T&gt;(T, T, String, String)</h4>
-  <div class="markdown level1 summary"><p>Hodnota parametra <code data-dev-comment-type="paramref" class="paramref">param</code> musí byť menšia ako <code data-dev-comment-type="paramref" class="paramref">value</code>.
-Vyvolaná výnimka má nastavený text a meno parametra.</p>
+  <div class="markdown level1 summary"><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> must be less than <code data-dev-comment-type="paramref" class="paramref">value</code>.
+Thrown exception has custom message <code data-dev-comment-type="paramref" class="paramref">message</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static T LessThan&lt;T&gt;(T param, T value, string paramName, string message)
+
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1831,25 +1862,25 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Parameter.</p>
+        <td><p>Validated value.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">value</span></td>
-        <td><p>Hodnota, s ktorou sa parameter porovnáva.</p>
+        <td><p>Checked value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">paramName</span></td>
-        <td><p>Meno parametra.</p>
+        <td><p>Name of the method parameter.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">message</span></td>
-        <td><p>Text výnimky.</p>
+        <td><p>Custom exception message.</p>
 </td>
       </tr>
     </tbody>
@@ -1865,7 +1896,7 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">T</span></td>
-        <td><p>Vstupný parameter <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
+        <td><p>Input value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -1881,7 +1912,7 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td><p>Typ parametra.</p>
+        <td><p>Type of the <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -1897,15 +1928,15 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Hodnota parametra je väčšia, alebo rovná zadanej hodnote.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is greater or equal than
+<code data-dev-comment-type="paramref" class="paramref">value</code>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Utils_Check_NotEmptyGuid_" data-uid="Kros.Utils.Check.NotEmptyGuid*"></a>
   <h4 id="Kros_Utils_Check_NotEmptyGuid_System_Guid_System_String_" data-uid="Kros.Utils.Check.NotEmptyGuid(System.Guid,System.String)">NotEmptyGuid(Guid, String)</h4>
-  <div class="markdown level1 summary"><p>Parameter <code data-dev-comment-type="paramref" class="paramref">param</code> nesmie byť prázdny GUID (<span class="xref">System.Guid.Empty</span>). Vyvolaná výnimka má nastavené
-meno parametra.</p>
+  <div class="markdown level1 summary"><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> can not be empty GUID (<span class="xref">System.Guid.Empty</span>).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1925,13 +1956,13 @@ meno parametra.</p>
       <tr>
         <td><span class="xref">System.Guid</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Parameter.</p>
+        <td><p>Validated value.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">paramName</span></td>
-        <td><p>Meno parametra.</p>
+        <td><p>Name of the method parameter.</p>
 </td>
       </tr>
     </tbody>
@@ -1947,7 +1978,7 @@ meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Guid</span></td>
-        <td><p>Vstupný parameter <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
+        <td><p>Input value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -1970,8 +2001,8 @@ meno parametra.</p>
   </table>
   <a id="Kros_Utils_Check_NotEmptyGuid_" data-uid="Kros.Utils.Check.NotEmptyGuid*"></a>
   <h4 id="Kros_Utils_Check_NotEmptyGuid_System_Guid_System_String_System_String_" data-uid="Kros.Utils.Check.NotEmptyGuid(System.Guid,System.String,System.String)">NotEmptyGuid(Guid, String, String)</h4>
-  <div class="markdown level1 summary"><p>Parameter <code data-dev-comment-type="paramref" class="paramref">param</code> nesmie byť prázdny GUID (<span class="xref">System.Guid.Empty</span>). Vyvolaná výnimka má nastavený
-text a meno parametra.</p>
+  <div class="markdown level1 summary"><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> can not be empty GUID (<span class="xref">System.Guid.Empty</span>).
+Thrown exception has custom message <code data-dev-comment-type="paramref" class="paramref">message</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1991,19 +2022,19 @@ text a meno parametra.</p>
       <tr>
         <td><span class="xref">System.Guid</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Parameter.</p>
+        <td><p>Validated value.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">paramName</span></td>
-        <td><p>Meno parametra.</p>
+        <td><p>Name of the method parameter.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">message</span></td>
-        <td><p>Text výnimky.</p>
+        <td><p>Custom exception message.</p>
 </td>
       </tr>
     </tbody>
@@ -2019,7 +2050,7 @@ text a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Guid</span></td>
-        <td><p>Vstupný parameter <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
+        <td><p>Input value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -2035,15 +2066,14 @@ text a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Paramere je prázdny GUID (<span class="xref">System.Guid.Empty</span>).</p>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">param</code> is empty GUID (<span class="xref">System.Guid.Empty</span>).</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Utils_Check_NotEqual_" data-uid="Kros.Utils.Check.NotEqual*"></a>
   <h4 id="Kros_Utils_Check_NotEqual__1___0___0_System_String_" data-uid="Kros.Utils.Check.NotEqual``1(``0,``0,System.String)">NotEqual&lt;T&gt;(T, T, String)</h4>
-  <div class="markdown level1 summary"><p>Hodnota parametra <code data-dev-comment-type="paramref" class="paramref">param</code> nesmie byť <code data-dev-comment-type="paramref" class="paramref">value</code>.
-Vyvolaná výnimka má nastavené meno parametra.</p>
+  <div class="markdown level1 summary"><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> must not be <code data-dev-comment-type="paramref" class="paramref">value</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -2063,19 +2093,19 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Parameter.</p>
+        <td><p>Validated value.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">value</span></td>
-        <td><p>Rozdielna hodnota parametera.</p>
+        <td><p>Checked value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">paramName</span></td>
-        <td><p>Meno parametra.</p>
+        <td><p>Name of the method parameter.</p>
 </td>
       </tr>
     </tbody>
@@ -2091,7 +2121,7 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">T</span></td>
-        <td><p>Vstupný parameter <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
+        <td><p>Input value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -2107,7 +2137,7 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td><p>Typ parametra.</p>
+        <td><p>Type of the <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -2123,15 +2153,15 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Parameter má rovnakú hodnotu.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is <code data-dev-comment-type="paramref" class="paramref">value</code>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Utils_Check_NotEqual_" data-uid="Kros.Utils.Check.NotEqual*"></a>
   <h4 id="Kros_Utils_Check_NotEqual__1___0___0_System_String_System_String_" data-uid="Kros.Utils.Check.NotEqual``1(``0,``0,System.String,System.String)">NotEqual&lt;T&gt;(T, T, String, String)</h4>
-  <div class="markdown level1 summary"><p>Hodnota parametra <code data-dev-comment-type="paramref" class="paramref">param</code> nesmie byť <code data-dev-comment-type="paramref" class="paramref">value</code>.
-Vyvolaná výnimka má nastavený text a meno parametra.</p>
+  <div class="markdown level1 summary"><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> must not be <code data-dev-comment-type="paramref" class="paramref">value</code>.
+Thrown exception has custom message <code data-dev-comment-type="paramref" class="paramref">message</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -2151,25 +2181,25 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Parameter.</p>
+        <td><p>Validated value.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">value</span></td>
-        <td><p>Rozdielna hodnota parametera.</p>
+        <td><p>Checked value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">paramName</span></td>
-        <td><p>Meno parametra.</p>
+        <td><p>Name of the method parameter.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">message</span></td>
-        <td><p>Text výnimky.</p>
+        <td><p>Custom exception message.</p>
 </td>
       </tr>
     </tbody>
@@ -2185,7 +2215,7 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">T</span></td>
-        <td><p>Vstupný parameter <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
+        <td><p>Input value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -2201,7 +2231,7 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td><p>Typ parametra.</p>
+        <td><p>Type of the <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -2217,15 +2247,14 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Parameter má rovnakú hodnotu.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is <code data-dev-comment-type="paramref" class="paramref">value</code>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Utils_Check_NotNull_" data-uid="Kros.Utils.Check.NotNull*"></a>
   <h4 id="Kros_Utils_Check_NotNull__1___0_System_String_" data-uid="Kros.Utils.Check.NotNull``1(``0,System.String)">NotNull&lt;T&gt;(T, String)</h4>
-  <div class="markdown level1 summary"><p>Parameter <code data-dev-comment-type="paramref" class="paramref">param</code> nesmie byť <code>null</code>. Vyvolaná výnimka má nastavené meno
-parametra.</p>
+  <div class="markdown level1 summary"><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> can not be <span class="xref">null</span>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -2245,13 +2274,13 @@ parametra.</p>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Parameter.</p>
+        <td><p>Validated value.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">paramName</span></td>
-        <td><p>Meno parametra.</p>
+        <td><p>Name of the method parameter.</p>
 </td>
       </tr>
     </tbody>
@@ -2267,7 +2296,7 @@ parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">T</span></td>
-        <td><p>Vstupný parameter <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
+        <td><p>Input value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -2283,7 +2312,7 @@ parametra.</p>
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td><p>Typ vstupného parametra.</p>
+        <td><p>Type of the <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -2299,15 +2328,15 @@ parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Hodnota parametra <code data-dev-comment-type="paramref" class="paramref">param</code> je <code>null</code>.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is <span class="xref">null</span>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Utils_Check_NotNull_" data-uid="Kros.Utils.Check.NotNull*"></a>
   <h4 id="Kros_Utils_Check_NotNull__1___0_System_String_System_String_" data-uid="Kros.Utils.Check.NotNull``1(``0,System.String,System.String)">NotNull&lt;T&gt;(T, String, String)</h4>
-  <div class="markdown level1 summary"><p>Parameter <code data-dev-comment-type="paramref" class="paramref">param</code> nesmie byť <code>null</code>. Vyvolaná výnimka má nastavený text
-a meno parametra.</p>
+  <div class="markdown level1 summary"><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> can not be <span class="xref">null</span>.
+Thrown exception has custom message <code data-dev-comment-type="paramref" class="paramref">message</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -2327,19 +2356,19 @@ a meno parametra.</p>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Parameter.</p>
+        <td><p>Validated value.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">paramName</span></td>
-        <td><p>Meno parametra.</p>
+        <td><p>Name of the method parameter.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">message</span></td>
-        <td><p>Text výnimky.</p>
+        <td><p>Custom exception message.</p>
 </td>
       </tr>
     </tbody>
@@ -2355,7 +2384,7 @@ a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">T</span></td>
-        <td><p>Vstupný parameter <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
+        <td><p>Input value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -2371,7 +2400,7 @@ a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td><p>Typ vstupného parametra.</p>
+        <td><p>Type of the <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -2387,15 +2416,14 @@ a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Hodnota parametra <code data-dev-comment-type="paramref" class="paramref">param</code> je <code>null</code>.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is <span class="xref">null</span>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Utils_Check_NotNullOrEmpty_" data-uid="Kros.Utils.Check.NotNullOrEmpty*"></a>
   <h4 id="Kros_Utils_Check_NotNullOrEmpty_System_String_System_String_" data-uid="Kros.Utils.Check.NotNullOrEmpty(System.String,System.String)">NotNullOrEmpty(String, String)</h4>
-  <div class="markdown level1 summary"><p>Parameter <code data-dev-comment-type="paramref" class="paramref">param</code> nesmie byť <code>null</code>, ani prázdny reťazec.
-Vyvolaná výnimka má nastavené meno parametra.</p>
+  <div class="markdown level1 summary"><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> can not be <span class="xref">null</span>, nor empty string.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -2415,13 +2443,13 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Parameter.</p>
+        <td><p>Validated value.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">paramName</span></td>
-        <td><p>Meno parametra.</p>
+        <td><p>Name of the method parameter.</p>
 </td>
       </tr>
     </tbody>
@@ -2437,7 +2465,7 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><p>Vstupný parameter <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
+        <td><p>Input value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -2453,20 +2481,20 @@ Vyvolaná výnimka má nastavené meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Parameter má hodnotu <code>null</code>.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is <span class="xref">null</span>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Parameter je prázdny reťazec.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is empty string.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Utils_Check_NotNullOrEmpty_" data-uid="Kros.Utils.Check.NotNullOrEmpty*"></a>
   <h4 id="Kros_Utils_Check_NotNullOrEmpty_System_String_System_String_System_String_" data-uid="Kros.Utils.Check.NotNullOrEmpty(System.String,System.String,System.String)">NotNullOrEmpty(String, String, String)</h4>
-  <div class="markdown level1 summary"><p>Parameter <code data-dev-comment-type="paramref" class="paramref">param</code> nesmie byť <code>null</code>, ani prázdny reťazec.
-Vyvolaná výnimka má nastavený text a meno parametra.</p>
+  <div class="markdown level1 summary"><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> can not be <span class="xref">null</span>, nor empty string.
+Thrown exception has custom message <code data-dev-comment-type="paramref" class="paramref">message</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -2486,19 +2514,19 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Parameter.</p>
+        <td><p>Validated value.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">paramName</span></td>
-        <td><p>Meno parametra.</p>
+        <td><p>Name of the method parameter.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">message</span></td>
-        <td><p>Text výnimky.</p>
+        <td><p>Custom exception message.</p>
 </td>
       </tr>
     </tbody>
@@ -2514,7 +2542,7 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><p>Vstupný parameter <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
+        <td><p>Input value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -2530,20 +2558,20 @@ Vyvolaná výnimka má nastavený text a meno parametra.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Parameter má hodnotu <code>null</code>.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is <span class="xref">null</span>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Parameter je prázdny reťazec.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is empty string.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Utils_Check_NotNullOrWhiteSpace_" data-uid="Kros.Utils.Check.NotNullOrWhiteSpace*"></a>
   <h4 id="Kros_Utils_Check_NotNullOrWhiteSpace_System_String_System_String_" data-uid="Kros.Utils.Check.NotNullOrWhiteSpace(System.String,System.String)">NotNullOrWhiteSpace(String, String)</h4>
-  <div class="markdown level1 summary"><p>Parameter <code data-dev-comment-type="paramref" class="paramref">param</code> nesmie byť <code>null</code>, ani prázdny reťazec, ani reťazec
-zložený iba z bielych znakov. Vyvolaná výnimka má nastavené meno parametra.</p>
+  <div class="markdown level1 summary"><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> can not be <span class="xref">null</span>, empty string, nor string containing
+only whitespace characters.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -2563,13 +2591,13 @@ zložený iba z bielych znakov. Vyvolaná výnimka má nastavené meno parametra
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Parameter.</p>
+        <td><p>Validated value.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">paramName</span></td>
-        <td><p>Meno parametra.</p>
+        <td><p>Name of the method parameter.</p>
 </td>
       </tr>
     </tbody>
@@ -2585,7 +2613,7 @@ zložený iba z bielych znakov. Vyvolaná výnimka má nastavené meno parametra
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><p>Vstupný parameter <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
+        <td><p>Input value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -2601,20 +2629,22 @@ zložený iba z bielych znakov. Vyvolaná výnimka má nastavené meno parametra
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Parameter má hodnotu <code>null</code>.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is <span class="xref">null</span>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Parameter je prázdny reťazec, alebo reťazec zložený iba z bielych znakov.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is empty string or string containing
+only whitespace characters.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Utils_Check_NotNullOrWhiteSpace_" data-uid="Kros.Utils.Check.NotNullOrWhiteSpace*"></a>
   <h4 id="Kros_Utils_Check_NotNullOrWhiteSpace_System_String_System_String_System_String_" data-uid="Kros.Utils.Check.NotNullOrWhiteSpace(System.String,System.String,System.String)">NotNullOrWhiteSpace(String, String, String)</h4>
-  <div class="markdown level1 summary"><p>Parameter <code data-dev-comment-type="paramref" class="paramref">param</code> nesmie byť <code>null</code>, ani prázdny reťazec, ani reťazec
-zložený iba z bielych znakov. Vyvolaná výnimka má nastavený text a meno parametra.</p>
+  <div class="markdown level1 summary"><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> can not be <span class="xref">null</span>, empty string, nor string containing
+only whitespace characters.
+Thrown exception has custom message <code data-dev-comment-type="paramref" class="paramref">message</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -2634,19 +2664,19 @@ zložený iba z bielych znakov. Vyvolaná výnimka má nastavený text a meno pa
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">param</span></td>
-        <td><p>Parameter.</p>
+        <td><p>Validated value.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">paramName</span></td>
-        <td><p>Meno parametra.</p>
+        <td><p>Name of the method parameter.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">message</span></td>
-        <td><p>Text výnimky.</p>
+        <td><p>Custom exception message.</p>
 </td>
       </tr>
     </tbody>
@@ -2662,7 +2692,7 @@ zložený iba z bielych znakov. Vyvolaná výnimka má nastavený text a meno pa
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><p>Vstupný parameter <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
+        <td><p>Input value of <code data-dev-comment-type="paramref" class="paramref">param</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -2678,12 +2708,13 @@ zložený iba z bielych znakov. Vyvolaná výnimka má nastavený text a meno pa
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Parameter má hodnotu <code>null</code>.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is <span class="xref">null</span>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Parameter je prázdny reťazec, alebo reťazec zložený iba z bielych znakov.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">param</code> is empty string or string containing
+only whitespace characters.</p>
 </td>
       </tr>
     </tbody>

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Namespace Kros.Data.BulkActions
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -88,25 +88,30 @@
     <h3 id="classes">Classes
   </h3>
       <h4><a class="xref" href="Kros.Data.BulkActions.BulkActionDataReader.html">BulkActionDataReader</a></h4>
-      <section><p>Obálka, ktorá jednoduché rozhranie <a class="xref" href="Kros.Data.BulkActions.IBulkActionDataReader.html">IBulkActionDataReader</a>, zverejní ako komplikovanejší
-<span class="xref">System.Data.IDataReader</span>.</p>
+      <section><p>Wrapper, which extends simple <a class="xref" href="Kros.Data.BulkActions.IBulkActionDataReader.html">IBulkActionDataReader</a> to more complex <span class="xref">System.Data.IDataReader</span>.</p>
+</section>
+      <h4><a class="xref" href="Kros.Data.BulkActions.BulkActionFactories.html">BulkActionFactories</a></h4>
+      <section><p>Representing set of registered <a class="xref" href="Kros.Data.BulkActions.IBulkActionFactory.html">IBulkActionFactory</a>.</p>
 </section>
       <h4><a class="xref" href="Kros.Data.BulkActions.BulkUpdateBase.html">BulkUpdateBase</a></h4>
-      <section><p>Spoločný predok pre bulk update.</p>
+      <section><p>Common base class for BulkUpdate.</p>
 </section>
       <h4><a class="xref" href="Kros.Data.BulkActions.EnumerableDataReader-1.html">EnumerableDataReader&lt;T&gt;</a></h4>
-      <section><p>Implementácia rozhrania <a class="xref" href="Kros.Data.BulkActions.IBulkActionDataReader.html">IBulkActionDataReader</a> nad ľubovoľným zoznamom objektov.</p>
+      <section><p><a class="xref" href="Kros.Data.BulkActions.IBulkActionDataReader.html">IBulkActionDataReader</a> implementation for any list of objects.</p>
 </section>
     <h3 id="interfaces">Interfaces
   </h3>
       <h4><a class="xref" href="Kros.Data.BulkActions.IBulkActionDataReader.html">IBulkActionDataReader</a></h4>
-      <section><p>Rozhranie pre zdroj dát pre <a class="xref" href="Kros.Data.BulkActions.IBulkInsert.html">IBulkInsert</a>.</p>
+      <section><p>Interface for data source used in bulk actions (<a class="xref" href="Kros.Data.BulkActions.IBulkInsert.html">IBulkInsert</a>, <a class="xref" href="Kros.Data.BulkActions.IBulkUpdate.html">IBulkUpdate</a>).</p>
+</section>
+      <h4><a class="xref" href="Kros.Data.BulkActions.IBulkActionFactory.html">IBulkActionFactory</a></h4>
+      <section><p>Creates instances of <a class="xref" href="Kros.Data.BulkActions.IBulkInsert.html">IBulkInsert</a> and <a class="xref" href="Kros.Data.BulkActions.IBulkUpdate.html">IBulkUpdate</a> for bulk actions.</p>
 </section>
       <h4><a class="xref" href="Kros.Data.BulkActions.IBulkInsert.html">IBulkInsert</a></h4>
-      <section><p>Rozhranie pre rýchle hromadné vkladanie dát do databázy.</p>
+      <section><p>Interface for fast data inserting into database.</p>
 </section>
       <h4><a class="xref" href="Kros.Data.BulkActions.IBulkUpdate.html">IBulkUpdate</a></h4>
-      <section><p>Rozhranie pre rýchlu hromadnú editáciu dát v databáze.</p>
+      <section><p>Interface for fast data updating in database.</p>
 </section>
 </article>
           </div>

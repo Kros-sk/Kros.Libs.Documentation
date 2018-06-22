@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IFilteredQuery&lt;T&gt;
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -169,7 +169,7 @@
     </tbody>
   </table>
   <h5 id="Kros_KORM_Query_IFilteredQuery_1_GroupBy_System_String__examples">Examples</h5>
-  <pre><code source="..\Examples\Kros.KORM.Examples\IQueryExample.cs" region="GroupBy"></code></pre>
+  <pre><code class="cs" source="..\..\..\..\Documentation\Examples\Kros.KORM.Examples\IQueryExample.cs" region="GroupBy">                var people = database.Query&lt;Person>().GroupBy(&quot;FirstName, LastName&quot;);</code></pre>
 
   <h5 class="exceptions">Exceptions</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -231,7 +231,7 @@
     </tbody>
   </table>
   <h5 id="Kros_KORM_Query_IFilteredQuery_1_OrderBy_System_String__examples">Examples</h5>
-  <pre><code source="..\Examples\Kros.KORM.Examples\IQueryExample.cs" region="OrderBy"></code></pre>
+  <pre><code class="cs" source="..\..\..\..\Documentation\Examples\Kros.KORM.Examples\IQueryExample.cs" region="OrderBy">                var people = database.Query&lt;Person>().OrderBy(&quot;FirstName DESC, LastName&quot;);</code></pre>
 
   <h5 class="exceptions">Exceptions</h5>
   <table class="table table-bordered table-striped table-condensed">

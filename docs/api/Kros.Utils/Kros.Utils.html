@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Namespace Kros.Utils
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -88,20 +88,17 @@
     <h3 id="classes">Classes
   </h3>
       <h4><a class="xref" href="Kros.Utils.DateTimeProvider.html">DateTimeProvider</a></h4>
-      <section><p>Trieda sprístupňujúca dátum a čas, aby bolo možné &quot;fixovať&quot; čas v testoch</p>
-<ul>
-<li><a class="xref" href="Kros.Utils.DateTimeProvider.html#Kros_Utils_DateTimeProvider_InjectActualDateTime_System_DateTime_">InjectActualDateTime(DateTime)</a>.</li>
-</ul>
+      <section><p>Class for &quot;freezing&quot; date and time to constant value. Usable for example in tests.</p>
 </section>
       <h4><a class="xref" href="Kros.Utils.Check.html">Check</a></h4>
-      <section><p>Pomocná trieda na kontrolu argumentov metód. Každá kontrola, ak zlyhá, vyvolá nejaký druh výnimky
-<code>ArgumentException</code> (<span class="xref">System.ArgumentException</span>, <span class="xref">System.ArgumentNullException</span>,
+      <section><p>Helper class for validating method parameters. Every validation throws some kind of <span class="xref">System.ArgumentException</span>
+if it fails (<span class="xref">System.ArgumentException</span>, <span class="xref">System.ArgumentNullException</span>,
 <span class="xref">System.ArgumentOutOfRangeException</span>).</p>
 </section>
       <h4><a class="xref" href="Kros.Utils.Suspender.html">Suspender</a></h4>
-      <section><p>Trieda, umožňujúca jednoduché pozastavenie práce. Pozastaviť prácu (<a class="xref" href="Kros.Utils.Suspender.html#Kros_Utils_Suspender_Suspend">Suspend()</a> je možné
-viackrát/vnorene. V takom prípade je nutné obnoviť prácu toľkokrát, koľkokrát bola pozastavená.
-Ideálne je používať <code>using</code> blok.</p>
+      <section><p>Class for simple work suspending. It is poosible to suspend work (<a class="xref" href="Kros.Utils.Suspender.html#Kros_Utils_Suspender_Suspend">Suspend()</a>) several times, but in that
+case it is necessary to resume (<span class="xref">Kros.Utils.Suspender.Resume</span>) it the same number of times. The easiest way of suspending
+work is using the <code>using</code> block.</p>
 </section>
     <h3 id="interfaces">Interfaces
   </h3>

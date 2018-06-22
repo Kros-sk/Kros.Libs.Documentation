@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class SqlServerParseDefaultValueEventArgs
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,7 +83,7 @@
   
   <h1 id="Kros_Data_Schema_SqlServer_SqlServerParseDefaultValueEventArgs" data-uid="Kros.Data.Schema.SqlServer.SqlServerParseDefaultValueEventArgs" class="text-break">Class SqlServerParseDefaultValueEventArgs
   </h1>
-  <div class="markdown level0 summary"><p>Argumenty pre udalosť <a class="xref" href="Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.html#Kros_Data_Schema_SqlServer_SqlServerSchemaLoader_ParseDefaultValue">ParseDefaultValue</a>.</p>
+  <div class="markdown level0 summary"><p>Arguments for the event <a class="xref" href="Kros.Data.Schema.SqlServer.SqlServerSchemaLoader.html#Kros_Data_Schema_SqlServer_SqlServerSchemaLoader_ParseDefaultValue">ParseDefaultValue</a>.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -102,7 +102,7 @@
   </h3>
   <a id="Kros_Data_Schema_SqlServer_SqlServerParseDefaultValueEventArgs__ctor_" data-uid="Kros.Data.Schema.SqlServer.SqlServerParseDefaultValueEventArgs.#ctor*"></a>
   <h4 id="Kros_Data_Schema_SqlServer_SqlServerParseDefaultValueEventArgs__ctor_System_String_System_String_System_Data_SqlDbType_System_String_System_Object_" data-uid="Kros.Data.Schema.SqlServer.SqlServerParseDefaultValueEventArgs.#ctor(System.String,System.String,System.Data.SqlDbType,System.String,System.Object)">SqlServerParseDefaultValueEventArgs(String, String, SqlDbType, String, Object)</h4>
-  <div class="markdown level1 summary"><p>Vytvorí a inicializuje inštanciu argumentov.</p>
+  <div class="markdown level1 summary"><p>Creates and initializes instance of arguments.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -122,31 +122,27 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">tableName</span></td>
-        <td><p>Meno tabuľky ktorej schéma sa načítava.</p>
-</td>
+        <td><inheritdoc cref="P:Kros.Data.Schema.SqlServer.SqlServerParseDefaultValueEventArgs.TableName"></inheritdoc></td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">columnName</span></td>
-        <td><p>Meno stĺpca, ktorého predvolená hodnota sa parsuje.</p>
-</td>
+        <td><inheritdoc cref="P:Kros.Data.Schema.SqlServer.SqlServerParseDefaultValueEventArgs.ColumnName"></inheritdoc></td>
       </tr>
       <tr>
         <td><span class="xref">System.Data.SqlDbType</span></td>
         <td><span class="parametername">sqlDbType</span></td>
-        <td><p>Dátový typ stĺpca, ktorého predvolená hodnota sa parsuje.</p>
-</td>
+        <td><inheritdoc cref="P:Kros.Data.Schema.SqlServer.SqlServerParseDefaultValueEventArgs.SqlDbType"></inheritdoc></td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">defaultValueString</span></td>
-        <td><p>Predvolená hodnota stĺpca - reťazec, ktorý sa parsuje.</p>
-</td>
+        <td><inheritdoc cref="P:Kros.Data.Schema.SqlServer.SqlServerParseDefaultValueEventArgs.DefaultValueString"></inheritdoc></td>
       </tr>
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">defaultValue</span></td>
-        <td><p>Hodnota, ktorá bola získaná štandardným parserom.</p>
+        <td><p>Value, which was obtained by default parser.</p>
 </td>
       </tr>
     </tbody>
@@ -155,7 +151,7 @@
   </h3>
   <a id="Kros_Data_Schema_SqlServer_SqlServerParseDefaultValueEventArgs_ColumnName_" data-uid="Kros.Data.Schema.SqlServer.SqlServerParseDefaultValueEventArgs.ColumnName*"></a>
   <h4 id="Kros_Data_Schema_SqlServer_SqlServerParseDefaultValueEventArgs_ColumnName" data-uid="Kros.Data.Schema.SqlServer.SqlServerParseDefaultValueEventArgs.ColumnName">ColumnName</h4>
-  <div class="markdown level1 summary"><p>Meno stĺpca, ktorého predvolená hodnota sa parsuje.</p>
+  <div class="markdown level1 summary"><p>Column name which default value is being parsed.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -179,7 +175,8 @@
   </table>
   <a id="Kros_Data_Schema_SqlServer_SqlServerParseDefaultValueEventArgs_DefaultValue_" data-uid="Kros.Data.Schema.SqlServer.SqlServerParseDefaultValueEventArgs.DefaultValue*"></a>
   <h4 id="Kros_Data_Schema_SqlServer_SqlServerParseDefaultValueEventArgs_DefaultValue" data-uid="Kros.Data.Schema.SqlServer.SqlServerParseDefaultValueEventArgs.DefaultValue">DefaultValue</h4>
-  <div class="markdown level1 summary"><p>Hodnota, ktorá bola získaná štandardným parserom. Pri vlastnej obsluhe je potrebné tu nastaviť vlastnú hodnotu.</p>
+  <div class="markdown level1 summary"><p>Value, which was obtained by default parser. Set this value, when using custom logic for parsing default value
+in event handler.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -203,7 +200,7 @@
   </table>
   <a id="Kros_Data_Schema_SqlServer_SqlServerParseDefaultValueEventArgs_DefaultValueString_" data-uid="Kros.Data.Schema.SqlServer.SqlServerParseDefaultValueEventArgs.DefaultValueString*"></a>
   <h4 id="Kros_Data_Schema_SqlServer_SqlServerParseDefaultValueEventArgs_DefaultValueString" data-uid="Kros.Data.Schema.SqlServer.SqlServerParseDefaultValueEventArgs.DefaultValueString">DefaultValueString</h4>
-  <div class="markdown level1 summary"><p>Predvolená hodnota stĺpca - reťazec, ktorý sa parsuje.</p>
+  <div class="markdown level1 summary"><p>Default value of a column. It is the string which is being parsed.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -227,7 +224,8 @@
   </table>
   <a id="Kros_Data_Schema_SqlServer_SqlServerParseDefaultValueEventArgs_Handled_" data-uid="Kros.Data.Schema.SqlServer.SqlServerParseDefaultValueEventArgs.Handled*"></a>
   <h4 id="Kros_Data_Schema_SqlServer_SqlServerParseDefaultValueEventArgs_Handled" data-uid="Kros.Data.Schema.SqlServer.SqlServerParseDefaultValueEventArgs.Handled">Handled</h4>
-  <div class="markdown level1 summary"><p>Je potrebné nastaviť na <span class="xref">true</span>, ak bola v obsluhe udalosti nastavená vlastná hodnota <a class="xref" href="Kros.Data.Schema.SqlServer.SqlServerParseDefaultValueEventArgs.html#Kros_Data_Schema_SqlServer_SqlServerParseDefaultValueEventArgs_DefaultValue">DefaultValue</a>.</p>
+  <div class="markdown level1 summary"><p>Flag indicating if default value was parsed using custom logic in event handler. Set this to <span class="xref">true</span>
+if you set your own default value in <a class="xref" href="Kros.Data.Schema.SqlServer.SqlServerParseDefaultValueEventArgs.html#Kros_Data_Schema_SqlServer_SqlServerParseDefaultValueEventArgs_DefaultValue">DefaultValue</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -251,7 +249,7 @@
   </table>
   <a id="Kros_Data_Schema_SqlServer_SqlServerParseDefaultValueEventArgs_SqlDbType_" data-uid="Kros.Data.Schema.SqlServer.SqlServerParseDefaultValueEventArgs.SqlDbType*"></a>
   <h4 id="Kros_Data_Schema_SqlServer_SqlServerParseDefaultValueEventArgs_SqlDbType" data-uid="Kros.Data.Schema.SqlServer.SqlServerParseDefaultValueEventArgs.SqlDbType">SqlDbType</h4>
-  <div class="markdown level1 summary"><p>Dátový typ stĺpca, ktorého predvolená hodnota sa parsuje.</p>
+  <div class="markdown level1 summary"><p>Data type of column which default value is being parsed.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -275,7 +273,7 @@
   </table>
   <a id="Kros_Data_Schema_SqlServer_SqlServerParseDefaultValueEventArgs_TableName_" data-uid="Kros.Data.Schema.SqlServer.SqlServerParseDefaultValueEventArgs.TableName*"></a>
   <h4 id="Kros_Data_Schema_SqlServer_SqlServerParseDefaultValueEventArgs_TableName" data-uid="Kros.Data.Schema.SqlServer.SqlServerParseDefaultValueEventArgs.TableName">TableName</h4>
-  <div class="markdown level1 summary"><p>Meno tabuľky ktorej schéma sa načítava.</p>
+  <div class="markdown level1 summary"><p>Table which schema is being loaded.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>

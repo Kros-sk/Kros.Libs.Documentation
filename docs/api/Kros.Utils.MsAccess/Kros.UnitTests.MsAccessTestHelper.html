@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class MsAccessTestHelper
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,8 +83,8 @@
   
   <h1 id="Kros_UnitTests_MsAccessTestHelper" data-uid="Kros.UnitTests.MsAccessTestHelper" class="text-break">Class MsAccessTestHelper
   </h1>
-  <div class="markdown level0 summary"><p>Pomocná trieda pre unit testy, ak je potrebné mať pri testovaní reálnu databázu. Umožňuje jednoducho
-vytvoriť dočasnú databázu v ktorej sa bude testovať. Táto databáza je automaticky po skončení práce vymazaná.</p>
+  <div class="markdown level0 summary"><p>Helper class for unit tests, if there is a need for real database in tests. It creates temporary empty database
+for testing. This database is automatically deleted after finishing the work.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -102,7 +102,7 @@ vytvoriť dočasnú databázu v ktorej sa bude testovať. Táto databáza je aut
   </h3>
   <a id="Kros_UnitTests_MsAccessTestHelper__ctor_" data-uid="Kros.UnitTests.MsAccessTestHelper.#ctor*"></a>
   <h4 id="Kros_UnitTests_MsAccessTestHelper__ctor_Kros_Data_MsAccess_ProviderType_System_IO_Stream_" data-uid="Kros.UnitTests.MsAccessTestHelper.#ctor(Kros.Data.MsAccess.ProviderType,System.IO.Stream)">MsAccessTestHelper(ProviderType, Stream)</h4>
-  <div class="markdown level1 summary"><p>Vytvorí inštanciu so zadanými parametrami. Nový <code>mdb</code> súbor je vytvorený ako kópia
+  <div class="markdown level1 summary"><p>Creates an instance of helper with specified parameters. New database file is created as a copy of
 <code data-dev-comment-type="paramref" class="paramref">sourceDatabaseStream</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -123,21 +123,21 @@ vytvoriť dočasnú databázu v ktorej sa bude testovať. Táto databáza je aut
       <tr>
         <td><a class="xref" href="Kros.Data.MsAccess.ProviderType.html">ProviderType</a></td>
         <td><span class="parametername">provider</span></td>
-        <td><p>MS Access provider, ktorý sa má pre spojenie použiť.</p>
+        <td><p>Microsoft Access provider type.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.IO.Stream</span></td>
         <td><span class="parametername">sourceDatabaseStream</span></td>
-        <td><p>Zdrojová databáza - nová databáza sa vytvorí ako jej kópia.</p>
+        <td><p>Source database. New temporary database is created as a copy of this.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_UnitTests_MsAccessTestHelper__ctor_" data-uid="Kros.UnitTests.MsAccessTestHelper.#ctor*"></a>
   <h4 id="Kros_UnitTests_MsAccessTestHelper__ctor_Kros_Data_MsAccess_ProviderType_System_IO_Stream_System_Collections_Generic_IEnumerable_System_String__" data-uid="Kros.UnitTests.MsAccessTestHelper.#ctor(Kros.Data.MsAccess.ProviderType,System.IO.Stream,System.Collections.Generic.IEnumerable{System.String})">MsAccessTestHelper(ProviderType, Stream, IEnumerable&lt;String&gt;)</h4>
-  <div class="markdown level1 summary"><p>Vytvorí inštanciu so zadanými parametrami. Nový <code>mdb</code> súbor je vytvorený ako kópia
-<code data-dev-comment-type="paramref" class="paramref">sourceDatabaseStream</code> a inicializovaný skriptami <code data-dev-comment-type="paramref" class="paramref">initDatabaseScripts</code>.</p>
+  <div class="markdown level1 summary"><p>Creates an instance of helper with specified parameters. New database file is created as a copy of
+<code data-dev-comment-type="paramref" class="paramref">sourceDatabaseStream</code> and initialized with scripts in <code data-dev-comment-type="paramref" class="paramref">initDatabaseScripts</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -157,28 +157,28 @@ vytvoriť dočasnú databázu v ktorej sa bude testovať. Táto databáza je aut
       <tr>
         <td><a class="xref" href="Kros.Data.MsAccess.ProviderType.html">ProviderType</a></td>
         <td><span class="parametername">provider</span></td>
-        <td><p>MS Access provider, ktorý sa má pre spojenie použiť.</p>
+        <td><p>Microsoft Access provider type.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.IO.Stream</span></td>
         <td><span class="parametername">sourceDatabaseStream</span></td>
-        <td><p>Zdrojová databáza - nová databáza sa vytvorí ako jej kópia.</p>
+        <td><p>Source database. New temporary database is created as a copy of this.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
         <td><span class="parametername">initDatabaseScripts</span></td>
-        <td><p>Zoznam skriptov, ktoré sa spustia a inicializujú tak novovytvorenú databázu.
-Môžu to byť napríklad skripty na vytvorenie a naplnenie potrebných tabuliek.</p>
+        <td><p>List of scripts, which are used for database initialization.
+For example, they can be scripts for creating and filling necessary tables.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_UnitTests_MsAccessTestHelper__ctor_" data-uid="Kros.UnitTests.MsAccessTestHelper.#ctor*"></a>
   <h4 id="Kros_UnitTests_MsAccessTestHelper__ctor_Kros_Data_MsAccess_ProviderType_System_IO_Stream_System_String_" data-uid="Kros.UnitTests.MsAccessTestHelper.#ctor(Kros.Data.MsAccess.ProviderType,System.IO.Stream,System.String)">MsAccessTestHelper(ProviderType, Stream, String)</h4>
-  <div class="markdown level1 summary"><p>Vytvorí inštanciu so zadanými parametrami. Nový <code>mdb</code> súbor je vytvorený ako kópia
-<code data-dev-comment-type="paramref" class="paramref">sourceDatabaseStream</code> a inicializovaný skriptom <code data-dev-comment-type="paramref" class="paramref">initDatabaseScript</code>.</p>
+  <div class="markdown level1 summary"><p>Creates an instance of helper with specified parameters. New database file is created as a copy of
+<code data-dev-comment-type="paramref" class="paramref">sourceDatabaseStream</code> and initialized with script <code data-dev-comment-type="paramref" class="paramref">initDatabaseScript</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -198,27 +198,27 @@ Môžu to byť napríklad skripty na vytvorenie a naplnenie potrebných tabuliek
       <tr>
         <td><a class="xref" href="Kros.Data.MsAccess.ProviderType.html">ProviderType</a></td>
         <td><span class="parametername">provider</span></td>
-        <td><p>MS Access provider, ktorý sa má pre spojenie použiť.</p>
+        <td><p>Microsoft Access provider type.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.IO.Stream</span></td>
         <td><span class="parametername">sourceDatabaseStream</span></td>
-        <td><p>Zdrojová databáza - nová databáza sa vytvorí ako jej kópia.</p>
+        <td><p>Source database. New temporary database is created as a copy of this.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">initDatabaseScript</span></td>
-        <td><p>Skript, ktorý sa spustí a inicializuje tak novovytvorenú databázu.
-Môže to byť napríklad skript na vytvorenie a naplnenie potrebných tabuliek.</p>
+        <td><p>A script, which is used for database initialization.
+For example, it can be script for creating some table.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_UnitTests_MsAccessTestHelper__ctor_" data-uid="Kros.UnitTests.MsAccessTestHelper.#ctor*"></a>
   <h4 id="Kros_UnitTests_MsAccessTestHelper__ctor_Kros_Data_MsAccess_ProviderType_System_String_" data-uid="Kros.UnitTests.MsAccessTestHelper.#ctor(Kros.Data.MsAccess.ProviderType,System.String)">MsAccessTestHelper(ProviderType, String)</h4>
-  <div class="markdown level1 summary"><p>Vytvorí inštanciu so zadanými parametrami. Nový <code>mdb</code> súbor je vytvorený ako kópia
+  <div class="markdown level1 summary"><p>Creates an instance of helper with specified parameters. New database file is created as a copy of
 <code data-dev-comment-type="paramref" class="paramref">sourceDatabasePath</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -239,21 +239,21 @@ Môže to byť napríklad skript na vytvorenie a naplnenie potrebných tabuliek.
       <tr>
         <td><a class="xref" href="Kros.Data.MsAccess.ProviderType.html">ProviderType</a></td>
         <td><span class="parametername">provider</span></td>
-        <td><p>MS Access provider, ktorý sa má pre spojenie použiť.</p>
+        <td><p>Microsoft Access provider type.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">sourceDatabasePath</span></td>
-        <td><p>Zdrojová databáza - nová databáza sa vytvorí ako jej kópia.</p>
+        <td><p>Source database. New temporary database is created as a copy of this.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_UnitTests_MsAccessTestHelper__ctor_" data-uid="Kros.UnitTests.MsAccessTestHelper.#ctor*"></a>
   <h4 id="Kros_UnitTests_MsAccessTestHelper__ctor_Kros_Data_MsAccess_ProviderType_System_String_System_Collections_Generic_IEnumerable_System_String__" data-uid="Kros.UnitTests.MsAccessTestHelper.#ctor(Kros.Data.MsAccess.ProviderType,System.String,System.Collections.Generic.IEnumerable{System.String})">MsAccessTestHelper(ProviderType, String, IEnumerable&lt;String&gt;)</h4>
-  <div class="markdown level1 summary"><p>Vytvorí inštanciu so zadanými parametrami. Nový <code>mdb</code> súbor je vytvorený ako kópia súboru
-<code data-dev-comment-type="paramref" class="paramref">sourceDatabasePath</code> a inicializovaný skriptami <code data-dev-comment-type="paramref" class="paramref">initDatabaseScripts</code>.</p>
+  <div class="markdown level1 summary"><p>Creates an instance of helper with specified parameters. New database file is created as a copy of
+<code data-dev-comment-type="paramref" class="paramref">sourceDatabasePath</code> and initialized with scripts in <code data-dev-comment-type="paramref" class="paramref">initDatabaseScripts</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -273,28 +273,28 @@ Môže to byť napríklad skript na vytvorenie a naplnenie potrebných tabuliek.
       <tr>
         <td><a class="xref" href="Kros.Data.MsAccess.ProviderType.html">ProviderType</a></td>
         <td><span class="parametername">provider</span></td>
-        <td><p>MS Access provider, ktorý sa má pre spojenie použiť.</p>
+        <td><p>Microsoft Access provider type.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">sourceDatabasePath</span></td>
-        <td><p>Zdrojová databáza - nová databáza sa vytvorí ako jej kópia.</p>
+        <td><p>Source database. New temporary database is created as a copy of this.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
         <td><span class="parametername">initDatabaseScripts</span></td>
-        <td><p>Zoznam skriptov, ktoré sa spustia a inicializujú tak novovytvorenú databázu.
-Môžu to byť napríklad skripty na vytvorenie a naplnenie potrebných tabuliek.</p>
+        <td><p>List of scripts, which are used for database initialization.
+For example, they can be scripts for creating and filling necessary tables.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_UnitTests_MsAccessTestHelper__ctor_" data-uid="Kros.UnitTests.MsAccessTestHelper.#ctor*"></a>
   <h4 id="Kros_UnitTests_MsAccessTestHelper__ctor_Kros_Data_MsAccess_ProviderType_System_String_System_String_" data-uid="Kros.UnitTests.MsAccessTestHelper.#ctor(Kros.Data.MsAccess.ProviderType,System.String,System.String)">MsAccessTestHelper(ProviderType, String, String)</h4>
-  <div class="markdown level1 summary"><p>Vytvorí inštanciu so zadanými parametrami. Nový <code>mdb</code> súbor je vytvorený ako kópia súboru
-<code data-dev-comment-type="paramref" class="paramref">sourceDatabasePath</code> a inicializovaný skriptom <code data-dev-comment-type="paramref" class="paramref">initDatabaseScript</code>.</p>
+  <div class="markdown level1 summary"><p>Creates an instance of helper with specified parameters. New database file is created as a copy of
+<code data-dev-comment-type="paramref" class="paramref">sourceDatabasePath</code> and initialized with script <code data-dev-comment-type="paramref" class="paramref">initDatabaseScript</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -314,20 +314,20 @@ Môžu to byť napríklad skripty na vytvorenie a naplnenie potrebných tabuliek
       <tr>
         <td><a class="xref" href="Kros.Data.MsAccess.ProviderType.html">ProviderType</a></td>
         <td><span class="parametername">provider</span></td>
-        <td><p>MS Access provider, ktorý sa má pre spojenie použiť.</p>
+        <td><p>Microsoft Access provider type.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">sourceDatabasePath</span></td>
-        <td><p>Zdrojová databáza - nová databáza sa vytvorí ako jej kópia.</p>
+        <td><p>Source database. New temporary database is created as a copy of this.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">initDatabaseScript</span></td>
-        <td><p>Skript, ktorý sa spustí a inicializuje tak novovytvorenú databázu.
-Môže to byť napríklad skript na vytvorenie a naplnenie potrebných tabuliek.</p>
+        <td><p>A script, which is used for database initialization.
+For example, it can be script for creating some table.</p>
 </td>
       </tr>
     </tbody>
@@ -336,7 +336,7 @@ Môže to byť napríklad skript na vytvorenie a naplnenie potrebných tabuliek.
   </h3>
   <a id="Kros_UnitTests_MsAccessTestHelper_Connection_" data-uid="Kros.UnitTests.MsAccessTestHelper.Connection*"></a>
   <h4 id="Kros_UnitTests_MsAccessTestHelper_Connection" data-uid="Kros.UnitTests.MsAccessTestHelper.Connection">Connection</h4>
-  <div class="markdown level1 summary"><p>Spojenie na vytvorenú databázu.</p>
+  <div class="markdown level1 summary"><p>Connection to created temporary database.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -360,7 +360,7 @@ Môže to byť napríklad skript na vytvorenie a naplnenie potrebných tabuliek.
   </table>
   <a id="Kros_UnitTests_MsAccessTestHelper_DatabasePath_" data-uid="Kros.UnitTests.MsAccessTestHelper.DatabasePath*"></a>
   <h4 id="Kros_UnitTests_MsAccessTestHelper_DatabasePath" data-uid="Kros.UnitTests.MsAccessTestHelper.DatabasePath">DatabasePath</h4>
-  <div class="markdown level1 summary"><p>Cesta k vytvorenej databáze.</p>
+  <div class="markdown level1 summary"><p>Path to created temporary database.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -419,7 +419,7 @@ Môže to byť napríklad skript na vytvorenie a naplnenie potrebných tabuliek.
   </table>
   <a id="Kros_UnitTests_MsAccessTestHelper_GenerateDatabaseName_" data-uid="Kros.UnitTests.MsAccessTestHelper.GenerateDatabaseName*"></a>
   <h4 id="Kros_UnitTests_MsAccessTestHelper_GenerateDatabaseName" data-uid="Kros.UnitTests.MsAccessTestHelper.GenerateDatabaseName">GenerateDatabaseName()</h4>
-  <div class="markdown level1 summary"><p>Vygeneruje názov k súboru, kde sa vytovrí databáza. Štandardne je to náhodný súbor v dočasnom (Temp) priečinku.</p>
+  <div class="markdown level1 summary"><p>Generates path to the file where database will be created. Default is random filename in system&apos;s temp folder.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -437,15 +437,15 @@ Môže to byť napríklad skript na vytvorenie a naplnenie potrebných tabuliek.
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><p>Názov databázy.</p>
+        <td><p>Path to the database file.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_UnitTests_MsAccessTestHelper_InitDatabase_" data-uid="Kros.UnitTests.MsAccessTestHelper.InitDatabase*"></a>
   <h4 id="Kros_UnitTests_MsAccessTestHelper_InitDatabase" data-uid="Kros.UnitTests.MsAccessTestHelper.InitDatabase">InitDatabase()</h4>
-  <div class="markdown level1 summary"><p>Inicializuje databázu. Metóda je volaná po vytvorení databázy a štandardne spustí skript(y), ktoré
-boli zadané v konštruktore. Metóda sa volá iba raz, po vytvorení databázy.</p>
+  <div class="markdown level1 summary"><p>Initializes new empty database. Method is called after empty temporary database is created and it executes
+initialization scripts (specified in constructor). method is called only once.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>

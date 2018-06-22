@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class MsAccessSchemaLoader
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,7 +83,7 @@
   
   <h1 id="Kros_Data_Schema_MsAccess_MsAccessSchemaLoader" data-uid="Kros.Data.Schema.MsAccess.MsAccessSchemaLoader" class="text-break">Class MsAccessSchemaLoader
   </h1>
-  <div class="markdown level0 summary"><p>Implementácia <a class="xref" href="../Kros.Utils/Kros.Data.Schema.IDatabaseSchemaLoader-1.html">IDatabaseSchemaLoader&lt;T&gt;</a>, ktorá načítava schému MS Access databáz.</p>
+  <div class="markdown level0 summary"><p>The implementation of <a class="xref" href="../Kros.Utils/Kros.Data.Schema.IDatabaseSchemaLoader-1.html">IDatabaseSchemaLoader&lt;T&gt;</a> for Microsoft Access.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -106,7 +106,7 @@
   </h3>
   <a id="Kros_Data_Schema_MsAccess_MsAccessSchemaLoader_GetDefaultValueString_" data-uid="Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.GetDefaultValueString*"></a>
   <h4 id="Kros_Data_Schema_MsAccess_MsAccessSchemaLoader_GetDefaultValueString_System_String_" data-uid="Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.GetDefaultValueString(System.String)">GetDefaultValueString(String)</h4>
-  <div class="markdown level1 summary"><p>Upraví reťazec predvolenej hodnoty, ktorý je uložený priamo v databáze, aby bol vhodný na parsovanie.</p>
+  <div class="markdown level1 summary"><p>Adjusts the string <code data-dev-comment-type="paramref" class="paramref">rawDefaultValueString</code> so column&apos;s default value can be obtained from it.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -126,7 +126,7 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">rawDefaultValueString</span></td>
-        <td><p>Reťazec predvolenej hodnoty stĺpca uložený priamo v databáze.</p>
+        <td><p>Default value string as it is stored in database.</p>
 </td>
       </tr>
     </tbody>
@@ -142,14 +142,14 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><p>Upravený reťazec. Z oboch koncov vstupného reťazca odstráni apostrofy a úvodzovky.</p>
+        <td><p>Adjusted string - trimmed of unneeded characters.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_Schema_MsAccess_MsAccessSchemaLoader_LoadSchema_" data-uid="Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.LoadSchema*"></a>
   <h4 id="Kros_Data_Schema_MsAccess_MsAccessSchemaLoader_LoadSchema_System_Data_OleDb_OleDbConnection_" data-uid="Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.LoadSchema(System.Data.OleDb.OleDbConnection)">LoadSchema(OleDbConnection)</h4>
-  <div class="markdown level1 summary"><p>Načíta celú schému databázy určenej spojením <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
+  <div class="markdown level1 summary"><p>Loads database schema for <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -169,7 +169,7 @@
       <tr>
         <td><span class="xref">System.Data.OleDb.OleDbConnection</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Spojenie na databázu.</p>
+        <td><p>Database connection.</p>
 </td>
       </tr>
     </tbody>
@@ -185,14 +185,15 @@
     <tbody>
       <tr>
         <td><a class="xref" href="../Kros.Utils/Kros.Data.Schema.DatabaseSchema.html">DatabaseSchema</a></td>
-        <td><p>Vráti schému celej databázy.</p>
+        <td><p>Database schema.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <h5 id="Kros_Data_Schema_MsAccess_MsAccessSchemaLoader_LoadSchema_System_Data_OleDb_OleDbConnection__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Štandardne sa na získanie schémy vytvorí nové spojenie na databázu podľa vstupného spojenia
-<code data-dev-comment-type="paramref" class="paramref">connection</code>. Ak je však vstupné spojenie exkluzívne, použije sa priamo.</p>
+  <div class="markdown level1 remarks"><p>Loading schema creates a new connection to database based on <code data-dev-comment-type="paramref" class="paramref">connection</code>. If loading with
+new connection fails (for example input connection is exclusive), schema is loaded using input
+<code data-dev-comment-type="paramref" class="paramref">connection</code> directly.</p>
 </div>
   <h5 class="exceptions">Exceptions</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -205,19 +206,20 @@
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Hodnota <code data-dev-comment-type="paramref" class="paramref">connection</code> je <code>null</code>.</p>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">connection</code> id <span class="xref">null</span>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Spojenie <code data-dev-comment-type="paramref" class="paramref">connection</code> nie je spojenie na MS Access databázu.</p>
+        <td><p>The connection <code data-dev-comment-type="paramref" class="paramref">connection</code> is not a connection
+to Microsoft Access database.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_Schema_MsAccess_MsAccessSchemaLoader_LoadTableSchema_" data-uid="Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.LoadTableSchema*"></a>
   <h4 id="Kros_Data_Schema_MsAccess_MsAccessSchemaLoader_LoadTableSchema_System_Data_OleDb_OleDbConnection_System_String_" data-uid="Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.LoadTableSchema(System.Data.OleDb.OleDbConnection,System.String)">LoadTableSchema(OleDbConnection, String)</h4>
-  <div class="markdown level1 summary"><p>Načíta schému tabuľky <code data-dev-comment-type="paramref" class="paramref">tableName</code> z databázy <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
+  <div class="markdown level1 summary"><p>Loads table schema for table <code data-dev-comment-type="paramref" class="paramref">tableName</code> in database <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -237,13 +239,13 @@
       <tr>
         <td><span class="xref">System.Data.OleDb.OleDbConnection</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Spojenie na databázu.</p>
+        <td><p>Database connection.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">tableName</span></td>
-        <td><p>Meno tabuľky, ktorej schéma sa načíta.</p>
+        <td><p>Table name.</p>
 </td>
       </tr>
     </tbody>
@@ -259,14 +261,15 @@
     <tbody>
       <tr>
         <td><a class="xref" href="../Kros.Utils/Kros.Data.Schema.TableSchema.html">TableSchema</a></td>
-        <td><p>Vráti načítanú schému tabuľky, alebo hodnotu <code>null</code>, ak taká tabuľka neexistuje.</p>
+        <td><p>Table schema, or value <span class="xref">null</span> if specified table does not exist.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <h5 id="Kros_Data_Schema_MsAccess_MsAccessSchemaLoader_LoadTableSchema_System_Data_OleDb_OleDbConnection_System_String__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Štandardne sa na získanie schémy vytvorí nové spojenie na databázu podľa vstupného spojenia
-<code data-dev-comment-type="paramref" class="paramref">connection</code>. Ak je však vstupné spojenie exkluzívne, použije sa priamo.</p>
+  <div class="markdown level1 remarks"><p>Loading schema creates a new connection to database based on <code data-dev-comment-type="paramref" class="paramref">connection</code>. If loading with
+new connection fails (for example input connection is exclusive), schema is loaded using input
+<code data-dev-comment-type="paramref" class="paramref">connection</code> directly.</p>
 </div>
   <h5 class="exceptions">Exceptions</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -279,25 +282,19 @@
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Hodnota <code data-dev-comment-type="paramref" class="paramref">connection</code> je <code>null</code>.</p>
+        <td><ul><li></li><li></li></ul>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Spojenie <code data-dev-comment-type="paramref" class="paramref">connection</code> nie je spojenie na MS Access databázu.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Názov tabuľky <code data-dev-comment-type="paramref" class="paramref">tableName</code> má hodnotu <code>null</code>,
-alebo je to prázdny reťazec, alebo je zložený len z bielych znakov.</p>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">tableName</code> is an empty string, or string containing whitespace characters only.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_Schema_MsAccess_MsAccessSchemaLoader_OnParseDefaultValue_" data-uid="Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.OnParseDefaultValue*"></a>
   <h4 id="Kros_Data_Schema_MsAccess_MsAccessSchemaLoader_OnParseDefaultValue_Kros_Data_Schema_MsAccess_MsAccessParseDefaultValueEventArgs_" data-uid="Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.OnParseDefaultValue(Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs)">OnParseDefaultValue(MsAccessParseDefaultValueEventArgs)</h4>
-  <div class="markdown level1 summary"><p>Vyvolá udalosť <a class="xref" href="Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.html#Kros_Data_Schema_MsAccess_MsAccessSchemaLoader_ParseDefaultValue">ParseDefaultValue</a>.</p>
+  <div class="markdown level1 summary"><p>Raises the <a class="xref" href="Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.html#Kros_Data_Schema_MsAccess_MsAccessSchemaLoader_ParseDefaultValue">ParseDefaultValue</a> event with arguments <code data-dev-comment-type="paramref" class="paramref">e</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -317,15 +314,14 @@ alebo je to prázdny reťazec, alebo je zložený len z bielych znakov.</p>
       <tr>
         <td><a class="xref" href="Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.html">MsAccessParseDefaultValueEventArgs</a></td>
         <td><span class="parametername">e</span></td>
-        <td><p>Argumenty udalosti.</p>
+        <td><p>Arguments for the event.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_Schema_MsAccess_MsAccessSchemaLoader_SupportsConnectionType_" data-uid="Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.SupportsConnectionType*"></a>
   <h4 id="Kros_Data_Schema_MsAccess_MsAccessSchemaLoader_SupportsConnectionType_System_Data_OleDb_OleDbConnection_" data-uid="Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.SupportsConnectionType(System.Data.OleDb.OleDbConnection)">SupportsConnectionType(OleDbConnection)</h4>
-  <div class="markdown level1 summary"><p>Kontroluje, či dokáže načítať schému zo spojenia <code data-dev-comment-type="paramref" class="paramref">connection</code>, tzn. či zadané spojenie je
-spojenie na MS Access databázu.</p>
+  <div class="markdown level1 summary"><p>Checks if it is poosible to load database schema for <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -345,7 +341,7 @@ spojenie na MS Access databázu.</p>
       <tr>
         <td><span class="xref">System.Data.OleDb.OleDbConnection</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Spojenie na databázu.</p>
+        <td><p>Database connection.</p>
 </td>
       </tr>
     </tbody>
@@ -361,7 +357,8 @@ spojenie na MS Access databázu.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p><span class="xref">true</span>, ak je možné načítať schému databázy, <span class="xref">false</span>, ak to možné nie je.</p>
+        <td><p><span class="xref">false</span> if value of <code data-dev-comment-type="paramref" class="paramref">connection</code> is <span class="xref">null</span>, or it is not
+    a connection to Microsoft Access database. Otherwise <span class="xref">true</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -369,8 +366,7 @@ spojenie na MS Access databázu.</p>
   <h3 id="events">Events
   </h3>
   <h4 id="Kros_Data_Schema_MsAccess_MsAccessSchemaLoader_ParseDefaultValue" data-uid="Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.ParseDefaultValue">ParseDefaultValue</h4>
-  <div class="markdown level1 summary"><p>Udalosť vyvolaná pri parsovaní predvolenej hodnoty stĺpca. V obsluhe je možné predvolenú hodnotu parsovať
-vlastným spôsobom, ak interné parsovanie zlyhalo.</p>
+  <div class="markdown level1 summary"><p>Event raised while parsing default value of a column. It is possible to use custom parsing logic in the event handler.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -393,16 +389,15 @@ vlastným spôsobom, ak interné parsovanie zlyhalo.</p>
     </tbody>
   </table>
   <h5 id="Kros_Data_Schema_MsAccess_MsAccessSchemaLoader_ParseDefaultValue_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>V obsluhe udalosti je možné spraviť vlatné parsovanie predvolenej hodnoty stĺpca. Ak je v obsluhe
-predvolená hodnota rozparsovaná, je potrebné ju nastaviť v argumente
-<a class="xref" href="Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.html#Kros_Data_Schema_MsAccess_MsAccessParseDefaultValueEventArgs_DefaultValue">DefaultValue</a> a zároveň je potrebné nastaviť
-<a class="xref" href="Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.html#Kros_Data_Schema_MsAccess_MsAccessParseDefaultValueEventArgs_Handled">Handled</a> na <span class="xref">true</span>.</p>
+  <div class="markdown level1 remarks"><p>When custom logic for parsing column&apos;s default value is used, the parsed value is set in
+<a class="xref" href="Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.html#Kros_Data_Schema_MsAccess_MsAccessParseDefaultValueEventArgs_DefaultValue">DefaultValue</a> property and
+<a class="xref" href="Kros.Data.Schema.MsAccess.MsAccessParseDefaultValueEventArgs.html#Kros_Data_Schema_MsAccess_MsAccessParseDefaultValueEventArgs_Handled">Handled</a> flag must be set to <span class="xref">true</span>.</p>
 </div>
   <h3 id="eii">Explicit Interface Implementations
   </h3>
   <a id="Kros_Data_Schema_MsAccess_MsAccessSchemaLoader_Kros_Data_Schema_IDatabaseSchemaLoader_LoadSchema_" data-uid="Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.Kros#Data#Schema#IDatabaseSchemaLoader#LoadSchema*"></a>
   <h4 id="Kros_Data_Schema_MsAccess_MsAccessSchemaLoader_Kros_Data_Schema_IDatabaseSchemaLoader_LoadSchema_System_Object_" data-uid="Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.Kros#Data#Schema#IDatabaseSchemaLoader#LoadSchema(System.Object)">IDatabaseSchemaLoader.LoadSchema(Object)</h4>
-  <div class="markdown level1 summary"><p>Načíta celú schému databázy určenej spojením <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
+  <div class="markdown level1 summary"><p>Loads database schema for <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -422,7 +417,7 @@ predvolená hodnota rozparsovaná, je potrebné ju nastaviť v argumente
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Spojenie na databázu.</p>
+        <td><p>Database connection.</p>
 </td>
       </tr>
     </tbody>
@@ -438,14 +433,14 @@ predvolená hodnota rozparsovaná, je potrebné ju nastaviť v argumente
     <tbody>
       <tr>
         <td><a class="xref" href="../Kros.Utils/Kros.Data.Schema.DatabaseSchema.html">DatabaseSchema</a></td>
-        <td><p>Vráti schému celej databázy.</p>
+        <td><p>Database schema.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <h5 id="Kros_Data_Schema_MsAccess_MsAccessSchemaLoader_Kros_Data_Schema_IDatabaseSchemaLoader_LoadSchema_System_Object__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Štandardne sa na získanie schémy vytvorí nové spojenie na databázu podľa vstupného spojenia
-<code data-dev-comment-type="paramref" class="paramref">connection</code>. Ak je však vstupné spojenie exkluzívne, použije sa priamo.</p>
+  <div class="markdown level1 remarks"><p>By default, schema is loaded using new connection to the database, based on <code data-dev-comment-type="paramref" class="paramref">connection</code>.
+But if <code data-dev-comment-type="paramref" class="paramref">connection</code> is an exclusive connection, it is used directly.</p>
 </div>
   <h5 class="exceptions">Exceptions</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -458,19 +453,19 @@ predvolená hodnota rozparsovaná, je potrebné ju nastaviť v argumente
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Hodnota <code data-dev-comment-type="paramref" class="paramref">connection</code> je <code>null</code>.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">connection</code> is <span class="xref">null</span>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Spojenie <code data-dev-comment-type="paramref" class="paramref">connection</code> nie je spojenie na MS Access databázu.</p>
+        <td><p>The connection <code data-dev-comment-type="paramref" class="paramref">connection</code> is not a connection to Microsoft Access database.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_Schema_MsAccess_MsAccessSchemaLoader_Kros_Data_Schema_IDatabaseSchemaLoader_LoadTableSchema_" data-uid="Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.Kros#Data#Schema#IDatabaseSchemaLoader#LoadTableSchema*"></a>
   <h4 id="Kros_Data_Schema_MsAccess_MsAccessSchemaLoader_Kros_Data_Schema_IDatabaseSchemaLoader_LoadTableSchema_System_Object_System_String_" data-uid="Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.Kros#Data#Schema#IDatabaseSchemaLoader#LoadTableSchema(System.Object,System.String)">IDatabaseSchemaLoader.LoadTableSchema(Object, String)</h4>
-  <div class="markdown level1 summary"><p>Načíta schému tabuľky <code data-dev-comment-type="paramref" class="paramref">tableName</code> z databázy <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
+  <div class="markdown level1 summary"><p>Loads table schema for table <code data-dev-comment-type="paramref" class="paramref">tableName</code> in database <code data-dev-comment-type="paramref" class="paramref">connection</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -490,13 +485,13 @@ predvolená hodnota rozparsovaná, je potrebné ju nastaviť v argumente
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Spojenie na databázu.</p>
+        <td><p>Database connection.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">tableName</span></td>
-        <td><p>Meno tabuľky, ktorej schéma sa načíta.</p>
+        <td><p>Table name.</p>
 </td>
       </tr>
     </tbody>
@@ -512,14 +507,14 @@ predvolená hodnota rozparsovaná, je potrebné ju nastaviť v argumente
     <tbody>
       <tr>
         <td><a class="xref" href="../Kros.Utils/Kros.Data.Schema.TableSchema.html">TableSchema</a></td>
-        <td><p>Vráti načítanú schému tabuľky, alebo hodnotu <code>null</code>, ak taká tabuľka neexistuje.</p>
+        <td><p>Table schema, or value <span class="xref">null</span> if specified table does not exist.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <h5 id="Kros_Data_Schema_MsAccess_MsAccessSchemaLoader_Kros_Data_Schema_IDatabaseSchemaLoader_LoadTableSchema_System_Object_System_String__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Štandardne sa na získanie schémy vytvorí nové spojenie na databázu podľa vstupného spojenia
-<code data-dev-comment-type="paramref" class="paramref">connection</code>. Ak je však vstupné spojenie exkluzívne, použije sa priamo.</p>
+  <div class="markdown level1 remarks"><p>By default, schema is loaded using new connection to the database, based on <code data-dev-comment-type="paramref" class="paramref">connection</code>.
+But if <code data-dev-comment-type="paramref" class="paramref">connection</code> is an exclusive connection, it is used directly.</p>
 </div>
   <h5 class="exceptions">Exceptions</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -532,27 +527,19 @@ predvolená hodnota rozparsovaná, je potrebné ju nastaviť v argumente
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Hodnota <code data-dev-comment-type="paramref" class="paramref">connection</code> je <code>null</code>.</p>
+        <td><p>The value of <code data-dev-comment-type="paramref" class="paramref">connection</code> or <code data-dev-comment-type="paramref" class="paramref">tableName</code>
+is <span class="xref">null</span>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Spojenie <code data-dev-comment-type="paramref" class="paramref">connection</code> nie je spojenie na MS Access databázu.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Názov tabuľky <code data-dev-comment-type="paramref" class="paramref">tableName</code> má hodnotu <code>null</code>,
-alebo je to prázdny reťazec, alebo je zložený len z bielych znakov.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_Schema_MsAccess_MsAccessSchemaLoader_Kros_Data_Schema_IDatabaseSchemaLoader_SupportsConnectionType_" data-uid="Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.Kros#Data#Schema#IDatabaseSchemaLoader#SupportsConnectionType*"></a>
   <h4 id="Kros_Data_Schema_MsAccess_MsAccessSchemaLoader_Kros_Data_Schema_IDatabaseSchemaLoader_SupportsConnectionType_System_Object_" data-uid="Kros.Data.Schema.MsAccess.MsAccessSchemaLoader.Kros#Data#Schema#IDatabaseSchemaLoader#SupportsConnectionType(System.Object)">IDatabaseSchemaLoader.SupportsConnectionType(Object)</h4>
-  <div class="markdown level1 summary"><p>Kontroluje, či dokáže načítať schému zo spojenia <code data-dev-comment-type="paramref" class="paramref">connection</code>, tzn. či zadané spojenie je
-spojenie na MS Access databázu.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -571,8 +558,7 @@ spojenie na MS Access databázu.</p>
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">connection</span></td>
-        <td><p>Spojenie na databázu.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -587,8 +573,7 @@ spojenie na MS Access databázu.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p><span class="xref">true</span>, ak je možné načítať schému databázy, <span class="xref">false</span>, ak to možné nie je.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class EnumerableDataReader&lt;T&gt;
    | Kros.Libs ">
-    <meta name="generator" content="docfx 2.35.2.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -83,7 +83,7 @@
   
   <h1 id="Kros_Data_BulkActions_EnumerableDataReader_1" data-uid="Kros.Data.BulkActions.EnumerableDataReader`1" class="text-break">Class EnumerableDataReader&lt;T&gt;
   </h1>
-  <div class="markdown level0 summary"><p>Implementácia rozhrania <a class="xref" href="Kros.Data.BulkActions.IBulkActionDataReader.html">IBulkActionDataReader</a> nad ľubovoľným zoznamom objektov.</p>
+  <div class="markdown level0 summary"><p><a class="xref" href="Kros.Data.BulkActions.IBulkActionDataReader.html">IBulkActionDataReader</a> implementation for any list of objects.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -112,20 +112,20 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td><p>Typ dátového objektu.</p>
+        <td><p>Object data type.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <h5 id="Kros_Data_BulkActions_EnumerableDataReader_1_remarks"><strong>Remarks</strong></h5>
-  <div class="markdown level0 remarks"><p>Trieda implementuje rozhranie <a class="xref" href="Kros.Data.BulkActions.IBulkActionDataReader.html">IBulkActionDataReader</a> nad ľubovoľným zoznamom objektov,
-aby bolo jednoduché takýto zoznam hromadne vložiť do databázy pomocou <code>BulkInsert</code>-u.</p>
+  <div class="markdown level0 remarks"><p>Class implements <a class="xref" href="Kros.Data.BulkActions.IBulkActionDataReader.html">IBulkActionDataReader</a> for any list of objects,
+so this list can be easily used in bulk actions (<a class="xref" href="Kros.Data.BulkActions.IBulkInsert.html">IBulkInsert</a>, <a class="xref" href="Kros.Data.BulkActions.IBulkUpdate.html">IBulkUpdate</a>).</p>
 </div>
   <h3 id="constructors">Constructors
   </h3>
   <a id="Kros_Data_BulkActions_EnumerableDataReader_1__ctor_" data-uid="Kros.Data.BulkActions.EnumerableDataReader`1.#ctor*"></a>
   <h4 id="Kros_Data_BulkActions_EnumerableDataReader_1__ctor_System_Collections_Generic_IEnumerable__0__System_Collections_Generic_IEnumerable_System_String__" data-uid="Kros.Data.BulkActions.EnumerableDataReader`1.#ctor(System.Collections.Generic.IEnumerable{`0},System.Collections.Generic.IEnumerable{System.String})">EnumerableDataReader(IEnumerable&lt;T&gt;, IEnumerable&lt;String&gt;)</h4>
-  <div class="markdown level1 summary"><p>Vytvorí inštanciu reader-a nad dátami <code data-dev-comment-type="paramref" class="paramref">data</code> so zoznamom sĺpcov <code data-dev-comment-type="paramref" class="paramref">columnNames</code>.</p>
+  <div class="markdown level1 summary"><p>Creates instance of reader over <code data-dev-comment-type="paramref" class="paramref">data</code> with list of columns <code data-dev-comment-type="paramref" class="paramref">columnNames</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -145,14 +145,14 @@ aby bolo jednoduché takýto zoznam hromadne vložiť do databázy pomocou <code
       <tr>
         <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;T&gt;</td>
         <td><span class="parametername">data</span></td>
-        <td><p>Dáta, nad ktorými je vytvorený reader.</p>
+        <td><p>Data which reader operates with.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
         <td><span class="parametername">columnNames</span></td>
-        <td><p>Zoznam stĺpcov s ktorými reader pracuje. Pre všetky stĺpce v zozname musí
-existovať property s rovnakým menom v objekte <code>T</code>.</p>
+        <td><p>List of columns with which reader works.
+For every column must exists property with the same name in object <code>T</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -168,17 +168,17 @@ existovať property s rovnakým menom v objekte <code>T</code>.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
-        <td><p>Hodnota <code data-dev-comment-type="paramref" class="paramref">data</code>, alebo <code data-dev-comment-type="paramref" class="paramref">columnNames</code> je <code>null</code>.</p>
+        <td><p>Value of <code data-dev-comment-type="paramref" class="paramref">data</code>, or <code data-dev-comment-type="paramref" class="paramref">columnNames</code> is <span class="xref">null</span>.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.ArgumentException</span></td>
-        <td><p>Zoznam <code data-dev-comment-type="paramref" class="paramref">columnNames</code> je prázdny, tzn. neobsahuje ani jednu hodnotu.</p>
+        <td><p>List <code data-dev-comment-type="paramref" class="paramref">columnNames</code> is empty, i.e. does not contain any value.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.InvalidOperationException</span></td>
-        <td><p>Trieda <code>T</code> nemá všetky vlastnosti určené zoznamom sĺpcov <code data-dev-comment-type="paramref" class="paramref">columnNames</code>.</p>
+        <td><p>Class <code>T</code> does not have all properties defined in <code data-dev-comment-type="paramref" class="paramref">columnNames</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -187,7 +187,7 @@ existovať property s rovnakým menom v objekte <code>T</code>.</p>
   </h3>
   <a id="Kros_Data_BulkActions_EnumerableDataReader_1_FieldCount_" data-uid="Kros.Data.BulkActions.EnumerableDataReader`1.FieldCount*"></a>
   <h4 id="Kros_Data_BulkActions_EnumerableDataReader_1_FieldCount" data-uid="Kros.Data.BulkActions.EnumerableDataReader`1.FieldCount">FieldCount</h4>
-  <div class="markdown level1 summary"><p>Počet stĺpcov.</p>
+  <div class="markdown level1 summary"><p>Columns count.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -246,7 +246,7 @@ existovať property s rovnakým menom v objekte <code>T</code>.</p>
   </table>
   <a id="Kros_Data_BulkActions_EnumerableDataReader_1_GetName_" data-uid="Kros.Data.BulkActions.EnumerableDataReader`1.GetName*"></a>
   <h4 id="Kros_Data_BulkActions_EnumerableDataReader_1_GetName_System_Int32_" data-uid="Kros.Data.BulkActions.EnumerableDataReader`1.GetName(System.Int32)">GetName(Int32)</h4>
-  <div class="markdown level1 summary"><p>Meno stĺpca na indexe <code data-dev-comment-type="paramref" class="paramref">i</code>.</p>
+  <div class="markdown level1 summary"><p>Column name at index <code data-dev-comment-type="paramref" class="paramref">i</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -266,7 +266,7 @@ existovať property s rovnakým menom v objekte <code>T</code>.</p>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">i</span></td>
-        <td><p>Index stĺpca.</p>
+        <td><p>Column index.</p>
 </td>
       </tr>
     </tbody>
@@ -282,14 +282,14 @@ existovať property s rovnakým menom v objekte <code>T</code>.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><p>Reťazec.</p>
+        <td><p>Column name.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_BulkActions_EnumerableDataReader_1_GetOrdinal_" data-uid="Kros.Data.BulkActions.EnumerableDataReader`1.GetOrdinal*"></a>
   <h4 id="Kros_Data_BulkActions_EnumerableDataReader_1_GetOrdinal_System_String_" data-uid="Kros.Data.BulkActions.EnumerableDataReader`1.GetOrdinal(System.String)">GetOrdinal(String)</h4>
-  <div class="markdown level1 summary"><p>Index stĺpca určeného menom <code data-dev-comment-type="paramref" class="paramref">name</code>.</p>
+  <div class="markdown level1 summary"><p>Index of column with <code data-dev-comment-type="paramref" class="paramref">name</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -309,7 +309,7 @@ existovať property s rovnakým menom v objekte <code>T</code>.</p>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">name</span></td>
-        <td><p>Meno stĺpca.</p>
+        <td><p>Column name.</p>
 </td>
       </tr>
     </tbody>
@@ -325,14 +325,14 @@ existovať property s rovnakým menom v objekte <code>T</code>.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Int32</span></td>
-        <td><p>Číslo.</p>
+        <td><p>Index.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_BulkActions_EnumerableDataReader_1_GetValue_" data-uid="Kros.Data.BulkActions.EnumerableDataReader`1.GetValue*"></a>
   <h4 id="Kros_Data_BulkActions_EnumerableDataReader_1_GetValue_System_Int32_" data-uid="Kros.Data.BulkActions.EnumerableDataReader`1.GetValue(System.Int32)">GetValue(Int32)</h4>
-  <div class="markdown level1 summary"><p>Vráti hodnotu stĺpca na indexe <code data-dev-comment-type="paramref" class="paramref">i</code>.</p>
+  <div class="markdown level1 summary"><p>Returns value of column at index <code data-dev-comment-type="paramref" class="paramref">i</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -352,7 +352,7 @@ existovať property s rovnakým menom v objekte <code>T</code>.</p>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">i</span></td>
-        <td><p>Index stĺpca.</p>
+        <td><p>Column index.</p>
 </td>
       </tr>
     </tbody>
@@ -368,14 +368,14 @@ existovať property s rovnakým menom v objekte <code>T</code>.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Object</span></td>
-        <td><p>Hodnota stĺpca.</p>
+        <td><p>Column value.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Kros_Data_BulkActions_EnumerableDataReader_1_Read_" data-uid="Kros.Data.BulkActions.EnumerableDataReader`1.Read*"></a>
   <h4 id="Kros_Data_BulkActions_EnumerableDataReader_1_Read" data-uid="Kros.Data.BulkActions.EnumerableDataReader`1.Read">Read()</h4>
-  <div class="markdown level1 summary"><p>Posunie sa na ďalšiu položku v zozname.</p>
+  <div class="markdown level1 summary"><p>Moves to next record.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -393,8 +393,8 @@ existovať property s rovnakým menom v objekte <code>T</code>.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p>Vráti <span class="xref">true</span>, ak sa podarilo posunúť na ďalšiu položku, <span class="xref">false</span>,
-ak už žiadna položka nie je.</p>
+        <td><p><span class="xref">true</span> if move was successfull,
+<span class="xref">false</span> if there is no next record.</p>
 </td>
       </tr>
     </tbody>
