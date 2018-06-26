@@ -101,6 +101,69 @@ for testing. This database is automatically deleted after finishing the work.</p
   <h3 id="constructors">Constructors
   </h3>
   <a id="Kros_UnitTests_MsAccessTestHelper__ctor_" data-uid="Kros.UnitTests.MsAccessTestHelper.#ctor*"></a>
+  <h4 id="Kros_UnitTests_MsAccessTestHelper__ctor_Kros_Data_MsAccess_ProviderType_" data-uid="Kros.UnitTests.MsAccessTestHelper.#ctor(Kros.Data.MsAccess.ProviderType)">MsAccessTestHelper(ProviderType)</h4>
+  <div class="markdown level1 summary"><p>Creates an instance of helper with specified parameters. New database file is created as an empty database
+with random name in temporary folder.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MsAccessTestHelper(ProviderType provider)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Kros.Data.MsAccess.ProviderType.html">ProviderType</a></td>
+        <td><span class="parametername">provider</span></td>
+        <td><p>Microsoft Access provider type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Kros_UnitTests_MsAccessTestHelper__ctor_" data-uid="Kros.UnitTests.MsAccessTestHelper.#ctor*"></a>
+  <h4 id="Kros_UnitTests_MsAccessTestHelper__ctor_Kros_Data_MsAccess_ProviderType_System_Collections_Generic_IEnumerable_System_String__" data-uid="Kros.UnitTests.MsAccessTestHelper.#ctor(Kros.Data.MsAccess.ProviderType,System.Collections.Generic.IEnumerable{System.String})">MsAccessTestHelper(ProviderType, IEnumerable&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Creates an instance of helper with specified parameters. New database file is created as an empty database
+with random name in temporary folder and is initialized with scripts in <code data-dev-comment-type="paramref" class="paramref">initDatabaseScripts</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MsAccessTestHelper(ProviderType provider, IEnumerable&lt;string&gt; initDatabaseScripts)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Kros.Data.MsAccess.ProviderType.html">ProviderType</a></td>
+        <td><span class="parametername">provider</span></td>
+        <td><p>Microsoft Access provider type.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">initDatabaseScripts</span></td>
+        <td><p>List of scripts, which are used for database initialization.
+For example, they can be scripts for creating and filling necessary tables.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Kros_UnitTests_MsAccessTestHelper__ctor_" data-uid="Kros.UnitTests.MsAccessTestHelper.#ctor*"></a>
   <h4 id="Kros_UnitTests_MsAccessTestHelper__ctor_Kros_Data_MsAccess_ProviderType_System_IO_Stream_" data-uid="Kros.UnitTests.MsAccessTestHelper.#ctor(Kros.Data.MsAccess.ProviderType,System.IO.Stream)">MsAccessTestHelper(ProviderType, Stream)</h4>
   <div class="markdown level1 summary"><p>Creates an instance of helper with specified parameters. New database file is created as a copy of
 <code data-dev-comment-type="paramref" class="paramref">sourceDatabaseStream</code>.</p>
@@ -392,31 +455,6 @@ For example, it can be script for creating some table.</p>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
   </div>
-  <a id="Kros_UnitTests_MsAccessTestHelper_Dispose_" data-uid="Kros.UnitTests.MsAccessTestHelper.Dispose*"></a>
-  <h4 id="Kros_UnitTests_MsAccessTestHelper_Dispose_System_Boolean_" data-uid="Kros.UnitTests.MsAccessTestHelper.Dispose(System.Boolean)">Dispose(Boolean)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual void Dispose(bool disposing)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><span class="parametername">disposing</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <a id="Kros_UnitTests_MsAccessTestHelper_GenerateDatabaseName_" data-uid="Kros.UnitTests.MsAccessTestHelper.GenerateDatabaseName*"></a>
   <h4 id="Kros_UnitTests_MsAccessTestHelper_GenerateDatabaseName" data-uid="Kros.UnitTests.MsAccessTestHelper.GenerateDatabaseName">GenerateDatabaseName()</h4>
   <div class="markdown level1 summary"><p>Generates path to the file where database will be created. Default is random filename in system&apos;s temp folder.</p>

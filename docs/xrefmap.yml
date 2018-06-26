@@ -13962,6 +13962,21 @@ references:
   commentId: T:Kros.UnitTests.MsAccessTestHelper
   fullName: Kros.UnitTests.MsAccessTestHelper
   nameWithType: MsAccessTestHelper
+- uid: Kros.UnitTests.MsAccessTestHelper.#ctor(Kros.Data.MsAccess.ProviderType)
+  name: MsAccessTestHelper(ProviderType)
+  href: api/Kros.Utils.MsAccess/Kros.UnitTests.MsAccessTestHelper.html#Kros_UnitTests_MsAccessTestHelper__ctor_Kros_Data_MsAccess_ProviderType_
+  commentId: M:Kros.UnitTests.MsAccessTestHelper.#ctor(Kros.Data.MsAccess.ProviderType)
+  fullName: Kros.UnitTests.MsAccessTestHelper.MsAccessTestHelper(Kros.Data.MsAccess.ProviderType)
+  nameWithType: MsAccessTestHelper.MsAccessTestHelper(ProviderType)
+- uid: Kros.UnitTests.MsAccessTestHelper.#ctor(Kros.Data.MsAccess.ProviderType,System.Collections.Generic.IEnumerable{System.String})
+  name: MsAccessTestHelper(ProviderType, IEnumerable<String>)
+  href: api/Kros.Utils.MsAccess/Kros.UnitTests.MsAccessTestHelper.html#Kros_UnitTests_MsAccessTestHelper__ctor_Kros_Data_MsAccess_ProviderType_System_Collections_Generic_IEnumerable_System_String__
+  commentId: M:Kros.UnitTests.MsAccessTestHelper.#ctor(Kros.Data.MsAccess.ProviderType,System.Collections.Generic.IEnumerable{System.String})
+  name.vb: MsAccessTestHelper(ProviderType, IEnumerable(Of String))
+  fullName: Kros.UnitTests.MsAccessTestHelper.MsAccessTestHelper(Kros.Data.MsAccess.ProviderType, System.Collections.Generic.IEnumerable<System.String>)
+  fullName.vb: Kros.UnitTests.MsAccessTestHelper.MsAccessTestHelper(Kros.Data.MsAccess.ProviderType, System.Collections.Generic.IEnumerable(Of System.String))
+  nameWithType: MsAccessTestHelper.MsAccessTestHelper(ProviderType, IEnumerable<String>)
+  nameWithType.vb: MsAccessTestHelper.MsAccessTestHelper(ProviderType, IEnumerable(Of String))
 - uid: Kros.UnitTests.MsAccessTestHelper.#ctor(Kros.Data.MsAccess.ProviderType,System.IO.Stream)
   name: MsAccessTestHelper(ProviderType, Stream)
   href: api/Kros.Utils.MsAccess/Kros.UnitTests.MsAccessTestHelper.html#Kros_UnitTests_MsAccessTestHelper__ctor_Kros_Data_MsAccess_ProviderType_System_IO_Stream_
@@ -14043,12 +14058,6 @@ references:
   commentId: M:Kros.UnitTests.MsAccessTestHelper.Dispose
   fullName: Kros.UnitTests.MsAccessTestHelper.Dispose()
   nameWithType: MsAccessTestHelper.Dispose()
-- uid: Kros.UnitTests.MsAccessTestHelper.Dispose(System.Boolean)
-  name: Dispose(Boolean)
-  href: api/Kros.Utils.MsAccess/Kros.UnitTests.MsAccessTestHelper.html#Kros_UnitTests_MsAccessTestHelper_Dispose_System_Boolean_
-  commentId: M:Kros.UnitTests.MsAccessTestHelper.Dispose(System.Boolean)
-  fullName: Kros.UnitTests.MsAccessTestHelper.Dispose(System.Boolean)
-  nameWithType: MsAccessTestHelper.Dispose(Boolean)
 - uid: Kros.UnitTests.MsAccessTestHelper.Dispose*
   name: Dispose
   href: api/Kros.Utils.MsAccess/Kros.UnitTests.MsAccessTestHelper.html#Kros_UnitTests_MsAccessTestHelper_Dispose_
